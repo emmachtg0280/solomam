@@ -949,5 +949,16 @@
       "Contacter le CCAS de Frontignan pour vérifier que le dispositif est encore ouvert et obtenir le dossier ainsi que les conditions de recevabilité."
     ],
     "url": "https://www.frontignan.fr/aide-au-paiement-des-factures-energetiques/"
+  },
+  {
+    "id": "caf-herault-bafa",
+    "name": "Aide locale au BAFA — Caf de l’Hérault",
+    "category": "Formation",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Aide locale plafonnée à 100 € pour la session générale du BAFA, versée après validation de la session et dans la limite des fonds disponibles. Cumulable avec l’aide nationale.",
+    "when": "Tout allocataire de la Caf de l’Hérault, y compris en cours d’affiliation, ou enfant à charge d’un allocataire; aucune condition de ressources.",
+    "steps": [],
+    "url": "https://www.caf.fr/professionnels/caf-de-l-herault/offre-de-service/vie-professionnelle/le-bafa"
   }
 ]

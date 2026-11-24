@@ -1405,7 +1405,7 @@
     },
     {
       "id": "fsl-ariege-rdas-2026",
-      "name": "Département de l’Ariège — RDAS 2026, fiche FSL/FUH",
+      "name": "Département de l’Ariège — PDF RDAS nommé 2026, préambule adopté le 14 mars 2022",
       "url": "https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf",
       "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
       "status": "official-page-or-regulation-reviewed-candidate-only",
@@ -1708,11 +1708,42 @@
       ],
       "version": "RIAS 2026; sections 4 à 7 extraites, secours/prêts, équipement, mobilité et BAFA",
       "license": "Aucun texte intégral reproduit; faits résumés avec source et pages PDF",
-      "candidateRecordsIntegrated": 3,
-      "factsEnrichedForAids": 3,
-      "publishableRecords": 4,
+      "candidateRecordsIntegrated": 4,
+      "factsEnrichedForAids": 4,
+      "publishableRecords": 5,
       "snapshot": "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf",
       "extractedSummary": "src/data/imports/local/herault/normalized/rias-aides-extract-2026.json"
+    },
+    {
+      "id": "caf-herault-bafa-page",
+      "name": "Caf de l'Hérault — aide locale BAFA",
+      "url": "https://www.caf.fr/professionnels/caf-de-l-herault/offre-de-service/vie-professionnelle/le-bafa",
+      "role": "Conditions officielles 2026 de l’aide locale BAFA",
+      "status": "official-guidance-and-current-form-reviewed",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution",
+      "coverage": "Caf Hérault",
+      "limitations": [
+        "Dépôt dans les trois mois après session; canal numérique éventuel à confirmer."
+      ]
+    },
+    {
+      "id": "caf-herault-bafa-form-2026",
+      "name": "Caf de l'Hérault — formulaire BAFA 1, session générale 2026",
+      "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Le%20Bafa/DDE%20AIDE%20BAFA%20LOCALE%202026.pdf",
+      "role": "Formulaire et pièces BAFA 1 2026",
+      "status": "official-form-reviewed",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Formulaire officiel conservé comme source; champs résumés avec attribution",
+      "coverage": "Caf Hérault",
+      "limitations": [
+        "Le formulaire indique le retour du dossier à la Caf sous trois mois."
+      ],
+      "snapshot": "src/data/imports/local/herault/raw/bafa-aide-locale-2026.pdf"
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertUniqueCanonicalAids, sameAidIdentity } from "../src/lib/catalogue-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const cataloguePath = path.join(root, "src/data/catalogue.json");
@@ -93,7 +94,8 @@ const records = [
 
 for (const data of records) {
   if (review[data.id]?.informationPublicationStatus === "verified") continue;
-  const existing = catalogue.find((record) => record.id === data.id || record.url === data.url);
+  const existing = catalogue.find((record) => record.id === data.id || sameAidIdentity(record, data));
+  if (existing && existing.id !== data.id) throw new Error(`Duplicate canonical aid identity for ${data.id}: ${existing.id} (${existing.name}, ${existing.org}, ${existing.zone})`);
   if (!existing) catalogue.push({ id: data.id, name: data.name, category: data.category, zone: data.zone, org: data.org, description: data.description, when: data.facts.find((fact) => fact.field === "audience").value, steps: data.procedure.steps.map((step) => step.text), url: data.url });
   const srcs = data.id === "rsa-parent-isole"
     ? [source("sp-rsa-parent-isole-2026", "Service-Public — RSA parent isolé", data.url, "2026-04-01")]
@@ -110,7 +112,7 @@ for (const data of records) {
   };
 }
 
-if (new Set(catalogue.map((item) => item.id)).size !== catalogue.length || new Set(catalogue.map((item) => item.url)).size !== catalogue.length) throw new Error("Duplicate canonical ID or URL");
+assertUniqueCanonicalAids(catalogue, "integrate-national-aids");
 await writeFile(cataloguePath, `${JSON.stringify(catalogue, null, 2)}\n`, "utf8");
 await writeFile(reviewPath, `${JSON.stringify(review, null, 2)}\n`, "utf8");
 const sourceRecord = registry.sources.find((item) => item.id === "service-public");

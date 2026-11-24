@@ -6877,30 +6877,30 @@
     "facts": [
       {
         "field": "current_status",
-        "status": "verified",
-        "value": "La fiche FSL/FUH figure au RDAS 2026.",
+        "status": "partially_verified",
+        "value": "Le PDF nommé RDAS 2026 indique dans son préambule une adoption du RDAS le 14 mars 2022; son applicabilité actuelle n’est pas confirmée.",
         "sourceIds": [
           "fsl-ariege-rdas-2026"
         ],
-        "validFor": "RDAS 2026"
+        "validFor": "Version PDF nommée RDAS-2026.pdf; préambule adopté le 14 mars 2022"
       },
       {
         "field": "territory",
-        "status": "verified",
+        "status": "partially_verified",
         "value": "Résidence principale dans le département de l’Ariège.",
         "sourceIds": [
           "fsl-ariege-rdas-2026"
         ],
-        "validFor": "RDAS 2026, fiche 69"
+        "validFor": "Fiche 69 du PDF, date d’adoption 2022; validité actuelle à confirmer"
       },
       {
         "field": "audience",
-        "status": "verified",
+        "status": "partially_verified",
         "value": "Toute personne ou famille domiciliée en Ariège rencontrant des difficultés pour accéder à un logement décent, s’y maintenir ou payer énergie, eau et télécommunications.",
         "sourceIds": [
           "fsl-ariege-rdas-2026"
         ],
-        "validFor": "RDAS 2026, fiche 69"
+        "validFor": "Fiche 69 du PDF, date d’adoption 2022; validité actuelle à confirmer"
       },
       {
         "field": "core_conditions",
@@ -6909,13 +6909,13 @@
         "sourceIds": [
           "fsl-ariege-rdas-2026"
         ],
-        "validFor": "RDAS 2026, fiche 69"
+        "validFor": "Fiche 69 du PDF, date d’adoption 2022; validité actuelle à confirmer"
       }
     ],
     "factSources": [
       {
         "id": "fsl-ariege-rdas-2026",
-        "label": "Département de l’Ariège — RDAS 2026, fiche FSL/FUH",
+        "label": "Département de l’Ariège — PDF RDAS nommé 2026, préambule adopté le 14 mars 2022",
         "url": "https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf",
         "kind": "legal-text",
         "consultedAt": "2026-11-23",
@@ -6947,6 +6947,7 @@
       ]
     },
     "notes": [
+      "Le nom de fichier RDAS-2026.pdf ne prouve pas une adoption 2026 : le préambule indique une adoption le 14 mars 2022. Confirmer la version applicable avant publication.",
       "Vérifier le règlement intérieur FUH lié depuis le RDAS et les barèmes/aides par poste avant de compléter le parcours.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
     ]
@@ -8492,6 +8493,110 @@
     },
     "notes": [
       "Source ancienne; fiche candidate non publiée pour éviter d'afficher une aide potentiellement fermée."
+    ]
+  },
+  "caf-herault-bafa": {
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "publicationStatus": "published",
+    "procedurePublicationStatus": "pending",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "RDAS Hérault consulté 2026-11-23",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [],
+    "factSources": [
+      {
+        "id": "caf-herault-bafa-page",
+        "label": "Caf de l'Hérault — Le BAFA",
+        "url": "https://www.caf.fr/professionnels/caf-de-l-herault/offre-de-service/vie-professionnelle/le-bafa",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "caf-herault-bafa-form-2026",
+        "label": "Caf de l'Hérault — formulaire BAFA 1, session générale 2026",
+        "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Le%20Bafa/DDE%20AIDE%20BAFA%20LOCALE%202026.pdf",
+        "kind": "official-form",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Aide locale au BAFA décrite par la page Caf Hérault; le RIAS 2026 la mentionne également.",
+        "sourceIds": [
+          "caf-herault-bafa-page"
+        ],
+        "validFor": "Page officielle consultée le 24-11-2026; RIAS 2026"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Caf de l’Hérault.",
+        "sourceIds": [
+          "caf-herault-bafa-page"
+        ],
+        "validFor": "Page officielle consultée le 24-11-2026"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Tout allocataire, y compris en cours d’affiliation, ou enfant à charge d’un allocataire; aucune condition de ressources.",
+        "sourceIds": [
+          "caf-herault-bafa-page"
+        ],
+        "validFor": "Page officielle consultée le 24-11-2026"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Plafond de 100 €, versement après validation de la première session générale, dans la limite des fonds disponibles; cumulable avec l’aide nationale.",
+        "sourceIds": [
+          "caf-herault-bafa-page"
+        ],
+        "validFor": "Page officielle consultée le 24-11-2026"
+      },
+      {
+        "field": "documents",
+        "status": "verified",
+        "value": "Formulaire dédié, RIB ou relevé postal et attestation de l’organisme de formation sur la session suivie, ses dates et son coût.",
+        "sourceIds": [
+          "caf-herault-bafa-form-2026"
+        ],
+        "validFor": "Formulaire BAFA 1 2026 consulté le 24-11-2026"
+      }
+    ],
+    "applicationProcedure": {
+      "status": "incomplete",
+      "steps": [],
+      "followUp": {
+        "status": "unverified",
+        "text": "À vérifier avec l'organisme instructeur.",
+        "sourceIds": [
+          "caf-herault-bafa-page"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "À vérifier selon le règlement en vigueur.",
+        "sourceIds": [
+          "caf-herault-bafa-page"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Caisse d'Allocations familiales de l'Hérault",
+      "remainingChecks": [
+        "Le formulaire indique un retour à la Caf dans les trois mois après la session; confirmer si un canal numérique de dépôt est disponible."
+      ]
+    },
+    "notes": [
+      "Le formulaire BAFA 1 officiel 2026 confirme le délai de trois mois après la session et les justificatifs indiqués.",
+      "Le canal de dépôt actuel reste à confirmer; les étapes de procédure ne sont donc pas publiées.",
+      "Le formulaire indique un retour à la Caf dans les trois mois après la session; confirmer si un canal numérique de dépôt est disponible."
     ]
   }
 }

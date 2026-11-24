@@ -15,11 +15,11 @@ const coverage = await read("src/data/coverage-matrix.json");
 const geography = await read("src/data/imports/geography/normalized/communes-occitanie.json");
 
 const definitions = [
-  { id:"fsl-09", name:"FSL / Fonds unique habitat — Ariège", zone:"09", org:"Conseil départemental de l’Ariège", url:"https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf", sourceId:"fsl-ariege-rdas-2026", sourceName:"Département de l’Ariège — RDAS 2026, fiche FSL/FUH", facts:[
-    ["current_status","verified","La fiche FSL/FUH figure au RDAS 2026.","RDAS 2026"],
-    ["territory","verified","Résidence principale dans le département de l’Ariège.","RDAS 2026, fiche 69"],
-    ["audience","verified","Toute personne ou famille domiciliée en Ariège rencontrant des difficultés pour accéder à un logement décent, s’y maintenir ou payer énergie, eau et télécommunications.","RDAS 2026, fiche 69"],
-    ["core_conditions","partially_verified","Aides sous forme de subventions ou prêts; ressources du foyer examinées au regard du plafond CSS et du taux d’effort logement. Demande > 300 € : accompagnement par un travailleur social; facture énergie/eau < 300 € : saisine directe par formulaire. La commission FUH décide.","RDAS 2026, fiche 69"],
+  { id:"fsl-09", name:"FSL / Fonds unique habitat — Ariège", zone:"09", org:"Conseil départemental de l’Ariège", url:"https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf", sourceId:"fsl-ariege-rdas-2026", sourceName:"Département de l’Ariège — PDF RDAS nommé 2026, préambule adopté le 14 mars 2022", facts:[
+    ["current_status","partially_verified","Le PDF nommé RDAS 2026 indique dans son préambule une adoption du RDAS le 14 mars 2022; son applicabilité actuelle n’est pas confirmée.","Version PDF nommée RDAS-2026.pdf; préambule adopté le 14 mars 2022"],
+    ["territory","partially_verified","Résidence principale dans le département de l’Ariège.","Fiche 69 du PDF, date d’adoption 2022; validité actuelle à confirmer"],
+    ["audience","partially_verified","Toute personne ou famille domiciliée en Ariège rencontrant des difficultés pour accéder à un logement décent, s’y maintenir ou payer énergie, eau et télécommunications.","Fiche 69 du PDF, date d’adoption 2022; validité actuelle à confirmer"],
+    ["core_conditions","partially_verified","Aides sous forme de subventions ou prêts; ressources du foyer examinées au regard du plafond CSS et du taux d’effort logement. Demande > 300 € : accompagnement par un travailleur social; facture énergie/eau < 300 € : saisine directe par formulaire. La commission FUH décide.","Fiche 69 du PDF, date d’adoption 2022; validité actuelle à confirmer"],
   ], notes:["Vérifier le règlement intérieur FUH lié depuis le RDAS et les barèmes/aides par poste avant de compléter le parcours."] },
   { id:"fsl-11", name:"Fonds de solidarité pour le logement — Aude", zone:"11", org:"Conseil départemental de l’Aude", url:"https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf", sourceId:"fsl-aude-rafi-2026", sourceName:"Département de l’Aude — règlement d’attribution des aides financières, avril 2026", facts:[
     ["current_status","verified","Le règlement départemental d’avril 2026 abroge et remplace le règlement antérieur du Fonds unique logement.","RAFI avril 2026"],

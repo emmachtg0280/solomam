@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { canPublishInformation } from "../src/lib/publication.mjs";
+import { sameAidIdentity } from "../src/lib/catalogue-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const file = path.join(root, "src/data/source-registry.json");
@@ -11,7 +12,8 @@ const catalogue = JSON.parse(await readFile(path.join(root, "src/data/catalogue.
 const reviews = JSON.parse(await readFile(path.join(root, "src/data/review.json"), "utf8"));
 const qualificationCounts = Object.fromEntries(["relevant", "not_relevant", "expired", "needs_manual_review"].map((status) => [status, qualifications.filter((item) => item.classification.status === status).length]));
 const publishableRegionalCount = qualifications.filter((item) => item.classification.status === "relevant").filter((item) => {
-  const aid = catalogue.find((record) => record.url === item.normalized.officialUrl);
+  const identity = { name: item.normalized.officialName, org: item.normalized.organization, zone: "regional" };
+  const aid = catalogue.find((record) => sameAidIdentity(record, identity));
   return aid && canPublishInformation(aid, reviews[aid.id]);
 }).length;
 const count = (id, patch) => {

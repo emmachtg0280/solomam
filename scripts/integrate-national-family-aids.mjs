@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertUniqueCanonicalAids, sameAidIdentity } from "../src/lib/catalogue-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (file) => readFile(path.join(root, file), "utf8").then(JSON.parse);
@@ -58,7 +59,7 @@ const definitions = [
 ];
 
 for (const item of definitions) {
-  const existing = catalogue.find((record) => record.id === item.id || record.url === item.url);
+  const existing = catalogue.find((record) => record.id === item.id || sameAidIdentity(record, { ...item, zone: "national" }));
   if (existing && existing.id !== item.id) throw new Error(`Possible duplicate canonical aid ${item.id}: ${existing.id}`);
   if (review[item.id]?.informationPublicationStatus === "verified" && review[item.id]?.procedurePublicationStatus && (item.documents === null || review[item.id]?.facts?.some((fact) => fact.field === "documents"))) {
     const amountFact = review[item.id].facts?.find((fact) => fact.field === "amount");
@@ -104,6 +105,7 @@ for (const item of definitions) {
   };
 }
 
+assertUniqueCanonicalAids(catalogue, "integrate-national-family-aids");
 const sourceRecord = registry.sources.find((entry) => entry.id === "service-public");
 sourceRecord.candidateRecordsIntegrated = (sourceRecord.candidateRecordsIntegrated ?? 0) + definitions.filter((item) => !sourceRecord.evidence?.some((entry) => entry.aidId === item.id)).length;
 sourceRecord.evidence = [...(sourceRecord.evidence ?? []), ...definitions.map((item) => ({ aidId: item.id, url: item.url, pageVerifiedAt: item.sources[0].pageVerifiedAt }))].filter((entry, index, all) => all.findIndex((candidate) => candidate.aidId === entry.aidId) === index);

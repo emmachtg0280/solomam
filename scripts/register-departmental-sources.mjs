@@ -104,8 +104,8 @@ if (gard) {
 }
 const ariege = coverage.territories.find((item) => item.id === "09");
 if (ariege) {
-  ariege.sources = [...new Set([...(ariege.sources ?? []), "Département Ariège — RDAS 2026, fiche FSL/FUH"] )];
-  if (ariege.status !== "partially_integrated") ariege.notes = "RDAS officiel consulté; la fiche 69 décrit FSL/FUH (accès, maintien, charges, ressources CSS, aide sociale selon le montant). Confirmer le règlement intérieur FUH et les barèmes avant publication.";
+  ariege.sources = [...new Set([...(ariege.sources ?? []), "Département Ariège — PDF RDAS nommé 2026, préambule adopté en 2022"] )];
+  ariege.notes = "Le PDF officiel nommé RDAS-2026.pdf indique dans son préambule une adoption au 14 mars 2022; l’actualité du règlement reste à confirmer. La fiche 69 n’est pas publiée et le règlement intérieur FUH courant reste à vérifier.";
 }
 const herault = coverage.territories.find((item) => item.id === "34");
 if (herault) {
@@ -117,7 +117,8 @@ if (herault) {
   herault.verifiedPublishedAidCount = catalogue.filter((record) => record.zone === "34" && canPublishInformation(record, review[record.id] ?? {})).length;
   herault.verifiedPublishedServiceCount = 3;
   herault.sources = [...new Set([...(herault.sources ?? []), "Département de l'Hérault RDAS septembre 2026", "Règlement FSL M3M 2025", "CAF Hérault", "Pages de services du Département", "Caf Hérault — RIAS 2026 extrait", "RDAS Hérault 2026 — AFIE/FSL", "CCAS Montpellier — aides facultatives", "Ville Montpellier — Bouclier social (règlement 2025)", "CCAS Frontignan — aide énergie à reconfirmer", "CCAS Sète (aucun dispositif financier nommé confirmé)", "CCAS Béziers — accompagnement social"])];
-  herault.notes = "FSL départemental et métropolitain distincts. RIAS Caf 2026 récupéré et extrait : secours/prêts, prêt équipement et aide mobilité sont documentés; le BAFA reste hors catalogue car le formulaire courant n'est pas confirmé. AFIE Hérault vérifiée; règles d'attribution/annexe de montants encore partielles. FDAJ/FAJ3M conservés séparément selon le territoire. CCAS Montpellier aide facultative reste candidate faute de barème; aide énergie Frontignan non publiée car la campagne et les critères courants restent à confirmer. Le dispositif Bouclier petite enfance s'appuie sur un règlement 2025 sans statut/campagne 2026 confirmés.";
+  herault.sources = [...new Set([...herault.sources, "Caf Hérault — BAFA 2026 et formulaire BAFA 1"] )];
+  herault.notes = "FSL départemental et métropolitain distincts. RIAS Caf 2026 récupéré et extrait : secours/prêts, prêt équipement, aide mobilité et BAFA sont documentés; le BAFA 2026 est publié pour information après vérification du formulaire, le canal de dépôt reste à confirmer. AFIE Hérault vérifiée; règles d'attribution/annexe de montants encore partielles. FDAJ/FAJ3M conservés séparément selon le territoire. CCAS Montpellier aide facultative reste candidate faute de barème; aide énergie Frontignan non publiée car la campagne et les critères courants restent à confirmer. Le dispositif Bouclier petite enfance s'appuie sur un règlement 2025 sans statut/campagne 2026 confirmés.";
 }
 await writeFile(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`, "utf8");
 console.log(JSON.stringify({ departmentalSourcesRegistered: sources.length, departments: departments.length, heraultSpecificSources: h34.length }, null, 2));

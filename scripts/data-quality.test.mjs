@@ -7,19 +7,35 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { canPublishInformation, canPublishProcedure } from "../src/lib/publication.mjs";
 import { canPublishService } from "../src/lib/services.mjs";
+import { assertUniqueCanonicalAids, sameAidIdentity } from "../src/lib/catalogue-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const readJson = async (name) => JSON.parse(await readFile(path.join(root, name), "utf8"));
 
-test("canonical catalogue has unique IDs and source URLs", async () => {
+test("canonical catalogue has unique IDs and allows shared source pages for distinct aids", async () => {
   const catalogue = await readJson("src/data/catalogue.json");
   assert.equal(new Set(catalogue.map((record) => record.id)).size, catalogue.length);
   const recordsByUrl = new Map();
   for (const record of catalogue) recordsByUrl.set(record.url, [...(recordsByUrl.get(record.url) ?? []), record.id]);
   const sharedSourcePages = [...recordsByUrl.values()].filter((ids) => ids.length > 1).map((ids) => ids.sort());
   assert.deepEqual(sharedSourcePages, [["caf-herault-mobilite-insertion", "caf-herault-pret-equipement-logement"], ["fsl-31-departement", "fsl-31-toulouse-metropole"]]);
+  assertUniqueCanonicalAids(catalogue);
+  for (const ids of sharedSourcePages) {
+    const [left, right] = ids.map((id) => catalogue.find((record) => record.id === id));
+    assert.equal(left.url, right.url);
+    assert.equal(sameAidIdentity(left, right), false);
+  }
   assert.ok(catalogue.every((record) => record.id && record.name && record.url));
   assert.doesNotMatch(JSON.stringify(catalogue), /Ã|â€™|â€“|â€”|â‚¬/);
+});
+
+test("canonical identity rejects a true duplicate with the same aid, organization and territory", () => {
+  const aid = { id: "aid-one", name: "Aide mobilité", org: "Caf Hérault", zone: "34", url: "https://caf.example/rias" };
+  const duplicate = { ...aid, id: "aid-two", url: "https://caf.example/another-page" };
+  assert.equal(sameAidIdentity(aid, duplicate), true);
+  assert.throws(() => assertUniqueCanonicalAids([aid, duplicate]), /duplicate aid identity/i);
+  assert.throws(() => assertUniqueCanonicalAids([aid, { ...aid, name: "Autre aide" }]), /duplicate canonical aid ID/i);
+  assert.throws(() => assertUniqueCanonicalAids([{ ...aid, id: "" }]), /missing canonical aid ID/i);
 });
 
 test("all regional candidates retain source identity and remain unpublished pending process review", async () => {

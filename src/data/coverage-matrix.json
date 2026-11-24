@@ -66,7 +66,7 @@
         "Parentalité",
         "Santé & bien-être"
       ],
-      "verifiedPublishedAidCount": 8,
+      "verifiedPublishedAidCount": 9,
       "verifiedPublishedServiceCount": 3,
       "sources": [
         "Conseil départemental Hérault (découverte)",
@@ -86,10 +86,11 @@
         "Caf Hérault — RIAS 2026 extrait",
         "CCAS Frontignan — aide énergie à reconfirmer",
         "CCAS Sète (aucun dispositif financier nommé confirmé)",
-        "CCAS Béziers — accompagnement social"
+        "CCAS Béziers — accompagnement social",
+        "Caf Hérault — BAFA 2026 et formulaire BAFA 1"
       ],
-      "checkedAt": "2026-11-23",
-      "notes": "FSL départemental et métropolitain distincts. RIAS Caf 2026 récupéré et extrait : secours/prêts, prêt équipement et aide mobilité sont documentés; le BAFA reste hors catalogue car le formulaire courant n'est pas confirmé. AFIE Hérault vérifiée; règles d'attribution/annexe de montants encore partielles. FDAJ/FAJ3M conservés séparément selon le territoire. CCAS Montpellier aide facultative reste candidate faute de barème; aide énergie Frontignan non publiée car la campagne et les critères courants restent à confirmer. Le dispositif Bouclier petite enfance s'appuie sur un règlement 2025 sans statut/campagne 2026 confirmés."
+      "checkedAt": "2026-11-24",
+      "notes": "FSL départemental et métropolitain distincts. RIAS Caf 2026 récupéré et extrait : secours/prêts, prêt équipement, aide mobilité et BAFA sont documentés; le BAFA 2026 est publié pour information après vérification du formulaire, le canal de dépôt reste à confirmer. AFIE Hérault vérifiée; règles d'attribution/annexe de montants encore partielles. FDAJ/FAJ3M conservés séparément selon le territoire. CCAS Montpellier aide facultative reste candidate faute de barème; aide énergie Frontignan non publiée car la campagne et les critères courants restent à confirmer. Le dispositif Bouclier petite enfance s'appuie sur un règlement 2025 sans statut/campagne 2026 confirmés."
     },
     {
       "id": "09",
@@ -108,10 +109,12 @@
         "Caf Ariège (découverte)",
         "Département Ariège — RDAS/FUH (PDF; version courante à confirmer)",
         "Département de l’Ariège — RDAS 2026, fiche FSL/FUH",
-        "Département Ariège — RDAS 2026, fiche FSL/FUH"
+        "Département Ariège — RDAS 2026, fiche FSL/FUH",
+        "Département de l’Ariège — PDF RDAS nommé 2026, préambule adopté le 14 mars 2022",
+        "Département Ariège — PDF RDAS nommé 2026, préambule adopté en 2022"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "notes": "Le PDF officiel nommé RDAS-2026.pdf indique dans son préambule une adoption au 14 mars 2022; l’actualité du règlement reste à confirmer. La fiche 69 n’est pas publiée et le règlement intérieur FUH courant reste à vérifier.",
       "verifiedPublishedAidCount": 0
     },
     {

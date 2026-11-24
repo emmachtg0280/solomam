@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertUniqueCanonicalAids, sameAidIdentity } from "../src/lib/catalogue-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const qualificationsPath = path.join(root, "src/data/imports/occitanie/normalized/qualifications.json");
@@ -74,8 +75,9 @@ let alreadyPresent = 0;
 for (const record of candidates) {
   const name = cleanText(record.normalized.officialName);
   const officialUrl = record.normalized.officialUrl;
-  const existing = catalogue.find((item) => item.url === officialUrl || item.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr") === name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr"));
-  const id = existing?.id ?? `occ-${slugify(name)}`;
+  const id = `occ-${slugify(name)}`;
+  const existing = catalogue.find((item) => item.id === id || sameAidIdentity(item, { name, org: "Région Occitanie", zone: "regional" }));
+  if (existing && (existing.org !== "Région Occitanie" || existing.zone !== "regional")) throw new Error(`Canonical aid ID collision for ${id}: ${existing.name} (${existing.org}, ${existing.zone})`);
   const audience = frenchAudience[id] ?? "Public bénéficiaire à confirmer sur la page officielle du dispositif.";
   const description = "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.";
   if (!existing) {
@@ -185,7 +187,8 @@ if (catalogue.some((item) => item.id === schoolSportId)) {
 }
 
 const ids = catalogue.map((item) => item.id);
-if (new Set(ids).size !== ids.length) throw new Error("Duplicate canonical catalogue ids detected");
+assertUniqueCanonicalAids(catalogue, "integrate-occitanie-qualified");
+if (new Set(ids).size !== ids.length) throw new Error("Duplicate canonical catalogue IDs detected");
 await writeFile(cataloguePath, `${JSON.stringify(catalogue, null, 2)}\n`, "utf8");
 await writeFile(reviewPath, `${JSON.stringify(review, null, 2)}\n`, "utf8");
 console.log(JSON.stringify({ qualifyingRecords: candidates.length, added, alreadyPresent, catalogueRecords: catalogue.length }, null, 2));

@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { repairText } from "./lib/repair-text.mjs";
+import { sameAidIdentity } from "../src/lib/catalogue-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rawPath = path.join(root, "src/data/imports/occitanie/raw/dataset.json");
@@ -135,7 +136,7 @@ export async function qualifyOccitanieRecords() {
     }
     const hash = rawHash;
     const id = `occitanie:${record.url ? normalizedKey(record.url.split("/").pop()) : hash.slice(0, 20)}`;
-    const duplicateOf = catalogue.find((item) => normalizedKey(item.name) === normalizedKey(record.titre) || (item.url && item.url === record.url));
+    const duplicateOf = catalogue.find((item) => sameAidIdentity(item, { name: record.titre, org: entityFromUrl(record.url), zone: "regional" }));
     const introduction = [record.chapo, record.introduction].filter(Boolean).join("\n\n");
     const sourceStatus = reviewStatus === "needs_manual_review" ? "dataset-only" : "official-page-checked";
     const sourceEntries = evidenceFor(record, reviewStatus, justification, pageDecision);
@@ -177,16 +178,16 @@ export async function qualifyOccitanieRecords() {
         unresolved: reviewStatus === "relevant" ? ["conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel", "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement", "ne pas publier tant que les contrôles existants de qualité et de procédure ne sont pas satisfaits"] : reviewStatus === "needs_manual_review" ? ["public bénéficiaire", "conditions", "période de validité", "montant", "pièces", "démarche", "nature exacte du bénéfice"] : [],
         publicationStatus: "not-published",
       },
-      deduplication: duplicateOf ? { status: "duplicate-candidate", existingCatalogueId: duplicateOf.id, reason: "normalized title or identical official URL" } : { status: "no-match-found" },
+      deduplication: duplicateOf ? { status: "duplicate-candidate", existingCatalogueId: duplicateOf.id, reason: "same normalized aid name, competent organization and territory" } : { status: "no-match-found" },
       importMetadata: { schema: schema.map((item) => item.name), datasetSourceUrl: sourceUrl ?? regionDataUrl, rawRecordHash: hash },
     };
     
   });
   await mkdir(path.dirname(outputPath), { recursive: true });
   const counts = Object.fromEntries(["relevant", "not_relevant", "expired", "needs_manual_review"].map((status) => [status, qualifications.filter((item) => item.classification.status === status).length]));
-  const generatedAt = new Date().toISOString();
-  await writeFile(outputPath, `${JSON.stringify({ generatedAt, source: regionDataUrl, sourceSnapshot: "src/data/imports/occitanie/raw/dataset.json", records: qualifications }, null, 2)}\n`, "utf8");
   const report = JSON.parse(await readFile(reportPath, "utf8"));
+  const generatedAt = report.startedAt ?? retrievedAt ?? checkedAt;
+  await writeFile(outputPath, `${JSON.stringify({ generatedAt, source: regionDataUrl, sourceSnapshot: "src/data/imports/occitanie/raw/dataset.json", records: qualifications }, null, 2)}\n`, "utf8");
   const sourceRetrievedAt = report.startedAt ?? retrievedAt ?? generatedAt;
   report.qualification = {
     completedAt: generatedAt,
