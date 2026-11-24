@@ -18,7 +18,7 @@ test("canonical catalogue has unique IDs and source URLs", async () => {
   const recordsByUrl = new Map();
   for (const record of catalogue) recordsByUrl.set(record.url, [...(recordsByUrl.get(record.url) ?? []), record.id]);
   const sharedSourcePages = [...recordsByUrl.values()].filter((ids) => ids.length > 1).map((ids) => ids.sort());
-  assert.deepEqual(sharedSourcePages, [["caf-herault-mobilite-insertion", "caf-herault-secours-prets"], ["fsl-31-departement", "fsl-31-toulouse-metropole"]]);
+  assert.deepEqual(sharedSourcePages, [["caf-herault-mobilite-insertion", "caf-herault-pret-equipement-logement"], ["fsl-31-departement", "fsl-31-toulouse-metropole"]]);
   assert.ok(catalogue.every((record) => record.id && record.name && record.url));
   assert.doesNotMatch(JSON.stringify(catalogue), /Ã|â€™|â€“|â€”|â‚¬/);
 });
@@ -31,7 +31,7 @@ test("all regional candidates retain source identity and remain unpublished pend
   assert.equal(regional.length, 25);
   for (const record of regional) {
     const audit = review[record.id];
-    assert.equal(audit.publicationStatus, "pending");
+    assert.equal(audit.publicationStatus, record.id === "occ-la-mobilite-internationale-des-etudiants-avec-mouv-occitanie" ? "published" : "pending");
     assert.equal(audit.sourceDatasetRecord.qualification.status, "relevant");
     assert.equal(audit.sourceDatasetRecord.sourceRecordHash.length, 64);
     assert.equal(createHash("sha256").update(JSON.stringify(snapshot.records[audit.sourceDatasetRecord.sourceRecordIndex])).digest("hex"), audit.sourceDatasetRecord.sourceRecordHash);
@@ -89,7 +89,7 @@ test("information publication is independent from procedure completeness", async
   assert.match(review.asf.facts.find((fact) => fact.field === "core_conditions").value, /incohérence/);
   assert.equal(review.asf.facts.find((fact) => fact.field === "amount").status, "conflict");
   assert.ok(review.css.applicationProcedure.renewal.text.includes("un an"));
-  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 25);
+  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 27);
   assert.deepEqual(catalogue.filter((item) => ["apl", "alf", "als"].includes(item.id)).map(({ id }) => id).sort(), ["alf", "als", "apl"]);
   assert.equal(catalogue.some((item) => item.id === "logement"), false);
   assert.equal(review.logement.recordLifecycle, "superseded");
@@ -117,7 +117,7 @@ test("Hérault local candidates preserve source evidence and publish only the ve
   assert.ok(afie);
   assert.equal(review[afie.id].informationPublicationStatus, "verified");
   assert.equal(canPublishInformation(afie, review[afie.id]), true);
-  assert.equal(review[afie.id].publicationStatus, "pending");
+  assert.equal(review[afie.id].publicationStatus, "published");
   assert.ok(review[afie.id].facts.some((fact) => fact.field === "amount" && fact.status === "unverified" && fact.value === null));
 
   for (const id of ["caf-herault-secours-prets", "caf-herault-pret-equipement-logement", "caf-herault-mobilite-insertion"]) {
@@ -125,7 +125,7 @@ test("Hérault local candidates preserve source evidence and publish only the ve
     assert.ok(record);
     assert.equal(review[id].informationPublicationStatus, "verified");
     assert.equal(canPublishInformation(record, review[id]), true);
-    assert.equal(review[id].publicationStatus, "pending");
+    assert.equal(review[id].publicationStatus, "published");
     assert.equal(review[id].procedurePublicationStatus, "pending");
   }
   for (const id of ["bouclier-social-petite-enfance-montpellier"]) {
@@ -144,7 +144,7 @@ test("Gard FSL access aid is separate, sourced, and limited to verified 2026 cri
   assert.ok(record);
   assert.equal(review[record.id].informationPublicationStatus, "verified");
   assert.equal(canPublishInformation(record, review[record.id]), true);
-  assert.equal(review[record.id].publicationStatus, "pending");
+  assert.equal(review[record.id].publicationStatus, "published");
   assert.equal(review[record.id].procedurePublicationStatus, "pending");
   assert.match(review[record.id].facts.find((fact) => fact.field === "core_conditions").value, /33 %/);
   assert.ok(review[record.id].factSources.some((source) => source.url.includes("baremes-fsl.html")));
@@ -206,6 +206,10 @@ test("regional editorial exclusions retain qualifications and raw provenance", a
     assert.ok(aid);
     assert.equal(review[id].publicationStatus, "pending");
   }
+  const sportAudit = review["occ-aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire"];
+  assert.equal(sportAudit.informationPublicationStatus, "pending");
+  assert.match(sportAudit.facts.find((fact) => fact.field === "audience").value, /associations sportives/);
+  assert.match(sportAudit.facts.find((fact) => fact.field === "core_conditions").value, /20 €/);
   assert.equal(qualifications.records.filter((item) => item.editorialDisposition.status === "candidate-retained-for-review").length, 2);
 });
 
@@ -216,7 +220,7 @@ test("local aid snapshots preserve CAF and FSL scope distinctions", async () => 
   const rias = await readJson("src/data/imports/local/herault/normalized/rias-aides-extract-2026.json");
   const familyAid = catalogue.find((aid) => aid.id === "caf-aveyron-projet-familial");
   assert.equal(canPublishInformation(familyAid, review[familyAid.id]), true);
-  assert.equal(review[familyAid.id].publicationStatus, "pending");
+  assert.equal(review[familyAid.id].publicationStatus, "published");
   assert.equal(toulouse.epciCode, "243100518");
   assert.equal(toulouse.communes.length, 37);
   assert.equal(new Set(toulouse.communes.map((commune) => commune.inseeCode)).size, 37);
@@ -224,6 +228,86 @@ test("local aid snapshots preserve CAF and FSL scope distinctions", async () => 
   assert.ok(catalogue.some((aid) => aid.id === "fsl-31-departement"));
   assert.ok(catalogue.some((aid) => aid.id === "fsl-31-toulouse-metropole"));
   assert.equal(review["ccas-frontignan-energy-aid"].informationPublicationStatus, "pending");
+});
+
+test("21 local additions publish only when essential information is verified", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  const additions = [
+    "occ-aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire",
+    "occ-avec-mouv-occitanie-la-region-t-aide-pour-ta-mobilite-internationale",
+    "caf-herault-pret-equipement-logement", "caf-herault-mobilite-insertion",
+    "fsl-09", "fsl-11", "fsl-12", "fsl-31-departement", "fsl-31-toulouse-metropole",
+    "aide-urgence-gers", "fsl-46", "fsl-48", "fsl-65", "fsl-66", "fsl-81", "fsl-82",
+    "caf-aveyron-projet-familial", "fdaj-herault", "faj3m-montpellier",
+    "ccas-montpellier-aide-facultative", "ccas-frontignan-energy-aid",
+  ];
+  assert.equal(additions.length, 21);
+  assert.equal(new Set(catalogue.map(({ id }) => id)).size, catalogue.length);
+  for (const id of additions) assert.ok(catalogue.some((record) => record.id === id), `missing canonical record ${id}`);
+  for (const id of ["caf-herault-pret-equipement-logement", "caf-herault-mobilite-insertion", "aide-urgence-gers", "caf-aveyron-projet-familial", "fdaj-herault", "faj3m-montpellier"]) {
+    const record = catalogue.find((item) => item.id === id);
+    const audit = review[id];
+    assert.equal(audit.informationPublicationStatus, "verified");
+    assert.equal(audit.publicationStatus, "published");
+    assert.equal(audit.procedurePublicationStatus, "pending");
+    assert.ok(audit.informationVerifiedAt);
+    assert.equal(canPublishInformation(record, audit), true);
+  }
+  const equipment = catalogue.find((record) => record.id === "caf-herault-pret-equipement-logement");
+  const equipmentAudit = review[equipment.id];
+  assert.equal(canPublishInformation(equipment, {
+    ...equipmentAudit,
+    facts: equipmentAudit.facts.map((fact) => fact.field === "core_conditions" ? { ...fact, status: "unverified" } : fact),
+  }), false, "an unverified essential condition keeps the information hidden");
+  assert.match(equipmentAudit.facts.find((fact) => fact.field === "audience").value, /QF|quotient familial/i);
+  assert.match(review["aide-urgence-gers"].facts.find((fact) => fact.field === "core_conditions").value, /évaluation sociale/);
+  assert.match(catalogue.find((record) => record.id === "aide-urgence-gers").description, /n’est pas automatique/);
+  for (const id of ["fdaj-herault", "faj3m-montpellier", "caf-aveyron-projet-familial", "caf-herault-secours-prets"]) {
+    const record = catalogue.find((item) => item.id === id);
+    assert.match(`${record.description} ${record.when}`, /commission|décision|ponctuelle|cas par cas/i, `${id} must not imply automatic entitlement`);
+  }
+  for (const id of additions.filter((value) => value.startsWith("fsl-"))) {
+    const record = catalogue.find((item) => item.id === id);
+    if (id !== "fsl-31-toulouse-metropole") assert.equal(record.zone, id.slice(4, 6));
+    if (review[id].informationPublicationStatus !== "verified") assert.equal(canPublishInformation(record, review[id]), false);
+  }
+  assert.equal(review["fsl-31-toulouse-metropole"].informationPublicationStatus, "pending");
+  assert.equal(review["ccas-montpellier-aide-facultative"].informationPublicationStatus, "pending");
+  assert.equal(review["ccas-frontignan-energy-aid"].informationPublicationStatus, "pending");
+  assert.equal(review["occ-aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire"].informationPublicationStatus, "pending");
+  assert.equal(review["occ-avec-mouv-occitanie-la-region-t-aide-pour-ta-mobilite-internationale"].informationPublicationStatus, "pending");
+});
+
+test("Mouv’Occitanie is verified once under its canonical ID with an official current source", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  const registry = await readJson("src/data/source-registry.json");
+  const id = "occ-la-mobilite-internationale-des-etudiants-avec-mouv-occitanie";
+  const aid = catalogue.find((record) => record.id === id);
+  assert.ok(aid);
+  assert.equal(review[id].informationPublicationStatus, "verified");
+  assert.equal(review[id].publicationStatus, "published");
+  assert.equal(review[id].procedurePublicationStatus, "pending");
+  assert.equal(canPublishInformation(aid, review[id]), true);
+  assert.match(review[id].facts.find((fact) => fact.field === "core_conditions").value, /sélectionné par son établissement/);
+  assert.match(aid.description, /sélection par l’établissement/);
+  const duplicate = review["occ-avec-mouv-occitanie-la-region-t-aide-pour-ta-mobilite-internationale"];
+  assert.equal(duplicate.recordLifecycle, "duplicate");
+  assert.equal(duplicate.duplicateOf, id);
+  assert.equal(duplicate.publicationStatus, "pending");
+  assert.equal(registry.sources.filter((source) => source.id === "mouv-occitanie-official-guidance-2026").length, 1);
+  const before = { aid, audit: review[id], duplicate, source: registry.sources.find((source) => source.id === "mouv-occitanie-official-guidance-2026") };
+  execFileSync(process.execPath, ["scripts/verify-mouv-occitanie.mjs"], { cwd: root, stdio: "ignore" });
+  const nextCatalogue = await readJson("src/data/catalogue.json");
+  const nextReview = await readJson("src/data/review.json");
+  const nextRegistry = await readJson("src/data/source-registry.json");
+  assert.deepEqual({
+    aid: nextCatalogue.find((record) => record.id === id),
+    audit: nextReview[id],
+    duplicate: nextReview["occ-avec-mouv-occitanie-la-region-t-aide-pour-ta-mobilite-internationale"],
+    source: nextRegistry.sources.find((source) => source.id === "mouv-occitanie-official-guidance-2026"),
+  }, before);
 });
 
 test("new PAJE and AJPP records retain official evidence, uncertainty, and separate procedure status", async () => {

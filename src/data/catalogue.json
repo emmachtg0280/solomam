@@ -439,13 +439,16 @@
   },
   {
     "id": "occ-la-mobilite-internationale-des-etudiants-avec-mouv-occitanie",
-    "name": "La mobilité internationale des étudiants avec Mouv’Occitanie",
+    "name": "Aides à la mobilité internationale — Mouv’Occitanie",
     "category": "Mobilité",
     "zone": "regional",
     "org": "Région Occitanie",
-    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
-    "when": "Étudiants sélectionnés par leur établissement pour une mobilité internationale d'études ou de stage éligible; conditions variables selon ressources, statut, formation et destination.",
-    "steps": [],
+    "description": "Aides de la Région pour certains séjours d’études ou stages à l’étranger intégrés à une formation en Occitanie. Selon le dispositif, le soutien peut inclure une bourse de 75 € par semaine ou des aides forfaitaires; sélection par l’établissement, critères propres à chaque aide et budget annuel.",
+    "when": "Étudiants inscrits dans un établissement partenaire d’Occitanie et réalisant une mobilité d’études ou de stage à l’étranger valorisée dans leur diplôme. Les critères de durée, de ressources, de formation et de destination dépendent de l’aide; une sélection par l’établissement est requise.",
+    "steps": [
+      "Demander au bureau des relations internationales de son établissement les critères et la procédure de sélection.",
+      "Après sélection, déposer les justificatifs demandés sur le Portail des Aides à l’aide du lien personnel reçu par courriel, dans le délai indiqué par la Région."
+    ],
     "url": "https://www.laregion.fr/Aides-Mouv-Occitanie"
   },
   {
@@ -672,8 +675,8 @@
     "category": "Famille",
     "zone": "34",
     "org": "Caisse d'Allocations familiales de l'Hérault",
-    "description": "Aides exceptionnelles sous forme de secours ou de prêts sans intérêt, examinées avec un travailleur social de la Caf. Les montants et modalités renvoient au règlement intérieur d’action sociale 2026, dont l’extraction a échoué lors de cette collecte.",
-    "when": "Familles allocataires avec enfant à charge ou à naître; la page cite notamment séparation, décès, certains impayés ALF et des difficultés de familles à revenus d’activité modestes.",
+    "description": "Aides exceptionnelles sous forme de secours ou de prêts sans intérêt, après ouverture des droits légaux et étude au cas par cas par la commission des aides individuelles sur proposition d’un travailleur social Caf. Les montants ne sont pas forfaitaires.",
+    "when": "Familles allocataires avec enfant à charge ou à naître; situations citées : parent seul avec enfants, séparation/divorce/décès, impayé de loyer avec ALF pour une famille avec enfant à charge, ou difficultés de familles percevant la prime d’activité avec QF inférieur à 800 € et sans RSA.",
     "steps": [],
     "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux"
   },
@@ -729,7 +732,7 @@
     "description": "Prêt Caf destiné à l’équipement ménager, mobilier et de puériculture, plafonné à 95 % du devis et 650 €. Le règlement 2026 inclut les parents non-gardiens et encadre le fournisseur, les biens et le remboursement.",
     "when": "Allocataires Caf de l’Hérault avec quotient familial ≤ 900 €, percevant au moins une prestation légale (RSA, prime d’activité ou APL) le mois de la demande et n’ayant pas de prêt de même nature en cours; les parents sans charge de l’enfant et non-gardiens sont expressément inclus.",
     "steps": [],
-    "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/logement/aideaulogementmontpellier/les-3-etapes-de-l-aide-au-logement"
+    "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf"
   },
   {
     "id": "caf-herault-mobilite-insertion",
@@ -740,7 +743,7 @@
     "description": "Aide locale Caf pour le permis (code/heures de conduite) ou la location d’un véhicule, dans le cadre d’un parcours d’insertion. La demande passe par un organisme d’accompagnement conventionné avec la Caf.",
     "when": "Allocataires avec enfant(s) à charge qui perçoivent des minima sociaux et sont accompagnés vers l’insertion professionnelle par un organisme conventionné par la Caf de l’Hérault.",
     "steps": [],
-    "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux"
+    "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf"
   },
   {
     "id": "fsl-09",
@@ -800,12 +803,14 @@
   {
     "id": "aide-urgence-gers",
     "name": "Fonds d’aide d’urgence — Gers",
-    "category": "Logement",
+    "category": "Revenus",
     "zone": "32",
     "org": "Conseil départemental du Gers",
-    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
-    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
-    "steps": [],
+    "description": "Aide départementale ponctuelle pour les personnes ou ménages confrontés à une détresse grave ou à un événement exceptionnel. Le service social évalue la situation et les autres droits mobilisables; l’aide n’est pas automatique et aucun montant forfaitaire n’est publié.",
+    "when": "Résider principalement dans le Gers et rencontrer une détresse grave compromettant ses conditions d’existence, des difficultés importantes de charges quotidiennes ou un événement exceptionnel; évaluation par le service social départemental.",
+    "steps": [
+      "Contacter le service social départemental pour une évaluation de la situation et des droits déjà mobilisables."
+    ],
     "url": "https://www.gers.fr/aides-infos-pratiques/insertion-et-solidarites/aides-financieres"
   },
   {

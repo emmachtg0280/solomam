@@ -47,7 +47,7 @@ const records = [
     remainingChecks: ["Confirmer auprès de la Caf le point d’entrée pour prendre rendez-vous avec le travailleur social et le canal de suivi du dossier."],
   },
   {
-    id: "caf-herault-pret-equipement-logement", name: "Prêt à l’équipement du logement — Caf de l’Hérault", category: "Logement", org: "Caisse d'Allocations familiales de l'Hérault", url: "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/logement/aideaulogementmontpellier/les-3-etapes-de-l-aide-au-logement",
+    id: "caf-herault-pret-equipement-logement", name: "Prêt à l’équipement du logement — Caf de l’Hérault", category: "Logement", org: "Caisse d'Allocations familiales de l'Hérault", url: "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
     description: "Prêt Caf destiné à l’équipement ménager, mobilier et de puériculture, plafonné à 95 % du devis et 650 €. Le règlement 2026 inclut les parents non-gardiens et encadre le fournisseur, les biens et le remboursement.",
     when: "Allocataires Caf de l’Hérault avec quotient familial ≤ 900 €, percevant au moins une prestation légale (RSA, prime d’activité ou APL) le mois de la demande et n’ayant pas de prêt de même nature en cours; les parents sans charge de l’enfant et non-gardiens sont expressément inclus.",
     facts: [
@@ -63,7 +63,7 @@ const records = [
     remainingChecks: ["Vérifier le lien courant du formulaire Caf et de la liste des fournisseurs partenaires avant d'afficher un parcours de demande détaillé."],
   },
   {
-    id: "caf-herault-mobilite-insertion", name: "Aide à la mobilité pour l’insertion professionnelle — Caf de l’Hérault", category: "Mobilité", org: "Caisse d'Allocations familiales de l'Hérault", url: "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux",
+    id: "caf-herault-mobilite-insertion", name: "Aide à la mobilité pour l’insertion professionnelle — Caf de l’Hérault", category: "Mobilité", org: "Caisse d'Allocations familiales de l'Hérault", url: "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
     description: "Aide locale Caf pour le permis (code/heures de conduite) ou la location d’un véhicule, dans le cadre d’un parcours d’insertion. La demande passe par un organisme d’accompagnement conventionné avec la Caf.",
     when: "Allocataires avec enfant(s) à charge qui perçoivent des minima sociaux et sont accompagnés vers l’insertion professionnelle par un organisme conventionné par la Caf de l’Hérault.",
     facts: [
@@ -102,6 +102,12 @@ for (const data of records) {
     canonical = { id: data.id, name: data.name, category: data.category, zone: "34", org: data.org, description: data.description, when: data.when, steps: [], url: data.url };
     catalogue.push(canonical);
   }
+  canonical.name = data.name;
+  canonical.category = data.category;
+  canonical.org = data.org;
+  canonical.description = data.description;
+  canonical.when = data.when;
+  canonical.url = data.url;
   const previous = review[data.id] ?? {};
   const verified = data.informationPublicationStatus === "verified" && canPublishInformation(canonical, {
     informationPublicationStatus: "verified", informationVerifiedAt: checkedAt, sources: data.sources,
@@ -111,7 +117,7 @@ for (const data of records) {
     ...previous,
     informationPublicationStatus: verified ? "verified" : "pending",
     informationVerifiedAt: verified ? checkedAt : null,
-    publicationStatus: "pending", procedurePublicationStatus: "pending", reviewedAt: checkedAt, currentForPeriod: verified ? "RDAS Hérault consulté 2026-11-23" : null,
+    publicationStatus: verified ? "published" : "pending", procedurePublicationStatus: "pending", reviewedAt: checkedAt, currentForPeriod: verified ? "RDAS Hérault consulté 2026-11-23" : null,
     eligibilityRulesReady: false, testCases: 0, sources: [], factSources: data.sources, facts: data.facts,
     applicationProcedure: { status: data.procedureStatus, steps: [], followUp: { status: "unverified", text: "À vérifier avec l'organisme instructeur.", sourceIds: [data.sources[0].id] }, renewal: { status: "unverified", text: "À vérifier selon le règlement en vigueur.", sourceIds: [data.sources[0].id] }, portalUrl: null, competentOrganization: data.org, remainingChecks: data.remainingChecks },
     notes: [...new Set([...(previous.notes ?? []), ...data.remainingChecks])],
@@ -139,7 +145,7 @@ const riasExtract = {
 await writeFile(path.join(importsRoot, "normalized/rias-aides-extract-2026.json"), `${JSON.stringify(riasExtract, null, 2)}\n`, "utf8");
 const registryPath = path.join(root, "src/data/source-registry.json");
 const registry = JSON.parse(await readFile(registryPath, "utf8"));
-const registrySource = { id: "caf-herault-rias-2026", name: "Caf de l'Hérault — RIAS 2026, aides financières individuelles", url: riasExtract.sourceUrl, role: "Règlement officiel des aides locales aux familles allocataires; secours, prêts sociaux, équipement, mobilité et vacances", status: "official-pdf-downloaded-extracted-key-sections-reviewed", version: "RIAS 2026; sections 4 à 7 extraites, secours/prêts, équipement, mobilité et BAFA", license: "Aucun texte intégral reproduit; faits résumés avec source et pages PDF", retrievedAt: checkedAt, recordsImported: 0, candidateRecordsIntegrated: records.filter((item) => item.id.startsWith("caf-herault-")).length, factsEnrichedForAids: records.filter((item) => item.id.startsWith("caf-herault-")).length, publishableRecords: 0, snapshot: "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf", extractedSummary: "src/data/imports/local/herault/normalized/rias-aides-extract-2026.json", coverage: "CAF Hérault", limitations: ["L'octroi des secours/prêts est discrétionnaire et décidé au cas par cas; le circuit précis d'orientation reste à confirmer.", "Les fenêtres et critères 2026 des aides aux vacances ne sont pas pérennes; les aides saisonnières ne sont pas ajoutées à cette passe."] };
+const registrySource = { id: "caf-herault-rias-2026", name: "Caf de l'Hérault — RIAS 2026, aides financières individuelles", url: riasExtract.sourceUrl, role: "Règlement officiel des aides locales aux familles allocataires; secours, prêts sociaux, équipement, mobilité et vacances", status: "official-pdf-downloaded-extracted-key-sections-reviewed", version: "RIAS 2026; sections 4 à 7 extraites, secours/prêts, équipement, mobilité et BAFA", license: "Aucun texte intégral reproduit; faits résumés avec source et pages PDF", retrievedAt: checkedAt, recordsImported: 0, candidateRecordsIntegrated: records.filter((item) => item.id.startsWith("caf-herault-")).length, factsEnrichedForAids: records.filter((item) => item.id.startsWith("caf-herault-")).length, publishableRecords: records.filter((item) => review[item.id]?.publicationStatus === "published").length, snapshot: "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf", extractedSummary: "src/data/imports/local/herault/normalized/rias-aides-extract-2026.json", coverage: "CAF Hérault", limitations: ["L'octroi des secours/prêts est discrétionnaire et décidé au cas par cas; le circuit précis d'orientation reste à confirmer.", "Les fenêtres et critères 2026 des aides aux vacances ne sont pas pérennes; les aides saisonnières ne sont pas ajoutées à cette passe."] };
 registry.sources = [...registry.sources.filter((item) => item.id !== registrySource.id && item.id !== "caf-herault-rias" && item.id !== "caf-herault-rias-source"), registrySource];
 registry.auditedAt = checkedAt;
 await writeFile(registryPath, `${JSON.stringify(registry, null, 2)}\n`, "utf8");

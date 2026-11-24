@@ -18,13 +18,14 @@
     "data:enrich:fsl34-regulations": "node scripts/enrich-herault-fsl-regulations.mjs",
     "data:integrate:national": "node scripts/integrate-national-aids.mjs",
     "data:integrate:national-family": "node scripts/integrate-national-family-aids.mjs",
+    "data:verify:mouv": "node scripts/verify-mouv-occitanie.mjs",
     "data:enrich:occitanie-ev-car": "node scripts/enrich-occitanie-ev-car.mjs",
     "data:registry": "node scripts/update-enrichment-registry.mjs",
     "data:registry:departments": "node scripts/register-departmental-sources.mjs",
     "data:publish-national-info": "node scripts/publish-national-information.mjs",
     "data:split-housing": "node scripts/split-housing-aids.mjs",
     "data:repair-encoding": "node scripts/repair-catalogue-encoding.mjs",
-    "data:refresh-local-catalogue": "node scripts/qualify-occitanie.mjs && node scripts/integrate-occitanie-qualified.mjs && node scripts/integrate-herault-fsl.mjs && node scripts/integrate-herault-local-aids.mjs && node scripts/integrate-gard-fsl.mjs && node scripts/integrate-occitanie-departmental-candidates.mjs && node scripts/integrate-national-aids.mjs && node scripts/update-enrichment-registry.mjs && node scripts/register-departmental-sources.mjs && node scripts/repair-catalogue-encoding.mjs && node scripts/enrich-herault-fsl-regulations.mjs",
+    "data:refresh-local-catalogue": "node scripts/qualify-occitanie.mjs && node scripts/integrate-occitanie-qualified.mjs && node scripts/verify-mouv-occitanie.mjs && node scripts/integrate-herault-fsl.mjs && node scripts/integrate-herault-local-aids.mjs && node scripts/integrate-gard-fsl.mjs && node scripts/integrate-occitanie-departmental-candidates.mjs && node scripts/integrate-national-aids.mjs && node scripts/update-enrichment-registry.mjs && node scripts/register-departmental-sources.mjs && node scripts/repair-catalogue-encoding.mjs && node scripts/enrich-herault-fsl-regulations.mjs",
     "data:test": "node --test --test-concurrency=1 scripts/import-official-data.test.mjs scripts/data-quality.test.mjs scripts/saved-aids.test.mjs"
   },
   "dependencies": {

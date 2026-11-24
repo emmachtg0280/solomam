@@ -144,6 +144,46 @@ for (const record of candidates) {
   };
 }
 
+// Preserve the targeted official-page review for the school-sport candidate.
+const schoolSportId = "occ-aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire";
+const schoolSportPage = "https://www.laregion.fr/Aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire";
+if (catalogue.some((item) => item.id === schoolSportId)) {
+  const sourceId = "region-school-sport-page-2026";
+  const source = { id: sourceId, label: "Région Occitanie — Aides en faveur du développement de la pratique du sport scolaire", url: schoolSportPage, kind: "official-guidance", consultedAt: "2026-11-24", pageVerifiedAt: "2026-11-24" };
+  review[schoolSportId] = {
+    ...review[schoolSportId],
+    informationPublicationStatus: "pending",
+    informationVerifiedAt: null,
+    publicationStatus: "pending",
+    reviewedAt: "2026-11-24",
+    facts: [
+      { field: "current_status", status: "partially_verified", value: "La page régionale décrit le dispositif et précise qu’une ligne financière est votée chaque année; la campagne et l’enveloppe de l’année scolaire en cours ne sont pas établies par la page consultée.", sourceIds: [sourceId], validFor: "Page officielle consultée le 2026-11-24; budget voté annuellement." },
+      { field: "territory", status: "verified", value: "Région Occitanie.", sourceIds: [sourceId], validFor: "Page officielle consultée le 2026-11-24." },
+      { field: "audience", status: "verified", value: "Les bénéficiaires listés comprennent les lycéens, les associations sportives de lycées, les services régionaux et départementaux UNSS ainsi que des comités de sport universitaire et scolaire.", sourceIds: [sourceId], validFor: "Page officielle consultée le 2026-11-24." },
+      { field: "core_conditions", status: "partially_verified", value: "Pour les championnats de France et compétitions internationales, la Région indique 20 € par sportif et par nuitée versés aux associations d’établissements affiliés à l’UNSS, avec prise en charge du professeur accompagnant et d’un jeune officiel. Les autres aides évoquées dépendent de la Carte Jeune Région et de la ligne budgétaire annuelle.", sourceIds: [sourceId], validFor: "Page officielle consultée le 2026-11-24; campagne annuelle et détails de dépôt à confirmer." },
+    ],
+    factSources: [source],
+    sources: [],
+    currentForPeriod: null,
+    applicationProcedure: {
+      status: "incomplete",
+      steps: [],
+      followUp: { status: "unverified", text: "Les coordonnées du service régional des sports sont affichées; la procédure de dépôt applicable à la campagne courante reste à confirmer.", sourceIds: [sourceId] },
+      renewal: { status: "unverified", text: "L’enveloppe est votée annuellement; les conditions de reconduction et de dépôt de la campagne en cours ne sont pas établies.", sourceIds: [sourceId] },
+      portalUrl: null,
+      competentOrganization: "Région Occitanie — Direction des Sports; association scolaire ou organisme sportif selon le volet.",
+      remainingChecks: ["Confirmer l’ouverture et le règlement de la campagne en cours, le bénéficiaire direct de chaque volet et les modalités de dépôt."],
+    },
+    notes: [...new Set([...(review[schoolSportId]?.notes ?? []), "Fiche maintenue en attente: la page mélange une subvention versée aux associations/organismes et une aide liée à la Carte Jeune; l’ouverture budgétaire annuelle et le bénéfice direct pour une famille ne sont pas établis."])],
+  };
+  const registryPath = path.join(root, "src/data/source-registry.json");
+  const registry = JSON.parse(await readFile(registryPath, "utf8"));
+  const registrySource = { id: sourceId, name: source.label, url: source.url, role: "Bénéficiaires, soutien aux déplacements sportifs scolaires et calendrier annuel", status: "official-page-reviewed-current-campaign-unconfirmed", retrievedAt: "2026-11-24", recordsImported: 0, candidateRecordsIntegrated: 1, license: "Faits résumés avec attribution", coverage: "Région Occitanie", limitations: ["L’aide de 20 € par sportif et par nuitée est versée à des associations UNSS; campagne et ligne budgétaire courantes à confirmer."] };
+  const registryIndex = registry.sources.findIndex((item) => item.id === sourceId);
+  if (registryIndex < 0) registry.sources.push(registrySource); else registry.sources[registryIndex] = registrySource;
+  await writeFile(registryPath, `${JSON.stringify(registry, null, 2)}\n`, "utf8");
+}
+
 const ids = catalogue.map((item) => item.id);
 if (new Set(ids).size !== ids.length) throw new Error("Duplicate canonical catalogue ids detected");
 await writeFile(cataloguePath, `${JSON.stringify(catalogue, null, 2)}\n`, "utf8");

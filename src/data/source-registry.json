@@ -1652,6 +1652,36 @@
       "candidateRecordsIntegrated": 0
     },
     {
+      "id": "mouv-occitanie-official-guidance-2026",
+      "name": "Région Occitanie — Aides à la mobilité internationale Mouv’Occitanie",
+      "url": "https://www.laregion.fr/Aides-Mouv-Occitanie",
+      "role": "Conditions, bénéficiaires, aides financières et parcours Mouv’Occitanie",
+      "status": "official-guidance-reviewed-current-2026-11-24",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun contenu intégral reproduit",
+      "coverage": "Région Occitanie; établissements partenaires",
+      "limitations": [
+        "Les conditions et montants diffèrent entre les aides; sélection par établissement et enveloppe budgétaire annuelles."
+      ]
+    },
+    {
+      "id": "region-school-sport-page-2026",
+      "name": "Région Occitanie — Aides en faveur du développement de la pratique du sport scolaire",
+      "url": "https://www.laregion.fr/Aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire",
+      "role": "Bénéficiaires, soutien aux déplacements sportifs scolaires et calendrier annuel",
+      "status": "official-page-reviewed-current-campaign-unconfirmed",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits résumés avec attribution",
+      "coverage": "Région Occitanie",
+      "limitations": [
+        "L’aide de 20 € par sportif et par nuitée est versée à des associations UNSS; campagne et ligne budgétaire courantes à confirmer."
+      ]
+    },
+    {
       "id": "caf-herault-rias-2026",
       "name": "Caf de l'Hérault — RIAS 2026, aides financières individuelles",
       "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
@@ -1678,7 +1708,7 @@
       "license": "Aucun texte intégral reproduit; faits résumés avec source et pages PDF",
       "candidateRecordsIntegrated": 3,
       "factsEnrichedForAids": 3,
-      "publishableRecords": 0,
+      "publishableRecords": 4,
       "snapshot": "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf",
       "extractedSummary": "src/data/imports/local/herault/normalized/rias-aides-extract-2026.json"
     }
