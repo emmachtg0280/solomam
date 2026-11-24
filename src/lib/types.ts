@@ -13,7 +13,7 @@ export type AidCategory =
   | "Études"
   | "Culture";
 
-export type Coverage = "national" | "regional" | "34";
+export type Coverage = "national" | "regional" | "09" | "11" | "12" | "30" | "31" | "32" | "34" | "46" | "48" | "65" | "66" | "81" | "82";
 export type ValidationStatus = "à vérifier" | "vérifié";
 
 export interface AidSource {

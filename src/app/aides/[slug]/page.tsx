@@ -2,8 +2,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AidActions } from "@/components/aid-actions";
 import { publishedAids, getAid } from "@/lib/aids";
+import type { Aid } from "@/lib/types";
 
-const coverageLabel = { national: "France", regional: "Occitanie", "34": "Hérault (34)" };
+const coverageLabel: Record<Aid["coverage"], string> = {
+  national: "France", regional: "Occitanie",
+  "09": "Ariège (09)", "11": "Aude (11)", "12": "Aveyron (12)", "30": "Gard (30)",
+  "31": "Haute-Garonne (31)", "32": "Gers (32)", "34": "Hérault (34)", "46": "Lot (46)",
+  "48": "Lozère (48)", "65": "Hautes-Pyrénées (65)", "66": "Pyrénées-Orientales (66)",
+  "81": "Tarn (81)", "82": "Tarn-et-Garonne (82)",
+};
 
 export const dynamicParams = false;
 export function generateStaticParams() { return publishedAids.map(({ slug }) => ({ slug })); }

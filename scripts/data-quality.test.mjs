@@ -396,10 +396,13 @@ test("published services are sourced and kept separate from administrative aids"
   const catalogue = await readJson("src/data/catalogue.json");
   const geo = await readJson("src/data/territories/montpellier-metropole.json");
   assert.equal(services.length, 4);
-  assert.ok(services.every(canPublishService));
-  assert.deepEqual(new Set(services.map((service) => service.category)), new Set(["Parentalité", "Santé & bien-être", "Dating & vie amoureuse"]));
-  const dating = services.find((service) => service.category === "Dating & vie amoureuse");
+  const publishedServices = services.filter(canPublishService);
+  assert.equal(publishedServices.length, 3);
+  assert.ok(publishedServices.every(canPublishService));
+  assert.deepEqual(new Set(services.map((service) => service.category)), new Set(["Parentalité", "Santé & bien-être", "Dating & relations"]));
+  const dating = services.find((service) => service.category === "Dating & relations");
   assert.equal(dating.kind, "private-platform");
+  assert.equal(dating.publicationStatus, "pending", "a parent-only service must not stand in for the general adult dating category");
   assert.match(dating.pricing, /facultatif payant/);
   assert.ok(!catalogue.some((aid) => aid.id === dating.id), "private dating service must not enter aid catalogue");
   assert.equal(geo.epciCode, "243400017");

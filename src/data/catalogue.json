@@ -762,7 +762,7 @@
     "category": "Logement",
     "zone": "11",
     "org": "Conseil départemental de l’Aude",
-    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "description": "Le FSL départemental de l’Aude peut soutenir l’accès ou le maintien dans le logement et certaines factures d’eau, d’énergie ou de télécommunications. Le règlement de mars 2026 prévoit une évaluation des ressources et des charges; critères, plafonds et pièces varient selon le volet.",
     "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
     "steps": [],
     "url": "https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf"
@@ -819,7 +819,7 @@
     "category": "Logement",
     "zone": "46",
     "org": "Département du Lot",
-    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "description": "Le FSL du Lot peut aider des ménages en difficulté à accéder à un logement indépendant ou à s’y maintenir. Les ressources des occupants sont comparées à des plafonds indexés sur l’AAH; conditions et subsidiarité varient selon les volets accès, maintien, énergie et accompagnement.",
     "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
     "steps": [],
     "url": "https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf"

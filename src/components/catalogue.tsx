@@ -5,8 +5,15 @@ import { useMemo, useState } from "react";
 import { publishedAids, categories, organizations, pendingCount } from "@/lib/aids";
 import { Select, Input } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
+import type { Aid } from "@/lib/types";
 
-const coverageLabel = { national: "National", regional: "Occitanie", "34": "Hérault (34)" };
+const coverageLabel: Record<Aid["coverage"], string> = {
+  national: "National", regional: "Occitanie",
+  "09": "Ariège (09)", "11": "Aude (11)", "12": "Aveyron (12)", "30": "Gard (30)",
+  "31": "Haute-Garonne (31)", "32": "Gers (32)", "34": "Hérault (34)", "46": "Lot (46)",
+  "48": "Lozère (48)", "65": "Hautes-Pyrénées (65)", "66": "Pyrénées-Orientales (66)",
+  "81": "Tarn (81)", "82": "Tarn-et-Garonne (82)",
+};
 
 export function Catalogue() {
   const [query, setQuery] = useState("");

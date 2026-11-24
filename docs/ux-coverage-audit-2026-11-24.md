@@ -1,0 +1,95 @@
+# Audit UX et couverture locale — 24 novembre 2026
+
+## Périmètre et état du dépôt
+
+Audit réalisé sur `data/collection-pipeline`, HEAD `4502484` (`fix(data): align aid publication and improve local eligibility evidence`). Le dépôt était propre au début de l’audit. Aucun merge, PR ou déploiement n’a été effectué; aucune collecte générale n’a été lancée.
+
+Le catalogue local contient 75 identifiants uniques, dont 29 fiches d’information vérifiées/publicables; le brief indiquait 74 fiches canoniques. Le précédent HEAD contenait 27 fiches publiables. Le passage à 29 vient exclusivement des deux changements de porte d’information du commit `4502484` : `fsl-11` (FSL Aude) et `fsl-46` (FSL Lot), passées de `pending` à `verified` après examen de leur règlement officiel. Le statut de procédure reste `pending` pour les deux. Les autres changements de statut de publication du même commit n’ont pas ajouté de fiche à la porte d’information.
+
+L’interface du catalogue est en mode « Hérault (34) » par défaut. Elle affichait donc 24 résultats avant de choisir « Toutes les zones »; cette dernière option affiche les 29 fiches publiables. Ce sont deux portées de filtre différentes, pas une divergence de total.
+
+## Audit UX navigateur
+
+`localhost:3000` répondait avec la page Solomam. Le serveur de développement était déjà joignable depuis Edge, même si le terminal ne voyait aucun listener Node et qu’un lancement supplémentaire échouait sur `0.0.0.0:3000` avec `EACCES`. L’URL existante est donc restée le moyen de test; aucun second serveur n’a été lancé.
+
+| Page / parcours | Viewport | Observation avant correction | Correction / vérification après |
+| --- | --- | --- | --- |
+| Catalogue — Hérault par défaut | 1440 × 899 CSS px | 24 aides visibles; filtre Hérault sélectionné | Choix « Toutes les zones » donne 29 cartes et les libellés de territoire sont renseignés après la correction. |
+| Catalogue — Toutes les zones | 1440 × 899 CSS px | Les fiches de couverture `11`, `12`, `30`, `32`, `46` avaient un emplacement de territoire vide sur les cartes. | Libellés explicites Ariège, Aude, Aveyron, Gard, Haute-Garonne, Gers, Hérault, Lot, Lozère, Hautes-Pyrénées, Pyrénées-Orientales, Tarn et Tarn-et-Garonne. |
+| Fiche FSL Aude | 1440 × 899 CSS px | Le territoire apparaissait comme `Conseil départemental de l’Aude —` et le résumé qualifiait encore l’aide de « candidate ». | Territoire Aude (11); résumé aligné sur les faits vérifiés du règlement 2026. Les critères varient toujours selon le volet et la procédure reste signalée comme non documentée. |
+| Fiche FSL Lot | 1440 × 899 CSS px | Le territoire apparaissait comme `Département du Lot —` et le résumé qualifiait encore l’aide de « candidate ». | Territoire Lot (46); résumé aligné sur les faits vérifiés du règlement applicable depuis juillet 2025. Les critères varient selon le volet et la procédure reste signalée comme non documentée. |
+| Mes démarches — ajouter, retrouver, ouvrir, recharger, retirer | 1440 × 899 CSS px | Le bouton d’enregistrement activait la sauvegarde locale; l’ASF apparaissait avec lien de fiche, informations officielles et étapes; elle persistait après rechargement. | Retrait de l’ASF de test confirmé. Les quatre aides qui étaient déjà dans le stockage local ont été préservées. Le lien « Voir la fiche » est présent. |
+| Mes démarches — largeur / navigation | 390 × 844, 375 × 812, 768 × 1024 | Navigation, cartes et boutons accessibles; aucun débordement horizontal (`scrollWidth == clientWidth` à chaque largeur). | Même constat; la liste reste utilisable, avec retour à la ligne des actions selon l’espace. |
+| État vide de Mes démarches | — | Non testé dans le profil utilisateur, car il contient quatre aides sauvegardées avant le test. | À tester dans un profil isolé lors d’une prochaine vérification; aucune donnée existante n’a été effacée pour forcer cet état. |
+| Recherche, catégorie, erreur de stockage | — | Les contrôles existent dans l’interface; les scénarios de recherche/erreur de stockage n’ont pas été exécutés dans le navigateur. | Couverture automatisée présente pour la normalisation/idempotence de la liste, mais l’erreur de stockage n’est pas injectée dans le navigateur. |
+
+Les fiches FSL Aude et Lot demeurent des fiches d’information, pas des instructions complètes pour déposer un dossier. Le formulaire ne doit pas laisser croire que toutes les voies, pièces et critères propres aux volets sont connus.
+
+## Portée territoriale et catalogue
+
+Le filtre de territoire propose actuellement Hérault, Occitanie et toutes les zones. Il ne permet pas de sélectionner individuellement chacun des départements. Les cartes et fiches montrent le département pour les dispositifs locaux après cette correction; les métropoles sont des périmètres distincts dans les règles, même si le filtre Hérault les regroupe avec le reste de l’Hérault.
+
+## Matrice CAF / FSL / CCAS des 13 départements
+
+La matrice reprend les sources et candidats déjà consignés dans `src/data/coverage-matrix.json`, `src/data/source-registry.json`, `src/data/catalogue.json` et `src/data/review.json`. « Découverte » signifie que la page de la caisse ou du territoire est identifiée, pas que le règlement CAF ou les aides ont été examinés. « Non recensé » signifie absence de collecte documentée dans ce périmètre, jamais absence d’aide.
+
+| Dép. | CAF — état et fiches | FSL — règlement, territoire, publication | CCAS / communes — collecte connue |
+| --- | --- | --- | --- |
+| 09 Ariège | Caf identifiée en découverte; aucun RIAS local examiné dans les données fournies; 0 fiche CAF publiée/candidate. | RDAS 2026 / FUH identifié et consulté comme candidat; conditions, barèmes et procédure à extraire; `fsl-09` bloquée, 0 publiée. | Pas de collecte communale documentée. |
+| 11 Aude | Caf Aude identifiée en découverte; règlement d’action sociale non examiné; 0 fiche CAF locale. | RAFI adopté le 27 mars 2026 consulté. Périmètre départemental; critères, plafonds, pièces et saisine varient selon le volet. `fsl-11` publiée pour information, procédure partielle; 1 publiée. | Pas de collecte communale documentée. |
+| 12 Aveyron | RIAS aides financières individuelles 2026 consulté; une candidate CAF `caf-aveyron-projet-familial` publiée (aide facultative en commission, modalités modulées selon projet). | RDAS 2025 / fiche FSL identifiée et consultée comme candidate; extraction des critères/volets et procédure manquante. `fsl-12` non publiée; 1 aide CAF publiée. | Pas de collecte communale documentée. |
+| 30 Gard | Caf du Gard identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | FSL départemental; seul le volet Accès et ses barèmes au 1er avril 2026 sont documentés. L’ADHL instruit, le Département finance. `fsl-gard-acces` publiée; maintien, énergie et procédure complète à examiner; 1 publiée. | Pas de collecte communale documentée. |
+| 31 Haute-Garonne | Caf Haute-Garonne identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Deux compétences séparées : Département hors Toulouse Métropole et Toulouse Métropole. Le FSL métropolitain couvre 37 communes identifiées par codes INSEE. Deux fiches candidates, toutes deux non publiées; règles applicables et articulation des sources à compléter. | Pas de collecte communale documentée hors prise en compte de la compétence métropolitaine. |
+| 32 Gers | Caf du Gers identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Le lien officiel du FSL est identifié mais le site bloque sa consultation dans la collecte existante; règle non examinée et aucune fiche FSL. | Le Fonds d’aide d’urgence départemental est publié, mais ce n’est pas une aide CCAS. Collecte CCAS communale non documentée. |
+| 34 Hérault | RIAS 2026 consulté/extrait. Trois fiches CAF publiées : secours/prêts, prêt équipement, mobilité insertion. Trois candidates CAF non publiées : aide à domicile, AVF, Premiers départs/AVES. Le parcours BAFA reste hors catalogue faute de formulaire courant confirmé. | Deux FSL distincts et publiés : Département hors Montpellier Métropole et Montpellier Méditerranée Métropole. Le règlement M3M est consulté; les procédures et certains critères par volet restent partiels. | Montpellier : aide facultative candidate, barème manquant. Frontignan : aide énergie candidate, campagne/critères 2026 à reconfirmer. Sète : aucun dispositif financier nommé confirmé dans la collecte; Béziers : accompagnement social consulté, pas une aide financière identifiée. Le Bouclier petite enfance de Montpellier repose sur un règlement 2025 dont le statut/campagne 2026 n’est pas confirmé. |
+| 46 Lot | Caf du Lot identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Règlement départemental applicable depuis le 1er juillet 2025 consulté. Plafonds indexés sur l’AAH et révisés annuellement; critères d’accès, maintien, énergie et accompagnement restent à détailler. `fsl-46` publiée pour information; procédure partielle; 1 publiée. | Pas de collecte communale documentée. |
+| 48 Lozère | Caf identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Règlement intérieur FSL actualisé au 18 décembre 2025 identifié/consulté comme candidat; critères et démarche non extraits; `fsl-48` non publiée. | Pas de collecte communale documentée. |
+| 65 Hautes-Pyrénées | Caf identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Règlement intérieur FSL du 1er mars 2025 identifié/consulté comme candidat; critères et procédure à extraire; `fsl-65` non publiée. | Pas de collecte communale documentée. |
+| 66 Pyrénées-Orientales | Caf identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Mode d’emploi FSL officiel identifié/consulté comme candidat; critères par volet et procédure à extraire; `fsl-66` non publiée. | Pas de collecte communale documentée. |
+| 81 Tarn | Caf identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Fiche FSL 2025 officielle identifiée/consultée comme candidate; version courante, critères par volet, plafonds et procédure à vérifier; `fsl-81` non publiée. | Pas de collecte communale documentée. |
+| 82 Tarn-et-Garonne | Caf identifiée en découverte; RIAS local non examiné; 0 fiche CAF locale. | Page FSL et règlement 2025–2026 identifiés/consultés comme candidats; extraction des règles et de la saisine à compléter; `fsl-82` non publiée. | Pas de collecte communale documentée. |
+
+État quantifié des fiches locales publiables : Aveyron 1, Gard 1, Aude 1, Gers 1, Lot 1, Hérault 8; autres départements 0. Le catalogue contient en plus 14 fiches nationales et 2 régionales. L’état global est donc 29 fiches d’information publiées. Les 46 autres entrées ne sont pas toutes des aides locales candidates : elles restent en revue selon leur règle de publication.
+
+La matrice de travail a été alignée sur les faits nouveaux : Occitanie compte 2 fiches régionales; Aude et Lot ont chacune 1 fiche publiée pour information. Les territoires restent `partially_integrated`; cette mise à jour ne signifie ni exhaustivité ni éligibilité individuelle.
+
+## Shortlist de vérifications ciblées
+
+Les actions ci-dessous sont un plan; elles n’ont pas été lancées dans cet audit.
+
+| Priorité | Organisme / territoire / dispositif | Source officielle déjà identifiée | Information manquante | Bénéfice potentiel / action recommandée |
+| --- | --- | --- | --- | --- |
+| P1 | Département de l’Aude — FSL | [RAFI 2026](https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf) | Plafonds, dépenses, justificatifs et saisine par volet. | Finaliser une information utile; extraire un volet à la fois sans prétendre couvrir tout le règlement. |
+| P1 | Département du Lot — FSL | [Règlement FSL 2025](https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf) | Barème AAH en vigueur, seuils par composition, pièces et travailleurs sociaux habilités. | Compléter les critères qui conditionnent directement l’accès; vérifier le barème annuel avant publication. |
+| P1 | Caf de l’Hérault — RIAS 2026 | [Caf Hérault](https://www.caf.fr/allocataires/caf-herault) et extrait RIAS déjà versé | Parcours, formulaires et pièces courants pour secours/prêts, mobilité et équipement; formulaire BAFA courant. | Rendre les trois aides publiées actionnables et ne reprendre BAFA qu’après confirmation du formulaire 2026. |
+| P1 | CCAS Montpellier — aides facultatives | [CCAS Montpellier](https://www.montpellier.fr/actions/competences/solidarites/centre-communal-daction-sociale-ccas) | Barème, résidence, ressources, pièces, procédure et statut 2026. | Qualifier ou exclure proprement la candidate sans assimiler accompagnement à droit automatique. |
+| P1 | Département de l’Ariège — FSL/FUH | [RDAS 2026](https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf) | Confirmer version applicable, volets, montants, conditions et saisine. | Lever l’incertitude de version avant de publier une aide logement départementale. |
+| P1 | Haute-Garonne / Toulouse Métropole — FSL | [Page FSL départementale](https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl) | Règle propre à la Métropole, communes compétentes, différences avec le FSL départemental, pièces et voie de dépôt. | Éviter une règle appliquée au mauvais territoire; documenter séparément les deux périmètres. |
+| P2 | Département du Gard — FSL maintien/énergie | [ADHL FSL](https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces.html) | Autres volets et procédure au-delà du volet Accès déjà publié. | Étendre la fiche seulement par volets officiellement confirmés. |
+| P2 | Caf de l’Aveyron — aide au projet familial | [RIAS 2026](https://www.caf.fr/sites/default/files/medias/121/Images/Partenaires/RIAS%202026%20Version%20D%C3%A9finitive%2001%202026.pdf) | Dépenses recevables, échelle de soutien, pièces, sollicitation et étape de commission. | Compléter cette aide facultative sans inventer de montant forfaitaire. |
+| P2 | Département de l’Aveyron — FSL | [RDAS départemental](https://aveyron.fr/sites/default/files/documents/Solidarite/2025/08-aout/2025_03_28_RDAS.pdf) | Actualité 2026, critères d’accès/maintien, plafonds et procédure. | Transformer la candidate existante uniquement si les règles courantes sont clairement extraites. |
+| P2 | Caf des départements 09, 11, 30, 31, 32, 46, 48, 65, 66, 81 et 82 — aides individuelles | Pages officielles Caf départementales identifiées dans le registre; aucun RIAS local consulté pour ces départements à ce stade. | RIAS en vigueur, familles de secours/prêts, mobilité, vacances et critères parent/enfant. | Première collecte CAF ciblée : récupérer et dater chaque règlement avant de créer des fiches candidates. |
+| P2 | Frontignan — aide énergie CCAS | [Ville de Frontignan](https://www.frontignan.fr/aide-au-paiement-des-factures-energetiques/) | Campagne 2026, résidence, critères de ressources, montant, pièces et guichet. | Confirmer rapidement si cette aide financière est encore active; garder masquée d’ici là. |
+| P2 | Béziers et Sète — aides financières CCAS | [Béziers](https://www.ville-beziers.fr/jhabite-a-beziers/solidarites/actions-sociales), [Sète](https://www.sete.fr/) | Aide nominative, publics, règles financières et dispositif actuel; les sources locales ne confirment pas encore d’aide financière précise. | Examiner deux villes déjà repérées sans généraliser à toutes les communes de l’Hérault. |
+| P2 | Département du Tarn — FSL | [Fiche FSL Tarn 2025](https://www.tarn.fr/fileadmin/mediatheque/Tarn/Documents/Actualites/2025/Logement/FSL-Fonds-de-solidarite-pour-le-logement_Tarn.pdf) | Version 2026, critères et barèmes par volet, pièces et saisine. | Débloquer la candidate FSL avec un contrôle de validité, puis rédiger une fiche limitée aux faits extraits. |
+| P2 | Département de Tarn-et-Garonne — FSL | [Page FSL 2025–2026](https://www.tarnetgaronne.fr/social-insertion/fonds-de-solidarite-pour-le-logement) | Critères complets, volets, plafonds, pièces et procédure. | Compléter une source récente déjà identifiée. |
+| P3 | Département du Gers — FSL | Source FSL repérée au plan du site du Département; le lien bloque la consultation actuellement enregistrée. | Accès au règlement et confirmation du dispositif 2026, volets et procédure. | Réessayer le document officiel ou demander un canal institutionnel accessible; ne pas extrapoler la fiche d’urgence publiée. |
+
+## Positionnement des services
+
+Le vocabulaire produit conserve les trois catégories exactes : Parentalité, Santé & bien-être, Dating & relations. La seule fiche de rencontre existante, Parents Solos, est réservée aux parents solos d’après ses conditions; elle ne peut pas représenter les rencontres généralistes entre adultes. Elle reste conservée dans les données mais est maintenue hors de la page publique tant qu’aucun service conforme n’est vérifié. Aucun service n’a été ajouté.
+
+## Changements de cette passe
+
+- Correction des types de couverture pour représenter les 13 codes départementaux d’Occitanie et des libellés sur les cartes et les fiches.
+- Remplacement des résumés obsolètes des FSL Aude et Lot par des résumés bornés aux faits vérifiés; procédure toujours explicitement partielle.
+- Mise à jour des comptes Aude, Lot et Occitanie dans la matrice de couverture.
+- Alignement de la catégorie « Dating & relations »; la fiche parent-only reste non publiée, sans la supprimer des données.
+- Aucune modification des règles d’idempotence ni des scripts de collecte.
+
+## Anomalies de données restantes
+
+- `src/data/catalogue.json` compte 75 lignes/identifiants uniques, tandis que le brief et l’ancienne synthèse annonçaient 74 fiches canoniques. Le HEAD n’a pas changé le catalogue; l’écart préexiste à cette passe et n’a pas été « corrigé » sans identifier quelle entrée serait à retirer.
+- `src/data/review.json` contient 79 clés : 75 correspondent à une entrée du catalogue et quatre audits n’ont pas d’entrée correspondante (`logement`, plus trois anciens identifiants d’aides régionales). `logement` est explicitement maintenue en attente dans les tests; les trois autres restes sont sans effet sur le catalogue public mais méritent un nettoyage de données séparé.
+- La catégorie de rencontres ne dispose d’aucune fiche généraliste adulte vérifiée. La fiche « Parents Solos » reste masquée, car son public documenté est limité aux parents solos.
+- L’état vide de Mes démarches n’a pas été simulé dans le profil utilisateur afin de préserver les quatre aides qui y étaient déjà sauvegardées.

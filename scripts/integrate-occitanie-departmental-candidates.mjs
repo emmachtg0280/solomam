@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { canPublishInformation } from "../src/lib/publication.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const file = (name) => path.join(root, name);
@@ -188,10 +189,19 @@ for(const source of otherLocalSources) upsertSource({...source,role:"Recherche d
 for(const dep of coverage.territories.filter((x)=>/^\d{2}$/.test(x.id))) {
  const aids=definitions.filter((d)=>d.zone===dep.id).length+(dep.id==="32"?1:0);
  if(aids>0) {
-  dep.status="partially_integrated"; dep.checkedAt=checkedAt; dep.verifiedPublishedAidCount=dep.id==="12"?1:0;
+  dep.status="partially_integrated"; dep.checkedAt=checkedAt;
+  dep.verifiedPublishedAidCount=catalogue.filter((record)=>record.zone===dep.id&&canPublishInformation(record,review[record.id]??{})).length;
   dep.sources=[...new Set([...(dep.sources??[]),...definitions.filter(d=>d.zone===dep.id).map(d=>d.sourceName),...(dep.id==="12"?["Caf de l’Aveyron — RIAS aides financières individuelles 2026"]:[]),...(dep.id==="32"?["Département du Gers — Fonds d’aide d’urgence et Fonds d’aide aux jeunes"]:[])])];
   dep.types=[...new Set([...(dep.types??[]),"aide_financiere"])];
-  dep.notes=`${aids} candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.`;
+  if(dep.id==="11") {
+   dep.checkedAt=review["fsl-11"]?.reviewedAt??checkedAt;
+   dep.notes="Le règlement départemental adopté le 27 mars 2026 a été consulté; une fiche FSL est publiée pour information. Les critères et parcours par volet restent partiels; publication ne signifie pas confirmation individuelle d’éligibilité.";
+  } else if(dep.id==="46") {
+   dep.checkedAt=review["fsl-46"]?.reviewedAt??checkedAt;
+   dep.notes="Le règlement FSL applicable depuis le 1er juillet 2025 a été consulté; une fiche FSL est publiée pour information. Les critères et parcours par volet restent partiels; publication ne signifie pas confirmation individuelle d’éligibilité.";
+  } else {
+   dep.notes=`${aids} candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.`;
+  }
  }
 }
 const dept32=coverage.territories.find(x=>x.id==="32"); if(dept32) dept32.notes += " Le lien officiel du FSL apparaît dans le plan du site, mais le domaine bloque la consultation par l’outil de recherche; sa règle n’est pas marquée examinée.";

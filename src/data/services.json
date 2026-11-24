@@ -60,7 +60,7 @@
     "id": "parents-solos",
     "slug": "parents-solos",
     "name": "Parents Solos",
-    "category": "Dating & vie amoureuse",
+    "category": "Dating & relations",
     "kind": "private-platform",
     "organization": "RANDOMATCH LTD",
     "description": "Plateforme privée de mise en relation entre adultes qui élèvent seuls leurs enfants; elle propose profils, échanges et sorties.",
@@ -72,7 +72,7 @@
     "officialUrl": "https://www.parents-solos.com/",
     "sources": [{ "id": "parents-solos-terms", "url": "https://www.parents-solos.com/conditions-utilisation/", "label": "Parents Solos — Conditions d'utilisation et de vente", "consultedAt": "2026-11-23" }],
     "verifiedAt": "2026-11-23",
-    "publicationStatus": "published",
-    "remainingChecks": ["Plateforme commerciale privée; Solomam ne vérifie ni l'identité des membres ni la disponibilité locale du service."]
+    "publicationStatus": "pending",
+    "remainingChecks": ["Cette plateforme réserve son public aux parents solos et ne correspond pas à l'offre de rencontres généraliste entre adultes prévue pour Dating & relations; ne pas publier cette fiche tant qu'une offre conforme n'est pas vérifiée."]
   }
 ]

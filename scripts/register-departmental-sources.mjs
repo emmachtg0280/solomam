@@ -90,7 +90,7 @@ for (const department of departments) {
       row.notes = "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe.";
       row.status = "identified";
     }
-    row.checkedAt = checkedAt;
+    row.checkedAt = row.id === "11" || row.id === "46" ? row.checkedAt : checkedAt;
   }
 }
 const gard = coverage.territories.find((item) => item.id === "30");

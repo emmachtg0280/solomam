@@ -44,13 +44,13 @@
         "Parentalité",
         "Santé & bien-être"
       ],
-      "verifiedPublishedAidCount": 1,
+      "verifiedPublishedAidCount": 2,
       "sources": [
         "Dataset Région Occitanie",
         "Pages détaillées Région Occitanie"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Un dispositif régional publié; 87 des 153 lignes Aides restent à examiner après cette passe, plus les autres dossiers non publiés."
+      "notes": "Deux dispositifs régionaux publiés; 87 des 153 lignes Aides restent à examiner après cette passe, plus les autres dossiers non publiés."
     },
     {
       "id": "34",
@@ -131,9 +131,9 @@
         "Caf Aude (découverte)",
         "Département de l’Aude — règlement d’attribution des aides financières, avril 2026"
       ],
-      "checkedAt": "2026-11-23",
-      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
-      "verifiedPublishedAidCount": 0
+      "checkedAt": "2026-11-24",
+      "notes": "Le règlement départemental adopté le 27 mars 2026 a été consulté; une fiche FSL est publiée pour information. Les critères et parcours par volet restent partiels; publication ne signifie pas confirmation individuelle d’éligibilité.",
+      "verifiedPublishedAidCount": 1
     },
     {
       "id": "12",
@@ -219,7 +219,7 @@
       ],
       "checkedAt": "2026-11-23",
       "notes": "2 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive. Le lien officiel du FSL apparaît dans le plan du site, mais le domaine bloque la consultation par l’outil de recherche; sa règle n’est pas marquée examinée.",
-      "verifiedPublishedAidCount": 0
+      "verifiedPublishedAidCount": 1
     },
     {
       "id": "46",
@@ -238,9 +238,9 @@
         "Caf Lot (découverte)",
         "Département du Lot — règlement intérieur FSL au 1er juillet 2025"
       ],
-      "checkedAt": "2026-11-23",
-      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
-      "verifiedPublishedAidCount": 0
+      "checkedAt": "2026-11-24",
+      "notes": "Le règlement FSL applicable depuis le 1er juillet 2025 a été consulté; une fiche FSL est publiée pour information. Les critères et parcours par volet restent partiels; publication ne signifie pas confirmation individuelle d’éligibilité.",
+      "verifiedPublishedAidCount": 1
     },
     {
       "id": "48",

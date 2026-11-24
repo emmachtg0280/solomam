@@ -1,4 +1,4 @@
-export const SERVICE_CATEGORIES = ["Parentalité", "Santé & bien-être", "Dating & vie amoureuse"];
+export const SERVICE_CATEGORIES = ["Parentalité", "Santé & bien-être", "Dating & relations"];
 
 export function canPublishService(service) {
   return Boolean(service
