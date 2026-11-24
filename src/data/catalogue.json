@@ -1,0 +1,259 @@
+[
+  {
+    "id": "asf",
+    "name": "Allocation de soutien familial",
+    "category": "Famille",
+    "zone": "national",
+    "org": "CAF / MSA",
+    "description": "Un soutien possible lorsque tu élèves seule un enfant et que l’autre parent ne contribue pas ou pas suffisamment à son entretien.",
+    "when": "Situation familiale, contribution ou pension alimentaire, conditions spécifiques de la CAF/MSA.",
+    "steps": [
+      "Vérifier les conditions officielles de l’ASF et ta situation de pension alimentaire.",
+      "Consulter la démarche correspondant à ta situation sur le site CAF ou MSA.",
+      "Préparer les justificatifs demandés directement par l’organisme.",
+      "Effectuer la demande sur le canal officiel et noter la date de dépôt."
+    ],
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F815"
+  },
+  {
+    "id": "af",
+    "name": "Allocations familiales",
+    "category": "Famille",
+    "zone": "national",
+    "org": "CAF / MSA",
+    "description": "Une prestation liée au nombre d’enfants à charge. Les conditions et le montant varient selon la famille et les ressources.",
+    "when": "Nombre et âge des enfants, résidence et ressources du foyer.",
+    "steps": [
+      "Vérifier le nombre d’enfants à charge et les critères officiels.",
+      "Contrôler que ta situation familiale est actualisée auprès de la CAF/MSA.",
+      "Consulter tes droits dans ton espace officiel."
+    ],
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F13213"
+  },
+  {
+    "id": "prime",
+    "name": "Prime d’activité",
+    "category": "Revenus",
+    "zone": "national",
+    "org": "CAF / MSA",
+    "description": "Un complément de revenus à explorer lorsque tu travailles, selon les ressources et la composition du foyer.",
+    "when": "Revenus du foyer, activité professionnelle, composition familiale et autres ressources.",
+    "steps": [
+      "Consulter les conditions et effectuer la simulation officielle.",
+      "Réunir les informations de revenus demandées.",
+      "Faire la demande sur le site CAF ou MSA si la simulation est pertinente."
+    ],
+    "url": "https://www.service-public.fr/particuliers/vosdroits/N31477"
+  },
+  {
+    "id": "logement",
+    "name": "Aides au logement",
+    "category": "Logement",
+    "zone": "national",
+    "org": "CAF / MSA",
+    "description": "APL, ALF ou ALS selon le logement et la situation familiale. Un point de départ utile pour les locataires.",
+    "when": "Type de logement, loyer, composition du foyer et ressources.",
+    "steps": [
+      "Rassembler les informations du logement et du loyer.",
+      "Réaliser une estimation sur le site officiel de la CAF/MSA.",
+      "Compléter la demande de logement auprès de l’organisme compétent."
+    ],
+    "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/logement"
+  },
+  {
+    "id": "cf",
+    "name": "Complément familial",
+    "category": "Famille",
+    "zone": "national",
+    "org": "CAF / MSA",
+    "description": "Une prestation à examiner pour les familles d’au moins trois enfants, sous conditions d’âge et de ressources.",
+    "when": "Nombre et âge des enfants, revenus du foyer et conditions CAF/MSA.",
+    "steps": [
+      "Vérifier les conditions d’âge des enfants et de ressources.",
+      "Consulter les informations de la CAF/MSA.",
+      "Vérifier si tes données sont à jour dans ton dossier."
+    ],
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F13212"
+  },
+  {
+    "id": "ars",
+    "name": "Allocation de rentrée scolaire",
+    "category": "Enfants & école",
+    "zone": "national",
+    "org": "CAF / MSA",
+    "description": "Une aide à regarder pour la rentrée des enfants scolarisés, avec des conditions d’âge et de ressources.",
+    "when": "Scolarisation, âge des enfants et ressources du foyer.",
+    "steps": [
+      "Vérifier les conditions pour chaque enfant.",
+      "Mettre à jour les informations de scolarité auprès de la CAF/MSA si nécessaire.",
+      "Consulter ton dossier pour savoir si une démarche est requise."
+    ],
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F1885"
+  },
+  {
+    "id": "cmg",
+    "name": "Aide à la garde d’enfants (CMG)",
+    "category": "Garde",
+    "zone": "national",
+    "org": "CAF / MSA",
+    "description": "Une prise en charge possible d’une partie des frais de garde selon les modalités et les conditions du CMG.",
+    "when": "Âge des enfants, mode de garde, situation professionnelle et ressources.",
+    "steps": [
+      "Identifier le mode de garde utilisé ou envisagé.",
+      "Vérifier les conditions et la procédure CAF/MSA.",
+      "Préparer les éléments relatifs au contrat ou à la structure de garde."
+    ],
+    "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/vie-personnelle/le-complement-de-libre-choix-du-mode-de-garde-cmg"
+  },
+  {
+    "id": "fsl",
+    "name": "Fonds de solidarité pour le logement",
+    "category": "Logement",
+    "zone": "34",
+    "org": "Département de l’Hérault",
+    "description": "Une piste d’aide en cas de difficultés pour accéder à un logement ou s’y maintenir.",
+    "when": "Difficulté de logement, résidence dans l’Hérault, ressources et règlement applicable.",
+    "steps": [
+      "Identifier ton besoin : accès au logement, loyer impayé ou maintien dans le logement.",
+      "Lire le dispositif du Département et repérer le service compétent.",
+      "Contacter le service indiqué pour connaître la procédure actuelle et les pièces nécessaires.",
+      "Déposer le dossier selon les indications du service social."
+    ],
+    "url": "https://herault.fr/402-aide-financiere.htm"
+  },
+  {
+    "id": "domicile",
+    "name": "Aide à domicile des familles",
+    "category": "Accompagnement",
+    "zone": "34",
+    "org": "CAF de l’Hérault",
+    "description": "Un accompagnement temporaire dans les périodes où l’organisation familiale devient difficile, notamment après certains événements de vie.",
+    "when": "Situation familiale, événement fragilisant et évaluation par un service conventionné.",
+    "steps": [
+      "Prendre connaissance des situations et conditions couvertes par la CAF de l’Hérault.",
+      "Identifier une association d’aide à domicile conventionnée.",
+      "Contacter l’association pour l’évaluation de la situation et des conditions de prise en charge."
+    ],
+    "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/vie-personnelle/parentalite/l-aide-au-domicile-des-familles-dans-l-herault"
+  },
+  {
+    "id": "vacaf",
+    "name": "Aide aux vacances en famille (AVF)",
+    "category": "Loisirs",
+    "zone": "34",
+    "org": "CAF de l’Hérault",
+    "description": "Un soutien possible pour certains séjours en famille dans des structures labellisées, selon les droits ouverts par la CAF.",
+    "when": "Conditions de l’action sociale CAF, quotient familial et notification éventuelle.",
+    "steps": [
+      "Consulter les critères annuels de la CAF de l’Hérault.",
+      "Vérifier dans ton espace CAF si une aide VACAF t’a été attribuée.",
+      "Consulter les hébergements labellisés et les modalités de réservation."
+    ],
+    "url": "https://caf.fr/allocataires/caf-de-l-herault/offre-de-service/vie-personnelle/vacances-et-loisirs/l-aide-aux-vacances-familles-avf"
+  },
+  {
+    "id": "carte",
+    "name": "Carte Jeune Région",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Des avantages régionaux pour les lycéens et certains publics concernés par la Carte Jeune Région.",
+    "when": "Scolarisation ou formation relevant des conditions du dispositif.",
+    "steps": [
+      "Vérifier la scolarité ou le statut de formation de ton enfant.",
+      "Consulter les conditions de la Carte Jeune Région.",
+      "Suivre la procédure de demande officielle de la Région."
+    ],
+    "url": "https://www.laregion.fr/-cartejeune-"
+  },
+  {
+    "id": "transport",
+    "name": "Transports scolaires régionaux",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Des dispositifs régionaux de transport scolaire à explorer selon le trajet, l’établissement et les conditions de prise en charge.",
+    "when": "Scolarité, résidence, trajet et règles de transport applicables.",
+    "steps": [
+      "Vérifier le service de transport scolaire compétent pour ton trajet.",
+      "Consulter les conditions régionales et le calendrier d’inscription.",
+      "Effectuer l’inscription auprès du service indiqué."
+    ],
+    "url": "https://www.laregion.fr/Des-aides-pour-les-famille-Carte-jeune-et-Transport"
+  },
+  {
+    "id": "aves",
+    "name": "Premiers départs en vacances des enfants",
+    "category": "Loisirs",
+    "zone": "34",
+    "org": "CAF de l’Hérault / Région Occitanie",
+    "description": "Un dispositif pour faciliter un premier séjour de vacances d’enfants, selon les critères et les opérateurs partenaires.",
+    "when": "Âge de l’enfant, règles de la campagne annuelle et accompagnement partenaire.",
+    "steps": [
+      "Vérifier les âges et les règles de la campagne en cours.",
+      "Repérer un opérateur partenaire auprès de la CAF.",
+      "Contacter le partenaire pour organiser la démarche."
+    ],
+    "url": "https://caf.fr/allocataires/caf-de-l-herault/offre-de-service/vie-personnelle/vacances-et-loisirs/l-aide-aux-premiers-departs-en-vacances-aves"
+  },
+  {
+    "id": "css",
+    "name": "Complémentaire santé solidaire",
+    "category": "Santé",
+    "zone": "national",
+    "org": "Assurance Maladie",
+    "description": "Une complémentaire santé gratuite ou avec participation selon les ressources du foyer.",
+    "when": "Résidence, composition et ressources du foyer ; les conditions sont évaluées par l’Assurance Maladie.",
+    "steps": [
+      "Consulter les conditions actualisées.",
+      "Préparer les informations et justificatifs demandés par l’Assurance Maladie.",
+      "Faire la demande sur son compte ameli ou selon les modalités officielles."
+    ],
+    "url": "https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire-demande"
+  },
+  {
+    "id": "aripa",
+    "name": "Gestion et recouvrement de pension alimentaire",
+    "category": "Séparation",
+    "zone": "national",
+    "org": "CAF / ARIPA",
+    "description": "Un service pour faciliter le versement d’une pension alimentaire ou agir en cas d’impayé.",
+    "when": "Situation juridique de la pension, titre exécutoire et modalités de versement.",
+    "steps": [
+      "Identifier si une pension est fixée par un titre exécutoire.",
+      "Vérifier les conditions de mise en place de l’intermédiation financière.",
+      "Déposer ou suivre la demande sur le service officiel."
+    ],
+    "url": "https://www.service-public.fr/particuliers/vosdroits/R62156"
+  },
+  {
+    "id": "age",
+    "name": "Aide à la garde d’enfants lors d’une reprise d’emploi",
+    "category": "Emploi",
+    "zone": "national",
+    "org": "France Travail",
+    "description": "Une aide à la garde des enfants pour certains parents isolés qui reprennent un emploi ou une formation.",
+    "when": "Inscription et situation France Travail, âge des enfants et conditions de reprise d’emploi ou de formation.",
+    "steps": [
+      "Vérifier les conditions actuelles sur France Travail.",
+      "Rassembler les justificatifs concernant les enfants et la reprise d’activité.",
+      "Contacter France Travail ou engager la demande par le parcours indiqué."
+    ],
+    "url": "https://www.francetravail.fr/faq/candidat/mes-allocations---mes-aides/les-aides/pour-la-garde-denfants/agepi.html"
+  },
+  {
+    "id": "planning34",
+    "name": "Consultations et santé sexuelle",
+    "category": "Santé",
+    "zone": "34",
+    "org": "Planning Familial 34",
+    "description": "Informations et consultations liées à la contraception, la santé sexuelle et la vie affective.",
+    "when": "Consulter les permanences et modalités d’accueil du Planning Familial de l’Hérault.",
+    "steps": [
+      "Consulter les lieux et horaires des permanences.",
+      "Choisir un lieu d’accueil adapté à ton besoin.",
+      "Contacter le centre pour connaître les modalités de rendez-vous."
+    ],
+    "url": "https://www.planning-familial.org/fr/le-planning-familial-de-lherault-34"
+  }
+]

@@ -1,0 +1,2890 @@
+[
+  {
+    "source": {
+      "id": "region-occitanie:appels-a-projets-arts-de-la-scene-contrat-de-filiere-musiques-actuelles-en-occitanie-etat-region-cnm-2024-2027",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appels à projets - Arts de la Scène - Contrat de filière musiques actuelles en Occitanie État / Région / CNM - 2024-2027",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appels-a-projets-Arts-de-la-Scene-Contrat-de-filiere-musiques-actuelles-en-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2024-02-01 08:41:02",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-readynov-sante-du-futur-silver-economie-et-industrie-du-sport-clos",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets READYNOV - Santé du futur, Silver Economie et Industrie du sport  - Clos",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-READYNOV-Sante-du-futur-Silver-Economie-et-Industrie-du-sport-Clos",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2019-03-25 17:12:05",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:accompagnement-a-la-transmission-reprise-d-entreprise-en-zrr-et-zmm-de-la-region-occitanie-occtav",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Accompagnement à la transmission-reprise d’entreprise en ZRR et ZMM de la Région Occitanie – OCCTAV",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Accompagnement-a-la-transmission-reprise-d-entreprise-en-ZRR-et-ZMM-de-la-Region",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2019-02-04 18:30:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-france-2030-regionalise-projets-d-innovation",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - France 2030 régionalisé – Projets d’innovation",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-France-2030-regionalise-Projets-d-innovation",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2018-01-11 11:19:50",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-nbsp-lutte-contre-l-8217-illettrisme-sensibilisation-et-information-des-acteurs-sur-le-reperage-et-l-8217-orientation-des-publics",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets&nbsp;: Lutte contre l&#8217;illettrisme - sensibilisation et information des acteurs sur le repérage et l&#8217;orientation des publics",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Lutte-contre-l-illettrisme-sensibilisation-et-information-des-36959",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2018-02-23 16:42:48",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-total-festum-solstice-d-ete-feu-de-la-saint-jean",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Total Festum - Solstice d’été / Feu de la Saint-Jean",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Total-Festum-Solstice-d-ete-Feu-de-la-Saint-Jean",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-09-28 11:19:56",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:rencontres-id-metiers-campagne-2026-2027",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Rencontres ID.METIERS- Campagne 2026-2027",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Rencontres-ID-METIERS-Campagne-2026-2027",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-11-10 09:35:46",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:colloques-scientifiques-internationaux",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Colloques Scientifiques Internationaux",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/colloques-scientifiques-internationaux",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2020-06-04 17:17:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-pour-l-egalite-reelle-entre-les-femmes-et-les-hommes-en-occitanie-2023",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets pour l’égalité réelle entre les Femmes et les Hommes en Occitanie 2023",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-pour-l-egalite-reelle-entre-les-Femmes-et-les-Hommes-en-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2021-07-08 14:48:14",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-manifestation-d-interet-offres-de-bons-plans-jeunesse-carte-jeune-region",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à Manifestation d’Intérêt - Offres de Bons Plans jeunesse \"Carte Jeune Région\"",
+    "type": "Appel à manifestation d’intérêt",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/AMI-Bons-Plans-Jeunes",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-09-15 14:18:56",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-candidatures-d-operateurs-assurant-la-realisation-d-actions-d-accompagnement-a-la-creation-d-activite-agricole-a-l-accompagnement-conseil-des-transmissions",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à candidatures d’opérateurs assurant la réalisation d’actions d’accompagnement à la création d’activité agricole à l’accompagnement/conseil des transmissions",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-candidatures-d-operateurs-assurant-la-realisation-d-actions-d-accompagnement-45220",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-12-05 17:48:37",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-candidature-performance-et-resultats-du-service-public-de-prevention-et-de-gestion-des-dechets",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à candidature « Performance et Résultats » du Service Public de Prévention et de Gestion des Déchets",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-candidature-Performance-et-Resultats-du-Service-Public-de-Prevention-et-de-Gestion-des-Dechets",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-07-13 17:10:19",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-accompagnement-des-actions-d-experimentation-en-agriculture",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Accompagnement des actions d’expérimentation en agriculture",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Accompagnement-des-actions-d-experimentation-en-agriculture",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-05-02 11:19:47",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-anim-bio-pour-le-developpement-et-la-structuration-des-filieres-biologiques-en-occitanie",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Anim’Bio Pour le développement et la structuration des filières biologiques en Occitanie",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Anim-Bio-Pour-le-developpement-et-la-structuration-des-filieres",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-12-05 17:28:41",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-manifestation-d-interet-ami-territoires-viticoles-pilotes-laboratoires-d-une-filiere-en-mutation-et-d-une-region-aux-avant-postes-du-changement-climatique",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à Manifestation d’Intérêt (AMI) - Territoires viticoles pilotes, laboratoires d’une filière en mutation et d’une région aux avant-postes du changement climatique",
+    "type": "Appel à manifestation d’intérêt",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-Manifestation-Interet-Territoires-viticoles-pilotes-filiere-mutation",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2024-07-12 11:45:18",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-accompagner-les-transitions-et-les-metiers-de-demain",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets  - Accompagner les transitions et les métiers de demain",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Accompagner-les-transitions-et-les-metiers-de-demain-47882",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2026-05-26 10:55:42",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:culture-de-l-euroregion-2025",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Culture de l’Eurorégion 2025",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Culture-de-l-Euroregion-2025",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2025-06-12 11:27:29",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:pass-metiers-d-8217-art",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Pass Métiers d&#8217;art",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Pass-Metiers-d-art",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-03-15 11:56:36",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:biodiversite-preservation-et-restauration-de-la-biodiversite-a-l-echelle-regionale",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Biodiversité : Préservation et restauration de la biodiversité à l’échelle régionale",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Biodiversite-Preservation-et-restauration-de-la-biodiversite-a-l-echelle-regionale",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-11-08 10:30:51",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:eco-cheque-mobilite",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Éco-chèque mobilité",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Eco-cheque-mobilite",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2019-02-22 15:29:17",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-bi-sites-de-saint-gaudens-et-montrejeau-haute-garonne",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé bi-sites de Saint-Gaudens et Montréjeau (Haute-Garonne)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-bi-sites-de-Saint",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-01-13 16:22:20",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-lodeve-herault",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Lodève (Hérault)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Lodeve",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-01-17 10:13:48",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-mazamet-tarn",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à  Mazamet (Tarn)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Mazamet",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-10-25 18:05:22",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-beaucaire-et-jonquieres-saint-vincent-gard",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à  Beaucaire et Jonquières Saint Vincent (Gard)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Beaucaire",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-02-13 09:26:33",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-lussan-gard",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à  Lussan (Gard)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Lussan",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-12-12 14:56:26",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-fourques-pyrenees-orientales",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à  Fourques (Pyrénées Orientales)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Fourques",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-02-10 10:26:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-diffusion-de-la-culture-scientifique-technique-et-industrielle-csti-2027",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets diffusion de la Culture Scientifique Technique et Industrielle (CSTI) 2027",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-diffusion-de-la-Culture-Scientifique-Technique-et-Industrielle-CSTI",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2025-08-28 09:00:02",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-foodtrucks-2025-2026-site-de-capdeville",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Foodtrucks 2025-2026 - Site de Capdeville",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Foodtrucks-2024-2025-Site-de-Capdeville",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-06-08 08:30:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:l-etat-la-region-occitanie-et-la-banque-des-territoires-accelerent-la-renovation-des-coproprietes-touristiques-du-littoral",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "L’État, la Région Occitanie et la Banque des Territoires accélèrent la rénovation des copropriétés touristiques du littoral",
+    "type": "Appel à manifestation d’intérêt",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/PL21-Rehabilit",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2020-12-14 14:34:13",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-collaboratifs-i-demo-regionalise",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets collaboratifs I-Démo Régionalisé",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-collaboratifs-I-Demo-Regionalise",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-06-30 12:01:29",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-neree-4-valorisation-du-patrimoine-maritime-regional-d-occitanie",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Nérée 4 : valorisation du patrimoine maritime régional d’Occitanie",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Neree-4-valorisation-du-patrimoine-maritime-regional-d-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-05-25 08:49:42",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-tourisme-durable-responsable-et-solidaire",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Tourisme durable, responsable et solidaire",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Tourisme-durable-responsable-et-solidaire",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2024-03-06 16:22:22",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-manifestation-d-interet-2024-2025-171-nbsp-nouveaux-modeles-energetiques-citoyens-nbsp-187",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à Manifestation d’Intérêt 2024-2025 &#171;&nbsp;Nouveaux modèles énergétiques citoyens&nbsp;&#187;",
+    "type": "Appel à manifestation d’intérêt",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-Manifestation-d-Interet-2024-2025-Nouveaux-modeles-energetiques-citoyens",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2026-03-24 11:49:37",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:pack-zero-emballage-occitanie",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Pack Zéro Emballage Occitanie",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Pack-Zero-Emballage-Occitanie-47434",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2025-11-20 16:20:28",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:soutien-aux-projets-de-maisons-et-centres-de-sante-pluri-professionnels",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Soutien aux projets de maisons et centres de santé pluri-professionnels",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/soutien-maisons-de-sante",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-12-11 10:56:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:revenu-ecologique-jeunes",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Revenu Écologique Jeunes",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Revenu-ecologique-Jeunes",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-03-24 10:43:56",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-a-les-cabannes-ariege",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé à Les Cabannes (Ariège)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-a-Les-Cabannes-Ariege",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-01-13 16:22:21",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-reduction-de-l-impact-des-ancres-des-navires-de-plaisance-par-la-mise-en-peuvre-de-mouillages-organises",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Réduction de l’impact des ancres des navires de plaisance par la mise en peuvre de mouillages organisés",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Reduction-de-l-impact-des-ancres-des-navires-de-plaisance-par-la",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-11-17 10:04:32",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:accompagnement-des-plantations-agricoles-en-occitanie",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Accompagnement des plantations agricoles en Occitanie",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Accompagnement-des-plantations-agricoles-en-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-04-26 09:33:56",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:innovations-pedagogiques-dans-l-enseignement-superieur",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Innovations pédagogiques dans l’enseignement supérieur",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Innovations-pedagogiques-dans-l-enseignement-superieur",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-05-16 09:20:12",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-occitanie-libre-et-solidaire-handicap-egalite-femmes-hommes-lutte-contre-le-racisme-et-l-antisemitisme-les-lgbtqia-phobies-et-autres-discriminations",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Occitanie Libre et Solidaire – Handicap, Egalité femmes-hommes, Lutte contre le racisme et l’antisémitisme, les LGBTQIA+phobies et autres discriminations",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Occitanie-Libre-et-Solidaire-Handicap-Egalite-femmes-hommes-Lutte",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-07-07 16:39:45",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:cooperation-internationale-pour-l-eau-2024",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Coopération internationale pour l’eau 2024",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Cooperation-internationale-pour-l-eau-2024",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2024-10-28 16:22:55",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-entrepreneuriat",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets Entrepreneuriat",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Entrepreneuriat",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2025-01-31 14:21:38",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projet-accompagnement-a-la-creation-d-activite-agricole-post-installation",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à Projet - Accompagnement à la création d’activité agricole (post-installation)",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-Projet-Accompagnement-a-la-creation-d-activite-agricole-post-installation",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2026-03-26 09:42:09",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-en-faveur-de-la-sensibilisation-et-de-l-amelioration-des-conditions-d-accueil-des-beneficiaires-d-une-protection-internationale-et-des-demandeurs-d-asile",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets en faveur de la sensibilisation et de l’amélioration des conditions d’accueil des bénéficiaires d’une protection internationale et des demandeurs d’asile",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Soutien-demandeurs-asile-bpi-refugies",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-07-11 11:48:46",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-borderes-sur-l-echez-hautes-pyrenees",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Bordères-sur-l’Echez (Hautes-Pyrénées)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Borderes",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-07-12 16:19:35",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-loures-barousse-hautes-pyrenees",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de  Loures-Barousse (Hautes-Pyrénées)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Loures-Barousse",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-01-13 16:22:25",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-lacaune-tarn",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à Lacaune (Tarn)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Lacaune",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-02-13 08:58:58",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:aux-cotes-des-agriculteurs",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Aux côtés des agriculteurs",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Aux-cotes-des-agriculteurs",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2024-09-24 16:30:17",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-cooperation-internationale-occitanie-resilience-des-territoires-maroc-senegal-palestine",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Coopération internationale Occitanie Résilience des Territoires  Maroc - Sénégal - Palestine",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Cooperation-internationale-Occitanie-Resilience-des-Territoires",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2026-10-22 16:38:51",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:telechargements-des-fichiers-coup-de-pousse-2016",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Téléchargements des fichiers - Coup de pousse 2016",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Telechargements-des-fichiers-Coup-de-pousse-2016",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2016-07-08 16:55:38",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-handicap-occitanie-2023",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Handicap Occitanie 2023",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/AAP-Handicap-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2020-07-20 09:30:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-info-metiers",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Info métiers",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Info-metiers",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2021-11-26 16:33:34",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-apprentissage-en-occitanie-2026",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Apprentissage en Occitanie 2026",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Apprentissage-en-Occitanie-2026",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2020-07-17 10:47:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-emergence-edition-2027",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets \"EMERGENCE\" - Edition 2027",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-EMERGENCE",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2025-09-01 10:12:32",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-candidatures-foodtrucks-2026-2027-site-de-capdeville",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à candidatures - Foodtrucks 2026-2027 - Site de Capdeville",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-candidatures-Foodtrucks-2026-2027-Site-de-Capdeville",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2026-06-12 12:11:42",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-a-salviac-lot",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé  à Salviac  (Lot)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-Salviac-Cazals",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-01-13 16:22:24",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-multi-sites-a-castelsarrasin-la-ville-dieu-du-temple-et-saint-porquier-tarn-et-garonne",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé  multi-sites à Castelsarrasin, La Ville-Dieu-du-Temple et Saint-Porquier (Tarn-et-Garonne)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-Tarn-et-Garonne",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-01-13 16:22:14",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-livinhac-le-haut-et-saint-santin-aveyron",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à  Livinhac-Le-Haut et Saint-Santin (Aveyron)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-Aveyron",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-02-10 07:45:07",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-manifestation-d-interet-projets-structurants-de-culture-scientifique-technique-et-industrielle",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à manifestation d’intérêt - Projets structurants de Culture Scientifique Technique et Industrielle",
+    "type": "Appel à manifestation d’intérêt",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-manifestation-d-interet-Projets-structurants-de-Culture-Scientifique",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-11-14 13:07:23",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-dispositif-regional-d-accompagnement-des-jeunes-volontaires-en-service-civique-2025-2026",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Dispositif régional d’accompagnement des jeunes volontaires en service civique 2025/2026",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-service-civique",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-01-03 11:35:34",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-manifestation-d-interet-ecole-regionale-du-numerique-2027-2030",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à manifestation d’intérêt - Ecole Régionale du Numérique 2027/2030",
+    "type": "Appel à manifestation d’intérêt",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/AMI-Ecole-Regionale-du-Numerique",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-07-19 14:56:52",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-candidature-optimisation-et-progres-du-service-public-de-prevention-et-de-gestion-des-dechets",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à candidature « Optimisation et Progrès » du Service Public de Prévention et de Gestion des Déchets",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-candidature-Optimisation-et-Progres-du-Service-Public-de-Prevention-et-de-Gestion-des-Dechets",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-07-13 17:09:42",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-pour-le-soutien-aux-actions-de-developpement-et-structuration-des-filieres-en-agriculture-biologique-en-occitanie",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets pour le soutien aux  Actions de développement et structuration des filières en Agriculture Biologique en Occitanie",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-soutien-Actions-developpement-structuration-des-filieres-Agriculture-Biologique-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-07-20 09:28:19",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-manifestation-d-8217-interet-transformer-son-entreprise-vers-un-engagement-plus-vert",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à Manifestation d&#8217;Intérêt \"Transformer son entreprise - Vers un engagement plus vert\"",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/AMI-FACE-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2021-06-22 16:33:36",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-cooperation-transfrontaliere-dans-les-pyrenees",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Coopération transfrontalière dans les Pyrénées",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Cooperation-transfrontaliere-dans-les-Pyrenees",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-02-08 11:03:00",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-cooperation-internationale-pour-l-eau-et-l-agroecologie-2025",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - « Coopération internationale pour l’eau et l’agroécologie » 2025",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Cooperation-internationale-pour-l-eau-et-l-agroecologie-2025",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-12-08 15:13:04",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projets-impulser-des-formations-d-enseignement-superieur-pour-preparer-aux-metiers-de-demain-2027",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projets - Impulser des formations d’enseignement supérieur pour préparer aux métiers de demain 2027",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projets-Impulser-des-formations-d-enseignement-superieur-pour-preparer-aux",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2024-04-15 09:00:01",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projet-investissement-pour-la-solidarite-alimentaire",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à projet - \"Investissement pour la solidarité alimentaire\"",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-projet-Investissement-pour-la-solidarite-alimentaire",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2025-06-05 11:48:35",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projet-plan-littoral-21-deploiement-des-ports-propres-en-occitanie",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à Projet - Plan Littoral 21 - Déploiement des Ports Propres en Occitanie",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-Projet-Plan-Littoral-21-Deploiement-des-Ports-Propres-en-Occitanie",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2026-03-26 09:47:49",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:appel-a-projet-accompagnement-a-la-creation-d-activite-agricole-pre-installation",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Appel à Projet - Accompagnement à la création d’activité agricole (pré-installation)",
+    "type": "Appels à projets",
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Appel-a-Projet-Accompagnement-a-la-creation-d-activite-agricole-pre-installation",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2026-03-26 09:44:05",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:aide-regionale-au-developpement-des-installations-geothermiques",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Aide régionale au développement des installations géothermiques",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Aide-regionale-au-developpement-des-installations-geothermiques",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-07-11 15:41:43",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:solidarite-alimentaire-en-occitanie",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Solidarité Alimentaire en Occitanie",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/bien-manger-pour-tous",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2020-11-04 11:04:33",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:eco-cheque",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Eco-chèque",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/eco-cheque",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2019-04-25 18:24:17",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-durban-corbieres-aude",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de médecins généralistes pour le Centre de Santé de Ma Région à  Durban-Corbières (Aude)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Durban",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2022-01-13 16:22:16",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  },
+  {
+    "source": {
+      "id": "region-occitanie:recrutement-de-medecins-generalistes-pour-le-centre-de-sante-de-ma-region-a-verdun-sur-garonne-tarn-et-garonne",
+      "dataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "retrievedAt": "2026-11-24T00:53:03.529Z"
+    },
+    "name": "Recrutement de  médecins généralistes pour le Centre de Santé de Ma Région à Verdun-sur-Garonne (Tarn et Garonne)",
+    "type": null,
+    "audienceReview": "excluded-not-aid",
+    "description": null,
+    "conditions": null,
+    "documents": null,
+    "applicationSteps": null,
+    "officialUrl": "https://www.laregion.fr/Recrutement-de-medecins-generalistes-pour-le-Centre-de-Sante-de-Ma-Region-a-Verdun",
+    "validFrom": null,
+    "validUntil": null,
+    "periodStatus": "period-not-found-manual-review",
+    "beneficiaryRaw": "2023-02-14 15:39:05",
+    "rawFieldNames": [
+      "titre",
+      "type",
+      "chapo",
+      "introduction",
+      "date_publication",
+      "date_modification",
+      "url",
+      "thematiques",
+      "logo",
+      "source_record_id"
+    ],
+    "reviewStatus": "pending",
+    "publicationStatus": "pending",
+    "reviewNotes": [
+      "Import brut à contrôler contre la page officielle du dispositif.",
+      "Les critères, pièces et étapes restent non vérifiés tant qu'ils ne sont pas reliés à des sources dédiées."
+    ]
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "asf": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "2026-04-01/2027-03-31", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["CAF/ARIPA indique absence de condition de ressources, vie seule avec enfant à charge de moins de 20 ans et des règles différentes selon l'absence, le faible montant ou l'impayé de pension.", "Les montants ont changé au 1er avril 2026; la fiche prototype et son URL ne décrivent pas les exceptions, formalités ni pièces.", "Règles complètes, formulaire actuel et cas de pension à recouper avant publication."],
+    "sources": [{"label":"CAF / ARIPA — Allocation de soutien familial","url":"https://pension-alimentaire.caf.fr/usagers/aides-et-demarches/allocation-de-soutien-familial","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF — Barème ASF au 1er avril 2026","url":"https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-allocation-de-soutien-familial","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF — Formulaire ASF / intermédiation / recouvrement","url":"https://www.caf.fr/sites/default/files/medias/cnaf/Partenaires/Mon_Compte_Partenaire/Tuteurs%20moraux/Formulaires/Asf/asf-tr-metro.pdf","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "af": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": null, "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["La source Service-Public établit le seuil de deux enfants à charge en métropole; les seuils de modulation, âge/charge, résidence, garde alternée et démarches doivent être repris des sources réglementaires et CAF/MSA."],
+    "sources": [{"label":"Service-Public — Prestations selon le nombre d'enfants","url":"https://www.service-public.fr/particuliers/vosdroits/F14723","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"Service-Public — Prestations sous conditions de ressources","url":"https://www.service-public.fr/particuliers/vosdroits/F13212","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "prime": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": null, "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Service-Public confirme l'âge minimal de 18 ans et le périmètre des actifs salariés/non salariés; les règles détaillées, revenus du foyer, résidence, exceptions étudiants/apprentis, périodes de ressources et déclaration trimestrielle restent à vérifier."],
+    "sources": [{"label":"Service-Public — Prime d'activité","url":"https://www.service-public.fr/particuliers/vosdroits/N31477","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "logement": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": null, "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["APL, ALF et ALS sont trois prestations distinctes, attribuées selon des critères de logement, foyer et ressources; ne pas les présenter comme une décision unique sans expliquer le mécanisme de priorité.", "La demande passe par la CAF ou la MSA; les pièces varient selon le parcours dématérialisé. Vérifier les critères, périodes de ressources et justificatifs exacts."],
+    "sources": [{"label":"Service-Public — Aides personnelles au logement","url":"https://www.service-public.fr/particuliers/vosdroits/F14723","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF Hérault — Étapes de la demande d'aide au logement","url":"https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/logement/aideaulogementmontpellier/les-3-etapes-de-l-aide-au-logement","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF — Foire aux questions logement","url":"https://www.caf.fr/allocataires/foire-aux-questions/logement","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "cf": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "2026-04-01/2027-03-31", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Il faut au moins trois enfants à charge, dont le plus jeune a au moins 3 ans, sous conditions de ressources; versement annoncé automatiquement si le dossier CAF est à jour.", "Barème et seuils changent annuellement. Reprendre les règles et modalités CAF/MSA en vigueur avant publication."],
+    "sources": [{"label":"CAF — Barème du complément familial au 1er avril 2026","url":"https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-complement-familial","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF — FAQ sur le complément familial","url":"https://www.caf.fr/allocataires/foire-aux-questions/vie-personnelle?field_prestation_target_id=832","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "ars": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "rentrée-2026", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Conditions 2026 issues d'une source CAF : enfant de 6 à 18 ans selon la situation, ressources 2024 sous plafond; déclaration de poursuite d'études pour les 16–18 ans, versement automatique généralement entre 6–15 ans avec exception entrée en CP avant 6 ans.", "Cette campagne est datée et les montants/plafonds doivent être renouvelés pour la rentrée 2027."],
+    "sources": [{"label":"CAF — Guide des prestations 2026, ARS","url":"https://www.caf.fr/sites/default/files/medias/521/actualit%C3%A9s/Guide%20des%20prestation%202026%20Numerique%20FINAL%20page%20simple.pdf","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF — Barème ARS rentrée 2026","url":"https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-allocation-de-rentree-scolaire","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "cmg": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "règles à compter du 2025-09-01; alternance à compter du 2025-12-01", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Le prototype fusionne emploi direct et structures alors que la réforme 2025 ne s'applique pas aux mêmes modes de garde; les règles monoparentales jusqu'à 12 ans et résidence alternée ont des dates d'effet distinctes.", "Démarches, critères résiduels, preuves et règles propres à chaque mode de garde à confirmer sur les pages CAF et Pajemploi/Urssaf."],
+    "sources": [{"label":"CAF — FAQ réforme du CMG","url":"https://caf.fr/allocataires/actualites/actualites-nationales/reforme-du-cmg-la-foire-aux-questions","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF Hérault — Guide des prestations 2026 CMG","url":"https://www.caf.fr/sites/default/files/medias/951/2026/livret-PCPE-01-2026-t1.pdf","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "fsl": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "règlements locaux à dater", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Le territoire 34 n'a pas un circuit unique : Montpellier Méditerranée Métropole gère son FSL pour les 31 communes; le Département intervient sur le reste du territoire. Saisine via travailleur social obligatoire dans les pages consultées.", "Deux règlements territoriaux, critères, formulaires et pièces à analyser séparément avant publication."],
+    "sources": [{"label":"Département de l'Hérault — Aides financières logement","url":"https://herault.fr/402-aide-financiere.htm","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"Montpellier Méditerranée Métropole — FSL","url":"https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"Montpellier Méditerranée Métropole — Règlement FSL 2025","url":"https://www.montpellier.fr/sites/default/files/2025-11/20250101%20R%C3%A8glement%20int%C3%A9rieur_FSL%203M.pdf","kind":"legal-text","consultedAt":"2026-11-23"}]
+  },
+  "domicile": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": null, "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["L'aide est proposée aux allocataires et, sous certaines conditions, aux non-allocataires; un SAAD réalise un diagnostic et définit le plan d'intervention. Dans l'Hérault, orientation directe vers un service autorisé et conventionné.", "Motifs d'intervention, critères détaillés, tarifs/quotient familial, durée et coordonnées locales doivent être vérifiés sur le référentiel en vigueur."],
+    "sources": [{"label":"CAF Hérault — Aide à domicile des familles","url":"https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/vie-personnelle/parentalite/l-aide-au-domicile-des-familles-dans-l-herault","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF — Aide et accompagnement à domicile: conditions et demande","url":"https://caf.fr/allocataires/aides-et-demarches/ma-situation/vie-personnelle/je-souhaite-beneficier-d-une-aide-et-d-un-accompagnement-domicile","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "vacaf": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "campagne 2026 seulement", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Pour l'AVF Hérault 2026, QF de janvier ≤ 1 000 €, notification individuelle, durée 3 à 8 jours consécutifs, structure VACAF; le barème est annuel et les aides dépendent des fonds disponibles.", "La fiche ne peut pas être publiée comme règle permanente; renouveler la campagne et vérifier modalités de réservation et pièces chaque année."],
+    "sources": [{"label":"CAF Hérault — Aide aux vacances familles 2026","url":"https://caf.fr/allocataires/caf-de-l-herault/offre-de-service/vie-personnelle/vacances-et-loisirs/l-aide-aux-vacances-familles-avf","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "carte": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "rentrée 2026-2027", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["La Carte Jeune Région est un support donnant accès à plusieurs avantages et aides, pas une aide unique. L'accès dépend d'un établissement/public éligible; procédure annuelle, justificatifs selon cursus.", "Séparer les avantages juridiquement distincts du support Carte Jeune Région avant publication d'une fiche d'aide."],
+    "sources": [{"label":"Région Occitanie — Demander la Carte Jeune Région","url":"https://www.laregion.fr/Demander-la-Carte-Jeune-Region","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"Région Occitanie — Présentation Carte Jeune Région","url":"https://www.laregion.fr/-cartejeune-","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "transport": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "année scolaire 2026-2027", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["L'inscription et la décision dépendent du profil scolaire, du lieu, de la distance, du secteur, de la régularité et parfois d'une autre autorité organisatrice. L'aide individuelle de transport est un parcours séparé de l'abonnement scolaire.", "Les règles et calendriers sont annuels; vérifier compétence locale dans l'Hérault et pièces propres au dossier."],
+    "sources": [{"label":"Région Occitanie / liO — Transport scolaire 2026-2027","url":"https://www.lio-occitanie.fr/transport-scolaire","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"Région Occitanie / liO — Inscriptions 2026-2027","url":"https://www.lio-occitanie.fr/inscription-transport-scolaire-2026","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "aves": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "campagne été 2026 seulement", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["L'AVES Hérault est une aide au premier départ en vacances des enfants (6–16 ans), QF janvier 2026 ≤ 700 €, places limitées et accompagnement par un partenaire relais obligatoire; le prototype ne décrit pas les critères ni le parcours exacts.", "Ne pas confondre avec l'aide aux vacances enfants AVE, l'aide aux vacances sociales AVS ou l'aide aux vacances familles AVF. La campagne 2026 est échue."],
+    "sources": [{"label":"CAF Hérault — Règlement d'action sociale 2026 (AVES/AVE)","url":"https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF Hérault — Vacances et loisirs","url":"https://caf.fr/allocataires/caf-de-l-herault/offre-de-service/vie-personnelle/vacances-et-loisirs","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "css": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": "seuils à compter du 2026-04-01", "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Demande pour le foyer auprès de la CPAM sur ameli ou formulaire papier; ressources de la période de référence et justificatifs dépendent des cas. Plafonds actualisés au 1er avril 2026.", "Composition exacte du foyer, exceptions, seuils en euros et justificatifs à revérifier à la date de demande."],
+    "sources": [{"label":"Assurance Maladie — Demander la Complémentaire santé solidaire","url":"https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire-demande","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"Service-Public — Plafonds C2S 2026","url":"https://www.service-public.fr/particuliers/actualites/A17326","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "aripa": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": null, "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Le prototype réunit gestion et recouvrement; l'intermédiation financière et l'aide au recouvrement sont des parcours distincts. Depuis 2023, elle est en principe automatique pour les décisions judiciaires, avec exceptions; les demandes en ligne requièrent le titre et autres pièces selon le cas."],
+    "sources": [{"label":"Service-Public — Demande d'intermédiation financière","url":"https://www.service-public.fr/particuliers/vosdroits/R62156","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"CAF / ARIPA — Intermédiation financière","url":"https://pension-alimentaire.caf.fr/usagers/aides-et-demarches/intermediation-financiere","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "age": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": null, "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["France Travail présente désormais l'aide comme AGE (ancien nom AGEPI dans certaines pages): critères d'inscription/indemnisation, reprise ou formation, moins de 12 ans, demandes dans un délai donné et pièces justificatives. Le prototype utilise un intitulé/URL hérités."],
+    "sources": [{"label":"France Travail — AGE pendant une formation","url":"https://www.francetravail.fr/candidat/en-formation/les-dispositifs/formation---laide-a-la-garde-den.html","kind":"official-guidance","consultedAt":"2026-11-23"},{"label":"France Travail — AGE à la reprise d'emploi","url":"https://www.francetravail.fr/candidat/vos-recherches/les-aides-financieres/reprise-demploi---laide-a-la-gar.html","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  },
+  "planning34": {
+    "publicationStatus": "pending", "reviewedAt": "2026-11-23", "currentForPeriod": null, "eligibilityRulesReady": false, "testCases": 0,
+    "notes": ["Fiche service de santé/orientation associative (pas une aide financière). Permanences, modalités de rendez-vous, coordonnées et offre de soins doivent être rattachées aux lieux exacts et actualisées."],
+    "sources": [{"label":"Planning Familial 34 — Accueil, consultations et permanences","url":"https://www.planning-familial.org/fr/le-planning-familial-de-lherault-34","kind":"official-guidance","consultedAt":"2026-11-23"}]
+  }
+}

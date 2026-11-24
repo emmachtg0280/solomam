@@ -1,0 +1,353 @@
+{
+  "registryVersion": 1,
+  "auditedAt": "2026-11-23",
+  "countingPolicy": "Only distinct normalized aid records actually retrieved, mapped to the canonical model, stored and usable count as imported records. Consultation, code inspection, metadata, or a link alone count as zero.",
+  "sources": [
+    {
+      "id": "openfisca-france",
+      "name": "OpenFisca France",
+      "url": "https://github.com/openfisca/openfisca-france",
+      "role": "French socio-fiscal calculation model; code, variables, dated parameters and tests",
+      "status": "repository-reviewed-reference-only",
+      "updatedAtObserved": "2026-11-03 (repository activity observed)",
+      "version": "No commit pinned in this MVP",
+      "license": "AGPL-3.0 (repository license file)",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Potentially relevant national socio-fiscal rules; not all benefits, local aid, application processes, or official award decisions",
+      "limitations": [
+        "No code, variables or rules imported or activated",
+        "Check period, variable semantics, assumptions, upstream tests and source law aid by aid",
+        "Network API is prototyping only; production requires hosting and versioning"
+      ]
+    },
+    {
+      "id": "openfisca-api-docs",
+      "name": "OpenFisca Web API documentation",
+      "url": "https://openfisca.org/doc/openfisca-web-api/",
+      "role": "API endpoints and operational constraints",
+      "status": "documentation-reviewed-reference-only",
+      "version": "Documentation current at consultation; API version not pinned",
+      "license": "Documentation terms not independently verified",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "API simulation contract and public France endpoint guidance",
+      "limitations": [
+        "No API call or simulation performed",
+        "Public endpoint has no production SLA and may change"
+      ]
+    },
+    {
+      "id": "aides-simplifiees-app",
+      "name": "Aides Simplifiées application",
+      "url": "https://github.com/betagouv/aides-simplifiees-app",
+      "role": "Reference implementation for aid simulation flows and application architecture",
+      "status": "repository-reviewed-reference-only",
+      "version": "No commit pinned in this MVP",
+      "license": "AGPL-3.0",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Application code (AdonisJS, Inertia/Vue, PostgreSQL, OpenFisca/LexImpact integrations)",
+      "limitations": [
+        "Not a normalized authoritative aid dataset",
+        "No rules or records imported; license obligations apply to any code reuse"
+      ]
+    },
+    {
+      "id": "aides-simplifiees-docs",
+      "name": "Aides Simplifiées documentation",
+      "url": "https://github.com/betagouv/aides-simplifiees-docs",
+      "role": "Methodology for aid rules, journeys, source traceability and tests",
+      "status": "documentation-reviewed-reference-only",
+      "version": "No commit pinned in this MVP",
+      "license": "Exact repository license not confirmed",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Methods and documentation, not aid records",
+      "limitations": [
+        "Methodology informed governance notes only",
+        "No rule model, questionnaire or test case imported"
+      ]
+    },
+    {
+      "id": "aides-jeunes",
+      "name": "Aides Jeunes",
+      "url": "https://github.com/DNUM-SocialGouv/aides-jeunes",
+      "role": "Reference for catalogue maintenance, link/geography/period checks",
+      "status": "repository-reviewed-reference-only",
+      "version": "No commit pinned; data directory not inspected successfully",
+      "license": "AGPL-3.0",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Youth-focused catalogue and maintenance tooling",
+      "limitations": [
+        "Audience is not equivalent to Solomam's scope",
+        "Underlying benefit records, provenance and data license not verified; no reuse"
+      ]
+    },
+    {
+      "id": "region-occitanie-dataset",
+      "name": "Aides et appels à projets de la Région Occitanie (open data)",
+      "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
+      "role": "Potential structured source for regional schemes",
+      "status": "official-snapshot-imported-qualification-in-progress",
+      "version": "Snapshot captured 2026-11-24T00:53:03.529Z; live dataset revision not separately pinned",
+      "license": "Licence Ouverte / Open Licence 2.0 (confirmed on the dataset portal)",
+      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "endpointProbe": {
+        "consent": "accepted for the recorded import",
+        "metadataRetrieved": true,
+        "datasetRecordsRetrieved": 229,
+        "rawSnapshotWritten": true,
+        "networkCause": null
+      },
+      "recordsImported": 229,
+      "uniqueUsableAids": 0,
+      "candidateRowsObserved": 229,
+      "candidateAidRowsObserved": 153,
+      "coverage": "229 official dataset records; 153 rows categorized Aides; 76 other categories excluded from this aid qualification run",
+      "limitations": [
+        "Dataset has no beneficiary, eligibility, documents, application process or legal validity fields",
+        "Qualification register has 22 relevant candidates, 28 confirmed non-relevant items, 2 expired items and 101 manual reviews",
+        "No regional aid card is published until current rules and application routes are normalized",
+        "Local snapshot count differs from the portal observation and needs reconciliation at the next import"
+      ],
+      "candidateAidRowsQualifiedRelevant": 22,
+      "candidateAidRowsExpired": 2,
+      "candidateAidRowsExcluded": 28,
+      "candidateAidRowsPendingReview": 101,
+      "attribution": "Source : R?gion Occitanie ? Aides et appels ? projets; cite the source and last update date.",
+      "portalObservation": {
+        "observedAt": "2026-11-23",
+        "recordsDisplayed": 228,
+        "aidRowsDisplayed": 152,
+        "localSnapshotRecords": 229,
+        "localSnapshotAidRows": 153,
+        "discrepancy": "The locally captured snapshot has one more total record and one more Aides row than the portal observation; reconcile on next import."
+      }
+    },
+    {
+      "id": "region-official-catalogue",
+      "name": "Région Occitanie — aides et appels à projets",
+      "url": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
+      "role": "Official detailed regional scheme pages and application routes",
+      "status": "official-pages-reviewed-partially",
+      "version": "Live catalogue; individual page dates vary",
+      "license": "Reuse terms not verified for page content",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "candidateResultsObserved": 357,
+      "coverage": "Catalogue contains schemes and calls for multiple types of applicants",
+      "limitations": [
+        "Review is partial: 52 of 153 aid records have a decision supported by the linked official detail page",
+        "No complete individual application journey has yet been normalized into a publishable aid card",
+        "The remaining 101 official pages still require beneficiary, validity and application-path review"
+      ],
+      "pagesReviewed": 52,
+      "relevantCandidates": 22,
+      "confirmedNonRelevant": 28,
+      "expired": 2,
+      "pendingManualReview": 101
+    },
+    {
+      "id": "caf-herault",
+      "name": "CAF de l'Hérault",
+      "url": "https://www.caf.fr/allocataires/caf-de-l-herault",
+      "role": "Local aid catalogue, service routes and local CAF guidance",
+      "status": "landing-page-reviewed-reference-only",
+      "version": "Live pages; local rules may be annual",
+      "license": "Reuse terms not verified",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Entry point to local benefits/services; aid-specific pages required",
+      "limitations": [
+        "Landing page is not a full rule or process source",
+        "Dynamic pages and content dates require aid-by-aid capture"
+      ]
+    },
+    {
+      "id": "caf-herault-rias",
+      "name": "CAF Hérault — Règlement intérieur d'action sociale (RIAS)",
+      "url": "https://www.caf.fr/professionnels/offres-et-services/caf-de-l-herault/partenaires-locaux",
+      "role": "Annual rules for local social-action aids and holiday assistance",
+      "status": "official-document-found-not-fully-extracted",
+      "version": "2026 PDF surfaced: https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
+      "license": "Reuse terms not independently verified",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "2026 local CAF terms, including holiday aids in the surfaced document",
+      "limitations": [
+        "Provided landing page served maintenance during direct review",
+        "PDF located but not fully extracted and mapped; annual validity must be retained"
+      ]
+    },
+    {
+      "id": "caf-herault-secours",
+      "name": "CAF Hérault — secours et prêts sociaux",
+      "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux",
+      "role": "Local exceptional grants and social loans",
+      "status": "provided-page-maintenance-alternative-official-reference-found",
+      "version": "Current Hérault rules/document version not identified",
+      "license": "Reuse terms not verified",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "CAF Hérault landing page confirms exceptional grants/loans exist; current detailed local criteria not retrieved",
+      "limitations": [
+        "Provided page returned maintenance",
+        "An RIAS from another CAF is not transferable to Hérault",
+        "Local eligibility, application, evidence and validity remain unverified"
+      ]
+    },
+    {
+      "id": "fsl-herault",
+      "name": "Département de l'Hérault — FSL",
+      "url": "https://herault.fr/402-aide-financiere.htm",
+      "role": "Departmental housing solidarity fund information",
+      "status": "official-guidance-reviewed-no-normalized-record",
+      "version": "Current web page; regulation version not established",
+      "license": "Reuse terms not verified",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "FSL purposes and territorial split; department's coverage excludes Montpellier Méditerranée Métropole",
+      "limitations": [
+        "The linked departmental regulation found was dated several years earlier and cannot establish current terms",
+        "Do not apply departmental process to 31 metropolitan communes"
+      ]
+    },
+    {
+      "id": "fsl-montpellier-metropole",
+      "name": "Montpellier Méditerranée Métropole — FSL",
+      "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement",
+      "role": "Metropolitan FSL guidance and rules for 31 communes",
+      "status": "official-guidance-and-2025-regulation-reviewed-no-normalized-record",
+      "version": "Regulation dated 2025-01-01: https://www.montpellier.fr/sites/default/files/2025-11/20250101%20R%C3%A8glement%20int%C3%A9rieur_FSL%203M.pdf",
+      "license": "Reuse terms not verified",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Montpellier Méditerranée Métropole, 31 communes; social-worker-initiated route observed",
+      "limitations": [
+        "Separate territorial variant from departmental FSL",
+        "Verify whether 2025 document remains in force and extract each intervention branch"
+      ]
+    },
+    {
+      "id": "api-geo",
+      "name": "API Géo",
+      "url": "https://geo.api.gouv.fr/",
+      "role": "Resolve communes, INSEE codes, departments, regions, EPCI and postal-code relations",
+      "status": "official-snapshot-imported-and-normalized",
+      "version": "Snapshot retrieved 2026-11-24T00:53:03.529Z",
+      "license": "Open Data licences (data.gouv.fr service metadata); field-level licence is not named as one uniform licence in the API metadata.",
+      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "endpointProbe": {
+        "latestRefreshHttpStatus": 200,
+        "latestRefreshNetworkCause": null,
+        "departments": 13,
+        "communes": 4446,
+        "postalMappings": 4482
+      },
+      "recordsImported": 4446,
+      "uniqueUsableAids": 0,
+      "postalMappingsImported": 4482,
+      "coverage": "Official administrative geography for Occitanie; geographic membership routes a rule but does not establish legal coverage",
+      "limitations": [
+        "Current refresh remains blocked by EACCES in this execution environment",
+        "Postal crosswalk derived from API Géo is reported separately from La Poste"
+      ],
+      "licenseEvidenceUrl": "https://www.data.gouv.fr/dataservices/api-decoupage-administratif-api-geo",
+      "attribution": "Source : API G?o (Etalab / DINUM), r?f?rentiels administratifs INSEE."
+    },
+    {
+      "id": "postal-codes",
+      "name": "Base officielle des codes postaux",
+      "url": "https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux",
+      "role": "Postal-code to commune/INSEE-code crosswalk",
+      "status": "official-snapshot-imported-and-normalized",
+      "version": "Source updated 2023-07-09T07:01:18+00:00; fetched 2026-11-24T00:53:03.529Z",
+      "license": "Licence Ouverte / Open Licence 2.0 (confirmed on data.gouv.fr)",
+      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "endpointProbe": {
+        "latestRefreshHttpStatus": 200,
+        "latestRefreshNetworkCause": null,
+        "encoding": "windows-1252",
+        "sourceRows": 39192,
+        "uniqueCommunePostalPairsFrance": 35511,
+        "identicalFullRows": 0,
+        "repeatedRowsForSharedPair": 3681,
+        "OccitaniePairsWithMultipleRows": 154,
+        "priorUserRun": null
+      },
+      "recordsImported": 4482,
+      "uniqueUsableAids": 0,
+      "coverage": "4,482 distinct Occitanie commune/postal-code pairs cross-checked against API Géo; 4,446 communes matched",
+      "limitations": [
+        "Dataset last updated in 2023 and therefore needs freshness monitoring",
+        "Repeated INSEE/postal pairs are not exact duplicate rows; preserve alternative delivery labels and Ligne_5 values",
+        "Postal relation supports geographic routing only and does not itself establish a programme's legal territory"
+      ],
+      "attribution": "Source : La Poste ? Base officielle des codes postaux; include source update date 2023-07-09."
+    },
+    {
+      "id": "data-inclusion-open-data",
+      "name": "data·inclusion — open data",
+      "url": "https://data.inclusion.gouv.fr/acc%C3%A9der-aux-donnees/api-open-data/",
+      "role": "Discover social support structures/services and orientation",
+      "status": "documentation-reviewed-not-imported",
+      "version": "Open-data refresh described as weekly; no dated snapshot pinned",
+      "license": "Open-data terms to verify on chosen export",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Support services and structures; not benefit eligibility rules",
+      "limitations": [
+        "No export imported",
+        "Must inspect field-level sensitivity, record-level terms and deduplicate on import"
+      ]
+    },
+    {
+      "id": "data-inclusion-api-docs",
+      "name": "data·inclusion API documentation",
+      "url": "https://data.inclusion.gouv.fr/outils-et-documentation/documentation-api/",
+      "role": "API endpoints, detail lookup and access conditions",
+      "status": "documentation-reviewed-not-connected",
+      "version": "Live documentation; API schema not pinned",
+      "license": "API terms/access agreement must be checked",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "API documentation says access is restricted/token-based; some contact fields require care",
+      "limitations": [
+        "No API key or call used",
+        "Use open dataset or approved service only; avoid exposing sensitive referral contacts"
+      ]
+    },
+    {
+      "id": "service-public",
+      "name": "Service-Public.fr",
+      "url": "https://www.service-public.gouv.fr/",
+      "role": "Official citizen guidance, eligibility summaries and forms for national procedures",
+      "status": "official-pages-consulted-per-aid-no-bulk-import",
+      "version": "Individual pages have their own update dates",
+      "license": "Content reuse conditions not reviewed as a bulk dataset",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Several prototype national aids received initial page-level review, recorded in review.json",
+      "limitations": [
+        "Not a bulk structured aid dataset",
+        "Must use aid-specific current pages and primary legal/administrator sources for exact rules"
+      ]
+    }
+  ]
+}

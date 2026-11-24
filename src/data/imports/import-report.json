@@ -1,0 +1,193 @@
+{
+  "importerVersion": 1,
+  "startedAt": "2026-11-24T00:53:03.529Z",
+  "completedAt": "2026-11-24T00:53:10.483Z",
+  "previousAttempt": {
+    "startedAt": "2026-11-24T00:51:43.775Z",
+    "counts": {
+      "regionRecordsRetrieved": 0,
+      "uniqueRegionAidCandidates": 0,
+      "regionDuplicates": 0,
+      "geographyDepartments": 13,
+      "geographyCommunes": 4446,
+      "normalizedGeographyCommunes": 4446,
+      "geographyDuplicates": 0,
+      "geoApiPostalMappings": 4482,
+      "postalDatasetRowsRetrieved": 39192,
+      "occitaniePostalRowsNormalized": 4482,
+      "postalCommunesMatched": 4446,
+      "postalDuplicates": 3681
+    },
+    "errors": [],
+    "priorPostalResponse": null
+  },
+  "historicalPostalResponse": {
+    "responseReceived": true,
+    "rawSaved": false,
+    "rowCount": "not recorded",
+    "fields": [
+      "#Code_commune_INSEE",
+      "Nom_de_la_commune",
+      "Code_postal",
+      "Libell�_d_acheminement",
+      "Ligne_5"
+    ],
+    "error": "SCHEMA_ERROR"
+  },
+  "counts": {
+    "regionRecordsRetrieved": 229,
+    "uniqueRegionAidCandidates": 0,
+    "regionDuplicates": 0,
+    "geographyDepartments": 13,
+    "geographyCommunes": 4446,
+    "normalizedGeographyCommunes": 4446,
+    "geographyDuplicates": 0,
+    "geoApiPostalMappings": 4482,
+    "postalDatasetRowsRetrieved": 39192,
+    "occitaniePostalRowsNormalized": 4482,
+    "postalCommunesMatched": 4446,
+    "postalDuplicates": 3681,
+    "postalDuplicateRowsBeyondFirstPerPair": 3681,
+    "postalExactDuplicateRows": 0,
+    "occitaniePostalPairsWithMultipleRows": 154,
+    "occitaniePostalRowsBeyondFirstPerPair": 217
+  },
+  "regionConsent": {
+    "required": true,
+    "accepted": true,
+    "status": "accepted"
+  },
+  "region": {
+    "retrievedRecords": 229,
+    "normalizedUniqueRecords": 229,
+    "individualAidCandidates": 0,
+    "organizationAndNonAidExcluded": 76,
+    "manualAudienceReview": 153,
+    "duplicateRecords": 0,
+    "schema": [
+      {
+        "name": "titre",
+        "description": null,
+        "annotations": {},
+        "label": "titre",
+        "type": "text"
+      },
+      {
+        "name": "type",
+        "description": null,
+        "annotations": {
+          "facet": true,
+          "disjunctive": true,
+          "sortable": true
+        },
+        "label": "Type",
+        "type": "text"
+      },
+      {
+        "name": "chapo",
+        "description": null,
+        "annotations": {},
+        "label": "Chapeau",
+        "type": "text"
+      },
+      {
+        "name": "introduction",
+        "description": null,
+        "annotations": {},
+        "label": "Extrait du contenu",
+        "type": "text"
+      },
+      {
+        "name": "date_publication",
+        "description": null,
+        "annotations": {},
+        "label": "date_publication",
+        "type": "text"
+      },
+      {
+        "name": "date_modification",
+        "description": null,
+        "annotations": {},
+        "label": "date_modification",
+        "type": "text"
+      },
+      {
+        "name": "url",
+        "description": null,
+        "annotations": {},
+        "label": "url",
+        "type": "text"
+      },
+      {
+        "name": "thematiques",
+        "description": null,
+        "annotations": {},
+        "label": "thematiques",
+        "type": "text"
+      },
+      {
+        "name": "logo",
+        "description": null,
+        "annotations": {},
+        "label": "logo",
+        "type": "text"
+      }
+    ]
+  },
+  "geography": {
+    "status": "fresh",
+    "sourceRetrievedAt": "2026-11-24T00:53:03.529Z",
+    "departmentCount": 13,
+    "communeCount": 4446,
+    "normalizedCommuneCount": 4446,
+    "duplicateCount": 0,
+    "geoPostalMappingCount": 4482,
+    "requiredChecks": {
+      "Montpellier": true,
+      "Frontignan": true,
+      "Sète": true,
+      "Béziers": true
+    }
+  },
+  "postalStatus": "fresh",
+  "postal": {
+    "status": "fresh",
+    "sourceRows": 39192,
+    "occitanieRows": 4482,
+    "matchedCommunes": 4446,
+    "duplicateCount": 3681,
+    "encoding": "windows-1252",
+    "matchedAgainst": "API Géo commune codes",
+    "datasetLastUpdate": "2023-07-09T07:01:18+00:00",
+    "resourceUrl": "https://data.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw"
+  },
+  "errors": [],
+  "qualification": {
+    "completedAt": "2026-11-24T01:57:48.968Z",
+    "sourceRecordsReviewed": 153,
+    "counts": {
+      "relevant": 22,
+      "not_relevant": 28,
+      "expired": 2,
+      "needs_manual_review": 101
+    },
+    "newPublishedCards": 0,
+    "note": "No record is published from the imported qualification register. All relevant records still need their full current rule, documents and application path captured and checked before catalogue publication.",
+    "output": "src/data/imports/occitanie/normalized/qualifications.json"
+  },
+  "postalDuplicateAudit": {
+    "sourceUrl": "https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux",
+    "sourceDatasetLastUpdate": "2023-07-09T07:01:18+00:00",
+    "retrievedFile": "src/data/imports/geography/raw/la-poste-hexasmal.csv",
+    "encoding": "windows-1252",
+    "totalRows": 39192,
+    "identicalFullRowsRemoved": 0,
+    "uniqueCommunePostalPairs": 35511,
+    "rowsBeyondFirstPerPair": 3681,
+    "communePostalPairsWithMultipleRows": 2177,
+    "occitaniePairsWithMultipleRows": 154,
+    "occitanieRowsBeyondFirstPerPair": 217,
+    "allOccurrenceVariantsPreserved": true,
+    "retention": "A line with the same INSEE/postal pair is a legitimate postal routing variant if any source column differs; normalized pair stores all distinct names, delivery labels and Ligne_5 values."
+  }
+}

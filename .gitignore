@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Next.js build output
+.next/
+/out/
+/build/
+/dist/
+next-env.d.ts
+*.tsbuildinfo
+
+# Vercel local configuration
+.vercel/
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+*.bak
+
+# Tests and coverage output
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# Local database files and dumps (SQL schemas/migrations stay tracked)
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.backup
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini

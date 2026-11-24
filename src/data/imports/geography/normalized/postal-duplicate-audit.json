@@ -1,0 +1,15 @@
+{
+  "sourceUrl": "https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux",
+  "sourceDatasetLastUpdate": "2023-07-09T07:01:18+00:00",
+  "retrievedFile": "src/data/imports/geography/raw/la-poste-hexasmal.csv",
+  "encoding": "windows-1252",
+  "totalRows": 39192,
+  "identicalFullRowsRemoved": 0,
+  "uniqueCommunePostalPairs": 35511,
+  "rowsBeyondFirstPerPair": 3681,
+  "communePostalPairsWithMultipleRows": 2177,
+  "occitaniePairsWithMultipleRows": 154,
+  "occitanieRowsBeyondFirstPerPair": 217,
+  "allOccurrenceVariantsPreserved": true,
+  "retention": "A line with the same INSEE/postal pair is a legitimate postal routing variant if any source column differs; normalized pair stores all distinct names, delivery labels and Ligne_5 values."
+}
