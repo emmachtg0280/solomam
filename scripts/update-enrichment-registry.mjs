@@ -1,40 +1,45 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { canPublishInformation } from "../src/lib/publication.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const file = path.join(root, "src/data/source-registry.json");
 const registry = JSON.parse(await readFile(file, "utf8"));
+const qualifications = JSON.parse(await readFile(path.join(root, "src/data/imports/occitanie/normalized/qualifications.json"), "utf8")).records;
+const catalogue = JSON.parse(await readFile(path.join(root, "src/data/catalogue.json"), "utf8"));
+const reviews = JSON.parse(await readFile(path.join(root, "src/data/review.json"), "utf8"));
+const qualificationCounts = Object.fromEntries(["relevant", "not_relevant", "expired", "needs_manual_review"].map((status) => [status, qualifications.filter((item) => item.classification.status === status).length]));
+const publishableRegionalCount = qualifications.filter((item) => item.classification.status === "relevant").filter((item) => {
+  const aid = catalogue.find((record) => record.url === item.normalized.officialUrl);
+  return aid && canPublishInformation(aid, reviews[aid.id]);
+}).length;
 const count = (id, patch) => {
   const source = registry.sources.find((item) => item.id === id);
   if (!source) throw new Error(`Source not found in registry: ${id}`);
   Object.assign(source, patch);
 };
 count("region-occitanie-dataset", {
-  status: "official-snapshot-imported-22-candidates-integrated-pending-review",
-  candidateRecordsIntegrated: 22,
-  publishableRecords: 0,
-  limitations: [...new Set([...registry.sources.find((item) => item.id === "region-occitanie-dataset").limitations, "22 qualified records are now projected into the canonical catalogue as pending records; 101 aid records remain in manual review", "Dataset rows and regional programme pages do not by themselves establish active validity or a complete application process"])],
+  status: "official-snapshot-imported-qualification-in-progress",
+  candidateRecordsIntegrated: qualificationCounts.relevant,
+  publishableRecords: publishableRegionalCount,
+  candidateAidRowsQualifiedRelevant: qualificationCounts.relevant,
+  candidateAidRowsExpired: qualificationCounts.expired,
+  candidateAidRowsExcluded: qualificationCounts.not_relevant,
+  candidateAidRowsPendingReview: qualificationCounts.needs_manual_review,
+  limitations: [...new Set([...registry.sources.find((item) => item.id === "region-occitanie-dataset").limitations.filter((value) => !/remain in manual review|pending records/i.test(value)), `${qualificationCounts.needs_manual_review} aid rows remain in manual review`, "Dataset rows and regional programme pages do not by themselves establish active validity or a complete application process"])],
 });
 count("region-official-catalogue", {
-  status: "22-official-programme-pages-reviewed-and-candidate-records-integrated",
-  candidateRecordsIntegrated: 22,
-  publishableRecords: 0,
+  status: "official-pages-reviewed-partially",
+  pagesReviewed: qualifications.filter((item) => item.classification.status !== "needs_manual_review").length,
+  relevantCandidates: qualificationCounts.relevant,
+  confirmedNonRelevant: qualificationCounts.not_relevant,
+  expired: qualificationCounts.expired,
+  pendingManualReview: qualificationCounts.needs_manual_review,
+  candidateRecordsIntegrated: qualificationCounts.relevant,
+  publishableRecords: publishableRegionalCount,
   reviewedAt: "2026-11-23",
-});
-count("service-public", {
-  status: "four-guidance-pages-opened-facts-integrated-pending-review",
-  recordsImported: 0,
-  candidateRecordsIntegrated: 3,
-  factsEnrichedForAids: 3,
-  publishableRecords: 0,
-  consultedAt: "2026-11-23",
-  evidence: [
-    { aidId: "asf", url: "https://www.service-public.fr/particuliers/vosdroits/F815", pageVerifiedAt: "2026-04-01" },
-    { aidId: "af", url: "https://www.service-public.fr/particuliers/vosdroits/F13213", pageVerifiedAt: "2026-06-01" },
-    { aidId: "af", url: "https://www.service-public.fr/particuliers/vosdroits/F13212", pageVerifiedAt: "2026-06-01" },
-    { aidId: "logement", url: "https://www.service-public.fr/particuliers/vosdroits/F12006", pageVerifiedAt: "2026-07-01" },
-  ],
+  limitations: [...new Set([...registry.sources.find((item) => item.id === "region-official-catalogue").limitations.filter((value) => !/remaining \d+ official pages/i.test(value)), "No complete individual application journey has yet been normalized into a publishable aid card", `The remaining ${qualificationCounts.needs_manual_review} official pages still require beneficiary, validity and application-path review`])],
 });
 const addedSources = [
   {
@@ -85,7 +90,19 @@ const addedSources = [
 for (const next of addedSources) {
   const index = registry.sources.findIndex((item) => item.id === next.id);
   if (index < 0) registry.sources.push(next);
-  else registry.sources[index] = next;
+  else {
+    const previous = registry.sources[index];
+    const merged = { ...previous, ...next };
+    for (const field of ["limitations", "evidence"]) {
+      if (Array.isArray(previous[field]) || Array.isArray(next[field])) {
+        const items = [...(previous[field] ?? []), ...(next[field] ?? [])];
+        merged[field] = [...new Map(items.map((item) => [JSON.stringify(item), item])).values()];
+      }
+    }
+    registry.sources[index] = merged;
+  }
 }
+registry.sources = [...new Map(registry.sources.map((source) => [source.id, source])).values()];
+registry.auditedAt = "2026-11-23";
 await writeFile(file, `${JSON.stringify(registry, null, 2)}\n`, "utf8");
 console.log("Source registry updated with actual integrations, evidence dates and limits.");

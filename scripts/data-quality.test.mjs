@@ -5,6 +5,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { canPublishInformation, canPublishProcedure } from "../src/lib/publication.mjs";
+import { canPublishService } from "../src/lib/services.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const readJson = async (name) => JSON.parse(await readFile(path.join(root, name), "utf8"));
@@ -84,7 +85,7 @@ test("information publication is independent from procedure completeness", async
   assert.match(review.asf.facts.find((fact) => fact.field === "core_conditions").value, /incohérence/);
   assert.equal(review.asf.facts.find((fact) => fact.field === "amount").status, "conflict");
   assert.ok(review.css.applicationProcedure.renewal.text.includes("un an"));
-  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 15);
+  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 17);
   assert.deepEqual(catalogue.filter((item) => ["apl", "alf", "als"].includes(item.id)).map(({ id }) => id).sort(), ["alf", "als", "apl"]);
   assert.equal(catalogue.some((item) => item.id === "logement"), false);
   assert.equal(review.logement.recordLifecycle, "superseded");
@@ -169,13 +170,51 @@ test("Hérault FSL variants remain separate and retain the 31-commune boundary",
   const catalogue = await readJson("src/data/catalogue.json");
   assert.ok(catalogue.some((record) => record.id === "fsl" && record.zone === "34"));
   assert.ok(catalogue.some((record) => record.id === "fsl-m3m" && record.zone === "34"));
-  assert.equal(review.fsl.publicationStatus, "pending");
-  assert.equal(review["fsl-m3m"].publicationStatus, "pending");
+  assert.equal(review.fsl.publicationStatus, "published");
+  assert.equal(review["fsl-m3m"].publicationStatus, "published");
+  assert.equal(canPublishInformation(catalogue.find((record) => record.id === "fsl"), review.fsl), true);
+  assert.equal(canPublishInformation(catalogue.find((record) => record.id === "fsl-m3m"), review["fsl-m3m"]), true);
   assert.match(review.fsl.facts.find((fact) => fact.field === "territory").value, /hors des 31 communes/);
   assert.match(review["fsl-m3m"].facts.find((fact) => fact.field === "territory").value, /31 communes/);
+  assert.match(review.fsl.facts.find((fact) => fact.field === "core_conditions").value, /aucune ressource/);
+  assert.match(review["fsl-m3m"].facts.find((fact) => fact.field === "core_conditions").value, /ACS/);
   assert.equal(review["fsl-m3m"].applicationProcedure.steps.length, 3);
-  assert.equal(review.fsl.applicationProcedure.steps.length, 0);
+  assert.equal(review.fsl.applicationProcedure.steps.length, 2);
+  assert.equal(review.fsl.procedurePublicationStatus, "pending");
+  assert.equal(review["fsl-m3m"].procedurePublicationStatus, "pending");
   assert.equal(review.logement.informationPublicationStatus ?? "pending", "pending", "combined APL/ALF/ALS record is held until distinct legal benefits are modeled");
+});
+
+test("published services are sourced and kept separate from administrative aids", async () => {
+  const services = await readJson("src/data/services.json");
+  const catalogue = await readJson("src/data/catalogue.json");
+  const geo = await readJson("src/data/territories/montpellier-metropole.json");
+  assert.equal(services.length, 4);
+  assert.ok(services.every(canPublishService));
+  assert.deepEqual(new Set(services.map((service) => service.category)), new Set(["Parentalité", "Santé & bien-être", "Dating & vie amoureuse"]));
+  const dating = services.find((service) => service.category === "Dating & vie amoureuse");
+  assert.equal(dating.kind, "private-platform");
+  assert.match(dating.pricing, /facultatif payant/);
+  assert.ok(!catalogue.some((aid) => aid.id === dating.id), "private dating service must not enter aid catalogue");
+  assert.equal(geo.epciCode, "243400017");
+  assert.equal(geo.communes.length, 31);
+  assert.equal(new Set(geo.communes.map((commune) => commune.inseeCode)).size, 31);
+  assert.ok(geo.communes.some((commune) => commune.inseeCode === "34172" && commune.communeName === "Montpellier"));
+  assert.ok(!canPublishService({ ...dating, sources: [] }));
+  assert.ok(!canPublishService({ ...dating, category: "Emploi" }));
+});
+
+test("source registry preserves prior evidence and reports current regional review totals", async () => {
+  const registry = await readJson("src/data/source-registry.json");
+  const qualifications = await readJson("src/data/imports/occitanie/normalized/qualifications.json");
+  assert.equal(new Set(registry.sources.map((source) => source.id)).size, registry.sources.length);
+  const servicePublic = registry.sources.find((source) => source.id === "service-public");
+  assert.ok(servicePublic.evidence.length >= 12);
+  const regional = registry.sources.find((source) => source.id === "region-official-catalogue");
+  assert.equal(regional.pagesReviewed, 66);
+  assert.equal(regional.pendingManualReview, 87);
+  assert.equal(qualifications.records.filter((record) => record.classification.status === "needs_manual_review").length, regional.pendingManualReview);
+  assert.ok(!regional.limitations.some((limitation) => /remaining 94 official pages/i.test(limitation)));
 });
 
 test("new national records include sourced rules and separate procedure branches", async () => {

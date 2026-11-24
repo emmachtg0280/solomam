@@ -108,4 +108,7 @@ delete review["fsl-herault"];
 if (new Set(catalogue.map((record) => record.id)).size !== catalogue.length) throw new Error("Duplicate catalogue IDs detected");
 await writeFile(cataloguePath, `${JSON.stringify(catalogue, null, 2)}\n`, "utf8");
 await writeFile(reviewPath, `${JSON.stringify(review, null, 2)}\n`, "utf8");
-console.log(JSON.stringify({ variants: records.length, catalogueRecords: catalogue.length, publicationStatus: "pending" }, null, 2));
+// Reapply the sourced current-rule enrichment after this canonical seed import so
+// rerunning the importer does not downgrade the reviewed FSL information cards.
+await import("./enrich-herault-fsl-regulations.mjs");
+console.log(JSON.stringify({ variants: records.length, catalogueRecords: catalogue.length, informationStatus: "verified", procedureStatus: "partial" }, null, 2));

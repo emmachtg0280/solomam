@@ -163,13 +163,13 @@
   },
   "errors": [],
   "qualification": {
-    "completedAt": "2026-11-24T04:28:50.489Z",
+    "completedAt": "2026-11-24T05:06:32.104Z",
     "sourceRecordsReviewed": 153,
     "counts": {
       "relevant": 23,
-      "not_relevant": 34,
+      "not_relevant": 41,
       "expired": 2,
-      "needs_manual_review": 94
+      "needs_manual_review": 87
     },
     "newPublishedCards": 0,
     "note": "No record is published from the imported qualification register. All relevant records still need their full current rule, documents and application path captured and checked before catalogue publication.",

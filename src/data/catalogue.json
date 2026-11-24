@@ -96,9 +96,12 @@
     "category": "Logement",
     "zone": "34",
     "org": "Conseil départemental de l'Hérault",
-    "description": "Aide locale à instruire selon le règlement applicable et le territoire de résidence.",
-    "when": "Personnes en difficulté relevant du plan départemental d'action pour le logement des personnes défavorisées; les critères individuels et ressources relèvent du règlement intérieur applicable.",
-    "steps": [],
+    "description": "Accès au logement (dépôt de garantie, frais d'agence, premier loyer, assurance habitation, frais associés et ouverture de compteurs); maintien dans le logement (loyers/charges, frais de procédure, énergie et eau); accompagnement social lié au logement.",
+    "when": "Habitants rencontrant des difficultés d'accès ou de maintien dans un logement décent et relevant du public défini par le PDALHPD. La demande est examinée au regard des ressources et de la situation du foyer.",
+    "steps": [
+      "Contacter un travailleur social d'un service habilité, qui construit et transmet la demande FSL.",
+      "Le dossier est examiné selon le règlement; la décision est adressée au demandeur et à l'instructeur."
+    ],
     "url": "https://herault.fr/402-aide-financiere.htm"
   },
   {
@@ -484,12 +487,12 @@
     "category": "Logement",
     "zone": "34",
     "org": "Montpellier Méditerranée Métropole",
-    "description": "Aide locale à instruire selon le règlement applicable et le territoire de résidence.",
-    "when": "Personnes en difficulté résidant dans l'une des 31 communes de Montpellier Méditerranée Métropole; critères individuels et ressources définis par le règlement métropolitain.",
+    "description": "Aides à l'accès et au maintien dans le logement selon le règlement. Le dossier est construit avec un travailleur social habilité à partir des justificatifs propres à l'aide demandée; identité, ressources, charges et situation sont contrôlées.",
+    "when": "Demandeurs majeurs ou mineurs émancipés résidant dans la Métropole, relevant du public du PDALHPD et satisfaisant aux critères du règlement. Les étudiants sans enfant à charge sont exclus; une personne étrangère doit être en situation administrative régulière. Priorité notamment aux personnes sans logement, menacées d'expulsion sans relogement ou en situation économique et sociale cumulée.",
     "steps": [
-      "Formuler la demande auprès d'un travailleur social.",
-      "Le dossier est constitué selon la situation à partir des pièces fournies et d'une évaluation sociale.",
-      "Le dossier est transmis à la Métropole et examiné pour décision par une équipe pluridisciplinaire."
+      "S'adresser à un travailleur social d'un service instructeur habilité par la Métropole ou le Département.",
+      "Le travailleur social constitue le formulaire métropolitain et joint les justificatifs de l'aide demandée.",
+      "Le dossier transmis est instruit et soumis à la décision de l'instance compétente; la page de la Métropole décrit l'examen par une équipe pluridisciplinaire."
     ],
     "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement"
   },

@@ -112,7 +112,7 @@ test("all 153 imported aid records receive traceable, conservative qualification
   t.after(() => Promise.all(generatedFiles.map((file, index) => writeFile(path.join(repo, file), originals[index]))));
   const result = await qualifyOccitanieRecords();
   assert.equal(result.qualifications.length, 153);
-  assert.deepEqual(result.counts, { relevant: 23, not_relevant: 34, expired: 2, needs_manual_review: 94 });
+  assert.deepEqual(result.counts, { relevant: 23, not_relevant: 41, expired: 2, needs_manual_review: 87 });
   assert.equal(new Set(result.qualifications.map((item) => item.id)).size, 153);
   assert.ok(result.qualifications.every((item) => item.sourceRecordHash.length === 64 && item.rawRecordReference.file.endsWith("raw/dataset.json")));
   const rawSnapshot = JSON.parse(await readFile(path.join(repo, "src/data/imports/occitanie/raw/dataset.json"), "utf8"));

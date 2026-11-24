@@ -676,15 +676,16 @@
     "procedurePublicationStatus": "pending"
   },
   "fsl": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
-    "currentForPeriod": null,
+    "currentForPeriod": "Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025.",
     "eligibilityRulesReady": false,
     "testCases": 0,
     "notes": [
       "Le territoire 34 n'a pas un circuit unique : Montpellier Méditerranée Métropole gère son FSL pour les 31 communes; le Département intervient sur le reste du territoire. Saisine via travailleur social obligatoire dans les pages consultées.",
       "Deux règlements territoriaux, critères, formulaires et pièces à analyser séparément avant publication.",
-      "Variante territoriale normalisée séparément. La fiche est non publiée tant que le règlement, les ressources et les pièces ne sont pas extraits et datés."
+      "Variante territoriale normalisée séparément. La fiche est non publiée tant que le règlement, les ressources et les pièces ne sont pas extraits et datés.",
+      "Fiche d'information publiée après vérification de la règle actuelle, du territoire et du public; parcours de demande encore partiel."
     ],
     "sources": [
       {
@@ -709,9 +710,17 @@
     "factSources": [
       {
         "id": "fsl-herault-page",
-        "label": "Département de l'Hérault — Aides financières au logement",
+        "label": "Département de l'Hérault — aides financières au logement",
         "url": "https://herault.fr/402-aide-financiere.htm",
         "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      },
+      {
+        "id": "fsl-herault-rdas-2026",
+        "label": "Département de l'Hérault — règlement départemental d'aide sociale, édition septembre 2026",
+        "url": "https://bessilles.herault.fr/cms_viewFile.php?idtf=30205&path=RDAS-09-2026.pdf",
+        "kind": "legal-text",
         "consultedAt": "2026-11-23",
         "pageVerifiedAt": "2026-11-23"
       },
@@ -722,84 +731,128 @@
         "kind": "official-guidance",
         "consultedAt": "2026-11-23",
         "pageVerifiedAt": "2026-11-23"
+      },
+      {
+        "id": "fsl-m3m-regulation-2025",
+        "label": "Montpellier Méditerranée Métropole — règlement intérieur FSL 2025",
+        "url": "https://www.montpellier.fr/sites/default/files/2025-11/20250101%20R%C3%A8glement%20int%C3%A9rieur_FSL%203M.pdf",
+        "kind": "legal-text",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
       }
     ],
     "facts": [
       {
-        "field": "audience",
+        "field": "current_status",
         "status": "verified",
-        "value": "Personnes en difficulté relevant du plan départemental d'action pour le logement des personnes défavorisées.",
+        "value": "Dispositif en vigueur au contrôle du 2026-11-23; Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025.",
         "sourceIds": [
-          "fsl-herault-page"
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
         ],
-        "validFor": "Page officielle consultée le 23-11-2026; critères détaillés dépendant du règlement"
+        "validFor": "Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025."
       },
       {
         "field": "territory",
         "status": "verified",
-        "value": "FSL départemental hors des 31 communes de Montpellier Méditerranée Métropole; ces communes ont un FSL géré par la Métropole.",
+        "value": "Hérault hors des 31 communes de Montpellier Méditerranée Métropole.",
         "sourceIds": [
           "fsl-herault-page",
-          "fsl-m3m-page"
+          "fsl-herault-rdas-2026"
         ],
-        "validFor": "Pages officielles consultées le 23-11-2026"
+        "validFor": "Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025."
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Habitants rencontrant des difficultés d'accès ou de maintien dans un logement décent et relevant du public défini par le PDALHPD. La demande est examinée au regard des ressources et de la situation du foyer.",
+        "sourceIds": [
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
+        ],
+        "validFor": "Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025."
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Le règlement départemental en vigueur renvoie à un barème lié aux plafonds de la Complémentaire santé solidaire, selon la composition du foyer. Les ressources sont examinées sur les trois mois précédant la demande et, en cas de changement, selon les ressources prévisionnelles; un niveau de ressources doit permettre d'assumer le loyer et les charges. Aucune intervention si le foyer n'a aucune ressource. Aucun montant-plafond n'est repris ici.",
+        "sourceIds": [
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
+        ],
+        "validFor": "Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025."
       },
       {
         "field": "eligible_needs",
         "status": "verified",
-        "value": "Accès au logement (dépôt de garantie, frais d'agence, premier loyer, assurance habitation), maintien (dettes de loyer, charges, frais de procédure), maintien des fournitures d'énergie et d'eau.",
+        "value": "Accès au logement (dépôt de garantie, frais d'agence, premier loyer, assurance habitation, frais associés et ouverture de compteurs); maintien dans le logement (loyers/charges, frais de procédure, énergie et eau); accompagnement social lié au logement.",
         "sourceIds": [
-          "fsl-herault-page"
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
         ],
-        "validFor": "Page officielle consultée le 23-11-2026"
-      },
-      {
-        "field": "resource_condition",
-        "status": "unverified",
-        "value": null,
-        "sourceIds": [
-          "fsl-herault-page"
-        ],
-        "validFor": "À extraire du règlement départemental en vigueur"
+        "validFor": "Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025."
       },
       {
         "field": "documents",
-        "status": "unverified",
-        "value": null,
+        "status": "partially_verified",
+        "value": "Le dossier est constitué par un travailleur social d'un service habilité. Les pièces sont déterminées par l'aide demandée; le règlement prévoit notamment la vérification de l'identité, des ressources, des charges et de la situation du foyer. La liste détaillée par aide reste à consulter dans le formulaire applicable.",
         "sourceIds": [
-          "fsl-herault-page"
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
         ],
-        "validFor": null
+        "validFor": "Règlement départemental d'aide sociale, édition septembre 2026; règle FSL adoptée le 16 décembre 2024 et applicable depuis le 1er janvier 2025."
       }
     ],
     "applicationProcedure": {
-      "status": "incomplete",
-      "steps": [],
+      "status": "partially_complete",
+      "steps": [
+        {
+          "text": "Contacter un travailleur social d'un service habilité, qui construit et transmet la demande FSL.",
+          "sourceIds": [
+            "fsl-herault-rdas-2026"
+          ],
+          "status": "verified"
+        },
+        {
+          "text": "Le dossier est examiné selon le règlement; la décision est adressée au demandeur et à l'instructeur.",
+          "sourceIds": [
+            "fsl-herault-rdas-2026"
+          ],
+          "status": "verified"
+        }
+      ],
+      "documents": {
+        "status": "verified",
+        "sourceIds": [
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
+        ]
+      },
       "followUp": {
         "status": "unverified",
-        "text": "Modalités de suivi non établies par les pages consultées.",
+        "text": "Modalités de suivi à confirmer auprès du service instructeur.",
         "sourceIds": [
-          "fsl-herault-page"
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
         ]
       },
       "renewal": {
         "status": "unverified",
-        "text": "Modalités de renouvellement à vérifier dans le règlement en vigueur.",
+        "text": "Renouvellement selon la nature de l'aide; modalités à confirmer.",
         "sourceIds": [
-          "fsl-herault-page"
+          "fsl-herault-page",
+          "fsl-herault-rdas-2026"
         ]
       },
       "portalUrl": null,
       "competentOrganization": "Conseil départemental de l'Hérault",
       "remainingChecks": [
-        "Récupérer le règlement départemental en vigueur et sa date d'application.",
-        "Établir les plafonds, conditions, barèmes, pièces et dossier applicables.",
-        "Confirmer le point d'entrée social, le dépôt, le suivi et les délais.",
-        "Vérifier l'adresse communale dans la relation officielle des 31 communes de la Métropole."
+        "Confirmer le formulaire actuellement utilisé et les justificatifs précis selon la nature de l'aide.",
+        "Confirmer les coordonnées de l'équipe d'instruction, les délais et le suivi du dossier."
       ]
     },
-    "informationPublicationStatus": "pending",
-    "informationVerifiedAt": null,
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
     "procedurePublicationStatus": "pending"
   },
   "domicile": {
@@ -3619,17 +3672,25 @@
     "procedurePublicationStatus": "pending"
   },
   "fsl-m3m": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
-    "currentForPeriod": null,
+    "currentForPeriod": "Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service.",
     "eligibilityRulesReady": false,
     "testCases": 0,
     "factSources": [
       {
         "id": "fsl-herault-page",
-        "label": "Département de l'Hérault — Aides financières au logement",
+        "label": "Département de l'Hérault — aides financières au logement",
         "url": "https://herault.fr/402-aide-financiere.htm",
         "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      },
+      {
+        "id": "fsl-herault-rdas-2026",
+        "label": "Département de l'Hérault — règlement départemental d'aide sociale, édition septembre 2026",
+        "url": "https://bessilles.herault.fr/cms_viewFile.php?idtf=30205&path=RDAS-09-2026.pdf",
+        "kind": "legal-text",
         "consultedAt": "2026-11-23",
         "pageVerifiedAt": "2026-11-23"
       },
@@ -3640,109 +3701,150 @@
         "kind": "official-guidance",
         "consultedAt": "2026-11-23",
         "pageVerifiedAt": "2026-11-23"
+      },
+      {
+        "id": "fsl-m3m-regulation-2025",
+        "label": "Montpellier Méditerranée Métropole — règlement intérieur FSL 2025",
+        "url": "https://www.montpellier.fr/sites/default/files/2025-11/20250101%20R%C3%A8glement%20int%C3%A9rieur_FSL%203M.pdf",
+        "kind": "legal-text",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
       }
     ],
     "facts": [
       {
-        "field": "audience",
+        "field": "current_status",
         "status": "verified",
-        "value": "Personnes en difficulté résidant sur l'une des 31 communes de Montpellier Méditerranée Métropole.",
+        "value": "Dispositif en vigueur au contrôle du 2026-11-23; Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service.",
         "sourceIds": [
-          "fsl-m3m-page"
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
         ],
-        "validFor": "Page officielle consultée le 23-11-2026; critères détaillés dépendant du règlement"
+        "validFor": "Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service."
       },
       {
         "field": "territory",
         "status": "verified",
-        "value": "Les 31 communes de Montpellier Méditerranée Métropole; hors de ce ressort, le Département indique gérer le dispositif FSL.",
+        "value": "Les 31 communes de Montpellier Méditerranée Métropole (EPCI 243400017), identifiées par leur code INSEE dans le référentiel géographique officiel importé.",
         "sourceIds": [
           "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
           "fsl-herault-page"
         ],
-        "validFor": "Pages officielles consultées le 23-11-2026"
+        "validFor": "Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service."
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Demandeurs majeurs ou mineurs émancipés résidant dans la Métropole, relevant du public du PDALHPD et satisfaisant aux critères du règlement. Les étudiants sans enfant à charge sont exclus; une personne étrangère doit être en situation administrative régulière. Priorité notamment aux personnes sans logement, menacées d'expulsion sans relogement ou en situation économique et sociale cumulée.",
+        "sourceIds": [
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
+        ],
+        "validFor": "Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service."
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Le foyer doit disposer de ressources suffisantes pour faire face au loyer et aux charges; l'absence totale de ressources exclut l'intervention. Les ressources de toutes les personnes du foyer sont prises en compte, avec des exceptions listées dans le règlement. Le calcul tient compte des ressources des trois mois précédant la demande et des ressources à venir en cas de changement. Le règlement 2025 cite l'ancien seuil ACS; il n'est pas présenté comme un plafond actuel sans confirmation de sa mise à jour.",
+        "sourceIds": [
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
+        ],
+        "validFor": "Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service."
       },
       {
         "field": "eligible_needs",
         "status": "verified",
-        "value": "Accès au logement, impayés de loyer et charges, impayés d'électricité, gaz et eau.",
+        "value": "Aides à l'accès et au maintien dans le logement selon le règlement. Le dossier est construit avec un travailleur social habilité à partir des justificatifs propres à l'aide demandée; identité, ressources, charges et situation sont contrôlées.",
         "sourceIds": [
-          "fsl-m3m-page"
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
         ],
-        "validFor": "Page officielle consultée le 23-11-2026"
-      },
-      {
-        "field": "resource_condition",
-        "status": "unverified",
-        "value": null,
-        "sourceIds": [
-          "fsl-m3m-page"
-        ],
-        "validFor": "À extraire du règlement métropolitain en vigueur"
+        "validFor": "Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service."
       },
       {
         "field": "documents",
-        "status": "verified",
-        "value": "La page indique que le travailleur social constitue le dossier selon la situation avec les pièces justificatives fournies et une évaluation sociale; la liste de pièces n'est pas publiée sur cette page.",
+        "status": "partially_verified",
+        "value": "Demande au moyen de l'imprimé métropolitain FSL, accompagnée des justificatifs relatifs à l'aide sollicitée. Le travailleur social vérifie l'état civil, les ressources, les charges et la situation particulière; la liste documentaire dépend du besoin.",
         "sourceIds": [
-          "fsl-m3m-page"
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
         ],
-        "validFor": "Page officielle consultée le 23-11-2026"
+        "validFor": "Règlement intérieur métropolitain 2025 affiché par la Métropole; aucune date de fin n'est indiquée dans le document consulté. En vigueur au contrôle du 23 novembre 2026 selon la page officielle du service."
       }
     ],
     "applicationProcedure": {
       "status": "partially_complete",
       "steps": [
         {
-          "text": "Formuler la demande auprès d'un travailleur social.",
+          "text": "S'adresser à un travailleur social d'un service instructeur habilité par la Métropole ou le Département.",
           "sourceIds": [
-            "fsl-m3m-page"
+            "fsl-m3m-regulation-2025"
           ],
           "status": "verified"
         },
         {
-          "text": "Le dossier est constitué selon la situation à partir des pièces fournies et d'une évaluation sociale.",
+          "text": "Le travailleur social constitue le formulaire métropolitain et joint les justificatifs de l'aide demandée.",
           "sourceIds": [
-            "fsl-m3m-page"
+            "fsl-m3m-regulation-2025"
           ],
           "status": "verified"
         },
         {
-          "text": "Le dossier est transmis à la Métropole et examiné pour décision par une équipe pluridisciplinaire.",
+          "text": "Le dossier transmis est instruit et soumis à la décision de l'instance compétente; la page de la Métropole décrit l'examen par une équipe pluridisciplinaire.",
           "sourceIds": [
-            "fsl-m3m-page"
+            "fsl-m3m-page",
+            "fsl-m3m-regulation-2025"
           ],
           "status": "verified"
         }
       ],
+      "documents": {
+        "status": "verified",
+        "sourceIds": [
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
+        ]
+      },
       "followUp": {
         "status": "unverified",
-        "text": "Modalités de suivi non établies par les pages consultées.",
+        "text": "Modalités de suivi à confirmer auprès du service instructeur.",
         "sourceIds": [
-          "fsl-m3m-page"
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
         ]
       },
       "renewal": {
         "status": "unverified",
-        "text": "Modalités de renouvellement à vérifier dans le règlement en vigueur.",
+        "text": "Renouvellement selon la nature de l'aide; modalités à confirmer.",
         "sourceIds": [
-          "fsl-m3m-page"
+          "fsl-m3m-page",
+          "fsl-m3m-regulation-2025",
+          "fsl-herault-page"
         ]
       },
       "portalUrl": null,
       "competentOrganization": "Montpellier Méditerranée Métropole",
       "remainingChecks": [
-        "Récupérer le règlement métropolitain actuellement applicable et confirmer que la version 2025 reste en vigueur.",
-        "Établir les plafonds, priorités, barèmes, liste des pièces, délais, suivi et éventuel renouvellement.",
-        "Lister les 31 communes à partir d'une source officielle et tester la correspondance INSEE."
+        "Le règlement mentionne encore le seuil ACS; demander à la Métropole la référence de ressources actuelle avant de reprendre un seuil chiffré.",
+        "Confirmer les coordonnées de l'équipe d'instruction, les délais et les modalités de suivi après dépôt."
       ]
     },
     "notes": [
-      "Variante territoriale normalisée séparément. La fiche est non publiée tant que le règlement, les ressources et les pièces ne sont pas extraits et datés."
+      "Variante territoriale normalisée séparément. La fiche est non publiée tant que le règlement, les ressources et les pièces ne sont pas extraits et datés.",
+      "Fiche d'information publiée après vérification de la règle actuelle, du territoire et du public; parcours de demande encore partiel."
     ],
     "sources": [],
-    "informationPublicationStatus": "pending",
-    "informationVerifiedAt": null,
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
     "procedurePublicationStatus": "pending"
   },
   "rsa-parent-isole": {

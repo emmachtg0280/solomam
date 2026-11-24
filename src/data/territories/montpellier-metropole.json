@@ -1,0 +1,139 @@
+{
+  "territoryId": "montpellier-mediterranee-metropole",
+  "organization": "Montpellier Méditerranée Métropole",
+  "epciCode": "243400017",
+  "departmentCode": "34",
+  "communes": [
+    {
+      "inseeCode": "34022",
+      "communeName": "Baillargues"
+    },
+    {
+      "inseeCode": "34027",
+      "communeName": "Beaulieu"
+    },
+    {
+      "inseeCode": "34057",
+      "communeName": "Castelnau-le-Lez"
+    },
+    {
+      "inseeCode": "34058",
+      "communeName": "Castries"
+    },
+    {
+      "inseeCode": "34077",
+      "communeName": "Clapiers"
+    },
+    {
+      "inseeCode": "34087",
+      "communeName": "Cournonsec"
+    },
+    {
+      "inseeCode": "34088",
+      "communeName": "Cournonterral"
+    },
+    {
+      "inseeCode": "34090",
+      "communeName": "Le Crès"
+    },
+    {
+      "inseeCode": "34095",
+      "communeName": "Fabrègues"
+    },
+    {
+      "inseeCode": "34116",
+      "communeName": "Grabels"
+    },
+    {
+      "inseeCode": "34120",
+      "communeName": "Jacou"
+    },
+    {
+      "inseeCode": "34123",
+      "communeName": "Juvignac"
+    },
+    {
+      "inseeCode": "34129",
+      "communeName": "Lattes"
+    },
+    {
+      "inseeCode": "34134",
+      "communeName": "Lavérune"
+    },
+    {
+      "inseeCode": "34164",
+      "communeName": "Montaud"
+    },
+    {
+      "inseeCode": "34169",
+      "communeName": "Montferrier-sur-Lez"
+    },
+    {
+      "inseeCode": "34172",
+      "communeName": "Montpellier"
+    },
+    {
+      "inseeCode": "34179",
+      "communeName": "Murviel-lès-Montpellier"
+    },
+    {
+      "inseeCode": "34198",
+      "communeName": "Pérols"
+    },
+    {
+      "inseeCode": "34202",
+      "communeName": "Pignan"
+    },
+    {
+      "inseeCode": "34217",
+      "communeName": "Prades-le-Lez"
+    },
+    {
+      "inseeCode": "34227",
+      "communeName": "Restinclières"
+    },
+    {
+      "inseeCode": "34244",
+      "communeName": "Saint-Brès"
+    },
+    {
+      "inseeCode": "34249",
+      "communeName": "Saint-Drézéry"
+    },
+    {
+      "inseeCode": "34256",
+      "communeName": "Saint-Geniès-des-Mourgues"
+    },
+    {
+      "inseeCode": "34259",
+      "communeName": "Saint-Georges-d'Orques"
+    },
+    {
+      "inseeCode": "34270",
+      "communeName": "Saint-Jean-de-Védas"
+    },
+    {
+      "inseeCode": "34295",
+      "communeName": "Saussan"
+    },
+    {
+      "inseeCode": "34307",
+      "communeName": "Sussargues"
+    },
+    {
+      "inseeCode": "34327",
+      "communeName": "Vendargues"
+    },
+    {
+      "inseeCode": "34337",
+      "communeName": "Villeneuve-lès-Maguelone"
+    }
+  ],
+  "source": {
+    "url": "https://geo.api.gouv.fr/communes?codeEpci=243400017&fields=nom,code,codeDepartement,codeEpci&format=json",
+    "dataset": "src/data/imports/geography/normalized/communes-occitanie.json",
+    "importedAt": "2026-11-24T00:53:03.529Z",
+    "consultedAt": "2026-11-23"
+  },
+  "legalScopeSource": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement"
+}

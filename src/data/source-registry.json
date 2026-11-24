@@ -113,14 +113,16 @@
       "coverage": "229 official dataset records; 153 rows categorized Aides; 76 other categories excluded from this aid qualification run",
       "limitations": [
         "Dataset has no beneficiary, eligibility, documents, application process or validity fields",
-        "Qualification register has 23 relevant candidates, 34 confirmed non-relevant items, 2 expired items and 94 manual reviews",
+        "Qualification register has 23 relevant candidates, 41 confirmed non-relevant items, 2 expired items and 87 manual reviews",
         "No regional aid card is published until full current rules and application routes are normalized",
-        "Live source page and dataset metadata need to be rechecked for updates and reuse terms"
+        "Live source page and dataset metadata need to be rechecked for updates and reuse terms",
+        "87 aid rows remain in manual review",
+        "Dataset rows and regional programme pages do not by themselves establish active validity or a complete application process"
       ],
       "candidateAidRowsQualifiedRelevant": 23,
       "candidateAidRowsExpired": 2,
-      "candidateAidRowsExcluded": 34,
-      "candidateAidRowsPendingReview": 94,
+      "candidateAidRowsExcluded": 41,
+      "candidateAidRowsPendingReview": 87,
       "attribution": "Source : R?gion Occitanie ? Aides et appels ? projets; cite the source and last update date.",
       "portalObservation": {
         "observedAt": "2026-11-23",
@@ -131,7 +133,7 @@
         "discrepancy": "The locally captured snapshot has one more total record and one more Aides row than the portal observation; reconcile on next import."
       },
       "candidateRecordsIntegrated": 23,
-      "publishableRecords": 0
+      "publishableRecords": 1
     },
     {
       "id": "region-official-catalogue",
@@ -147,15 +149,15 @@
       "candidateResultsObserved": 357,
       "coverage": "Catalogue contains schemes and calls for multiple types of applicants",
       "limitations": [
-        "Review is partial: 59 of 153 aid records have a decision supported by the linked official detail page",
+        "Review is partial: 66 of 153 aid records have a decision supported by the linked official detail page",
         "No complete individual application journey has yet been normalized into a publishable aid card",
-        "The remaining 94 official pages still require beneficiary, validity and application-path review"
+        "The remaining 87 official pages still require beneficiary, validity and application-path review"
       ],
-      "pagesReviewed": 59,
+      "pagesReviewed": 66,
       "relevantCandidates": 23,
-      "confirmedNonRelevant": 34,
+      "confirmedNonRelevant": 41,
       "expired": 2,
-      "pendingManualReview": 94,
+      "pendingManualReview": 87,
       "candidateRecordsIntegrated": 23,
       "publishableRecords": 1,
       "reviewedAt": "2026-11-23"
@@ -216,36 +218,36 @@
       "id": "fsl-herault",
       "name": "Département de l'Hérault — FSL",
       "url": "https://herault.fr/402-aide-financiere.htm",
-      "role": "Departmental FSL scope and supported housing needs",
-      "status": "official-guidance-reviewed-local-variant-pending-regulation",
-      "version": "Consulted 2026-11-23",
-      "license": "No bulk dataset copied; sourced facts retained with URL",
+      "role": "FSL départemental, règlement d'action sociale et parcours d'instruction",
+      "status": "current-regulation-reviewed-information-published-procedure-partial",
+      "version": "RDAS édition septembre 2026; règles FSL applicables depuis le 1er janvier 2025",
+      "license": "Aucun dataset copié; faits attribués aux sources officielles",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "candidateRecordsIntegrated": 1,
       "factsEnrichedForAids": 1,
-      "publishableRecords": 0,
-      "coverage": "Department of Hérault outside the 31 Montpellier Métropole communes, subject to confirmation of exact commune list",
+      "publishableRecords": 1,
+      "coverage": "Hérault hors des 31 communes de Montpellier Méditerranée Métropole",
       "limitations": [
-        "Current departmental regulation, criteria, resources, documents and application path not extracted"
+        "Les justificatifs détaillés varient par aide et formulaire; délais, suivi et contacts d'instruction restent à confirmer."
       ]
     },
     {
       "id": "fsl-montpellier-metropole",
       "name": "Montpellier Méditerranée Métropole — FSL",
       "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement",
-      "role": "Metropolitan FSL territory, supported needs and social-worker application procedure",
-      "status": "official-guidance-reviewed-local-variant-pending-current-regulation",
-      "version": "Page consulted 2026-11-23; 2025 regulation must be checked for continued effect",
-      "license": "No bulk dataset copied; sourced facts retained with URL",
+      "role": "FSL métropolitain, règlement 2025, critères et instruction",
+      "status": "current-regulation-reviewed-information-published-procedure-partial",
+      "version": "Règlement intérieur FSL 2025, listé sur la page officielle et consulté le 23 novembre 2026",
+      "license": "Aucun dataset copié; faits attribués aux sources officielles",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "candidateRecordsIntegrated": 1,
       "factsEnrichedForAids": 1,
-      "publishableRecords": 0,
-      "coverage": "Residents of 31 Montpellier Méditerranée Métropole communes",
+      "publishableRecords": 1,
+      "coverage": "31 communes de Montpellier Méditerranée Métropole (EPCI 243400017)",
       "limitations": [
-        "Confirm current regulation and exact commune list; criteria, resource bands, documentary list, delays and follow-up remain unverified"
+        "Le règlement cite encore l'ancien seuil ACS; aucun seuil chiffré actuel n'est repris avant confirmation. Délais et suivi restent à confirmer."
       ]
     },
     {
@@ -460,39 +462,33 @@
       ]
     },
     {
-      "id": "fsl-herault",
-      "name": "Département de l'Hérault — FSL",
-      "url": "https://herault.fr/402-aide-financiere.htm",
-      "role": "Departmental FSL scope and supported housing needs",
-      "status": "official-guidance-reviewed-local-variant-pending-regulation",
-      "version": "Consulted 2026-11-23",
-      "license": "No bulk dataset copied; sourced facts retained with URL",
+      "id": "herault-family-services",
+      "name": "Services départementaux aux familles de l'Hérault",
+      "url": "https://herault.fr/2135-maisons-des-1000-jours.htm",
+      "role": "Maisons des 1000 jours, LAEP et Centres de santé sexuelle",
+      "status": "official-service-pages-reviewed-services-published",
+      "version": "Pages officielles consultées le 23 novembre 2026",
+      "license": "Pas de copie de contenu tiers; descriptions factuelles avec attribution et URL",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
-      "candidateRecordsIntegrated": 1,
-      "factsEnrichedForAids": 1,
-      "publishableRecords": 0,
-      "coverage": "Department of Hérault outside the 31 Montpellier Métropole communes, subject to confirmation of exact commune list",
+      "uniqueUsableServices": 3,
       "limitations": [
-        "Current departmental regulation, criteria, resources, documents and application path not extracted"
+        "Les horaires, disponibilités, accès sans rendez-vous et mise à jour des annuaires locaux sont à confirmer auprès de chaque structure."
       ]
     },
     {
-      "id": "fsl-montpellier-metropole",
-      "name": "Montpellier Méditerranée Métropole — FSL",
-      "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement",
-      "role": "Metropolitan FSL territory, supported needs and social-worker application procedure",
-      "status": "official-guidance-reviewed-local-variant-pending-current-regulation",
-      "version": "Page consulted 2026-11-23; 2025 regulation must be checked for continued effect",
-      "license": "No bulk dataset copied; sourced facts retained with URL",
+      "id": "parents-solos-platform",
+      "name": "Parents Solos — plateforme privée",
+      "url": "https://www.parents-solos.com/conditions-utilisation/",
+      "role": "Vérification de l'éditeur, de l'accès et de la tarification déclarée",
+      "status": "private-service-terms-reviewed-service-published",
+      "version": "Conditions affichant une mise à jour au 15 novembre 2026; consultées le 23 novembre 2026",
+      "license": "Aucun contenu éditorial reproduit; informations factuelles attribuées",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
-      "candidateRecordsIntegrated": 1,
-      "factsEnrichedForAids": 1,
-      "publishableRecords": 0,
-      "coverage": "Residents of 31 Montpellier Méditerranée Métropole communes",
+      "uniqueUsableServices": 1,
       "limitations": [
-        "Confirm current regulation and exact commune list; criteria, resource bands, documentary list, delays and follow-up remain unverified"
+        "La disponibilité de membres locaux n'est pas garantie; le service n'est ni une aide sociale, ni un partenariat ou une recommandation de Solomam."
       ]
     }
   ]
