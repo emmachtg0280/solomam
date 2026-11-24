@@ -44,7 +44,7 @@ for (const [id, definition] of Object.entries(definitions)) {
   audit.informationPublicationStatus = "verified";
   audit.informationVerifiedAt = today;
   audit.procedurePublicationStatus = "pending";
-  audit.publicationStatus = "pending"; // legacy combined gate stays closed; information/procedure gates are independent.
+  audit.publicationStatus = "published"; // Catalogue visibility follows verified information; procedure completeness remains separate.
   const publicationNote = "Fiche d'information publiée après vérification des faits essentiels. Le statut ne valide pas le parcours de demande; voir les informations de vérification sur la fiche.";
   audit.notes = (audit.notes ?? []).filter((note) => !note.startsWith("Fiche d'information publiée après vérification des faits essentiels."));
   audit.notes.push(publicationNote);

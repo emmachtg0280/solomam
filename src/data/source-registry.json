@@ -1391,17 +1391,17 @@
       "sourceType": "pdf",
       "updateFrequency": "À contrôler à chaque publication ou délibération; date affichée du fichier ne suffit pas à établir la date d'entrée en vigueur",
       "termsOfUse": "Pas de téléchargement massif; source officielle consultée pour examen individuel.",
-      "status": "official-source-current-version-unconfirmed",
-      "accessibility": "PDF officiel accessible et indexé; couvre plusieurs prestations, règlement intérieur du FUH courant non vérifié",
+      "status": "official-rdas-2026-consulted-fsl-inner-regulation-unconfirmed",
+      "accessibility": "RDAS 2026 accessible; critères FSL/FUH examinés, mais le règlement intérieur dédié du FUH reste à confirmer.",
       "lastCollection": "2026-11-23",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
       "coverage": "Règlement départemental large; FSL/FUH identifié, aucun candidat intégré avant confirmation de la version en vigueur.",
       "limitations": [
-        "Le préambule indique adoption le 14 mars 2022 malgré le nom de fichier 2026.",
-        "Vérifier le règlement intérieur FUH courant et son barème avant qualification/publication."
-      ]
+        "Le préambule cite une adoption en 2022 malgré le nom du fichier et sa mise à jour de mars 2026; confirmer le règlement intérieur FUH en vigueur avant publication."
+      ],
+      "lastConsultedAt": "2026-11-24"
     },
     {
       "id": "fsl-ariege-rdas-2026",
@@ -1422,14 +1422,15 @@
       "name": "Département de l’Aude — règlement d’attribution des aides financières, avril 2026",
       "url": "https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf",
       "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
-      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "status": "official-current-regulation-reviewed",
       "retrievedAt": "2026-11-23",
       "candidateRecordsIntegrated": 1,
       "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
       "coverage": "11",
       "limitations": [
-        "Extraire les plafonds, dépenses admissibles, justificatifs, voies de saisine et répartition de compétence avant publication."
-      ]
+        "Les plafonds chiffrés et pièces varient par volet; la fiche résume les conditions communes et ne remplace pas l’examen du règlement."
+      ],
+      "lastConsultedAt": "2026-11-24"
     },
     {
       "id": "fsl-aveyron-rdas-2025",
@@ -1492,14 +1493,15 @@
       "name": "Département du Lot — règlement intérieur FSL au 1er juillet 2025",
       "url": "https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf",
       "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
-      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "status": "official-current-regulation-reviewed",
       "retrievedAt": "2026-11-23",
       "candidateRecordsIntegrated": 1,
       "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
       "coverage": "46",
       "limitations": [
-        "Extraire les critères par volet et les modalités de saisine du règlement avant publication."
-      ]
+        "Les plafonds de ressources sont indexés sur l’AAH et évoluent; vérifier la valeur applicable au dépôt. Conditions et pièces différentes selon le volet."
+      ],
+      "lastConsultedAt": "2026-11-24"
     },
     {
       "id": "fsl-lozere-regulation-2026",

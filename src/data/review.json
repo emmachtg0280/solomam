@@ -1,6 +1,6 @@
 {
   "asf": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": "2026-04-01/2027-03-31",
     "eligibilityRulesReady": false,
@@ -199,7 +199,7 @@
     "procedurePublicationStatus": "pending"
   },
   "af": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": null,
     "eligibilityRulesReady": false,
@@ -368,7 +368,7 @@
     "procedurePublicationStatus": "pending"
   },
   "prime": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": null,
     "eligibilityRulesReady": false,
@@ -990,7 +990,7 @@
     "procedurePublicationStatus": "pending"
   },
   "css": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": "seuils à compter du 2026-04-01",
     "eligibilityRulesReady": false,
@@ -3885,7 +3885,7 @@
     "procedurePublicationStatus": "pending"
   },
   "rsa-parent-isole": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": "Règles et montants datés selon les pages indiquées; revérifier à chaque mise à jour officielle",
     "eligibilityRulesReady": false,
@@ -4054,7 +4054,7 @@
     "procedurePublicationStatus": "pending"
   },
   "prepare": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": "Règles et montants datés selon les pages indiquées; revérifier à chaque mise à jour officielle",
     "eligibilityRulesReady": false,
@@ -4242,7 +4242,7 @@
     "procedurePublicationStatus": "pending"
   },
   "aeeh": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": "Règles et montants datés selon les pages indiquées; revérifier à chaque mise à jour officielle",
     "eligibilityRulesReady": false,
@@ -4442,7 +4442,7 @@
     "procedurePublicationStatus": "pending"
   },
   "apl": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": null,
     "eligibilityRulesReady": false,
@@ -4580,7 +4580,7 @@
     "procedurePublicationStatus": "pending"
   },
   "alf": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": null,
     "eligibilityRulesReady": false,
@@ -4718,7 +4718,7 @@
     "procedurePublicationStatus": "pending"
   },
   "als": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": null,
     "eligibilityRulesReady": false,
@@ -4856,7 +4856,7 @@
     "procedurePublicationStatus": "pending"
   },
   "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "reviewedAt": "2026-11-23",
     "currentForPeriod": "Règlement de campagne 2026, dispositif annoncé pour un an à compter du 1er juillet 2026 avec quota de 5 000 aides.",
     "eligibilityRulesReady": false,
@@ -5021,7 +5021,7 @@
     "procedurePublicationStatus": "pending"
   },
   "paje-prime-naissance": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "informationPublicationStatus": "verified",
     "informationVerifiedAt": "2026-11-23",
     "reviewedAt": "2026-11-23",
@@ -5158,7 +5158,7 @@
     "procedurePublicationStatus": "pending"
   },
   "paje-allocation-base": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "informationPublicationStatus": "verified",
     "informationVerifiedAt": "2026-11-23",
     "reviewedAt": "2026-11-23",
@@ -5304,7 +5304,7 @@
     "procedurePublicationStatus": "pending"
   },
   "paje-prime-adoption": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "informationPublicationStatus": "verified",
     "informationVerifiedAt": "2026-11-23",
     "reviewedAt": "2026-11-23",
@@ -5450,7 +5450,7 @@
     "procedurePublicationStatus": "pending"
   },
   "ajpp": {
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "informationPublicationStatus": "verified",
     "informationVerifiedAt": "2026-11-23",
     "reviewedAt": "2026-11-23",
@@ -6952,12 +6952,12 @@
     ]
   },
   "fsl-11": {
-    "informationPublicationStatus": "pending",
-    "informationVerifiedAt": null,
-    "publicationStatus": "pending",
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-24",
+    "publicationStatus": "published",
     "procedurePublicationStatus": "pending",
-    "reviewedAt": "2026-11-23",
-    "currentForPeriod": null,
+    "reviewedAt": "2026-11-24",
+    "currentForPeriod": "Règlement adopté le 27 mars 2026, publié sur le site du Département et consulté le 24 novembre 2026.",
     "eligibilityRulesReady": false,
     "testCases": 0,
     "facts": [
@@ -6981,21 +6981,21 @@
       },
       {
         "field": "audience",
-        "status": "partially_verified",
-        "value": "Ménages en difficulté pour accéder à un logement décent et durable ou s’y maintenir.",
+        "status": "verified",
+        "value": "Locataires, sous-locataires et résidents éligibles de résidences autonomie, habitats inclusifs et résidences habitat jeunes en situation de précarité; propriétaires occupants précaires pour les difficultés liées à l’eau, l’énergie ou au téléphone. Les cas d’accès pour les 16–18 ans en insertion sont encadrés.",
         "sourceIds": [
           "fsl-aude-rafi-2026"
         ],
-        "validFor": "RAFI avril 2026, partie FSL"
+        "validFor": "RAFI du 27 mars 2026, points 2.1 à 2.6; critères détaillés selon le volet."
       },
       {
         "field": "core_conditions",
-        "status": "partially_verified",
-        "value": "Aide subsidiaire après mobilisation des droits communs; peut couvrir tout ou partie des frais d’accès ou de maintien et peut être complétée par un accompagnement social lié au logement.",
+        "status": "verified",
+        "value": "Le règlement adopté en mars 2026 prévoit un quotient familial tenant compte des ressources des personnes vivant sous le même toit, sous réserve d’exclusions précisées au règlement; les charges de logement doivent rester compatibles avec les ressources. Le FSL intervient à titre subsidiaire; critères, plafonds et pièces varient selon l’accès, le maintien et les factures d’eau, d’énergie ou de télécommunications.",
         "sourceIds": [
           "fsl-aude-rafi-2026"
         ],
-        "validFor": "RAFI avril 2026, partie FSL"
+        "validFor": "RAFI du 27 mars 2026, points 2.1 à 2.6; critères détaillés selon le volet."
       }
     ],
     "factSources": [
@@ -7004,8 +7004,8 @@
         "label": "Département de l’Aude — règlement d’attribution des aides financières, avril 2026",
         "url": "https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf",
         "kind": "legal-text",
-        "consultedAt": "2026-11-23",
-        "pageVerifiedAt": "2026-11-23"
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-03-27"
       }
     ],
     "sources": [],
@@ -7033,8 +7033,7 @@
       ]
     },
     "notes": [
-      "Extraire les plafonds, dépenses admissibles, justificatifs, voies de saisine et répartition de compétence avant publication.",
-      "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
+      "Fiche d’information publiée après vérification des faits essentiels; procédure de demande et critères propres aux volets encore partiels."
     ]
   },
   "fsl-12": {
@@ -7382,12 +7381,12 @@
     ]
   },
   "fsl-46": {
-    "informationPublicationStatus": "pending",
-    "informationVerifiedAt": null,
-    "publicationStatus": "pending",
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-24",
+    "publicationStatus": "published",
     "procedurePublicationStatus": "pending",
-    "reviewedAt": "2026-11-23",
-    "currentForPeriod": null,
+    "reviewedAt": "2026-11-24",
+    "currentForPeriod": "Règlement applicable depuis le 1er juillet 2025; vérifier le barème AAH applicable à la date du dépôt.",
     "eligibilityRulesReady": false,
     "testCases": 0,
     "facts": [
@@ -7411,21 +7410,21 @@
       },
       {
         "field": "audience",
-        "status": "partially_verified",
-        "value": "Personnes et ménages en difficulté de logement couverts par les volets d’accès, de maintien et d’énergie.",
+        "status": "verified",
+        "value": "Ménages rencontrant des difficultés particulières pour accéder à un logement indépendant ou s’y maintenir; le règlement priorise notamment les personnes sans logement ou hébergées temporairement, en situation de handicap, menacées d’expulsion sans relogement, logées dans des conditions indignes, victimes de violences ou cumulant difficultés financières et d’insertion.",
         "sourceIds": [
           "fsl-lot-regulation-2025"
         ],
-        "validFor": "Règlement FSL 01-07-2025"
+        "validFor": "Règlement applicable depuis le 1er juillet 2025; barèmes indexés sur l’AAH et révisés chaque année."
       },
       {
         "field": "core_conditions",
-        "status": "unverified",
-        "value": "Conditions de ressources, de subsidiarité, de loyer et les pièces sont définies par volet dans le règlement; elles ne sont pas encore extraites ici.",
+        "status": "verified",
+        "value": "La résidence principale doit être dans le Lot, ou le ménage doit avoir signé un bail dans le Lot en arrivant d’un autre département; le séjour doit être régulier pour prétendre aux aides logement de droit commun. Les ressources de l’ensemble des occupants sont comparées à des plafonds calculés depuis l’AAH, revalorisés annuellement; conditions et subsidiarité diffèrent selon les volets accès, maintien, énergie et accompagnement.",
         "sourceIds": [
           "fsl-lot-regulation-2025"
         ],
-        "validFor": "Règlement FSL 01-07-2025"
+        "validFor": "Règlement applicable depuis le 1er juillet 2025; barèmes indexés sur l’AAH et révisés chaque année."
       }
     ],
     "factSources": [
@@ -7434,8 +7433,8 @@
         "label": "Département du Lot — règlement intérieur FSL au 1er juillet 2025",
         "url": "https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf",
         "kind": "legal-text",
-        "consultedAt": "2026-11-23",
-        "pageVerifiedAt": "2026-11-23"
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2025-07-01"
       }
     ],
     "sources": [],
@@ -7463,8 +7462,7 @@
       ]
     },
     "notes": [
-      "Extraire les critères par volet et les modalités de saisine du règlement avant publication.",
-      "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
+      "Fiche d’information publiée après vérification des faits essentiels; procédure de demande et critères propres aux volets encore partiels."
     ]
   },
   "fsl-48": {

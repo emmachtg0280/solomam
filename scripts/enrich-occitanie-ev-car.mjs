@@ -33,7 +33,7 @@ aid.description = "Aide régionale à l’achat d’une voiture particulière é
 aid.when = facts.find((fact) => fact.field === "audience").value;
 review[aid.id] = {
   ...prior,
-  informationPublicationStatus: "verified", informationVerifiedAt: consultedAt, publicationStatus: "pending", procedurePublicationStatus: "pending", reviewedAt: consultedAt,
+  informationPublicationStatus: "verified", informationVerifiedAt: consultedAt, publicationStatus: "published", procedurePublicationStatus: "pending", reviewedAt: consultedAt,
   currentForPeriod: "Règlement de campagne 2026, dispositif annoncé pour un an à compter du 1er juillet 2026 avec quota de 5 000 aides.",
   eligibilityRulesReady: false, testCases: 0,
   facts, factSources: [page, regulation], applicationUrl: "https://mesaidesenligne.laregion.fr/",

@@ -93,6 +93,16 @@ const upsertSource = (source) => {
   if (index < 0) registry.sources.push(source); else registry.sources[index] = { ...registry.sources[index], ...source };
 };
 for (const item of definitions) {
+  const existingReview = review[item.id];
+  if (existingReview?.informationPublicationStatus === "verified") {
+    const existingAid = catalogue.find((row) => row.id === item.id);
+    const reviewedSource = [...(existingReview.sources ?? []), ...(existingReview.factSources ?? [])]
+      .find((row) => row.id === item.sourceId && row.url === item.url);
+    if (!existingAid || existingAid.url !== item.url || !reviewedSource) {
+      throw new Error(`Verified editorial record ${item.id} changed source identity; re-review it explicitly before integration.`);
+    }
+    continue;
+  }
   const source = { id:item.sourceId, name:item.sourceName, url:item.url, role:"Source officielle de qualification d’un dispositif local aux personnes et ménages", status:"official-page-or-regulation-reviewed-candidate-only", retrievedAt:checkedAt, candidateRecordsIntegrated:1, license:"Faits synthétisés avec attribution; aucun document tiers intégral recopié", coverage:item.zone, limitations:item.notes };
   upsertSource(source);
   let aid = catalogue.find((row) => row.id === item.id);
