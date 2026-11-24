@@ -29,19 +29,53 @@ const records = [
   },
   {
     id: "caf-herault-secours-prets", name: "Secours et prêts sociaux — Caf de l’Hérault", category: "Famille", org: "Caisse d'Allocations familiales de l'Hérault", url: "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux",
-    description: "Aides exceptionnelles sous forme de secours ou de prêts sans intérêt, examinées avec un travailleur social de la Caf. Les montants et modalités renvoient au règlement intérieur d’action sociale 2026, dont l’extraction a échoué lors de cette collecte.",
-    when: "Familles allocataires avec enfant à charge ou à naître; la page cite notamment séparation, décès, certains impayés ALF et des difficultés de familles à revenus d’activité modestes.",
+    description: "Aides exceptionnelles sous forme de secours ou de prêts sans intérêt, après ouverture des droits légaux et étude au cas par cas par la commission des aides individuelles sur proposition d’un travailleur social Caf. Les montants ne sont pas forfaitaires.",
+    when: "Familles allocataires avec enfant à charge ou à naître; situations citées : parent seul avec enfants, séparation/divorce/décès, impayé de loyer avec ALF pour une famille avec enfant à charge, ou difficultés de familles percevant la prime d’activité avec QF inférieur à 800 € et sans RSA.",
     facts: [
-      { field: "audience", status: "verified", value: "Familles allocataires de la Caf de l’Hérault avec enfant à charge ou à naître.", sourceIds: ["caf-herault-secours-page"], validFor: "Page Caf consultée le 23-11-2026" },
-      { field: "eligible_situations", status: "verified", value: "La page cite les situations de célibat avec enfant, séparation/divorce, décès, certains impayés de loyer pour les familles en ALF et des difficultés de foyers modestes percevant la prime d’activité et n’ayant pas le RSA.", sourceIds: ["caf-herault-secours-page"], validFor: "Page Caf consultée le 23-11-2026; liste présentée comme exemples/situations d'examen" },
-      { field: "amount", status: "unverified", value: null, sourceIds: ["caf-herault-secours-page", "caf-herault-rias-source"], validFor: "Le RIAS 2026 lié par la Caf n'a pas pu être extrait: serveur en page de maintenance." },
+      { field: "current_status", status: "verified", value: "Aide locale décrite au règlement intérieur d’action sociale CAF Hérault 2026.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, version téléchargée le 23-11-2026" },
+      { field: "territory", status: "verified", value: "Allocataires relevant de la Caf de l’Hérault.", sourceIds: ["caf-herault-rias-2026", "caf-herault-secours-page"], validFor: "RIAS 2026 et page allocataire Caf consultés le 23-11-2026" },
+      { field: "audience", status: "verified", value: "Familles allocataires concernées : célibat avec enfant, séparation/divorce/décès; familles avec enfant à charge en ALF en cas d’impayé de loyer; foyers modestes bénéficiaires de la prime d’activité, QF < 800 €, sans RSA.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 5" },
+      { field: "core_conditions", status: "verified", value: "Droits légaux préalablement ouverts; accompagnement par un travailleur social et proposition à la Commission des aides individuelles; aide accordée au cas par cas en secours ou prêt sans intérêt. Les dettes de loyer, d’électricité, de gaz, d’eau ou de téléphone relèvent prioritairement du FSL. En résidence alternée avec partage de prestations, chacun des parents allocataire peut demander l’examen de son dossier.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 5" },
+      { field: "amount", status: "verified", value: "Pas de barème ni de montant fixe publié : nature et montant décidés au cas par cas par la Commission des aides individuelles.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 5" },
+      { field: "documents", status: "verified", value: "Évaluation sociale décrivant la situation familiale, financière, administrative et sociale, l’origine des difficultés et le projet de résolution avec les aides et accompagnements sollicités.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 5" },
     ],
     sources: [
       { id: "caf-herault-secours-page", label: "Caf de l'Hérault — Les secours et prêts sociaux", url: "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux", kind: "official-guidance", consultedAt: checkedAt, pageVerifiedAt: checkedAt },
-      { id: "caf-herault-rias-source", label: "Caf de l'Hérault — RIAS 2026 (lien officiel; extraction bloquée)", url: "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf", kind: "official-regulation", consultedAt: checkedAt, pageVerifiedAt: null },
+      { id: "caf-herault-rias-2026", label: "Caf de l'Hérault — Règlement intérieur d’action sociale 2026", url: "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf", kind: "official-regulation", consultedAt: checkedAt, pageVerifiedAt: checkedAt },
     ],
-    informationPublicationStatus: "pending", publicationStatus: "pending", procedureStatus: "blocked",
-    remainingChecks: ["Extraire le RIAS 2026 lié par la page officielle et vérifier ses règles, plafonds et critères généraux.", "Confirmer les pièces, l'accès au travailleur social, l'instruction et le paiement."],
+    informationPublicationStatus: "verified", publicationStatus: "pending", procedureStatus: "partially_complete",
+    remainingChecks: ["Confirmer auprès de la Caf le point d’entrée pour prendre rendez-vous avec le travailleur social et le canal de suivi du dossier."],
+  },
+  {
+    id: "caf-herault-pret-equipement-logement", name: "Prêt à l’équipement du logement — Caf de l’Hérault", category: "Logement", org: "Caisse d'Allocations familiales de l'Hérault", url: "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/logement/aideaulogementmontpellier/les-3-etapes-de-l-aide-au-logement",
+    description: "Prêt Caf destiné à l’équipement ménager, mobilier et de puériculture, plafonné à 95 % du devis et 650 €. Le règlement 2026 inclut les parents non-gardiens et encadre le fournisseur, les biens et le remboursement.",
+    when: "Allocataires Caf de l’Hérault avec quotient familial ≤ 900 €, percevant au moins une prestation légale (RSA, prime d’activité ou APL) le mois de la demande et n’ayant pas de prêt de même nature en cours; les parents sans charge de l’enfant et non-gardiens sont expressément inclus.",
+    facts: [
+      { field: "current_status", status: "verified", value: "Prêt local décrit au RIAS de la Caf de l’Hérault 2026.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026" },
+      { field: "territory", status: "verified", value: "Allocataires relevant de la Caf de l’Hérault.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026" },
+      { field: "audience", status: "verified", value: "Familles allocataires, y compris parents non-gardiens ou sans charge d’enfant, avec QF ≤ 900 €.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 4" },
+      { field: "core_conditions", status: "verified", value: "Au mois de la demande, percevoir au moins une prestation parmi RSA, prime d’activité ou APL; ne pas avoir de prêt de même nature en cours; achat auprès d’un fournisseur partenaire agréé avec devis. Équipements limités à la liste du règlement.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 4" },
+      { field: "amount", status: "verified", value: "Prêt plafonné à 95 % du devis et à 650 €, remboursé par retenues sur prestations en mensualités choisies de 25 €, 35 €, 45 € ou 55 €.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 4" },
+      { field: "documents", status: "verified", value: "Dossier Caf et devis établi par un fournisseur partenaire agréé; justificatif Banque de France requis en situation de surendettement.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 4" },
+    ],
+    sources: [{ id: "caf-herault-rias-2026", label: "Caf de l'Hérault — Règlement intérieur d’action sociale 2026", url: "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf", kind: "official-regulation", consultedAt: checkedAt, pageVerifiedAt: checkedAt }],
+    informationPublicationStatus: "verified", publicationStatus: "pending", procedureStatus: "partially_complete",
+    remainingChecks: ["Vérifier le lien courant du formulaire Caf et de la liste des fournisseurs partenaires avant d'afficher un parcours de demande détaillé."],
+  },
+  {
+    id: "caf-herault-mobilite-insertion", name: "Aide à la mobilité pour l’insertion professionnelle — Caf de l’Hérault", category: "Mobilité", org: "Caisse d'Allocations familiales de l'Hérault", url: "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux",
+    description: "Aide locale Caf pour le permis (code/heures de conduite) ou la location d’un véhicule, dans le cadre d’un parcours d’insertion. La demande passe par un organisme d’accompagnement conventionné avec la Caf.",
+    when: "Allocataires avec enfant(s) à charge qui perçoivent des minima sociaux et sont accompagnés vers l’insertion professionnelle par un organisme conventionné par la Caf de l’Hérault.",
+    facts: [
+      { field: "current_status", status: "verified", value: "Aide locale décrite au RIAS de la Caf de l’Hérault 2026.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026" },
+      { field: "territory", status: "verified", value: "Allocataires accompagnés dans le cadre de l’offre locale de la Caf de l’Hérault.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 6" },
+      { field: "audience", status: "verified", value: "Allocataires avec enfant(s) à charge, percevant des minima sociaux et suivis vers l’insertion professionnelle par un organisme conventionné Caf.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 6" },
+      { field: "core_conditions", status: "verified", value: "La demande doit être faite auprès d’un organisme d’accompagnement conventionné par la Caf dans un parcours d’insertion. Dépenses citées : heures de conduite/code et location de véhicule à deux ou quatre roues.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 6" },
+      { field: "amount", status: "verified", value: "Plafond de 2 000 € par année civile, dans la limite du coût du projet et mobilisable en deux fois maximum; cumulable avec d’autres aides institutionnelles à la mobilité.", sourceIds: ["caf-herault-rias-2026"], validFor: "RIAS 2026, section 6" },
+    ],
+    sources: [{ id: "caf-herault-rias-2026", label: "Caf de l'Hérault — Règlement intérieur d’action sociale 2026", url: "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf", kind: "official-regulation", consultedAt: checkedAt, pageVerifiedAt: checkedAt }],
+    informationPublicationStatus: "verified", publicationStatus: "pending", procedureStatus: "partial",
+    remainingChecks: ["Identifier un organisme conventionné local et confirmer les pièces et modalités propres au parcours individuel."],
   },
   {
     id: "bouclier-social-petite-enfance-montpellier", name: "Bouclier social Petite Enfance — Montpellier", category: "Garde", org: "Ville de Montpellier", url: "https://www.montpellier.fr/vie-quotidienne/vivre-ici/j-ai-un-enfant-entre-0-et-3-ans/je-recherche-un-mode-d-accueil/bouclier-social-petite-enfance",
@@ -86,4 +120,27 @@ for (const data of records) {
 if (new Set(catalogue.map((item) => item.id)).size !== catalogue.length) throw new Error("Duplicate canonical aid ID");
 await writeFile(cataloguePath, `${JSON.stringify(catalogue, null, 2)}\n`, "utf8");
 await writeFile(reviewPath, `${JSON.stringify(review, null, 2)}\n`, "utf8");
-console.log(JSON.stringify({ integratedCandidates: records.length, informationPublished: records.filter((item) => review[item.id].informationPublicationStatus === "verified").length, pending: records.filter((item) => review[item.id].informationPublicationStatus !== "verified").length }, null, 2));
+const importsRoot = path.join(root, "src/data/imports/local/herault");
+await import("node:fs/promises").then(({ mkdir }) => mkdir(path.join(importsRoot, "normalized"), { recursive: true }));
+const riasExtract = {
+  sourceId: "caf-herault-rias-2026",
+  sourceUrl: "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
+  rawSnapshot: "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf",
+  retrievedAt: checkedAt,
+  officialPage: "https://www.caf.fr/professionnels/offres-et-services/caf-de-l-herault/partenaires-locaux",
+  extractedSections: [
+    { section: "5. Secours et prêts sociaux", pdfPages: [14, 15], findings: ["Familles allocataires; situations de parent seul avec enfants, séparation/divorce/décès; impayé de loyer en ALF pour familles avec enfant à charge; prime d’activité avec revenus modestes, QF < 800 €, sans RSA.", "Droits légaux préalablement ouverts; proposition d’un travailleur social; décision de la Commission des aides individuelles; secours ou prêt sans intérêt au cas par cas.", "Évaluation sociale décrivant la situation, l’origine des difficultés et les aides/accompagnements sollicités.", "Les dettes de loyer, électricité, gaz, eau et téléphone sont prioritairement examinées au FSL."] },
+    { section: "4. Prêt à l’équipement du logement", pdfPages: [13, 14], findings: ["QF ≤ 900 €; parents non-gardiens inclus; percevoir RSA, prime d’activité ou APL le mois de demande; aucun prêt de même nature en cours.", "Montant ≤ 95 % du devis et ≤ 650 €; devis d’un fournisseur partenaire agréé; mensualités de 25 €, 35 €, 45 € ou 55 €."] },
+    { section: "6. Mobilité pour insertion professionnelle", pdfPages: [15], findings: ["Allocataires avec enfants à charge percevant des minima sociaux et accompagnés par un organisme conventionné Caf.", "Permis/code/heures de conduite ou location de véhicule 2/4 roues; plafond 2 000 € par année civile, jusqu’à deux mobilisations, dans la limite du coût du projet."] },
+    { section: "7. Aide locale BAFA 1", pdfPages: [15], findings: ["Stagiaire allocataire ou enfant à charge, sans condition de ressources; aide plafonnée à 100 €, sous réserve de budget, après validation de la première session; formulaire et justificatifs à transmettre dans les 3 mois.", "Le règlement signalait le formulaire comme disponible prochainement à sa publication; disponibilité actuelle non confirmée, donc non intégrée en fiche."] },
+  ],
+  scopeLimitations: ["Le RIAS fixe les règles d'aides locales sous enveloppe annuelle; il ne garantit pas l'octroi individuel.", "Les pages précisent que l’aide aux dettes locatives et aux charges concernées relève prioritairement du FSL.", "La mobilité reste une orientation via un organisme conventionné, qui n'est pas encore identifié pour chaque demandeuse."],
+};
+await writeFile(path.join(importsRoot, "normalized/rias-aides-extract-2026.json"), `${JSON.stringify(riasExtract, null, 2)}\n`, "utf8");
+const registryPath = path.join(root, "src/data/source-registry.json");
+const registry = JSON.parse(await readFile(registryPath, "utf8"));
+const registrySource = { id: "caf-herault-rias-2026", name: "Caf de l'Hérault — RIAS 2026, aides financières individuelles", url: riasExtract.sourceUrl, role: "Règlement officiel des aides locales aux familles allocataires; secours, prêts sociaux, équipement, mobilité et vacances", status: "official-pdf-downloaded-extracted-key-sections-reviewed", version: "RIAS 2026; sections 4 à 7 extraites, secours/prêts, équipement, mobilité et BAFA", license: "Aucun texte intégral reproduit; faits résumés avec source et pages PDF", retrievedAt: checkedAt, recordsImported: 0, candidateRecordsIntegrated: records.filter((item) => item.id.startsWith("caf-herault-")).length, factsEnrichedForAids: records.filter((item) => item.id.startsWith("caf-herault-")).length, publishableRecords: 0, snapshot: "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf", extractedSummary: "src/data/imports/local/herault/normalized/rias-aides-extract-2026.json", coverage: "CAF Hérault", limitations: ["L'octroi des secours/prêts est discrétionnaire et décidé au cas par cas; le circuit précis d'orientation reste à confirmer.", "Les fenêtres et critères 2026 des aides aux vacances ne sont pas pérennes; les aides saisonnières ne sont pas ajoutées à cette passe."] };
+registry.sources = [...registry.sources.filter((item) => item.id !== registrySource.id && item.id !== "caf-herault-rias" && item.id !== "caf-herault-rias-source"), registrySource];
+registry.auditedAt = checkedAt;
+await writeFile(registryPath, `${JSON.stringify(registry, null, 2)}\n`, "utf8");
+console.log(JSON.stringify({ integratedCandidates: records.length, informationPublished: records.filter((item) => review[item.id].informationPublicationStatus === "verified").length, pending: records.filter((item) => review[item.id].informationPublicationStatus !== "verified").length, riasSnapshot: riasExtract.rawSnapshot }, null, 2));

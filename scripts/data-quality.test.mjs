@@ -13,9 +13,12 @@ const readJson = async (name) => JSON.parse(await readFile(path.join(root, name)
 
 test("canonical catalogue has unique IDs and source URLs", async () => {
   const catalogue = await readJson("src/data/catalogue.json");
-  assert.equal(catalogue.length, 54);
+  assert.equal(catalogue.length, 75);
   assert.equal(new Set(catalogue.map((record) => record.id)).size, catalogue.length);
-  assert.equal(new Set(catalogue.map((record) => record.url)).size, catalogue.length);
+  const recordsByUrl = new Map();
+  for (const record of catalogue) recordsByUrl.set(record.url, [...(recordsByUrl.get(record.url) ?? []), record.id]);
+  const sharedSourcePages = [...recordsByUrl.values()].filter((ids) => ids.length > 1).map((ids) => ids.sort());
+  assert.deepEqual(sharedSourcePages, [["caf-herault-mobilite-insertion", "caf-herault-secours-prets"], ["fsl-31-departement", "fsl-31-toulouse-metropole"]]);
   assert.ok(catalogue.every((record) => record.id && record.name && record.url));
   assert.doesNotMatch(JSON.stringify(catalogue), /Ã|â€™|â€“|â€”|â‚¬/);
 });
@@ -25,7 +28,7 @@ test("all regional candidates retain source identity and remain unpublished pend
   const review = await readJson("src/data/review.json");
   const snapshot = await readJson("src/data/imports/occitanie/raw/dataset.json");
   const regional = catalogue.filter((record) => record.id.startsWith("occ-"));
-  assert.equal(regional.length, 23);
+  assert.equal(regional.length, 25);
   for (const record of regional) {
     const audit = review[record.id];
     assert.equal(audit.publicationStatus, "pending");
@@ -86,7 +89,7 @@ test("information publication is independent from procedure completeness", async
   assert.match(review.asf.facts.find((fact) => fact.field === "core_conditions").value, /incohérence/);
   assert.equal(review.asf.facts.find((fact) => fact.field === "amount").status, "conflict");
   assert.ok(review.css.applicationProcedure.renewal.text.includes("un an"));
-  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 19);
+  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 25);
   assert.deepEqual(catalogue.filter((item) => ["apl", "alf", "als"].includes(item.id)).map(({ id }) => id).sort(), ["alf", "als", "apl"]);
   assert.equal(catalogue.some((item) => item.id === "logement"), false);
   assert.equal(review.logement.recordLifecycle, "superseded");
@@ -117,7 +120,15 @@ test("Hérault local candidates preserve source evidence and publish only the ve
   assert.equal(review[afie.id].publicationStatus, "pending");
   assert.ok(review[afie.id].facts.some((fact) => fact.field === "amount" && fact.status === "unverified" && fact.value === null));
 
-  for (const id of ["caf-herault-secours-prets", "bouclier-social-petite-enfance-montpellier"]) {
+  for (const id of ["caf-herault-secours-prets", "caf-herault-pret-equipement-logement", "caf-herault-mobilite-insertion"]) {
+    const record = catalogue.find((item) => item.id === id);
+    assert.ok(record);
+    assert.equal(review[id].informationPublicationStatus, "verified");
+    assert.equal(canPublishInformation(record, review[id]), true);
+    assert.equal(review[id].publicationStatus, "pending");
+    assert.equal(review[id].procedurePublicationStatus, "pending");
+  }
+  for (const id of ["bouclier-social-petite-enfance-montpellier"]) {
     const record = catalogue.find((item) => item.id === id);
     assert.ok(record);
     assert.equal(review[id].informationPublicationStatus, "pending");
@@ -149,12 +160,15 @@ test("departmental source registry contains stable entries for all Occitanie dep
   const ariegeSource = registry.sources.find((source) => source.id === "ariege-rdas-pdf");
   assert.equal(ariegeSource.status, "official-source-current-version-unconfirmed");
   assert.ok(territorialSources.every((source) => source.lastCollection === null && source.recordsImported === 0));
-  assert.equal(coverage.territories.filter((territory) => territory.status === "identified").length, 11);
+  assert.equal(coverage.territories.filter((territory) => territory.status === "identified").length, 0);
   assert.equal(coverage.territories.find((territory) => territory.id === "30").status, "partially_integrated");
+  for (const department of ["09", "11", "12", "31", "32", "46", "48", "65", "66", "81", "82"]) {
+    assert.equal(coverage.territories.find((territory) => territory.id === department).status, "partially_integrated");
+  }
 });
 
 test("local aid integration and departmental registry rebuild idempotently", async () => {
-  const ids = ["afie-herault", "caf-herault-secours-prets", "bouclier-social-petite-enfance-montpellier", "fsl-gard-acces"];
+  const ids = ["afie-herault", "caf-herault-secours-prets", "bouclier-social-petite-enfance-montpellier", "fsl-gard-acces", "fsl-09", "fsl-11", "fsl-12", "fsl-31-departement", "fsl-31-toulouse-metropole", "fsl-82", "aide-urgence-gers", "caf-aveyron-projet-familial", "fdaj-herault", "faj3m-montpellier", "ccas-montpellier-aide-facultative", "ccas-frontignan-energy-aid"];
   const readManaged = async () => {
     const catalogue = await readJson("src/data/catalogue.json");
     const review = await readJson("src/data/review.json");
@@ -163,15 +177,53 @@ test("local aid integration and departmental registry rebuild idempotently", asy
     return {
       records: catalogue.filter((item) => ids.includes(item.id)),
       audits: Object.fromEntries(ids.map((id) => [id, review[id]])),
-      sources: registry.sources.filter((source) => source.id.startsWith("territory-") || source.id.startsWith("adhl-gard-") || source.id === "ariege-rdas-pdf"),
+      sources: registry.sources.filter((source) => source.id.startsWith("territory-") || source.id.startsWith("adhl-gard-") || source.id.startsWith("fsl-") || source.id === "ariege-rdas-pdf" || source.id === "caf-aveyron-rias-2026"),
       coverage,
     };
   };
   const before = await readManaged();
-  for (const script of ["scripts/integrate-herault-local-aids.mjs", "scripts/integrate-gard-fsl.mjs", "scripts/register-departmental-sources.mjs"]) {
+  for (const script of ["scripts/integrate-herault-local-aids.mjs", "scripts/integrate-gard-fsl.mjs", "scripts/integrate-occitanie-departmental-candidates.mjs", "scripts/register-departmental-sources.mjs"]) {
     execFileSync(process.execPath, [script], { cwd: root, stdio: "ignore" });
   }
   assert.deepEqual(await readManaged(), before);
+});
+
+test("regional editorial exclusions retain qualifications and raw provenance", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  const qualifications = await readJson("src/data/imports/occitanie/normalized/qualifications.json");
+  const decisions = await readJson("src/data/imports/occitanie/normalized/official-page-decisions.json");
+  const excluded = Object.keys(decisions.editorialExclusions ?? {});
+  assert.equal(excluded.length, 3);
+  for (const url of excluded) {
+    assert.equal(catalogue.some((aid) => aid.url === url), false);
+    const qualification = qualifications.records.find((item) => item.normalized.officialUrl === url);
+    assert.ok(qualification?.rawRecordReference?.file);
+    assert.equal(qualification.editorialDisposition.status, "excluded-from-editorial-catalogue");
+  }
+  for (const id of ["occ-aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire", "occ-avec-mouv-occitanie-la-region-t-aide-pour-ta-mobilite-internationale"]) {
+    const aid = catalogue.find((item) => item.id === id);
+    assert.ok(aid);
+    assert.equal(review[id].publicationStatus, "pending");
+  }
+  assert.equal(qualifications.records.filter((item) => item.editorialDisposition.status === "candidate-retained-for-review").length, 2);
+});
+
+test("local aid snapshots preserve CAF and FSL scope distinctions", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  const toulouse = await readJson("src/data/territories/toulouse-metropole.json");
+  const rias = await readJson("src/data/imports/local/herault/normalized/rias-aides-extract-2026.json");
+  const familyAid = catalogue.find((aid) => aid.id === "caf-aveyron-projet-familial");
+  assert.equal(canPublishInformation(familyAid, review[familyAid.id]), true);
+  assert.equal(review[familyAid.id].publicationStatus, "pending");
+  assert.equal(toulouse.epciCode, "243100518");
+  assert.equal(toulouse.communes.length, 37);
+  assert.equal(new Set(toulouse.communes.map((commune) => commune.inseeCode)).size, 37);
+  assert.equal(rias.extractedSections.some((section) => section.section.includes("Secours et prêts sociaux")), true);
+  assert.ok(catalogue.some((aid) => aid.id === "fsl-31-departement"));
+  assert.ok(catalogue.some((aid) => aid.id === "fsl-31-toulouse-metropole"));
+  assert.equal(review["ccas-frontignan-energy-aid"].informationPublicationStatus, "pending");
 });
 
 test("new PAJE and AJPP records retain official evidence, uncertainty, and separate procedure status", async () => {
@@ -279,8 +331,8 @@ test("source registry preserves prior evidence and reports current regional revi
   const servicePublic = registry.sources.find((source) => source.id === "service-public");
   assert.ok(servicePublic.evidence.length >= 12);
   const regional = registry.sources.find((source) => source.id === "region-official-catalogue");
-  assert.equal(regional.pagesReviewed, 66);
-  assert.equal(regional.pendingManualReview, 87);
+  assert.equal(regional.pagesReviewed, 153);
+  assert.equal(regional.pendingManualReview, 0);
   assert.equal(qualifications.records.filter((record) => record.classification.status === "needs_manual_review").length, regional.pendingManualReview);
   assert.ok(!regional.limitations.some((limitation) => /remaining 94 official pages/i.test(limitation)));
 });

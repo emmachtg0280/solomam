@@ -697,5 +697,252 @@
     "description": "Le volet Accès du FSL du Gard aide les ménages à accéder à un logement. Il peut contribuer au dépôt de garantie, premier loyer, frais d’agence, déménagement ou assurance locative, selon les règles et ressources applicables. L’ADHL instruit; le Département verse.",
     "when": "Ménages du Gard qui rencontrent des difficultés pour accéder à un logement, sous plafonds de ressources variables selon la composition du foyer et selon les conditions propres à l’aide demandée.",
     "url": "https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces.html"
+  },
+  {
+    "id": "occ-aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire",
+    "name": "Aides en faveur du développement de la pratique du sport scolaire",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Public bénéficiaire à confirmer sur la page officielle du dispositif.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire"
+  },
+  {
+    "id": "occ-avec-mouv-occitanie-la-region-t-aide-pour-ta-mobilite-internationale",
+    "name": "Avec Mouv’Occitanie, la Région t’aide pour ta mobilité internationale",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Public bénéficiaire à confirmer sur la page officielle du dispositif.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Avec-Mouv-Occitanie-la-Region-t-aide-pour-ta-mobilite-internationale"
+  },
+  {
+    "id": "caf-herault-pret-equipement-logement",
+    "name": "Prêt à l’équipement du logement — Caf de l’Hérault",
+    "category": "Logement",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Prêt Caf destiné à l’équipement ménager, mobilier et de puériculture, plafonné à 95 % du devis et 650 €. Le règlement 2026 inclut les parents non-gardiens et encadre le fournisseur, les biens et le remboursement.",
+    "when": "Allocataires Caf de l’Hérault avec quotient familial ≤ 900 €, percevant au moins une prestation légale (RSA, prime d’activité ou APL) le mois de la demande et n’ayant pas de prêt de même nature en cours; les parents sans charge de l’enfant et non-gardiens sont expressément inclus.",
+    "steps": [],
+    "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/logement/aideaulogementmontpellier/les-3-etapes-de-l-aide-au-logement"
+  },
+  {
+    "id": "caf-herault-mobilite-insertion",
+    "name": "Aide à la mobilité pour l’insertion professionnelle — Caf de l’Hérault",
+    "category": "Mobilité",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Aide locale Caf pour le permis (code/heures de conduite) ou la location d’un véhicule, dans le cadre d’un parcours d’insertion. La demande passe par un organisme d’accompagnement conventionné avec la Caf.",
+    "when": "Allocataires avec enfant(s) à charge qui perçoivent des minima sociaux et sont accompagnés vers l’insertion professionnelle par un organisme conventionné par la Caf de l’Hérault.",
+    "steps": [],
+    "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux"
+  },
+  {
+    "id": "fsl-09",
+    "name": "FSL / Fonds unique habitat — Ariège",
+    "category": "Logement",
+    "zone": "09",
+    "org": "Conseil départemental de l’Ariège",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf"
+  },
+  {
+    "id": "fsl-11",
+    "name": "Fonds de solidarité pour le logement — Aude",
+    "category": "Logement",
+    "zone": "11",
+    "org": "Conseil départemental de l’Aude",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf"
+  },
+  {
+    "id": "fsl-12",
+    "name": "Fonds de solidarité pour le logement — Aveyron",
+    "category": "Logement",
+    "zone": "12",
+    "org": "Conseil départemental de l’Aveyron",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://aveyron.fr/sites/default/files/documents/Solidarite/2025/08-aout/2025_03_28_RDAS.pdf"
+  },
+  {
+    "id": "fsl-31-departement",
+    "name": "Fonds de solidarité pour le logement — Haute-Garonne hors Toulouse Métropole",
+    "category": "Logement",
+    "zone": "31",
+    "org": "Conseil départemental de la Haute-Garonne",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
+  },
+  {
+    "id": "fsl-31-toulouse-metropole",
+    "name": "Fonds de solidarité pour le logement — Toulouse Métropole",
+    "category": "Logement",
+    "zone": "31",
+    "org": "Toulouse Métropole",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
+  },
+  {
+    "id": "aide-urgence-gers",
+    "name": "Fonds d’aide d’urgence — Gers",
+    "category": "Logement",
+    "zone": "32",
+    "org": "Conseil départemental du Gers",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.gers.fr/aides-infos-pratiques/insertion-et-solidarites/aides-financieres"
+  },
+  {
+    "id": "fsl-46",
+    "name": "Fonds de solidarité pour le logement — Lot",
+    "category": "Logement",
+    "zone": "46",
+    "org": "Département du Lot",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf"
+  },
+  {
+    "id": "fsl-48",
+    "name": "Fonds de solidarité pour le logement — Lozère",
+    "category": "Logement",
+    "zone": "48",
+    "org": "Conseil départemental de la Lozère",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://lozere.fr/sites/default/files/upload/05-solidarite/documents/260101_ri_fsl_complet_cd_lozere_2.pdf"
+  },
+  {
+    "id": "fsl-65",
+    "name": "Fonds de solidarité pour le logement — Hautes-Pyrénées",
+    "category": "Logement",
+    "zone": "65",
+    "org": "Département des Hautes-Pyrénées",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.hautespyrenees.fr/download/462/2025/27005/publication-n685-du-3-fevrier-2025-commission-permanente-du-31-janvier-2025-deliberations.pdf"
+  },
+  {
+    "id": "fsl-66",
+    "name": "Fonds de solidarité pour le logement — Pyrénées-Orientales",
+    "category": "Logement",
+    "zone": "66",
+    "org": "Département des Pyrénées-Orientales",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.ledepartement66.fr/fonds-de-solidarite-pour-le-logement-mode-demploi/"
+  },
+  {
+    "id": "fsl-81",
+    "name": "Fonds de solidarité pour le logement — Tarn",
+    "category": "Logement",
+    "zone": "81",
+    "org": "Conseil départemental du Tarn",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.tarn.fr/fileadmin/mediatheque/Tarn/Documents/Actualites/2025/Logement/FSL-Fonds-de-solidarite-pour-le-logement_Tarn.pdf"
+  },
+  {
+    "id": "fsl-82",
+    "name": "Fonds de solidarité pour le logement — Tarn-et-Garonne",
+    "category": "Logement",
+    "zone": "82",
+    "org": "Conseil départemental de Tarn-et-Garonne",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.tarnetgaronne.fr/social-insertion/fonds-de-solidarite-pour-le-logement"
+  },
+  {
+    "id": "caf-aveyron-projet-familial",
+    "name": "Aide au projet familial — Caf de l’Aveyron",
+    "category": "Famille",
+    "zone": "12",
+    "org": "Caisse d’Allocations familiales de l’Aveyron",
+    "description": "Aide ponctuelle par subvention ou prêt pour soutenir une famille après une difficulté ou un changement fragilisant son équilibre. L’aide est complémentaire aux droits légaux, examinée par une commission et modulée selon le projet.",
+    "when": "Familles aveyronnaises allocataires ou parents non hébergeants/non allocataires du régime général ou assimilé avec au moins un enfant à charge de moins de 21 ans ou à naître, concernées notamment par une séparation, un décès, la monoparentalité ou un impayé de loyer. Sans condition de ressources.",
+    "steps": [
+      "Être accompagné par un travailleur social de la Caf de l’Aveyron pour établir le projet familial.",
+      "Le dossier est examiné par la Commission des aides financières individuelles; en cas d’accord, paiement privilégié à un tiers."
+    ],
+    "url": "https://www.caf.fr/sites/default/files/medias/121/Images/Partenaires/RIAS%202026%20Version%20D%C3%A9finitive%2001%202026.pdf"
+  },
+  {
+    "id": "fdaj-herault",
+    "name": "Fonds départemental d’aide aux jeunes — Hérault hors Métropole",
+    "category": "Emploi",
+    "zone": "34",
+    "org": "Conseil départemental de l’Hérault",
+    "description": "Aide financière ponctuelle aux jeunes en difficulté d’insertion sociale ou professionnelle; elle peut soutenir des besoins urgents, selon l’évaluation et la décision du fonds.",
+    "when": "Jeunes de 18 à 25 ans sans emploi, sans ressources ou avec faibles ressources; la demande doit être instruite avec un travailleur social de la Mission Locale.",
+    "steps": [
+      "Contacter la Mission Locale pour être accompagné et constituer le dossier.",
+      "Le dossier est présenté à la commission d’attribution.",
+      "Pour l’accès au logement, solliciter prioritairement le FSL compétent."
+    ],
+    "url": "https://herault.fr/615-fdaj.htm"
+  },
+  {
+    "id": "faj3m-montpellier",
+    "name": "Fonds métropolitain d’aide aux jeunes (FAJ3M)",
+    "category": "Emploi",
+    "zone": "34",
+    "org": "Montpellier Méditerranée Métropole",
+    "description": "Aide financière ponctuelle aux jeunes en difficulté d’insertion sociale ou professionnelle; elle peut soutenir des besoins urgents, selon l’évaluation et la décision du fonds.",
+    "when": "Jeunes de 18 à 25 ans sans emploi, sans ressources ou avec faibles ressources; la demande doit être instruite avec un travailleur social de la Mission Locale.",
+    "steps": [
+      "Contacter la Mission Locale pour être accompagné et constituer le dossier.",
+      "Le dossier est présenté à la commission d’attribution.",
+      "Pour l’accès au logement, solliciter prioritairement le FSL compétent."
+    ],
+    "url": "https://www.montpellier3m.fr/sites/default/files/fiche_e.pdf"
+  },
+  {
+    "id": "ccas-montpellier-aide-facultative",
+    "name": "Aides financières facultatives — CCAS de Montpellier",
+    "category": "Famille",
+    "zone": "34",
+    "org": "CCAS de Montpellier",
+    "description": "Le CCAS reçoit les demandes d’aide financière facultative pour les ménages accompagnés par un travailleur social, notamment en attente d’ouverture de droits ou en rupture de parcours. La page officielle ne fixe pas de montant ni de barème.",
+    "when": "Ménages montpelliérains accompagnés par un travailleur social du CCAS; chaque demande relève d’une appréciation individuelle.",
+    "steps": [
+      "Être reçu par le service d’accompagnement social et d’accès aux droits du CCAS.",
+      "Présenter la situation au travailleur social, qui accompagne l’évaluation et la demande."
+    ],
+    "url": "https://www.montpellier.fr/actions/competences/solidarites/centre-communal-daction-sociale-ccas"
+  },
+  {
+    "id": "ccas-frontignan-energy-aid",
+    "name": "Aide du CCAS au paiement des factures énergétiques — Frontignan",
+    "category": "Logement",
+    "zone": "34",
+    "org": "CCAS de Frontignan",
+    "description": "Une page officielle ancienne du CCAS décrit une aide de 175 € versée aux ménages recevables après dépôt d’un dossier pour des factures d’énergie. La période actuelle et les critères d’accès ne sont pas confirmés; l’aide reste une candidate à revalider.",
+    "when": "Ménages de Frontignan en situation de précarité énergétique; les conditions détaillées et l’ouverture actuelle de l’aide doivent être confirmées par le CCAS.",
+    "steps": [
+      "Contacter le CCAS de Frontignan pour vérifier que le dispositif est encore ouvert et obtenir le dossier ainsi que les conditions de recevabilité."
+    ],
+    "url": "https://www.frontignan.fr/aide-au-paiement-des-factures-energetiques/"
   }
 ]

@@ -1,10 +1,13 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { canPublishInformation } from "../src/lib/publication.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const registryPath = path.join(root, "src/data/source-registry.json");
 const coveragePath = path.join(root, "src/data/coverage-matrix.json");
+const cataloguePath = path.join(root, "src/data/catalogue.json");
+const reviewPath = path.join(root, "src/data/review.json");
 const checkedAt = "2026-11-23";
 
 const departments = [
@@ -74,7 +77,7 @@ await writeFile(registryPath, `${JSON.stringify(registry, null, 2)}\n`, "utf8");
 const coverage = JSON.parse(await readFile(coveragePath, "utf8"));
 coverage.checkedAt = checkedAt;
 const discoveryScopeNote = "Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné.";
-if (!coverage.scopeNote.includes(discoveryScopeNote)) coverage.scopeNote = `${coverage.scopeNote} ${discoveryScopeNote}`;
+coverage.scopeNote = `${coverage.scopeNote.split(discoveryScopeNote)[0].trim()} ${discoveryScopeNote}`;
 for (const department of departments) {
   const row = coverage.territories.find((item) => item.id === department[0]);
   if (!row) continue;
@@ -82,9 +85,11 @@ for (const department of departments) {
   if (department[0] === "34") {
     row.sources = [...new Set([...(row.sources ?? []), ...discoveryLabels])];
   } else {
-    row.sources = discoveryLabels;
-    row.notes = "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe.";
-    row.status = "identified";
+    row.sources = [...new Set([...(row.sources ?? []), ...discoveryLabels])];
+    if (row.status !== "partially_integrated" && row.status !== "verified_and_integrated") {
+      row.notes = "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe.";
+      row.status = "identified";
+    }
     row.checkedAt = checkedAt;
   }
 }
@@ -99,18 +104,20 @@ if (gard) {
 }
 const ariege = coverage.territories.find((item) => item.id === "09");
 if (ariege) {
-  ariege.sources = [...new Set([...(ariege.sources ?? []), "Département Ariège — RDAS/FUH (PDF; version courante à confirmer)"])];
-  ariege.notes = "RDAS officiel consulté; il décrit le FSL/FUH mais indique une adoption en 2022, le fichier porte un chemin 2026. Confirmer la version en vigueur et le règlement intérieur FUH; aucune aide intégrée.";
+  ariege.sources = [...new Set([...(ariege.sources ?? []), "Département Ariège — RDAS 2026, fiche FSL/FUH"] )];
+  if (ariege.status !== "partially_integrated") ariege.notes = "RDAS officiel consulté; la fiche 69 décrit FSL/FUH (accès, maintien, charges, ressources CSS, aide sociale selon le montant). Confirmer le règlement intérieur FUH et les barèmes avant publication.";
 }
 const herault = coverage.territories.find((item) => item.id === "34");
 if (herault) {
   herault.status = "partially_integrated";
   herault.types = ["aide_financiere", "service_accompagnement", "ressource_structure"];
   herault.categories = ["Logement", "Parentalité", "Santé & bien-être"];
-  herault.verifiedPublishedAidCount = 3;
+  const catalogue = JSON.parse(await readFile(cataloguePath, "utf8"));
+  const review = JSON.parse(await readFile(reviewPath, "utf8"));
+  herault.verifiedPublishedAidCount = catalogue.filter((record) => record.zone === "34" && canPublishInformation(record, review[record.id] ?? {})).length;
   herault.verifiedPublishedServiceCount = 3;
-  herault.sources = [...new Set([...(herault.sources ?? []), "Département de l'Hérault RDAS septembre 2026", "Règlement FSL M3M 2025", "CAF Hérault", "Pages de services du Département", "Caf Hérault — page secours/prêts", "Caf Hérault — RIAS 2026 (extraction bloquée)", "RDAS Hérault 2026 — AFIE/FSL", "CCAS Montpellier — aides facultatives", "Ville Montpellier — Bouclier social (règlement 2025)", "CCAS Frontignan", "CCAS Sète (point de découverte)", "CCAS Béziers"])];
-  herault.notes = "FSL départemental et métropolitain distincts, plus services familiaux départementaux. AFIE Hérault intégrée avec information publiée, montant et procédure encore partiels. Page Caf secours/prêts examinée; extraction du RIAS 2026 bloquée par page de maintenance. Bouclier petite enfance Montpellier documenté par règlement 2025 mais statut/campagne 2026 à confirmer; non publié.";
+  herault.sources = [...new Set([...(herault.sources ?? []), "Département de l'Hérault RDAS septembre 2026", "Règlement FSL M3M 2025", "CAF Hérault", "Pages de services du Département", "Caf Hérault — RIAS 2026 extrait", "RDAS Hérault 2026 — AFIE/FSL", "CCAS Montpellier — aides facultatives", "Ville Montpellier — Bouclier social (règlement 2025)", "CCAS Frontignan — aide énergie à reconfirmer", "CCAS Sète (aucun dispositif financier nommé confirmé)", "CCAS Béziers — accompagnement social"])];
+  herault.notes = "FSL départemental et métropolitain distincts. RIAS Caf 2026 récupéré et extrait : secours/prêts, prêt équipement et aide mobilité sont documentés; le BAFA reste hors catalogue car le formulaire courant n'est pas confirmé. AFIE Hérault vérifiée; règles d'attribution/annexe de montants encore partielles. FDAJ/FAJ3M conservés séparément selon le territoire. CCAS Montpellier aide facultative reste candidate faute de barème; aide énergie Frontignan non publiée car la campagne et les critères courants restent à confirmer. Le dispositif Bouclier petite enfance s'appuie sur un règlement 2025 sans statut/campagne 2026 confirmés.";
 }
 await writeFile(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`, "utf8");
 console.log(JSON.stringify({ departmentalSourcesRegistered: sources.length, departments: departments.length, heraultSpecificSources: h34.length }, null, 2));

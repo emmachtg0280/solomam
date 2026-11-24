@@ -1,6 +1,6 @@
 {
   "checkedAt": "2026-11-23",
-  "scopeNote": "Matrice de travail, non exhaustive. Un territoire marqué non_examined n'est pas réputé dépourvu de dispositif; les sources et domaines explorés sont énumérés sans préjuger des résultats hors de ce périmètre. Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné. Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné. Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné. Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné.",
+  "scopeNote": "Matrice de travail, non exhaustive. Un territoire marqué non_examined n'est pas réputé dépourvu de dispositif; les sources et domaines explorés sont énumérés sans préjuger des résultats hors de ce périmètre. Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné.",
   "statuses": [
     "non_examined",
     "identified",
@@ -66,7 +66,7 @@
         "Parentalité",
         "Santé & bien-être"
       ],
-      "verifiedPublishedAidCount": 3,
+      "verifiedPublishedAidCount": 8,
       "verifiedPublishedServiceCount": 3,
       "sources": [
         "Conseil départemental Hérault (découverte)",
@@ -82,16 +82,22 @@
         "Département de l'Hérault RDAS septembre 2026",
         "Règlement FSL M3M 2025",
         "CAF Hérault",
-        "Pages de services du Département"
+        "Pages de services du Département",
+        "Caf Hérault — RIAS 2026 extrait",
+        "CCAS Frontignan — aide énergie à reconfirmer",
+        "CCAS Sète (aucun dispositif financier nommé confirmé)",
+        "CCAS Béziers — accompagnement social"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "FSL départemental et métropolitain distincts, plus services familiaux départementaux. AFIE Hérault intégrée avec information publiée, montant et procédure encore partiels. Page Caf secours/prêts examinée; extraction du RIAS 2026 bloquée par page de maintenance. Bouclier petite enfance Montpellier documenté par règlement 2025 mais statut/campagne 2026 à confirmer; non publié."
+      "notes": "FSL départemental et métropolitain distincts. RIAS Caf 2026 récupéré et extrait : secours/prêts, prêt équipement et aide mobilité sont documentés; le BAFA reste hors catalogue car le formulaire courant n'est pas confirmé. AFIE Hérault vérifiée; règles d'attribution/annexe de montants encore partielles. FDAJ/FAJ3M conservés séparément selon le territoire. CCAS Montpellier aide facultative reste candidate faute de barème; aide énergie Frontignan non publiée car la campagne et les critères courants restent à confirmer. Le dispositif Bouclier petite enfance s'appuie sur un règlement 2025 sans statut/campagne 2026 confirmés."
     },
     {
       "id": "09",
       "label": "Ariège",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -100,16 +106,21 @@
       "sources": [
         "Conseil départemental Ariège (découverte)",
         "Caf Ariège (découverte)",
-        "Département Ariège — RDAS/FUH (PDF; version courante à confirmer)"
+        "Département Ariège — RDAS/FUH (PDF; version courante à confirmer)",
+        "Département de l’Ariège — RDAS 2026, fiche FSL/FUH",
+        "Département Ariège — RDAS 2026, fiche FSL/FUH"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "RDAS officiel consulté; il décrit le FSL/FUH mais indique une adoption en 2022, le fichier porte un chemin 2026. Confirmer la version en vigueur et le règlement intérieur FUH; aucune aide intégrée."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "11",
       "label": "Aude",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -117,16 +128,20 @@
       ],
       "sources": [
         "Conseil départemental Aude (découverte)",
-        "Caf Aude (découverte)"
+        "Caf Aude (découverte)",
+        "Département de l’Aude — règlement d’attribution des aides financières, avril 2026"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "12",
       "label": "Aveyron",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -134,10 +149,13 @@
       ],
       "sources": [
         "Conseil départemental Aveyron (découverte)",
-        "Caf Aveyron (découverte)"
+        "Caf Aveyron (découverte)",
+        "Département de l’Aveyron — RDAS, fiche FSL",
+        "Caf de l’Aveyron — RIAS aides financières individuelles 2026"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 1
     },
     {
       "id": "30",
@@ -162,8 +180,10 @@
     {
       "id": "31",
       "label": "Haute-Garonne",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -171,16 +191,21 @@
       ],
       "sources": [
         "Conseil départemental Haute-Garonne (découverte)",
-        "Caf Haute-Garonne (découverte)"
+        "Caf Haute-Garonne (découverte)",
+        "Département de la Haute-Garonne — FSL",
+        "Département de la Haute-Garonne — répartition de compétence et règlement FSL"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "2 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive. Le FSL est séparé entre Département et Toulouse Métropole; les 37 communes métropolitaines sont conservées par code INSEE.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "32",
       "label": "Gers",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -188,16 +213,21 @@
       ],
       "sources": [
         "Conseil départemental Gers (découverte)",
-        "Caf Gers (découverte)"
+        "Caf Gers (découverte)",
+        "Département du Gers — aides financières (Fonds d’aide d’urgence et FAJ)",
+        "Département du Gers — Fonds d’aide d’urgence et Fonds d’aide aux jeunes"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "2 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive. Le lien officiel du FSL apparaît dans le plan du site, mais le domaine bloque la consultation par l’outil de recherche; sa règle n’est pas marquée examinée.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "46",
       "label": "Lot",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -205,16 +235,20 @@
       ],
       "sources": [
         "Conseil départemental Lot (découverte)",
-        "Caf Lot (découverte)"
+        "Caf Lot (découverte)",
+        "Département du Lot — règlement intérieur FSL au 1er juillet 2025"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "48",
       "label": "Lozère",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -222,16 +256,20 @@
       ],
       "sources": [
         "Conseil départemental Lozère (découverte)",
-        "Caf Lozère (découverte)"
+        "Caf Lozère (découverte)",
+        "Département de la Lozère — règlement intérieur FSL, actualisé au 18 décembre 2025"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "65",
       "label": "Hautes-Pyrénées",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -239,16 +277,20 @@
       ],
       "sources": [
         "Conseil départemental Hautes-Pyrénées (découverte)",
-        "Caf Hautes-Pyrénées (découverte)"
+        "Caf Hautes-Pyrénées (découverte)",
+        "Département des Hautes-Pyrénées — règlement intérieur FSL, 1er mars 2025"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "66",
       "label": "Pyrénées-Orientales",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -256,16 +298,20 @@
       ],
       "sources": [
         "Conseil départemental Pyrénées-Orientales (découverte)",
-        "Caf Pyrénées-Orientales (découverte)"
+        "Caf Pyrénées-Orientales (découverte)",
+        "Département des Pyrénées-Orientales — mode d’emploi FSL"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "81",
       "label": "Tarn",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -273,16 +319,20 @@
       ],
       "sources": [
         "Conseil départemental Tarn (découverte)",
-        "Caf Tarn (découverte)"
+        "Caf Tarn (découverte)",
+        "Département du Tarn — fiche FSL"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     },
     {
       "id": "82",
       "label": "Tarn-et-Garonne",
-      "status": "identified",
-      "types": [],
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
       "categories": [
         "all aid categories",
         "Parentalité",
@@ -290,10 +340,12 @@
       ],
       "sources": [
         "Conseil départemental Tarn-et-Garonne (découverte)",
-        "Caf Tarn-et-Garonne (découverte)"
+        "Caf Tarn-et-Garonne (découverte)",
+        "Département de Tarn-et-Garonne — FSL et règlement 2025-2026"
       ],
       "checkedAt": "2026-11-23",
-      "notes": "Points de découverte inscrits au registre; aucun règlement ou dispositif local n'a été vérifié dans cette passe."
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
     }
   ],
   "communeAndIntercommunalScopes": [

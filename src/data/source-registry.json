@@ -96,9 +96,9 @@
       "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
       "role": "Potential structured source for regional schemes",
       "status": "official-snapshot-imported-qualification-in-progress",
-      "version": "Snapshot captured 2026-11-24T00:53:03.529Z; live dataset revision not separately pinned",
+      "version": "229 records captured 2026-11-24T08:09:48.590Z; live dataset revision not separately pinned",
       "license": "Licence Ouverte / Open Licence 2.0 (previously observed in source metadata; snapshot lacks license metadata)",
-      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "retrievedAt": "2026-11-24T08:09:48.590Z",
       "endpointProbe": {
         "consent": "accepted for the recorded import",
         "metadataRetrieved": true,
@@ -113,16 +113,14 @@
       "coverage": "229 official dataset records; 153 rows categorized Aides; 76 other categories excluded from this aid qualification run",
       "limitations": [
         "Dataset has no beneficiary, eligibility, documents, application process or validity fields",
-        "Qualification register has 23 relevant candidates, 41 confirmed non-relevant items, 2 expired items and 87 manual reviews",
+        "Qualification register has 28 relevant candidates, 119 confirmed non-relevant items, 6 expired items and 0 manual reviews",
         "No regional aid card is published until full current rules and application routes are normalized",
-        "Live source page and dataset metadata need to be rechecked for updates and reuse terms",
-        "87 aid rows remain in manual review",
-        "Dataset rows and regional programme pages do not by themselves establish active validity or a complete application process"
+        "Live source page and dataset metadata need to be rechecked for updates and reuse terms"
       ],
-      "candidateAidRowsQualifiedRelevant": 23,
-      "candidateAidRowsExpired": 2,
-      "candidateAidRowsExcluded": 41,
-      "candidateAidRowsPendingReview": 87,
+      "candidateAidRowsQualifiedRelevant": 28,
+      "candidateAidRowsExpired": 6,
+      "candidateAidRowsExcluded": 119,
+      "candidateAidRowsPendingReview": 0,
       "attribution": "Source : R?gion Occitanie ? Aides et appels ? projets; cite the source and last update date.",
       "portalObservation": {
         "observedAt": "2026-11-23",
@@ -140,24 +138,24 @@
       "name": "Région Occitanie — aides et appels à projets",
       "url": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
       "role": "Official detailed regional scheme pages and application routes",
-      "status": "official-pages-reviewed-partially",
+      "status": "official-pages-reviewed-for-relevance",
       "version": "Live catalogue; individual page dates vary",
       "license": "Reuse terms not verified for page content",
-      "retrievedAt": "2026-11-23",
+      "retrievedAt": "2026-11-24T07:39:15.835Z",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
       "candidateResultsObserved": 357,
       "coverage": "Catalogue contains schemes and calls for multiple types of applicants",
       "limitations": [
-        "Review is partial: 66 of 153 aid records have a decision supported by the linked official detail page",
+        "Relevance review covers 153 of 153 aid records; this is not legal or regulatory validation",
         "No complete individual application journey has yet been normalized into a publishable aid card",
-        "The remaining 87 official pages still require beneficiary, validity and application-path review"
+        "All relevant candidates still require current eligibility, validity, document and application-process checks before publication"
       ],
-      "pagesReviewed": 66,
-      "relevantCandidates": 23,
-      "confirmedNonRelevant": 41,
-      "expired": 2,
-      "pendingManualReview": 87,
+      "pagesReviewed": 153,
+      "relevantCandidates": 28,
+      "confirmedNonRelevant": 119,
+      "expired": 6,
+      "pendingManualReview": 0,
       "candidateRecordsIntegrated": 23,
       "publishableRecords": 1,
       "reviewedAt": "2026-11-23"
@@ -177,23 +175,6 @@
       "limitations": [
         "Landing page is not a full rule or process source",
         "Dynamic pages and content dates require aid-by-aid capture"
-      ]
-    },
-    {
-      "id": "caf-herault-rias",
-      "name": "CAF Hérault — Règlement intérieur d'action sociale (RIAS)",
-      "url": "https://www.caf.fr/professionnels/offres-et-services/caf-de-l-herault/partenaires-locaux",
-      "role": "Annual rules for local social-action aids and holiday assistance",
-      "status": "official-document-found-not-fully-extracted",
-      "version": "2026 PDF surfaced: https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
-      "license": "Reuse terms not independently verified",
-      "retrievedAt": "2026-11-23",
-      "recordsImported": 0,
-      "uniqueUsableAids": 0,
-      "coverage": "2026 local CAF terms, including holiday aids in the surfaced document",
-      "limitations": [
-        "Provided landing page served maintenance during direct review",
-        "PDF located but not fully extracted and mapped; annual validity must be retained"
       ]
     },
     {
@@ -256,9 +237,9 @@
       "url": "https://geo.api.gouv.fr/",
       "role": "Resolve communes, INSEE codes, departments, regions, EPCI and postal-code relations",
       "status": "official-snapshot-imported-and-normalized",
-      "version": "Snapshot retrieved 2026-11-24T00:53:03.529Z",
+      "version": "Snapshot retrieved 2026-11-24T08:09:48.590Z",
       "license": "Open Data licences (data.gouv.fr service metadata); field-level licence is not named as one uniform licence in the API metadata.",
-      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "retrievedAt": "2026-11-24T08:09:48.590Z",
       "endpointProbe": {
         "latestRefreshHttpStatus": 200,
         "latestRefreshNetworkCause": null,
@@ -283,9 +264,9 @@
       "url": "https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux",
       "role": "Postal-code to commune/INSEE-code crosswalk",
       "status": "official-snapshot-imported-and-normalized",
-      "version": "Source updated 2023-07-09T07:01:18+00:00; fetched 2026-11-24T00:53:03.529Z",
+      "version": "Source updated 2023-07-09T07:01:18+00:00; fetched 2026-11-24T08:09:48.590Z",
       "license": "Licence Ouverte / Open Licence 2.0 (confirmed on data.gouv.fr)",
-      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "retrievedAt": "2026-11-24T08:09:48.590Z",
       "endpointProbe": {
         "latestRefreshHttpStatus": 200,
         "latestRefreshNetworkCause": null,
@@ -1165,29 +1146,6 @@
       ]
     },
     {
-      "id": "caf-herault-rias-2026",
-      "name": "Caf de l'Hérault — RIAS aides financières individuelles 2026",
-      "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
-      "role": "Règlement local annuel des aides individuelles et collectives.",
-      "territory": {
-        "departmentCode": "34",
-        "label": "Hérault"
-      },
-      "sourceType": "pdf",
-      "updateFrequency": "Annuel ou à chaque délibération; version en vigueur à contrôler",
-      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
-      "status": "identified-page-review-required",
-      "accessibility": "URL liée depuis la page officielle; l'extraction renvoie une page de maintenance, contenu non vérifié",
-      "lastCollection": null,
-      "retrievedAt": "2026-11-23",
-      "recordsImported": 0,
-      "uniqueUsableAids": 0,
-      "coverage": "Règlement local annuel des aides individuelles et collectives.",
-      "limitations": [
-        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
-      ]
-    },
-    {
       "id": "herault-rdas-2026",
       "name": "Département de l'Hérault — Règlement départemental d'aide sociale 2026",
       "url": "https://mda.herault.fr/cms_viewFilePublication.php?id=668",
@@ -1327,9 +1285,9 @@
     },
     {
       "id": "beziers-ccas-social",
-      "name": "Ville de Béziers — Accompagnement social / CCAS",
+      "name": "Béziers — accompagnement social CCAS",
       "url": "https://www.ville-beziers.fr/jhabite-a-beziers/solidarites/actions-sociales",
-      "role": "Accueil, aides facultatives et orientation sociale; aide Donnant-Donnant citée dans une délibération ancienne à revalider.",
+      "role": "Recherche d’un dispositif local d’aide aux particuliers",
       "territory": {
         "departmentCode": "34",
         "label": "Hérault"
@@ -1337,22 +1295,24 @@
       "sourceType": "html-page",
       "updateFrequency": "Non documentée; contrôler la page et les liens associés",
       "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
-      "status": "identified-page-review-required",
+      "status": "official-service-page-consulted-not-a-named-aid",
       "accessibility": "Page officielle indexée; détails réglementaires des aides facultatives non vérifiés",
       "lastCollection": null,
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
-      "coverage": "Accueil, aides facultatives et orientation sociale; aide Donnant-Donnant citée dans une délibération ancienne à revalider.",
+      "coverage": "Commune de Béziers",
       "limitations": [
-        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
-      ]
+        "La page confirme l’évaluation/orientation vers des aides éventuelles, pas un dispositif local avec critères propres."
+      ],
+      "license": "Aucun contenu reproduit; statut descriptif",
+      "candidateRecordsIntegrated": 0
     },
     {
       "id": "sete-ccas-discovery",
-      "name": "Ville de Sète — point de découverte CCAS",
+      "name": "CCAS de Sète — recherche de dispositifs individuels",
       "url": "https://www.sete.fr/",
-      "role": "URL de découverte seulement; retrouver la page officielle du CCAS et ses aides avant toute qualification.",
+      "role": "Recherche d’un dispositif local d’aide aux particuliers",
       "territory": {
         "departmentCode": "34",
         "label": "Hérault"
@@ -1360,16 +1320,18 @@
       "sourceType": "html-directory",
       "updateFrequency": "Non documentée; contrôler la page et les liens associés",
       "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
-      "status": "identified-page-review-required",
+      "status": "official-site-identified-no-specific-aid-confirmed",
       "accessibility": "URL de portail candidate; disponibilité et page détaillée non testées",
       "lastCollection": null,
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
-      "coverage": "URL de découverte seulement; retrouver la page officielle du CCAS et ses aides avant toute qualification.",
+      "coverage": "Commune de Sète",
       "limitations": [
-        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
-      ]
+        "La recherche publique consultée n’a pas permis d’identifier une page de dispositif financier nommée ni un règlement; ne pas conclure à l’absence d’aide."
+      ],
+      "license": "Aucun contenu reproduit; statut descriptif",
+      "candidateRecordsIntegrated": 0
     },
     {
       "id": "adhl-gard-fsl-access",
@@ -1440,6 +1402,285 @@
         "Le préambule indique adoption le 14 mars 2022 malgré le nom de fichier 2026.",
         "Vérifier le règlement intérieur FUH courant et son barème avant qualification/publication."
       ]
+    },
+    {
+      "id": "fsl-ariege-rdas-2026",
+      "name": "Département de l’Ariège — RDAS 2026, fiche FSL/FUH",
+      "url": "https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "09",
+      "limitations": [
+        "Vérifier le règlement intérieur FUH lié depuis le RDAS et les barèmes/aides par poste avant de compléter le parcours."
+      ]
+    },
+    {
+      "id": "fsl-aude-rafi-2026",
+      "name": "Département de l’Aude — règlement d’attribution des aides financières, avril 2026",
+      "url": "https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "11",
+      "limitations": [
+        "Extraire les plafonds, dépenses admissibles, justificatifs, voies de saisine et répartition de compétence avant publication."
+      ]
+    },
+    {
+      "id": "fsl-aveyron-rdas-2025",
+      "name": "Département de l’Aveyron — RDAS, fiche FSL",
+      "url": "https://aveyron.fr/sites/default/files/documents/Solidarite/2025/08-aout/2025_03_28_RDAS.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "12",
+      "limitations": [
+        "Le montant et les pièces relèvent des annexes du règlement intérieur; les règles par poste restent à vérifier."
+      ]
+    },
+    {
+      "id": "fsl-haute-garonne-departement",
+      "name": "Département de la Haute-Garonne — FSL",
+      "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "limitations": [
+        "La Métropole de Toulouse exerce le FSL sur son territoire; la liste des communes est conservée séparément par codes INSEE. Vérifier barèmes et formulaire du volet départemental."
+      ]
+    },
+    {
+      "id": "fsl-toulouse-metropole",
+      "name": "Département de la Haute-Garonne — répartition de compétence et règlement FSL",
+      "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "limitations": [
+        "Candidate distincte du FSL départemental. Vérifier la version locale du règlement, le guichet, les montants et les pièces avant publication."
+      ]
+    },
+    {
+      "id": "gers-aides-financieres",
+      "name": "Département du Gers — aides financières (Fonds d’aide d’urgence et FAJ)",
+      "url": "https://www.gers.fr/aides-infos-pratiques/insertion-et-solidarites/aides-financieres",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "32",
+      "limitations": [
+        "Aucun barème, liste de dépenses ni montant n’est publié sur la page consultée; ne pas en déduire un montant."
+      ]
+    },
+    {
+      "id": "fsl-lot-regulation-2025",
+      "name": "Département du Lot — règlement intérieur FSL au 1er juillet 2025",
+      "url": "https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "46",
+      "limitations": [
+        "Extraire les critères par volet et les modalités de saisine du règlement avant publication."
+      ]
+    },
+    {
+      "id": "fsl-lozere-regulation-2026",
+      "name": "Département de la Lozère — règlement intérieur FSL, actualisé au 18 décembre 2025",
+      "url": "https://lozere.fr/sites/default/files/upload/05-solidarite/documents/260101_ri_fsl_complet_cd_lozere_2.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "48",
+      "limitations": [
+        "Le règlement affiche annexes de barème, formulaire unique et pièces; extraire les plafonds et le détail avant de compléter la fiche."
+      ]
+    },
+    {
+      "id": "fsl-hautes-pyrenees-regulation-2025",
+      "name": "Département des Hautes-Pyrénées — règlement intérieur FSL, 1er mars 2025",
+      "url": "https://www.hautespyrenees.fr/download/462/2025/27005/publication-n685-du-3-fevrier-2025-commission-permanente-du-31-janvier-2025-deliberations.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "65",
+      "limitations": [
+        "La page de maintien mentionne une démarche directe au FSL; vérifier l’entrée d’accès, les formulaires et barèmes applicables à chaque volet."
+      ]
+    },
+    {
+      "id": "fsl-pyrenees-orientales-page",
+      "name": "Département des Pyrénées-Orientales — mode d’emploi FSL",
+      "url": "https://www.ledepartement66.fr/fonds-de-solidarite-pour-le-logement-mode-demploi/",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "66",
+      "limitations": [
+        "Vérifier la version courante du règlement, le barème, l’application exacte du seuil de 800 € et les formulaires."
+      ]
+    },
+    {
+      "id": "fsl-tarn-page-2025",
+      "name": "Département du Tarn — fiche FSL",
+      "url": "https://www.tarn.fr/fileadmin/mediatheque/Tarn/Documents/Actualites/2025/Logement/FSL-Fonds-de-solidarite-pour-le-logement_Tarn.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "81",
+      "limitations": [
+        "Le règlement intérieur complet et les barèmes n’ont pas été récupérés dans cette passe; la fiche ne doit pas présenter de plafond."
+      ]
+    },
+    {
+      "id": "fsl-tarn-et-garonne-page-2025-2026",
+      "name": "Département de Tarn-et-Garonne — FSL et règlement 2025-2026",
+      "url": "https://www.tarnetgaronne.fr/social-insertion/fonds-de-solidarite-pour-le-logement",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "82",
+      "limitations": [
+        "Le barème affiché ne garantit pas l’attribution; vérifier les règles détaillées par volet et les pièces au règlement en vigueur."
+      ]
+    },
+    {
+      "id": "caf-aveyron-rias-2026",
+      "name": "Caf de l’Aveyron — RIAS aides financières individuelles 2026",
+      "url": "https://www.caf.fr/sites/default/files/medias/121/Images/Partenaires/RIAS%202026%20Version%20D%C3%A9finitive%2001%202026.pdf",
+      "role": "RIAS 2026 des aides financières individuelles aux familles",
+      "status": "official-document-consulted-key-family-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec pages du règlement; aucun texte intégral recopié",
+      "coverage": "CAF Aveyron",
+      "limitations": [
+        "Aide ponctuelle et discrétionnaire; somme fixée par la commission au vu du projet et des interventions partenariales."
+      ]
+    },
+    {
+      "id": "herault-fdaj-page",
+      "name": "Département de l’Hérault — Fonds d’aide aux jeunes",
+      "url": "https://herault.fr/615-fdaj.htm",
+      "role": "Source officielle de définition et d’orientation du FDAJ/FAJ3M",
+      "status": "official-pages-consulted-youth-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits résumés avec attribution",
+      "coverage": "Hérault",
+      "limitations": [
+        "Montants individuels et pièces ne sont pas publiés sur les pages examinées."
+      ]
+    },
+    {
+      "id": "herault-faj-m3m-scope",
+      "name": "Département de l’Hérault — répartition FDAJ et délégations",
+      "url": "https://herault.fr/cms_viewFile.php?dl=1&idtf=9891&path=2022-04-11-Deliberations-de-l-Assemblee-departementale-du-11-avril-2022.pdf",
+      "role": "Source officielle de définition et d’orientation du FDAJ/FAJ3M",
+      "status": "official-pages-consulted-youth-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits résumés avec attribution",
+      "coverage": "Hérault",
+      "limitations": [
+        "Montants individuels et pièces ne sont pas publiés sur les pages examinées."
+      ]
+    },
+    {
+      "id": "faj3m-montpellier-metropole",
+      "name": "Montpellier Méditerranée Métropole — FAJ3M",
+      "url": "https://www.montpellier3m.fr/sites/default/files/fiche_e.pdf",
+      "role": "Source officielle de définition et d’orientation du FDAJ/FAJ3M",
+      "status": "official-pages-consulted-youth-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits résumés avec attribution",
+      "coverage": "31 communes M3M",
+      "limitations": [
+        "Montants individuels et pièces ne sont pas publiés sur les pages examinées."
+      ]
+    },
+    {
+      "id": "montpellier-ccas-facultative-aid",
+      "name": "Ville de Montpellier — aides facultatives et accompagnement CCAS",
+      "url": "https://www.montpellier.fr/actions/competences/solidarites/centre-communal-daction-sociale-ccas",
+      "role": "Aide facultative pour ménages accompagnés par un travailleur social CCAS",
+      "status": "official-page-consulted-candidate-eligibility-rules-incomplete",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits synthétisés avec attribution",
+      "coverage": "Commune de Montpellier",
+      "limitations": [
+        "Pas de barème, liste de besoins, montant ni pièces publiés sur la page."
+      ]
+    },
+    {
+      "id": "frontignan-ccas-energy-aid",
+      "name": "Ville de Frontignan — aide au paiement des factures énergétiques",
+      "url": "https://www.frontignan.fr/aide-au-paiement-des-factures-energetiques/",
+      "status": "official-page-consulted-period-and-criteria-unverified",
+      "coverage": "Commune de Frontignan",
+      "limitations": [
+        "La page consultée évoque 175 € et un dépôt de dossier au CCAS, mais sa date ancienne ne permet pas de confirmer la campagne actuelle ni les conditions de recevabilité."
+      ],
+      "role": "Aide financière locale aux factures d’énergie par le CCAS",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits synthétisés avec attribution",
+      "candidateRecordsIntegrated": 0
+    },
+    {
+      "id": "caf-herault-rias-2026",
+      "name": "Caf de l'Hérault — RIAS 2026, aides financières individuelles",
+      "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
+      "role": "Règlement officiel des aides locales aux familles allocataires; secours, prêts sociaux, équipement, mobilité et vacances",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "pdf",
+      "updateFrequency": "Annuel ou à chaque délibération; version en vigueur à contrôler",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "official-pdf-downloaded-extracted-key-sections-reviewed",
+      "accessibility": "URL liée depuis la page officielle; l'extraction renvoie une page de maintenance, contenu non vérifié",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "CAF Hérault",
+      "limitations": [
+        "L'octroi des secours/prêts est discrétionnaire et décidé au cas par cas; le circuit précis d'orientation reste à confirmer.",
+        "Les fenêtres et critères 2026 des aides aux vacances ne sont pas pérennes; les aides saisonnières ne sont pas ajoutées à cette passe."
+      ],
+      "version": "RIAS 2026; sections 4 à 7 extraites, secours/prêts, équipement, mobilité et BAFA",
+      "license": "Aucun texte intégral reproduit; faits résumés avec source et pages PDF",
+      "candidateRecordsIntegrated": 3,
+      "factsEnrichedForAids": 3,
+      "publishableRecords": 0,
+      "snapshot": "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf",
+      "extractedSummary": "src/data/imports/local/herault/normalized/rias-aides-extract-2026.json"
     }
   ]
 }

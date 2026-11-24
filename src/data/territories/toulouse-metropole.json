@@ -1,0 +1,162 @@
+{
+  "territoryId": "toulouse-metropole",
+  "organization": "Toulouse Métropole",
+  "epciCode": "243100518",
+  "departmentCode": "31",
+  "communes": [
+    {
+      "inseeCode": "31003",
+      "communeName": "Aigrefeuille"
+    },
+    {
+      "inseeCode": "31022",
+      "communeName": "Aucamville"
+    },
+    {
+      "inseeCode": "31032",
+      "communeName": "Aussonne"
+    },
+    {
+      "inseeCode": "31044",
+      "communeName": "Balma"
+    },
+    {
+      "inseeCode": "31053",
+      "communeName": "Beaupuy"
+    },
+    {
+      "inseeCode": "31056",
+      "communeName": "Beauzelle"
+    },
+    {
+      "inseeCode": "31069",
+      "communeName": "Blagnac"
+    },
+    {
+      "inseeCode": "31088",
+      "communeName": "Brax"
+    },
+    {
+      "inseeCode": "31091",
+      "communeName": "Bruguières"
+    },
+    {
+      "inseeCode": "31116",
+      "communeName": "Castelginest"
+    },
+    {
+      "inseeCode": "31149",
+      "communeName": "Colomiers"
+    },
+    {
+      "inseeCode": "31150",
+      "communeName": "Cornebarrieu"
+    },
+    {
+      "inseeCode": "31157",
+      "communeName": "Cugnaux"
+    },
+    {
+      "inseeCode": "31163",
+      "communeName": "Drémil-Lafage"
+    },
+    {
+      "inseeCode": "31182",
+      "communeName": "Fenouillet"
+    },
+    {
+      "inseeCode": "31184",
+      "communeName": "Flourens"
+    },
+    {
+      "inseeCode": "31186",
+      "communeName": "Fonbeauzard"
+    },
+    {
+      "inseeCode": "31205",
+      "communeName": "Gagnac-sur-Garonne"
+    },
+    {
+      "inseeCode": "31230",
+      "communeName": "Gratentour"
+    },
+    {
+      "inseeCode": "31282",
+      "communeName": "Launaguet"
+    },
+    {
+      "inseeCode": "31293",
+      "communeName": "Lespinasse"
+    },
+    {
+      "inseeCode": "31351",
+      "communeName": "Mondonville"
+    },
+    {
+      "inseeCode": "31352",
+      "communeName": "Mondouzil"
+    },
+    {
+      "inseeCode": "31355",
+      "communeName": "Mons"
+    },
+    {
+      "inseeCode": "31389",
+      "communeName": "Montrabé"
+    },
+    {
+      "inseeCode": "31417",
+      "communeName": "Pibrac"
+    },
+    {
+      "inseeCode": "31418",
+      "communeName": "Pin-Balma"
+    },
+    {
+      "inseeCode": "31445",
+      "communeName": "Quint-Fonsegrives"
+    },
+    {
+      "inseeCode": "31467",
+      "communeName": "Saint-Alban"
+    },
+    {
+      "inseeCode": "31488",
+      "communeName": "Saint-Jean"
+    },
+    {
+      "inseeCode": "31490",
+      "communeName": "Saint-Jory"
+    },
+    {
+      "inseeCode": "31506",
+      "communeName": "Saint-Orens-de-Gameville"
+    },
+    {
+      "inseeCode": "31541",
+      "communeName": "Seilh"
+    },
+    {
+      "inseeCode": "31555",
+      "communeName": "Toulouse"
+    },
+    {
+      "inseeCode": "31557",
+      "communeName": "Tournefeuille"
+    },
+    {
+      "inseeCode": "31561",
+      "communeName": "L'Union"
+    },
+    {
+      "inseeCode": "31588",
+      "communeName": "Villeneuve-Tolosane"
+    }
+  ],
+  "source": {
+    "url": "https://geo.api.gouv.fr/communes?codeEpci=243100518&fields=nom,code,codeDepartement,codeEpci&format=json",
+    "dataset": "src/data/imports/geography/normalized/communes-occitanie.json",
+    "retrievedAt": "2026-11-23"
+  },
+  "competenceSource": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
+}

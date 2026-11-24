@@ -14,6 +14,7 @@ const geographySnapshotPath = path.join(outputRoot, "geography", "raw", "commune
 const postalSnapshotPath = path.join(outputRoot, "geography", "raw", "la-poste-hexasmal.csv");
 const consultedAt = new Date().toISOString();
 const errors = [];
+const networkResponses = [];
 
 class ImportError extends Error {
   constructor(kind, url, message, details = {}) {
@@ -34,6 +35,7 @@ export async function getResponse(url, accept = "application/json") {
     } catch (error) {
       const cause = error?.cause;
       const code = cause?.code ?? error?.code ?? "UNKNOWN_NETWORK_ERROR";
+      networkResponses.push({ requestedUrl: url, requestedDomain: new URL(url).hostname, finalUrl: null, finalDomain: null, httpStatus: null, result: "network-error", networkCode: code, attempt });
       const transient = ["ECONNREFUSED", "ETIMEDOUT", "UND_ERR_CONNECT_TIMEOUT", "EHOSTUNREACH", "ENETUNREACH", "ECONNRESET", "UND_ERR_SOCKET"].includes(code);
       if (transient && attempt < maxAttempts) {
         await new Promise((resolve) => setTimeout(resolve, 300 * (2 ** (attempt - 1))));
@@ -50,6 +52,7 @@ export async function getResponse(url, accept = "application/json") {
               : "NETWORK_ERROR";
       throw new ImportError(classification, url, error.message, { code, cause: cause?.message, attempts: attempt });
     }
+    networkResponses.push({ requestedUrl: url, requestedDomain: new URL(url).hostname, finalUrl: response.url, finalDomain: response.url ? new URL(response.url).hostname : null, httpStatus: response.status, contentType: response.headers.get("content-type"), result: response.ok ? "http-response" : "http-error", attempt });
     if (!response.ok) {
       const retryable = response.status === 429 || response.status >= 500;
       if (retryable && attempt < maxAttempts) {
@@ -442,7 +445,19 @@ async function refreshPostalFromSavedCsv(communes = null) {
 async function writeJson(relative, value) {
   const target = path.join(outputRoot, relative);
   await mkdir(path.dirname(target), { recursive: true });
-  await writeFile(target, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  const serialized = `${JSON.stringify(value, null, 2)}\n`;
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    try {
+      await writeFile(target, serialized, "utf8");
+      return;
+    } catch (error) {
+      // Windows security scanners can briefly hold a just-refreshed generated
+      // JSON file. Retry only an unclassified open failure; access-denied and
+      // other explicit filesystem errors remain visible to the caller.
+      if (attempt === 2 || error.code || !/unknown error, open/i.test(error.message ?? "")) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 200));
+    }
+  }
 }
 
 async function main() {
@@ -530,6 +545,7 @@ async function main() {
     geography,
     postalStatus: postal?.status ?? "not-imported-current-run",
     postal,
+    networkResponses,
     errors,
   };
   await writeJson("import-report.json", report);

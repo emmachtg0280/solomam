@@ -1,7 +1,7 @@
 {
   "importerVersion": 2,
-  "startedAt": "2026-11-24T06:29:17.491Z",
-  "completedAt": "2026-11-24T06:29:18.046Z",
+  "startedAt": "2026-11-24T08:09:48.590Z",
+  "completedAt": "2026-11-24T08:09:56.288Z",
   "retryPolicy": {
     "maxAttempts": 3,
     "transientHttpStatuses": [
@@ -25,9 +25,9 @@
     ]
   },
   "previousAttempt": {
-    "startedAt": "2026-11-24T06:24:54.501Z",
+    "startedAt": "2026-11-24T08:04:23.164Z",
     "counts": {
-      "regionRecordsRetrieved": 0,
+      "regionRecordsRetrieved": 229,
       "uniqueRegionAidCandidates": 0,
       "regionDuplicates": 0,
       "geographyDepartments": 13,
@@ -38,45 +38,25 @@
       "postalDatasetRowsRetrieved": 39192,
       "occitaniePostalRowsNormalized": 4482,
       "postalCommunesMatched": 4446,
-      "postalDuplicates": 3681
+      "postalDuplicates": 3681,
+      "postalDuplicateRowsBeyondFirstPerPair": 3681,
+      "postalExactDuplicateRows": 0,
+      "occitaniePostalPairsWithMultipleRows": 154,
+      "occitaniePostalRowsBeyondFirstPerPair": 217
     },
     "errors": [
       {
-        "kind": "DNS_ERROR",
-        "message": "DNS_ERROR: https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true: fetch failed",
-        "url": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true",
-        "details": {
-          "code": "ENOTFOUND",
-          "cause": "getaddrinfo ENOTFOUND data.laregion.fr",
-          "attempts": 1
-        }
-      },
-      {
-        "kind": "DNS_ERROR",
-        "message": "DNS_ERROR: https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json: fetch failed",
-        "url": "https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json",
-        "details": {
-          "code": "ENOTFOUND",
-          "cause": "getaddrinfo ENOTFOUND geo.api.gouv.fr",
-          "attempts": 1
-        }
-      },
-      {
-        "kind": "DNS_ERROR",
-        "message": "DNS_ERROR: https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/: fetch failed",
-        "url": "https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/",
-        "details": {
-          "code": "ENOTFOUND",
-          "cause": "getaddrinfo ENOTFOUND www.data.gouv.fr",
-          "attempts": 1
-        }
+        "kind": "UNEXPECTED_ERROR",
+        "message": "UNKNOWN: unknown error, open 'C:\\Users\\emmac\\Projects\\solomam-mvp\\src\\data\\imports\\geography\\normalized\\postal-codes-occitanie.json'",
+        "url": null,
+        "details": null
       }
     ],
     "priorPostalResponse": null
   },
   "historicalPostalResponse": null,
   "counts": {
-    "regionRecordsRetrieved": 0,
+    "regionRecordsRetrieved": 229,
     "uniqueRegionAidCandidates": 0,
     "regionDuplicates": 0,
     "geographyDepartments": 13,
@@ -99,12 +79,85 @@
     "status": "accepted"
   },
   "region": {
-    "status": "failed",
-    "retrievedRecords": 0
+    "retrievedRecords": 229,
+    "normalizedUniqueRecords": 229,
+    "individualAidCandidates": 0,
+    "organizationAndNonAidExcluded": 76,
+    "manualAudienceReview": 153,
+    "duplicateRecords": 0,
+    "schema": [
+      {
+        "name": "titre",
+        "description": null,
+        "annotations": {},
+        "label": "titre",
+        "type": "text"
+      },
+      {
+        "name": "type",
+        "description": null,
+        "annotations": {
+          "facet": true,
+          "disjunctive": true,
+          "sortable": true
+        },
+        "label": "Type",
+        "type": "text"
+      },
+      {
+        "name": "chapo",
+        "description": null,
+        "annotations": {},
+        "label": "Chapeau",
+        "type": "text"
+      },
+      {
+        "name": "introduction",
+        "description": null,
+        "annotations": {},
+        "label": "Extrait du contenu",
+        "type": "text"
+      },
+      {
+        "name": "date_publication",
+        "description": null,
+        "annotations": {},
+        "label": "date_publication",
+        "type": "text"
+      },
+      {
+        "name": "date_modification",
+        "description": null,
+        "annotations": {},
+        "label": "date_modification",
+        "type": "text"
+      },
+      {
+        "name": "url",
+        "description": null,
+        "annotations": {},
+        "label": "url",
+        "type": "text"
+      },
+      {
+        "name": "thematiques",
+        "description": null,
+        "annotations": {},
+        "label": "thematiques",
+        "type": "text"
+      },
+      {
+        "name": "logo",
+        "description": null,
+        "annotations": {},
+        "label": "logo",
+        "type": "text"
+      }
+    ]
   },
   "geography": {
-    "status": "stored-snapshot-reused",
-    "sourceRetrievedAt": "2026-11-24T00:53:03.529Z",
+    "status": "fresh",
+    "sourceRetrievedAt": "2026-11-24T08:09:48.590Z",
     "departmentCount": 13,
     "communeCount": 4446,
     "normalizedCommuneCount": 4446,
@@ -117,56 +170,229 @@
       "Béziers": true
     }
   },
-  "postalStatus": "saved-raw-reprocessed",
+  "postalStatus": "fresh",
   "postal": {
-    "status": "saved-raw-reprocessed",
+    "status": "fresh",
     "sourceRows": 39192,
     "occitanieRows": 4482,
     "matchedCommunes": 4446,
     "duplicateCount": 3681,
     "encoding": "windows-1252",
-    "matchedAgainst": "API Géo commune codes"
+    "matchedAgainst": "API Géo commune codes",
+    "datasetLastUpdate": "2023-07-09T07:01:18+00:00",
+    "resourceUrl": "https://data.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw"
   },
-  "errors": [
+  "networkResponses": [
     {
-      "kind": "DNS_ERROR",
-      "message": "DNS_ERROR: https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true: fetch failed",
-      "url": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true",
-      "details": {
-        "code": "ENOTFOUND",
-        "cause": "getaddrinfo ENOTFOUND data.laregion.fr",
-        "attempts": 1
-      }
+      "requestedUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true",
+      "requestedDomain": "data.laregion.fr",
+      "finalUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true",
+      "finalDomain": "data.laregion.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
     },
     {
-      "kind": "DNS_ERROR",
-      "message": "DNS_ERROR: https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json: fetch failed",
-      "url": "https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json",
-      "details": {
-        "code": "ENOTFOUND",
-        "cause": "getaddrinfo ENOTFOUND geo.api.gouv.fr",
-        "attempts": 1
-      }
+      "requestedUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie/records?limit=100&offset=0",
+      "requestedDomain": "data.laregion.fr",
+      "finalUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie/records?limit=100&offset=0",
+      "finalDomain": "data.laregion.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
     },
     {
-      "kind": "DNS_ERROR",
-      "message": "DNS_ERROR: https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/: fetch failed",
-      "url": "https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/",
-      "details": {
-        "code": "ENOTFOUND",
-        "cause": "getaddrinfo ENOTFOUND www.data.gouv.fr",
-        "attempts": 1
-      }
+      "requestedUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie/records?limit=100&offset=100",
+      "requestedDomain": "data.laregion.fr",
+      "finalUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie/records?limit=100&offset=100",
+      "finalDomain": "data.laregion.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie/records?limit=100&offset=200",
+      "requestedDomain": "data.laregion.fr",
+      "finalUrl": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie/records?limit=100&offset=200",
+      "finalDomain": "data.laregion.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/12/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/12/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/30/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/30/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/09/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/09/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/11/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/11/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/81/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/81/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/48/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/48/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/46/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/46/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/34/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/34/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/31/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/31/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/82/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/82/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/32/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/32/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/66/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/66/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://geo.api.gouv.fr/departements/65/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "requestedDomain": "geo.api.gouv.fr",
+      "finalUrl": "https://geo.api.gouv.fr/departements/65/communes?fields=nom,code,codeDepartement,codeRegion,codeEpci,codesPostaux&format=json",
+      "finalDomain": "geo.api.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/",
+      "requestedDomain": "www.data.gouv.fr",
+      "finalUrl": "https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/",
+      "finalDomain": "www.data.gouv.fr",
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "result": "http-response",
+      "attempt": 1
+    },
+    {
+      "requestedUrl": "https://data.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw",
+      "requestedDomain": "data.laposte.fr",
+      "finalUrl": "https://data.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw",
+      "finalDomain": "data.laposte.fr",
+      "httpStatus": 200,
+      "contentType": "text/csv; charset=utf-8",
+      "result": "http-response",
+      "attempt": 1
     }
   ],
+  "errors": [],
   "qualification": {
-    "completedAt": "2026-11-24T06:36:19.259Z",
+    "completedAt": "2026-11-24T08:09:56.593Z",
     "sourceRecordsReviewed": 153,
     "counts": {
-      "relevant": 23,
-      "not_relevant": 41,
-      "expired": 2,
-      "needs_manual_review": 87
+      "relevant": 28,
+      "not_relevant": 119,
+      "expired": 6,
+      "needs_manual_review": 0
     },
     "newPublishedCards": 0,
     "note": "No record is published from the imported qualification register. All relevant records still need their full current rule, documents and application path captured and checked before catalogue publication.",

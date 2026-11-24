@@ -7,6 +7,18 @@ import path from "node:path";
 import { classifyAid, decodeCsvBytes, deduplicateCandidates, getResponse, normalizeGeoPostalMappings, normalizePostalRows, normalizeRegionRecord, parseCsv, validateRequiredCommunes } from "./import-official-data.mjs";
 import { qualifyOccitanieRecords } from "./qualify-occitanie.mjs";
 
+async function restoreFile(file, contents) {
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      await writeFile(file, contents);
+      return;
+    } catch (error) {
+      if (error.code !== "UNKNOWN" || attempt >= 4) throw error;
+      await new Promise((resolve) => setTimeout(resolve, attempt * 75));
+    }
+  }
+}
+
 test("CSV parser handles delimiter, quoted delimiter, escaped quote and CRLF", () => {
   const rows = parseCsv('Code_commune_INSEE;Nom;Code_postal\r\n34172;"Montpellier; centre";34000\r\n34301;"Sète ""centre""";34200\r\n');
   assert.deepEqual(rows, [
@@ -139,10 +151,10 @@ test("all 153 imported aid records receive traceable, conservative qualification
   const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
   const generatedFiles = ["src/data/imports/occitanie/normalized/qualifications.json", "src/data/imports/import-report.json", "src/data/source-registry.json"];
   const originals = await Promise.all(generatedFiles.map((file) => readFile(path.join(repo, file))));
-  t.after(() => Promise.all(generatedFiles.map((file, index) => writeFile(path.join(repo, file), originals[index]))));
+  t.after(() => Promise.all(generatedFiles.map((file, index) => restoreFile(path.join(repo, file), originals[index]))));
   const result = await qualifyOccitanieRecords();
   assert.equal(result.qualifications.length, 153);
-  assert.deepEqual(result.counts, { relevant: 23, not_relevant: 41, expired: 2, needs_manual_review: 87 });
+  assert.deepEqual(result.counts, { relevant: 28, not_relevant: 119, expired: 6, needs_manual_review: 0 });
   assert.equal(new Set(result.qualifications.map((item) => item.id)).size, 153);
   assert.ok(result.qualifications.every((item) => item.sourceRecordHash.length === 64 && item.rawRecordReference.file.endsWith("raw/dataset.json")));
   const rawSnapshot = JSON.parse(await readFile(path.join(repo, "src/data/imports/occitanie/raw/dataset.json"), "utf8"));
@@ -150,7 +162,7 @@ test("all 153 imported aid records receive traceable, conservative qualification
   assert.ok(result.qualifications.every((item) => item.classification.justification.length > 0));
   assert.ok(result.qualifications.every((item) => item.normalized.territory.regionCode === "76"));
   const duplicateCandidates = result.qualifications.filter((item) => item.deduplication.status === "duplicate-candidate");
-  assert.equal(duplicateCandidates.length, 23);
+  assert.equal(duplicateCandidates.length, 25);
   const catalogue = JSON.parse(await readFile(path.join(repo, "src/data/catalogue.json"), "utf8"));
   assert.ok(duplicateCandidates.every((item) => catalogue.some((record) => record.id === item.deduplication.existingCatalogueId && record.url === item.normalized.officialUrl)));
   assert.ok(result.qualifications.every((item) => item.dataQuality.publicationStatus === "not-published"));
@@ -168,7 +180,7 @@ test("qualification import is reproducible against the persisted raw snapshot", 
     const second = await qualifyOccitanieRecords();
     assert.equal(JSON.stringify(second.qualifications), firstRecords);
   } finally {
-    await Promise.all(generatedFiles.map((file, index) => writeFile(path.join(repo, file), originals[index])));
+    await Promise.all(generatedFiles.map((file, index) => restoreFile(path.join(repo, file), originals[index])));
   }
 });
 

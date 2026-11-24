@@ -9,6 +9,19 @@ const reviewPath = path.join(root, "src/data/review.json");
 const qualifications = JSON.parse(await readFile(qualificationsPath, "utf8"));
 const catalogue = JSON.parse(await readFile(cataloguePath, "utf8"));
 const review = JSON.parse(await readFile(reviewPath, "utf8"));
+const pageDecisionsPath = path.join(root, "src/data/imports/occitanie/normalized/official-page-decisions.json");
+const pageDecisions = JSON.parse(await readFile(pageDecisionsPath, "utf8"));
+const editorialExclusions = pageDecisions.editorialExclusions ?? {};
+const excludedUrls = new Set(Object.keys(editorialExclusions));
+for (const removed of catalogue.filter((item) => excludedUrls.has(item.url))) {
+  const decision = editorialExclusions[removed.url];
+  review[removed.id] = {
+    ...(review[removed.id] ?? {}),
+    editorialDisposition: { status: "excluded-from-editorial-catalogue", decidedAt: pageDecisions.reviewedAt, reason: decision.reason, qualificationRetained: true, rawSnapshotRetained: true },
+    notes: [...new Set([...(review[removed.id]?.notes ?? []), `Exclue du catalogue éditorial Solomam : ${decision.reason} La qualification, les preuves et le snapshot brut sont conservés.`])],
+  };
+}
+for (let index = catalogue.length - 1; index >= 0; index -= 1) if (excludedUrls.has(catalogue[index].url)) catalogue.splice(index, 1);
 const checkedAt = "2026-11-23";
 const categoryFor = (name) => {
   const value = name.toLocaleLowerCase("fr");
@@ -55,7 +68,7 @@ const frenchAudience = {
   "occ-aide-a-la-garde-d-enfants": "Parents ayant un enfant à charge de moins de 10 ans et suivant une formation régionale éligible ou reprenant un emploi sous les conditions de durée et de délai indiquées par la Région.",
 };
 
-const candidates = qualifications.records.filter((record) => record.classification.status === "relevant");
+const candidates = qualifications.records.filter((record) => record.classification.status === "relevant" && !excludedUrls.has(record.normalized.officialUrl));
 let added = 0;
 let alreadyPresent = 0;
 for (const record of candidates) {
@@ -108,6 +121,8 @@ for (const record of candidates) {
   review[id] = {
     ...(prior ?? {}),
     publicationStatus: "pending",
+    informationPublicationStatus: prior?.informationPublicationStatus ?? "pending",
+    procedurePublicationStatus: prior?.procedurePublicationStatus ?? "pending",
     reviewedAt: checkedAt,
     currentForPeriod: null,
     eligibilityRulesReady: false,

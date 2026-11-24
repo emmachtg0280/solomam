@@ -67,3 +67,11 @@ npm.cmd run data:refresh-local-catalogue
 - Remplacer les 22 points de découverte départementaux restants hors Gard/Hérault par des pages officielles détaillées, puis collecter leurs exports et règlements accessibles.
 - Tester l'intégrité après reconstruction complète et ajouter des tests directs d'idempotence des scripts de qualification et d'intégration régionale.
 
+
+## Cadrage éditorial et sélection des services (23 novembre 2026)
+
+Le cadrage courant est consigné dans [`editorial-positioning.md`](editorial-positioning.md) et s'applique aux prochaines fiches et sélections sans refonte UI. Solomam sert les femmes qui élèvent seules leurs enfants sans les réduire à la maternité : le catalogue associe aides/démarches concrètes et services personnels/lifestyle. Les services gardent trois catégories produit : Parentalité, Santé & bien-être, Dating & relations.
+
+Pour la sélection à venir, le dating s'adresse aux femmes adultes indépendamment de leur statut parental : considérer les applications généralistes, événements et expériences, sans cadrage automatique autour de la monoparentalité. Santé & bien-être peut couvrir santé gynécologique et sexuelle, thérapie, sport, soins, beauté et bien-être personnel, sous réserve de vérifier les services et de ne pas avancer de bénéfices médicaux non sourcés. Les fiches lifestyle sont distinctes du modèle administratif : description courte, bénéfice concret, disponibilité, prix/gratuité vérifié, lien officiel, source et date de vérification. Pas de critères d'aide ou d'étapes administratives hors sujet, ni de partenariat, recommandation ou offre inventés.
+
+Cette orientation ne change pas la priorité de collecte : poursuivre les aides locales d'Occitanie, les règlements départementaux et la qualification des sources décrits dans ce pipeline. Le catalogue actuel de services est préliminaire; « Parents Solos » n'est pas un modèle général pour le dating.
