@@ -1458,7 +1458,11 @@
       "coverage": "31",
       "limitations": [
         "La Métropole de Toulouse exerce le FSL sur son territoire; la liste des communes est conservée séparément par codes INSEE. Vérifier barèmes et formulaire du volet départemental."
-      ]
+      ],
+      "version": "Page consultée le 24/11/2026; règlement annoncé 2024 mais PDF mis à jour 2023; plafonds 2024",
+      "recordsImported": 0,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0
     },
     {
       "id": "fsl-toulouse-metropole",
@@ -1472,7 +1476,11 @@
       "coverage": "31",
       "limitations": [
         "Candidate distincte du FSL départemental. Vérifier la version locale du règlement, le guichet, les montants et les pièces avant publication."
-      ]
+      ],
+      "version": "Page consultée le 24/11/2026; règlement annoncé 2024 mais PDF mis à jour 2023; plafonds 2024",
+      "recordsImported": 0,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0
     },
     {
       "id": "gers-aides-financieres",
@@ -1681,6 +1689,67 @@
       "coverage": "Région Occitanie",
       "limitations": [
         "L’aide de 20 € par sportif et par nuitée est versée à des associations UNSS; campagne et ligne budgétaire courantes à confirmer."
+      ]
+    },
+    {
+      "id": "fsl-haute-garonne-reglement-2023",
+      "name": "Règlement intérieur commun FSL Haute-Garonne / Toulouse Métropole — mise à jour 2023",
+      "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/YjBmYmQzMTMtY2ExOC00MDVhLTg1OTQtMDU3NTA3ZDIyNThj",
+      "role": "Règles communes, partage des compétences, conditions générales, volets et instruction",
+      "status": "official-source-reviewed-information-pending",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "PDF officiel, 48 pages, mise à jour 2023",
+      "limitations": [
+        "Page actuelle l’intitule règlement 2024 mais le PDF dit mise à jour 2023; aucune version postérieure confirmée."
+      ]
+    },
+    {
+      "id": "fsl-haute-garonne-plafonds-2024",
+      "name": "Annexe plafonds de ressources FSL Haute-Garonne 2024",
+      "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/MTI0YjE4OTYtZTJhNC00OWZkLTk0MzUtODE2OWQxNTc3Zjc1",
+      "role": "Plafonds par composition familiale",
+      "status": "official-source-reviewed-information-pending",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "PDF officiel, plafonds 2024",
+      "limitations": [
+        "Annexe explicitement datée 2024; elle ne confirme pas les plafonds courants 2026."
+      ]
+    },
+    {
+      "id": "fsl-toulouse-metropole-jem",
+      "name": "Toulouse Métropole — fiche FSL sur JEM",
+      "url": "https://jem.metropole.toulouse.fr/decouvrir/479-fonds-de-solidarite-logement-fsl",
+      "role": "Présentation institutionnelle du FSL métropolitain",
+      "status": "official-source-reviewed-information-pending",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "Toulouse Métropole",
+      "version": "Page consultée le 24/11/2026",
+      "limitations": [
+        "Présentation générale; le passage procédure étudiant date de janvier 2021 et n’établit pas un canal de dépôt courant pour tous les ménages."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-communes-api-2026",
+      "name": "API Géo officielle — communes de l’EPCI Toulouse Métropole (243100518)",
+      "url": "https://geo.api.gouv.fr/epcis/243100518/communes?fields=nom,code&format=json",
+      "role": "Référentiel actuel des communes de l’EPCI Toulouse Métropole",
+      "status": "official-api-queried",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés; aucun dataset tiers recopié dans cette passe",
+      "coverage": "Toulouse Métropole (EPCI 243100518)",
+      "version": "Requête live API Géo le 24/11/2026; 37 communes",
+      "limitations": [
+        "L’API confirme le périmètre administratif courant, mais ne définit pas la compétence FSL; celle-ci est attribuée par le règlement FSL."
       ]
     },
     {

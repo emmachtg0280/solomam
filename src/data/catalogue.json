@@ -784,8 +784,8 @@
     "category": "Logement",
     "zone": "31",
     "org": "Conseil départemental de la Haute-Garonne",
-    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
-    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "description": "Le FSL comprend des aides pour accéder à un logement (dépôt de garantie, cautionnement du loyer, frais d’agence, premier loyer, assurance et installation), s’y maintenir (dettes locatives et certaines charges de copropriété), régler des factures d’énergie, d’eau ou de téléphone/internet, ainsi que des accompagnements sociaux. Conditions, plafonds, pièces et démarches varient selon le volet.",
+    "when": "Le logement concerné doit être situé dans le périmètre compétent de Haute-Garonne. L’examen tient compte de la situation et des ressources du ménage, du logement et du volet demandé; le FSL intervient en complément des droits et aides de droit commun. Les plafonds courants ne sont pas établis dans les sources consultées.",
     "steps": [],
     "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
   },
@@ -795,8 +795,8 @@
     "category": "Logement",
     "zone": "31",
     "org": "Toulouse Métropole",
-    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
-    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "description": "Le FSL comprend des aides pour accéder à un logement (dépôt de garantie, cautionnement du loyer, frais d’agence, premier loyer, assurance et installation), s’y maintenir (dettes locatives et certaines charges de copropriété), régler des factures d’énergie, d’eau ou de téléphone/internet, ainsi que des accompagnements sociaux. Conditions, plafonds, pièces et démarches varient selon le volet.",
+    "when": "Le logement concerné doit être situé dans le périmètre compétent de Haute-Garonne. L’examen tient compte de la situation et des ressources du ménage, du logement et du volet demandé; le FSL intervient en complément des droits et aides de droit commun. Les plafonds courants ne sont pas établis dans les sources consultées.",
     "steps": [],
     "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
   },

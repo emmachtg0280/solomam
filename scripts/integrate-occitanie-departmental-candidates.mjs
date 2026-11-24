@@ -205,7 +205,7 @@ for(const dep of coverage.territories.filter((x)=>/^\d{2}$/.test(x.id))) {
  }
 }
 const dept32=coverage.territories.find(x=>x.id==="32"); if(dept32) dept32.notes += " Le lien officiel du FSL apparaît dans le plan du site, mais le domaine bloque la consultation par l’outil de recherche; sa règle n’est pas marquée examinée.";
-const dept31=coverage.territories.find(x=>x.id==="31"); if(dept31) dept31.notes += " Le FSL est séparé entre Département et Toulouse Métropole; les 37 communes métropolitaines sont conservées par code INSEE.";
+const dept31=coverage.territories.find(x=>x.id==="31"); if(dept31) { dept31.checkedAt="2026-11-24"; dept31.notes="Règlement commun consulté : le Département exerce et finance le FSL en Haute-Garonne hors Toulouse Métropole; Toulouse Métropole exerce et finance sur son périmètre (37 communes, EPCI 243100518, liste recoupée avec API Géo live le 24/11/2026). Volets Accès, Maintien, énergie/téléphonie-internet et accompagnements sociaux confirmés. Deux fiches candidates non publiées : le règlement PDF est mis à jour en 2023 malgré l’étiquette page 2024; l’annexe de plafonds est datée 2024, donc valeurs 2026 inconnues. Guichets pratiques, formulaires et pièces à confirmer par volet, surtout côté Toulouse Métropole. Aucun autre département ni CCAS examiné dans cette passe."; }
 coverage.checkedAt=checkedAt;
 registry.auditedAt=checkedAt;
 await write("src/data/catalogue.json",catalogue);
