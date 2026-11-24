@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { classifyAid, decodeCsvBytes, deduplicateCandidates, normalizeGeoPostalMappings, normalizePostalRows, normalizeRegionRecord, parseCsv, validateRequiredCommunes } from "./import-official-data.mjs";
@@ -105,13 +105,16 @@ test("actual Region schema does not confuse publication date with beneficiaries 
   assert.equal(item.periodStatus, "not-established-from-dataset");
 });
 
-test("all 153 imported aid records receive traceable, conservative qualification decisions", async () => {
+test("all 153 imported aid records receive traceable, conservative qualification decisions", async (t) => {
+  const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const generatedFiles = ["src/data/imports/occitanie/normalized/qualifications.json", "src/data/imports/import-report.json", "src/data/source-registry.json"];
+  const originals = await Promise.all(generatedFiles.map((file) => readFile(path.join(repo, file))));
+  t.after(() => Promise.all(generatedFiles.map((file, index) => writeFile(path.join(repo, file), originals[index]))));
   const result = await qualifyOccitanieRecords();
   assert.equal(result.qualifications.length, 153);
   assert.deepEqual(result.counts, { relevant: 22, not_relevant: 28, expired: 2, needs_manual_review: 101 });
   assert.equal(new Set(result.qualifications.map((item) => item.id)).size, 153);
   assert.ok(result.qualifications.every((item) => item.sourceRecordHash.length === 64 && item.rawRecordReference.file.endsWith("raw/dataset.json")));
-  const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
   const rawSnapshot = JSON.parse(await readFile(path.join(repo, "src/data/imports/occitanie/raw/dataset.json"), "utf8"));
   assert.ok(result.qualifications.every((item) => createHash("sha256").update(JSON.stringify(rawSnapshot.records[item.sourceIndex])).digest("hex") === item.sourceRecordHash));
   assert.ok(result.qualifications.every((item) => item.classification.justification.length > 0));
@@ -126,10 +129,17 @@ test("all 153 imported aid records receive traceable, conservative qualification
 });
 
 test("qualification import is reproducible against the persisted raw snapshot", async () => {
-  const first = await qualifyOccitanieRecords();
-  const firstRecords = JSON.stringify(first.qualifications);
-  const second = await qualifyOccitanieRecords();
-  assert.equal(JSON.stringify(second.qualifications), firstRecords);
+  const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const generatedFiles = ["src/data/imports/occitanie/normalized/qualifications.json", "src/data/imports/import-report.json", "src/data/source-registry.json"];
+  const originals = await Promise.all(generatedFiles.map((file) => readFile(path.join(repo, file))));
+  try {
+    const first = await qualifyOccitanieRecords();
+    const firstRecords = JSON.stringify(first.qualifications);
+    const second = await qualifyOccitanieRecords();
+    assert.equal(JSON.stringify(second.qualifications), firstRecords);
+  } finally {
+    await Promise.all(generatedFiles.map((file, index) => writeFile(path.join(repo, file), originals[index])));
+  }
 });
 
 test("geography assertions accept only the exact four INSEE/name pairs", () => {

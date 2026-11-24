@@ -344,20 +344,20 @@
       "name": "Service-Public.fr",
       "url": "https://www.service-public.gouv.fr/",
       "role": "Official citizen guidance, eligibility summaries and forms for national procedures",
-      "status": "four-guidance-pages-opened-facts-integrated-pending-review",
+      "status": "ten-national-aid-records-reviewed-three-new-information-pages-published",
       "version": "Individual pages have their own update dates",
       "license": "Content reuse conditions not reviewed as a bulk dataset",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
-      "coverage": "Several prototype national aids received initial page-level review, recorded in review.json",
+      "coverage": "National official guidance pages for ASF, family benefits, activity bonus, CSS, RSA parent isolé, PreParE, AEEH, APL, ALF and ALS; information-publication and request-procedure states remain independent in review.json",
       "limitations": [
         "Not a bulk structured aid dataset",
         "Must use aid-specific current pages and primary legal/administrator sources for exact rules"
       ],
-      "candidateRecordsIntegrated": 3,
-      "factsEnrichedForAids": 3,
-      "publishableRecords": 0,
+      "candidateRecordsIntegrated": 5,
+      "factsEnrichedForAids": 5,
+      "publishableRecords": 3,
       "consultedAt": "2026-11-23",
       "evidence": [
         {
@@ -376,9 +376,34 @@
           "pageVerifiedAt": "2026-06-01"
         },
         {
-          "aidId": "logement",
-          "url": "https://www.service-public.fr/particuliers/vosdroits/F12006",
+          "aidId": "apl",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
           "pageVerifiedAt": "2026-07-01"
+        },
+        {
+          "aidId": "apl",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R1292",
+          "pageVerifiedAt": "2026-03-02"
+        },
+        {
+          "aidId": "alf",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13132",
+          "pageVerifiedAt": "2026-07-01"
+        },
+        {
+          "aidId": "alf",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R1292",
+          "pageVerifiedAt": "2026-03-02"
+        },
+        {
+          "aidId": "als",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1280",
+          "pageVerifiedAt": "2026-07-01"
+        },
+        {
+          "aidId": "als",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R1292",
+          "pageVerifiedAt": "2026-03-02"
         }
       ]
     },

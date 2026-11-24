@@ -46,21 +46,6 @@
     "url": "https://www.service-public.fr/particuliers/vosdroits/N31477"
   },
   {
-    "id": "logement",
-    "name": "Aides au logement",
-    "category": "Logement",
-    "zone": "national",
-    "org": "CAF / MSA",
-    "description": "APL, ALF ou ALS selon le logement et la situation familiale. Un point de départ utile pour les locataires.",
-    "when": "Type de logement, loyer, composition du foyer et ressources.",
-    "steps": [
-      "Rassembler les informations du logement et du loyer.",
-      "Réaliser une estimation sur le site officiel de la CAF/MSA.",
-      "Compléter la demande de logement auprès de l’organisme compétent."
-    ],
-    "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/logement"
-  },
-  {
     "id": "cf",
     "name": "Complément familial",
     "category": "Famille",
@@ -556,5 +541,47 @@
       "Après décision favorable, le versement est assuré par la Caf ou la MSA; les compléments et la majoration parent isolé dépendent de l'évaluation et de la situation de l'aidant."
     ],
     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14809"
+  },
+  {
+    "id": "apl",
+    "name": "Aide personnalisée au logement (APL)",
+    "category": "Logement",
+    "org": "Caf ou MSA selon le régime",
+    "zone": "national",
+    "description": "Aide au logement attribuée sous conditions, notamment lorsque le logement est conventionné.",
+    "when": "Locataires ou certains résidents en logement conventionné, sous conditions de logement, de résidence et de ressources.",
+    "steps": [
+      "Faire la demande en ligne auprès de la Caf; les personnes sans compte doivent créer leur espace personnel.",
+      "Renseigner le logement et le foyer, transmettre les justificatifs demandés, vérifier les informations puis valider la demande."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006"
+  },
+  {
+    "id": "alf",
+    "name": "Allocation de logement familiale (ALF)",
+    "category": "Logement",
+    "org": "Caf ou MSA selon le régime",
+    "zone": "national",
+    "description": "Aide au logement destinée à certains foyers qui ne relèvent pas de l'APL.",
+    "when": "Foyers remplissant une situation familiale définie et ne pouvant pas bénéficier de l'APL, sous conditions.",
+    "steps": [
+      "Faire la demande d'aide au logement en ligne auprès de la Caf; les personnes sans compte doivent créer leur espace personnel.",
+      "Renseigner le logement et le foyer, transmettre les justificatifs demandés, vérifier les informations puis valider la demande."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13132"
+  },
+  {
+    "id": "als",
+    "name": "Allocation de logement sociale (ALS)",
+    "category": "Logement",
+    "org": "Caf ou MSA selon le régime",
+    "zone": "national",
+    "description": "Aide au logement attribuée sous conditions lorsque le foyer ne peut bénéficier ni de l'APL ni de l'ALF.",
+    "when": "Locataires ou certains résidents qui ne relèvent ni de l'APL ni de l'ALF, sous conditions.",
+    "steps": [
+      "Faire la demande en ligne auprès de la Caf ou de la MSA selon le régime; suivre le parcours de l'organisme compétent.",
+      "Renseigner le logement et le foyer, transmettre les justificatifs demandés, vérifier les informations puis valider la demande."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1280"
   }
 ]

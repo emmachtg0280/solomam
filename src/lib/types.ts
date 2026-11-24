@@ -17,6 +17,7 @@ export type Coverage = "national" | "regional" | "34";
 export type ValidationStatus = "à vérifier" | "vérifié";
 
 export interface AidSource {
+  id?: string;
   label: string;
   url: string;
   consultedAt: string | null;
@@ -50,10 +51,13 @@ export interface Aid {
   organization: string;
   coverage: Coverage;
   description: string;
+  audience: string | null;
   conditions: string[];
+  amount: string | null;
   documents: string[];
   steps: string[];
   officialUrl: string;
+  applicationUrl: string | null;
   sources: AidSource[];
   verifiedAt: string | null;
   informationPublicationStatus: "pending" | "verified";
@@ -68,12 +72,3 @@ export interface Aid {
   applicationProcedure?: ApplicationProcedure;
   verifiedFacts: AidFact[];
 }
-
-export type ApplicationStatus = "à commencer" | "en cours" | "envoyée" | "terminée";
-
-export interface AidProgress {
-  steps: boolean[];
-  status: ApplicationStatus;
-}
-
-export type ProgressMap = Record<string, AidProgress>;

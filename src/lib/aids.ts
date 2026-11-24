@@ -14,6 +14,7 @@ type Audit = {
   sources: AidSource[];
   facts?: AidFact[];
   applicationProcedure?: ApplicationProcedure;
+  applicationUrl?: string | null;
   factSources?: AidSource[];
 };
 
@@ -31,6 +32,8 @@ export const aids: Aid[] = catalogueRows.map((item) => {
   const verifiedFacts = (audit.facts ?? []).filter((fact) => fact.status === "verified" && fact.value);
   const conditionFields = new Set(["audience", "core_conditions", "resource_condition", "residence", "territory", "living_situation", "contribution_condition", "work_status", "child_income", "pension_scenarios", "parental_lump_sum_period"]);
   const verifiedDocuments = verifiedFacts.filter((fact) => fact.field === "documents");
+  const audience = verifiedFacts.find((fact) => fact.field === "audience")?.value ?? null;
+  const amount = verifiedFacts.find((fact) => fact.field === "amount")?.value ?? null;
   return {
     id: item.id,
     slug: item.id,
@@ -39,10 +42,13 @@ export const aids: Aid[] = catalogueRows.map((item) => {
     organization: item.org,
     coverage: item.zone as Aid["coverage"],
     description: item.description,
-    conditions: verifiedFacts.filter((fact) => conditionFields.has(fact.field)).map((fact) => fact.value as string),
+    audience,
+    conditions: verifiedFacts.filter((fact) => conditionFields.has(fact.field) && fact.field !== "audience").map((fact) => fact.value as string),
+    amount,
     documents: verifiedDocuments.map((fact) => fact.value as string),
-    steps: procedure?.steps.filter((step) => ["verified", "verified_conditional"].includes(step.status) && step.sourceIds.length > 0).map((step) => step.text) ?? [],
+    steps: procedure?.steps.filter((step) => ["verified", "verified_conditional"].includes(step.status) && step.sourceIds.length > 0).slice(0, 5).map((step) => step.text) ?? [],
     officialUrl: item.url,
+    applicationUrl: audit.applicationUrl ?? null,
     sources,
     verifiedAt: audit.informationVerifiedAt ?? null,
     validationStatus: audit.informationPublicationStatus === "verified" ? "vérifié" : "à vérifier",

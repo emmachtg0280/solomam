@@ -11,7 +11,7 @@ const readJson = async (name) => JSON.parse(await readFile(path.join(root, name)
 
 test("canonical catalogue has unique IDs and source URLs", async () => {
   const catalogue = await readJson("src/data/catalogue.json");
-  assert.equal(catalogue.length, 43);
+  assert.equal(catalogue.length, 45);
   assert.equal(new Set(catalogue.map((record) => record.id)).size, catalogue.length);
   assert.equal(new Set(catalogue.map((record) => record.url)).size, catalogue.length);
   assert.ok(catalogue.every((record) => record.id && record.name && record.url));
@@ -84,7 +84,20 @@ test("information publication is independent from procedure completeness", async
   assert.match(review.asf.facts.find((fact) => fact.field === "core_conditions").value, /incohérence/);
   assert.equal(review.asf.facts.find((fact) => fact.field === "amount").status, "conflict");
   assert.ok(review.css.applicationProcedure.renewal.text.includes("un an"));
-  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 7);
+  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 10);
+  assert.deepEqual(catalogue.filter((item) => ["apl", "alf", "als"].includes(item.id)).map(({ id }) => id).sort(), ["alf", "als", "apl"]);
+  assert.equal(catalogue.some((item) => item.id === "logement"), false);
+  assert.equal(review.logement.recordLifecycle, "superseded");
+  assert.deepEqual(review.logement.supersededBy, ["apl", "alf", "als"]);
+  for (const id of ["apl", "alf", "als"]) {
+    const entry = review[id];
+    assert.equal(entry.informationPublicationStatus, "verified");
+    assert.equal(canPublishInformation(catalogue.find((item) => item.id === id), entry), true);
+    assert.equal(entry.procedurePublicationStatus, "pending");
+    assert.equal(canPublishProcedure(entry), false);
+    assert.ok(entry.facts.some((fact) => fact.field === "audience" && fact.status === "verified"));
+    assert.ok(entry.facts.some((fact) => fact.field === "documents" && fact.sourceIds.length));
+  }
   assert.ok(catalogue.every((item) => ["pending", "verified"].includes(review[item.id].informationPublicationStatus)));
   assert.ok(catalogue.every((item) => ["pending", "complete"].includes(review[item.id].procedurePublicationStatus)));
   for (const id of ["asf", "af", "prime", "css", "rsa-parent-isole", "prepare", "aeeh"]) {
