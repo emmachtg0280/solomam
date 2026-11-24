@@ -29,6 +29,7 @@ export default async function AidPage({ params }: { params: Promise<{ slug: stri
     {aid.audience && <section className="detail-section"><h2>À qui s’adresse cette aide ?</h2><p>{aid.audience}</p></section>}
     {aid.conditions.length > 0 && <section className="detail-section"><h2>Conditions essentielles</h2><ul>{aid.conditions.map((condition) => <li key={condition}>{condition}</li>)}</ul></section>}
     {aid.amount && <section className="detail-section"><h2>Montant ou nature de l’aide</h2><p>{aid.amount}</p></section>}
+    {aid.uncertainties.length > 0 && <section className="detail-section" aria-labelledby="uncertainties-title"><h2 id="uncertainties-title">Points à confirmer</h2><ul>{aid.uncertainties.map((uncertainty) => <li key={uncertainty}>{uncertainty}</li>)}</ul></section>}
     {aid.documents.length > 0 && <section className="detail-section"><h2>Documents indiqués par la source</h2><ul>{aid.documents.map((document) => <li key={document}>{document}</li>)}</ul></section>}
     <section className="detail-section"><h2>Organisme et territoire</h2><p>{aid.organization} — {coverageLabel[aid.coverage]}</p></section>
     <section className="detail-section"><h2>Comment faire la demande ?</h2>

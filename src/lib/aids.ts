@@ -30,6 +30,7 @@ export const aids: Aid[] = catalogueRows.map((item) => {
   }));
   const procedure = audit.applicationProcedure;
   const verifiedFacts = (audit.facts ?? []).filter((fact) => fact.status === "verified" && fact.value);
+  const uncertainties = (audit.facts ?? []).filter((fact) => ["conflict", "partially_verified"].includes(fact.status) && fact.value).map((fact) => fact.value as string);
   const conditionFields = new Set(["audience", "core_conditions", "resource_condition", "residence", "territory", "living_situation", "contribution_condition", "work_status", "child_income", "pension_scenarios", "parental_lump_sum_period"]);
   const verifiedDocuments = verifiedFacts.filter((fact) => fact.field === "documents");
   const audience = verifiedFacts.find((fact) => fact.field === "audience")?.value ?? null;
@@ -62,6 +63,7 @@ export const aids: Aid[] = catalogueRows.map((item) => {
     facts: audit.facts,
     applicationProcedure: procedure,
     verifiedFacts,
+    uncertainties,
   };
 });
 

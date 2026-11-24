@@ -583,5 +583,73 @@
       "Renseigner le logement et le foyer, transmettre les justificatifs demandés, vérifier les informations puis valider la demande."
     ],
     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1280"
+  },
+  {
+    "id": "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion",
+    "name": "Éco-chèque mobilité — voiture électrique d’occasion",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Aide régionale à l’achat d’une voiture particulière électrique d’occasion, soumise aux conditions de ressources, de véhicule et de dépôt.",
+    "when": "Personne physique majeure domiciliée en Occitanie et non imposable sur les revenus, n’ayant pas bénéficié de cette aide ni des versions antérieures de l’éco-chèque voiture neuve ou d’occasion.",
+    "steps": [],
+    "url": "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion"
+  },
+  {
+    "id": "paje-prime-naissance",
+    "name": "PAJE — prime à la naissance",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Prime sous conditions de ressources versée pendant la grossesse pour préparer l’arrivée de l’enfant.",
+    "when": "Personne attendant un enfant, relevant de la Caf ou de la MSA, sous plafond de ressources tenant compte de la composition familiale; un barème spécifique existe pour le parent isolé.",
+    "steps": [
+      "Effectuer le premier examen prénatal et déclarer la grossesse avant la fin du troisième mois.",
+      "Déposer la demande auprès de la Caf ou de la MSA selon le régime; le téléservice ou formulaire dépend de la situation de l’allocataire."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2550"
+  },
+  {
+    "id": "paje-allocation-base",
+    "name": "PAJE — allocation de base",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Prestation sous conditions de ressources pour contribuer à l’entretien et à l’éducation d’un enfant de moins de trois ans.",
+    "when": "Parent ayant un enfant à charge de moins de trois ans et dont les ressources respectent le plafond applicable; un barème spécifique existe pour le parent isolé.",
+    "steps": [
+      "Vérifier l’âge de l’enfant et le plafond de ressources applicable à la situation familiale.",
+      "Transmettre à la Caf ou à la MSA les pages lisibles du livret de famille et l’acte de naissance de l’enfant, selon la page officielle."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2552"
+  },
+  {
+    "id": "paje-prime-adoption",
+    "name": "PAJE — prime à l’adoption",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Prime sous conditions de ressources liée à l’adoption ou à l’accueil en vue d’adoption d’un enfant.",
+    "when": "Personne adoptant ou accueillant en vue d’adoption un enfant de moins de 20 ans par l’intermédiaire de l’Aide sociale à l’enfance, d’un organisme français autorisé/Agence française de l’adoption ou d’une autorité étrangère compétente.",
+    "steps": [
+      "Identifier le parcours applicable selon le pays d’origine de l’enfant et la situation Caf/MSA; les pièces justificatives ne sont pas les mêmes dans tous les cas.",
+      "Pour certains dossiers Caf, transmettre l’attestation ASE/organisme autorisé ou procès-verbal du conseil de famille; d’autres situations nécessitent les formulaires de déclaration et pièces d’adoption décrits par Service-Public."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13220"
+  },
+  {
+    "id": "ajpp",
+    "name": "Allocation journalière de présence parentale (AJPP)",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Aide journalière liée à la cessation temporaire d’activité pour s’occuper d’un enfant gravement malade, accidenté ou handicapé.",
+    "when": "Personne cessant temporairement son activité pour s’occuper d’un enfant à charge de moins de 20 ans nécessitant une présence soutenue et des soins contraignants en raison d’une maladie, d’un handicap ou d’un accident d’une particulière gravité.",
+    "steps": [
+      "Faire établir par le médecin traitant le certificat médical détaillant les soins contraignants et la présence soutenue; le volet médical est transmis sous pli confidentiel au service médical.",
+      "Adresser à la Caf ou à la MSA le formulaire AJPP adapté au régime avec les éléments de situation professionnelle demandés.",
+      "Après ouverture du droit, transmettre les attestations mensuelles de jours ou demi-journées utilisés; l’employeur complète sa partie lorsque la situation le requiert."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15132"
   }
 ]

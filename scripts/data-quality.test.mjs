@@ -11,7 +11,7 @@ const readJson = async (name) => JSON.parse(await readFile(path.join(root, name)
 
 test("canonical catalogue has unique IDs and source URLs", async () => {
   const catalogue = await readJson("src/data/catalogue.json");
-  assert.equal(catalogue.length, 45);
+  assert.equal(catalogue.length, 50);
   assert.equal(new Set(catalogue.map((record) => record.id)).size, catalogue.length);
   assert.equal(new Set(catalogue.map((record) => record.url)).size, catalogue.length);
   assert.ok(catalogue.every((record) => record.id && record.name && record.url));
@@ -23,7 +23,7 @@ test("all regional candidates retain source identity and remain unpublished pend
   const review = await readJson("src/data/review.json");
   const snapshot = await readJson("src/data/imports/occitanie/raw/dataset.json");
   const regional = catalogue.filter((record) => record.id.startsWith("occ-"));
-  assert.equal(regional.length, 22);
+  assert.equal(regional.length, 23);
   for (const record of regional) {
     const audit = review[record.id];
     assert.equal(audit.publicationStatus, "pending");
@@ -31,7 +31,7 @@ test("all regional candidates retain source identity and remain unpublished pend
     assert.equal(audit.sourceDatasetRecord.sourceRecordHash.length, 64);
     assert.equal(createHash("sha256").update(JSON.stringify(snapshot.records[audit.sourceDatasetRecord.sourceRecordIndex])).digest("hex"), audit.sourceDatasetRecord.sourceRecordHash);
     assert.ok(audit.factSources.some((source) => source.url === record.url));
-    assert.equal(audit.applicationProcedure.status, "incomplete");
+    assert.ok(["incomplete", "partially_complete"].includes(audit.applicationProcedure.status));
     assert.ok(audit.applicationProcedure.remainingChecks.length > 0);
   }
 });
@@ -84,7 +84,7 @@ test("information publication is independent from procedure completeness", async
   assert.match(review.asf.facts.find((fact) => fact.field === "core_conditions").value, /incohérence/);
   assert.equal(review.asf.facts.find((fact) => fact.field === "amount").status, "conflict");
   assert.ok(review.css.applicationProcedure.renewal.text.includes("un an"));
-  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 10);
+  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 15);
   assert.deepEqual(catalogue.filter((item) => ["apl", "alf", "als"].includes(item.id)).map(({ id }) => id).sort(), ["alf", "als", "apl"]);
   assert.equal(catalogue.some((item) => item.id === "logement"), false);
   assert.equal(review.logement.recordLifecycle, "superseded");
@@ -103,6 +103,39 @@ test("information publication is independent from procedure completeness", async
   for (const id of ["asf", "af", "prime", "css", "rsa-parent-isole", "prepare", "aeeh"]) {
     assert.equal(review[id].notes.filter((note) => note.startsWith("Fiche d'information publiée après vérification des faits essentiels.")).length, 1);
   }
+});
+
+test("new PAJE and AJPP records retain official evidence, uncertainty, and separate procedure status", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  for (const id of ["paje-prime-naissance", "paje-allocation-base", "paje-prime-adoption", "ajpp"]) {
+    const aid = catalogue.find((item) => item.id === id);
+    const audit = review[id];
+    assert.ok(aid);
+    assert.equal(audit.informationPublicationStatus, "verified");
+    assert.equal(canPublishInformation(aid, audit), true);
+    assert.equal(audit.procedurePublicationStatus ?? "pending", "pending");
+    assert.equal(canPublishProcedure(audit), false);
+    assert.ok(audit.sources.some((source) => source.url.includes("service-public.gouv.fr")));
+  }
+  for (const id of ["paje-prime-naissance", "paje-allocation-base", "paje-prime-adoption"]) assert.ok(review[id].facts.some((fact) => fact.field === "amount" && fact.status === "conflict"));
+  assert.ok(review.ajpp.facts.some((fact) => fact.field === "amount" && fact.status === "verified"));
+  assert.ok(review["paje-prime-naissance"].facts.find((fact) => fact.field === "amount").sourceIds.length >= 2);
+  assert.ok(review.ajpp.applicationProcedure.remainingChecks.length > 0);
+});
+
+test("new regional vehicle aid retains its precise campaign, documents and territorial source evidence", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  const aid = catalogue.find((item) => item.url === "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion");
+  const audit = review[aid.id];
+  assert.equal(audit.informationPublicationStatus, "verified");
+  assert.equal(canPublishInformation(aid, audit), true);
+  assert.equal(audit.applicationProcedure.status, "partially_complete");
+  assert.equal(canPublishProcedure(audit), false);
+  assert.match(audit.facts.find((fact) => fact.field === "core_conditions").value, /30 000 € TTC/);
+  assert.match(audit.facts.find((fact) => fact.field === "documents").value, /RIB/);
+  assert.ok(audit.factSources.some((source) => source.url.endsWith(".pdf")));
 });
 
 test("publication gate rejects missing, unverified, conflict, and dangling required evidence", async () => {

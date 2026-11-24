@@ -16,6 +16,7 @@ const regionDataUrl = "https://data.laregion.fr/explore/dataset/aides-et-appels-
 // Decisions below are keyed by the stable official URL. Page-level verification
 // links to official Region pages. Items without enough evidence remain manual.
 const verifiedRelevant = {
+  "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion": { audience: "Personne majeure domiciliée en Occitanie et non imposable, n'ayant pas déjà bénéficié de cette aide ou de ses versions antérieures.", justification: "La Région décrit une aide directe à une personne physique avec conditions de résidence, de ressources, de véhicule et de non-cumul; le règlement officiel est disponible.", amount: "30 % du coût d'acquisition, plafonné à 1 600 € (règlement 2026)", status: "relevant" },
   "https://www.laregion.fr/Aide-a-la-lecture-de-loisirs": { audience: "Lycéens titulaires de la Carte Jeune Région; a child in the household may be the direct beneficiary.", justification: "Official page confirms an individual benefit of €20 for qualifying lycée learners across Occitanie.", amount: "20 €", status: "relevant" },
   "https://www.laregion.fr/Pass-Mutuelle-Etudiant-e": { audience: "Scholarship students in Occitanie lacking CSS, employer coverage, or dependent coverage under a parent's health plan.", justification: "Official page describes the student-specific regional complementary health support; eligibility is conditional and must be checked against the current scheme rules.", status: "relevant" },
   "https://www.laregion.fr/Remuneration-des-stagiaires-de-la-formation-professionnelle": { audience: "Jobseekers with vocational trainee status, over 16 and not compensated by France Travail (page conditions).", justification: "Official page identifies a direct payment to vocational trainees and gives the non-compensation and age conditions.", status: "relevant" },
@@ -46,6 +47,12 @@ const verifiedExpired = {
 };
 
 const verifiedNotRelevant = {
+  "https://www.laregion.fr/Aide-a-la-construction-et-a-la-rehabilitation-de-logements-pour-les-jeunes": "The official page identifies HLM organisations, authorised associations or institutions as direct recipients; a household cannot apply for this investment grant.",
+  "https://www.laregion.fr/Accueil-de-la-petite-enfance": "The direct recipients are communes/EPCI, associations, CCAS/CIAS and operators developing childcare facilities; this is not an individual family benefit.",
+  "https://www.laregion.fr/Dispositif-regional-fonds-de-solidarite-catastrophes-naturelles": "The fund supports local authorities and public bodies after natural disasters; it does not provide direct individual housing repair grants.",
+  "https://www.laregion.fr/Arts-de-la-scene-Aide-aux-festivals": "The official aid targets legal entities carrying performing-arts festival projects, not individual households.",
+  "https://www.laregion.fr/Aide-aux-equipements-culturels-et-patrimoniaux-structurants": "The official page states that aid is for public owners/project owners or collective associations and is not individual aid.",
+  "https://www.laregion.fr/Dispositif-d-aide-au-prototypage-de-jeu-video": "The page concerns video-game production/publishing companies and is currently being updated; its direct applicant is not a household.",
   "https://www.laregion.fr/Dispositif-regional-de-soutien-au-fonctionnement-des-CFA-OFA-2026": "The official page identifies apprenticeship training centres and apprenticeship training organisations as grant recipients, not the apprentices themselves.",
   "https://www.laregion.fr/Dispositif-d-aides-pour-les-projets-d-energie-renouvelable-cooperatifs-et-citoyens-d": "The official page names associations, local authorities/public actors and businesses as applicants for collective renewable-energy project grants; it is not a direct household energy bill aid.",
   "https://www.laregion.fr/Startup-industrie-de-demain": "The official page restricts this innovation support to young companies meeting prior-public-support/incubator, research-laboratory and sector conditions.",

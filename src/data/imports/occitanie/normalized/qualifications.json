@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T03:38:23.337Z",
+  "generatedAt": "2026-11-24T04:28:50.489Z",
   "source": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
   "sourceSnapshot": "src/data/imports/occitanie/raw/dataset.json",
   "records": [
@@ -1187,8 +1187,8 @@
         "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
       },
       "classification": {
-        "status": "needs_manual_review",
-        "justification": "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.",
+        "status": "not_relevant",
+        "justification": "The page concerns video-game production/publishing companies and is currently being updated; its direct applicant is not a household.",
         "decidedAt": "2026-11-23"
       },
       "normalized": {
@@ -1231,18 +1231,17 @@
             "thematiques"
           ],
           "status": "imported"
+        },
+        {
+          "url": "https://www.laregion.fr/Dispositif-d-aide-au-prototypage-de-jeu-video",
+          "kind": "official-programme-page",
+          "consultedAt": "2026-11-23",
+          "verificationNote": "The page concerns video-game production/publishing companies and is currently being updated; its direct applicant is not a household.",
+          "status": "official-page-checked"
         }
       ],
       "dataQuality": {
-        "unresolved": [
-          "public bénéficiaire",
-          "conditions",
-          "période de validité",
-          "montant",
-          "pièces",
-          "démarche",
-          "nature exacte du bénéfice"
-        ],
+        "unresolved": [],
         "publicationStatus": "not-published"
       },
       "deduplication": {
@@ -1370,8 +1369,8 @@
         "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
       },
       "classification": {
-        "status": "needs_manual_review",
-        "justification": "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.",
+        "status": "not_relevant",
+        "justification": "The official aid targets legal entities carrying performing-arts festival projects, not individual households.",
         "decidedAt": "2026-11-23"
       },
       "normalized": {
@@ -1414,18 +1413,17 @@
             "thematiques"
           ],
           "status": "imported"
+        },
+        {
+          "url": "https://www.laregion.fr/Arts-de-la-scene-Aide-aux-festivals",
+          "kind": "official-programme-page",
+          "consultedAt": "2026-11-23",
+          "verificationNote": "The official aid targets legal entities carrying performing-arts festival projects, not individual households.",
+          "status": "official-page-checked"
         }
       ],
       "dataQuality": {
-        "unresolved": [
-          "public bénéficiaire",
-          "conditions",
-          "période de validité",
-          "montant",
-          "pièces",
-          "démarche",
-          "nature exacte du bénéfice"
-        ],
+        "unresolved": [],
         "publicationStatus": "not-published"
       },
       "deduplication": {
@@ -2271,8 +2269,8 @@
         "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
       },
       "classification": {
-        "status": "needs_manual_review",
-        "justification": "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.",
+        "status": "not_relevant",
+        "justification": "The official page states that aid is for public owners/project owners or collective associations and is not individual aid.",
         "decidedAt": "2026-11-23"
       },
       "normalized": {
@@ -2315,18 +2313,17 @@
             "thematiques"
           ],
           "status": "imported"
+        },
+        {
+          "url": "https://www.laregion.fr/Aide-aux-equipements-culturels-et-patrimoniaux-structurants",
+          "kind": "official-programme-page",
+          "consultedAt": "2026-11-23",
+          "verificationNote": "The official page states that aid is for public owners/project owners or collective associations and is not individual aid.",
+          "status": "official-page-checked"
         }
       ],
       "dataQuality": {
-        "unresolved": [
-          "public bénéficiaire",
-          "conditions",
-          "période de validité",
-          "montant",
-          "pièces",
-          "démarche",
-          "nature exacte du bénéfice"
-        ],
+        "unresolved": [],
         "publicationStatus": "not-published"
       },
       "deduplication": {
@@ -4615,8 +4612,8 @@
         "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
       },
       "classification": {
-        "status": "needs_manual_review",
-        "justification": "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.",
+        "status": "not_relevant",
+        "justification": "The official page identifies HLM organisations, authorised associations or institutions as direct recipients; a household cannot apply for this investment grant.",
         "decidedAt": "2026-11-23"
       },
       "normalized": {
@@ -4659,18 +4656,17 @@
             "thematiques"
           ],
           "status": "imported"
+        },
+        {
+          "url": "https://www.laregion.fr/Aide-a-la-construction-et-a-la-rehabilitation-de-logements-pour-les-jeunes",
+          "kind": "official-programme-page",
+          "consultedAt": "2026-11-23",
+          "verificationNote": "The official page identifies HLM organisations, authorised associations or institutions as direct recipients; a household cannot apply for this investment grant.",
+          "status": "official-page-checked"
         }
       ],
       "dataQuality": {
-        "unresolved": [
-          "public bénéficiaire",
-          "conditions",
-          "période de validité",
-          "montant",
-          "pièces",
-          "démarche",
-          "nature exacte du bénéfice"
-        ],
+        "unresolved": [],
         "publicationStatus": "not-published"
       },
       "deduplication": {
@@ -5514,8 +5510,8 @@
         "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
       },
       "classification": {
-        "status": "needs_manual_review",
-        "justification": "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.",
+        "status": "not_relevant",
+        "justification": "The direct recipients are communes/EPCI, associations, CCAS/CIAS and operators developing childcare facilities; this is not an individual family benefit.",
         "decidedAt": "2026-11-23"
       },
       "normalized": {
@@ -5558,18 +5554,17 @@
             "thematiques"
           ],
           "status": "imported"
+        },
+        {
+          "url": "https://www.laregion.fr/Accueil-de-la-petite-enfance",
+          "kind": "official-programme-page",
+          "consultedAt": "2026-11-23",
+          "verificationNote": "The direct recipients are communes/EPCI, associations, CCAS/CIAS and operators developing childcare facilities; this is not an individual family benefit.",
+          "status": "official-page-checked"
         }
       ],
       "dataQuality": {
-        "unresolved": [
-          "public bénéficiaire",
-          "conditions",
-          "période de validité",
-          "montant",
-          "pièces",
-          "démarche",
-          "nature exacte du bénéfice"
-        ],
+        "unresolved": [],
         "publicationStatus": "not-published"
       },
       "deduplication": {
@@ -6691,23 +6686,23 @@
         "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
       },
       "classification": {
-        "status": "needs_manual_review",
-        "justification": "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.",
+        "status": "relevant",
+        "justification": "La Région décrit une aide directe à une personne physique avec conditions de résidence, de ressources, de véhicule et de non-cumul; le règlement officiel est disponible.",
         "decidedAt": "2026-11-23"
       },
       "normalized": {
         "officialName": "\"Éco-chèque mobilité - Achat d’une voiture particulière électrique d’occasion",
         "type": "Aides",
-        "benefitKind": null,
+        "benefitKind": "aid-or-benefit",
         "organization": "Région Occitanie",
-        "audience": null,
-        "conditions": null,
+        "audience": "Personne majeure domiciliée en Occitanie et non imposable, n'ayant pas déjà bénéficié de cette aide ou de ses versions antérieures.",
+        "conditions": "Personne majeure domiciliée en Occitanie et non imposable, n'ayant pas déjà bénéficié de cette aide ou de ses versions antérieures.",
         "territory": {
           "level": "regional",
           "regionCode": "76",
           "label": "Occitanie"
         },
-        "amount": null,
+        "amount": "30 % du coût d'acquisition, plafonné à 1 600 € (règlement 2026)",
         "documents": null,
         "applicationSteps": null,
         "officialUrl": "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion",
@@ -6735,22 +6730,26 @@
             "thematiques"
           ],
           "status": "imported"
+        },
+        {
+          "url": "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion",
+          "kind": "official-programme-page",
+          "consultedAt": "2026-11-23",
+          "verificationNote": "La Région décrit une aide directe à une personne physique avec conditions de résidence, de ressources, de véhicule et de non-cumul; le règlement officiel est disponible.",
+          "status": "official-page-checked"
         }
       ],
       "dataQuality": {
         "unresolved": [
-          "public bénéficiaire",
-          "conditions",
-          "période de validité",
-          "montant",
-          "pièces",
-          "démarche",
-          "nature exacte du bénéfice"
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -8137,8 +8136,8 @@
         "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
       },
       "classification": {
-        "status": "needs_manual_review",
-        "justification": "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.",
+        "status": "not_relevant",
+        "justification": "The fund supports local authorities and public bodies after natural disasters; it does not provide direct individual housing repair grants.",
         "decidedAt": "2026-11-23"
       },
       "normalized": {
@@ -8181,18 +8180,17 @@
             "thematiques"
           ],
           "status": "imported"
+        },
+        {
+          "url": "https://www.laregion.fr/Dispositif-regional-fonds-de-solidarite-catastrophes-naturelles",
+          "kind": "official-programme-page",
+          "consultedAt": "2026-11-23",
+          "verificationNote": "The fund supports local authorities and public bodies after natural disasters; it does not provide direct individual housing repair grants.",
+          "status": "official-page-checked"
         }
       ],
       "dataQuality": {
-        "unresolved": [
-          "public bénéficiaire",
-          "conditions",
-          "période de validité",
-          "montant",
-          "pièces",
-          "démarche",
-          "nature exacte du bénéfice"
-        ],
+        "unresolved": [],
         "publicationStatus": "not-published"
       },
       "deduplication": {

@@ -92,6 +92,7 @@ const records = [
 ];
 
 for (const data of records) {
+  if (review[data.id]?.informationPublicationStatus === "verified") continue;
   const existing = catalogue.find((record) => record.id === data.id || record.url === data.url);
   if (!existing) catalogue.push({ id: data.id, name: data.name, category: data.category, zone: data.zone, org: data.org, description: data.description, when: data.facts.find((fact) => fact.field === "audience").value, steps: data.procedure.steps.map((step) => step.text), url: data.url });
   const srcs = data.id === "rsa-parent-isole"
@@ -113,9 +114,9 @@ if (new Set(catalogue.map((item) => item.id)).size !== catalogue.length || new S
 await writeFile(cataloguePath, `${JSON.stringify(catalogue, null, 2)}\n`, "utf8");
 await writeFile(reviewPath, `${JSON.stringify(review, null, 2)}\n`, "utf8");
 const sourceRecord = registry.sources.find((item) => item.id === "service-public");
-sourceRecord.candidateRecordsIntegrated = 6;
-sourceRecord.factsEnrichedForAids = 6;
-sourceRecord.publishableRecords = 0;
 sourceRecord.evidence = [...(sourceRecord.evidence ?? []), ...records.map(({ id, url }) => ({ aidId: id, url, pageVerifiedAt: id === "rsa-parent-isole" ? "2026-04-01" : "2026-06-01" }))].filter((item, index, all) => all.findIndex((candidate) => candidate.aidId === item.aidId) === index);
+sourceRecord.candidateRecordsIntegrated = sourceRecord.evidence.length;
+sourceRecord.factsEnrichedForAids = sourceRecord.evidence.length;
+sourceRecord.publishableRecords = sourceRecord.evidence.filter((item) => review[item.aidId]?.informationPublicationStatus === "verified").length;
 await writeFile(registryPath, `${JSON.stringify(registry, null, 2)}\n`, "utf8");
 console.log(JSON.stringify({ added: records.length, totalCatalogueRecords: catalogue.length, published: 0 }, null, 2));

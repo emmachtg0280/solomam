@@ -4715,5 +4715,767 @@
     "informationPublicationStatus": "verified",
     "informationVerifiedAt": "2026-11-23",
     "procedurePublicationStatus": "pending"
+  },
+  "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion": {
+    "publicationStatus": "pending",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "Règlement de campagne 2026, dispositif annoncé pour un an à compter du 1er juillet 2026 avec quota de 5 000 aides.",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sourceDatasetRecord": {
+      "sourceRecordId": "content-sha256:0a9d0460565532c62aad3173ae94bbcb13e015615e76df5afab2db19914d8375",
+      "sourceRecordHash": "0a9d0460565532c62aad3173ae94bbcb13e015615e76df5afab2db19914d8375",
+      "sourceRecordIndex": 110,
+      "rawRecordReference": {
+        "file": "src/data/imports/occitanie/raw/dataset.json",
+        "recordIndex": 110,
+        "sourceDataset": "aides-et-appels-a-projets-de-la-region-occitanie",
+        "datasetRetrievedAt": "2026-11-24T00:53:03.529Z"
+      },
+      "qualification": {
+        "status": "relevant",
+        "justification": "La Région décrit une aide directe à une personne physique avec conditions de résidence, de ressources, de véhicule et de non-cumul; le règlement officiel est disponible.",
+        "decidedAt": "2026-11-23"
+      },
+      "deduplication": {
+        "status": "no-match-found"
+      }
+    },
+    "factSources": [
+      {
+        "id": "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+        "label": "Région Occitanie — Éco-chèque voiture électrique d’occasion",
+        "url": "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      },
+      {
+        "id": "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026",
+        "label": "Région Occitanie — Règlement Éco-chèque voiture électrique d’occasion 2026",
+        "url": "https://www.laregion.fr/IMG/pdf/7/6/9/dispositif_voitelec_occasion_2026_1_.pdf",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Dispositif annoncé pour une durée d’un an à compter du 1er juillet 2026, dans la limite de 5 000 aides; l’épuisement anticipé du quota est possible.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ],
+        "validFor": "Fenêtre annoncée du 01-07-2026 au 30-06-2027, sous réserve du quota"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Personne domiciliée en Occitanie; véhicule acheté auprès d’un professionnel agréé établi dans la région.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ],
+        "validFor": "Règlement 2026"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Personne physique majeure domiciliée en Occitanie et non imposable sur les revenus, n’ayant pas bénéficié de cette aide ni des versions antérieures de l’éco-chèque voiture neuve ou d’occasion.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ],
+        "validFor": "Règlement 2026"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Voiture électrique d’occasion âgée d’au moins 12 mois; achat à partir du 1er juillet 2026 chez un professionnel établi en Occitanie; émissions ≤20 g CO₂/km; prix ≤30 000 € TTC; contrôle technique favorable sans réserve; immatriculation définitive française au nom de la bénéficiaire depuis au moins 12 mois. Demande dans les six mois suivant l’achat.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ],
+        "validFor": "Règlement applicable à compter du 01-07-2026 pour un an et jusqu’à 5 000 aides"
+      },
+      {
+        "field": "amount",
+        "status": "verified",
+        "value": "30 % du coût d’acquisition éligible, plafonné à 1 600 €; aide versée après instruction favorable.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ],
+        "validFor": "Règlement 2026"
+      },
+      {
+        "field": "documents",
+        "status": "verified",
+        "value": "Pièce d’identité; RIB; justificatif de domicile de moins de trois mois; dernier avis de non-imposition complet; facture d’achat; certificat d’immatriculation définitif au nom de la demandeuse; procès-verbal de contrôle technique favorable; certificat de situation administrative (non-gage) avec QR code fonctionnel.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ],
+        "validFor": "Liste du règlement 2026"
+      }
+    ],
+    "applicationProcedure": {
+      "status": "partially_complete",
+      "steps": [
+        {
+          "text": "Vérifier que la personne, le véhicule, le vendeur, l’immatriculation et la date d’achat satisfont les conditions du règlement.",
+          "sourceIds": [
+            "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+            "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+          ],
+          "status": "verified"
+        },
+        {
+          "text": "Déposer le dossier en ligne sur Mes Aides en Ligne dans les six mois suivant l’achat, avec les justificatifs listés dans le règlement.",
+          "sourceIds": [
+            "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+            "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+          ],
+          "status": "verified"
+        },
+        {
+          "text": "La Région instruit la demande et verse l’aide après décision favorable; les délais de traitement et le suivi détaillé ne sont pas précisés dans les sources consultées.",
+          "sourceIds": [
+            "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+            "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+          ],
+          "status": "verified_conditional"
+        }
+      ],
+      "followUp": {
+        "status": "partially_verified",
+        "text": "Versement après instruction favorable; modalités détaillées de suivi non publiées sur les pages consultées.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:region-page",
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ]
+      },
+      "renewal": {
+        "status": "not_applicable",
+        "text": "Aide ponctuelle à l’achat; une seule attribution par bénéficiaire selon la règle de non-cumul.",
+        "sourceIds": [
+          "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion:regulation-2026"
+        ]
+      },
+      "portalUrl": "https://mesaidesenligne.laregion.fr/",
+      "competentOrganization": "Région Occitanie — Direction Générale Déléguée Infrastructures et Mobilités",
+      "remainingChecks": [
+        "Les délais de traitement, motifs de rejet et voies de recours ne sont pas précisés dans les sources examinées."
+      ]
+    },
+    "notes": [
+      "Entrée intégrée depuis le snapshot régional content-sha256:0a9d0460565532c62aad3173ae94bbcb13e015615e76df5afab2db19914d8375; pertinence candidate, fiche non publiable en l'état. Conditions complètes, validité et procédure à extraire et dater.",
+      "Montant, critères, période et justificatifs documentés depuis la page et le règlement officiel 2026. Délai d’instruction et recours non précisés."
+    ],
+    "sources": [],
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "applicationUrl": "https://mesaidesenligne.laregion.fr/",
+    "procedurePublicationStatus": "pending"
+  },
+  "paje-prime-naissance": {
+    "publicationStatus": "pending",
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "Règles nationales documentées à partir des pages listées; seuils et montants à revalider selon le barème applicable au dépôt.",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [
+      {
+        "id": "sp-paje-prime-naissance-2026",
+        "label": "Service-Public — Prime à la naissance de la Paje",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2550",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      },
+      {
+        "id": "caf-bareme-paje-2026",
+        "label": "Caf — Barème prime à la naissance et allocation de base",
+        "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-la-naissance-et-allocation-de-base",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Prestation présentée comme en vigueur sur la page officielle consultée; règles à revalider lors de chaque mise à jour.",
+        "sourceIds": [
+          "sp-paje-prime-naissance-2026"
+        ],
+        "validFor": "Page Service-Public vérifiée 2026-04-01"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Dispositif national; demandes auprès de la Caf ou de la MSA selon le régime.",
+        "sourceIds": [
+          "sp-paje-prime-naissance-2026"
+        ],
+        "validFor": "Consulté le 2026-11-23"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Personne attendant un enfant, relevant de la Caf ou de la MSA, sous plafond de ressources tenant compte de la composition familiale; un barème spécifique existe pour le parent isolé.",
+        "sourceIds": [
+          "sp-paje-prime-naissance-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Premier examen prénatal effectué et grossesse déclarée avant la fin du troisième mois. Le revenu net catégoriel 2024 sert à l’examen des droits en 2026; résidence en France au moins neuf mois dans l’année de versement.",
+        "sourceIds": [
+          "sp-paje-prime-naissance-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01; vérifier les barèmes au dépôt"
+      },
+      {
+        "field": "amount",
+        "status": "conflict",
+        "value": "Service-Public affiche 1 093,11 €; le barème Caf au 1er avril 2026 affiche 1 093,08 €. Montant à confirmer auprès de la caisse; non affiché comme montant certain.",
+        "sourceIds": [
+          "sp-paje-prime-naissance-2026",
+          "caf-bareme-paje-2026"
+        ],
+        "validFor": "Pages consultées 2026-11-23; conflit signalé, ne pas traiter comme valeur certaine"
+      }
+    ],
+    "factSources": [
+      {
+        "id": "sp-paje-prime-naissance-2026",
+        "label": "Service-Public — Prime à la naissance de la Paje",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2550",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      },
+      {
+        "id": "caf-bareme-paje-2026",
+        "label": "Caf — Barème prime à la naissance et allocation de base",
+        "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-la-naissance-et-allocation-de-base",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      }
+    ],
+    "applicationProcedure": {
+      "status": "partially_complete",
+      "steps": [
+        {
+          "text": "Effectuer le premier examen prénatal et déclarer la grossesse avant la fin du troisième mois.",
+          "status": "verified",
+          "sourceIds": [
+            "sp-paje-prime-naissance-2026"
+          ]
+        },
+        {
+          "text": "Déposer la demande auprès de la Caf ou de la MSA selon le régime; le téléservice ou formulaire dépend de la situation de l’allocataire.",
+          "status": "verified_conditional",
+          "sourceIds": [
+            "sp-paje-prime-naissance-2026"
+          ]
+        }
+      ],
+      "followUp": {
+        "status": "unverified",
+        "text": "Modalités de suivi à vérifier selon la caisse, le formulaire et la situation individuelle.",
+        "sourceIds": [
+          "sp-paje-prime-naissance-2026"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "Durée ou renouvellement à vérifier selon le droit ouvert et le cas individuel.",
+        "sourceIds": [
+          "sp-paje-prime-naissance-2026"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Caf / MSA",
+      "remainingChecks": [
+        "Le seuil exact dépend du nombre d’enfants à charge, du statut de parent isolé et des revenus professionnels retenus; vérifier le tableau applicable à la situation.",
+        "Vérifier le formulaire courant et le parcours de dépôt correspondant au régime et à la situation."
+      ]
+    },
+    "applicationUrl": null,
+    "notes": [
+      "Le seuil exact dépend du nombre d’enfants à charge, du statut de parent isolé et des revenus professionnels retenus; vérifier le tableau applicable à la situation."
+    ],
+    "procedurePublicationStatus": "pending"
+  },
+  "paje-allocation-base": {
+    "publicationStatus": "pending",
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "Règles nationales documentées à partir des pages listées; seuils et montants à revalider selon le barème applicable au dépôt.",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [
+      {
+        "id": "sp-paje-allocation-base-2026",
+        "label": "Service-Public — Allocation de base de la Paje",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2552",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      },
+      {
+        "id": "caf-bareme-paje-2026",
+        "label": "Caf — Barème prime à la naissance et allocation de base",
+        "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-la-naissance-et-allocation-de-base",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Prestation présentée comme en vigueur sur la page officielle consultée; règles à revalider lors de chaque mise à jour.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026"
+        ],
+        "validFor": "Page Service-Public vérifiée 2026-04-01"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Dispositif national; demandes auprès de la Caf ou de la MSA selon le régime.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026"
+        ],
+        "validFor": "Consulté le 2026-11-23"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Parent ayant un enfant à charge de moins de trois ans et dont les ressources respectent le plafond applicable; un barème spécifique existe pour le parent isolé.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Les revenus nets catégoriels de 2024 sont pris en compte pour les droits en 2026. Le plafond varie selon la composition du foyer et les revenus d’activité.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01; vérifier les barèmes au dépôt"
+      },
+      {
+        "field": "amount",
+        "status": "conflict",
+        "value": "Le taux plein est affiché à 198,16 € par la Caf et Service-Public. Pour le taux partiel, Service-Public affiche 99,08 € et la Caf 99,09 € au 1er avril 2026; le montant partiel est à confirmer.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026",
+          "caf-bareme-paje-2026"
+        ],
+        "validFor": "Pages consultées 2026-11-23; conflit signalé, ne pas traiter comme valeur certaine"
+      },
+      {
+        "field": "documents",
+        "status": "verified",
+        "value": "Pages lisibles du livret de famille et acte de naissance de l’enfant, selon la page Service-Public.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01"
+      }
+    ],
+    "factSources": [
+      {
+        "id": "sp-paje-allocation-base-2026",
+        "label": "Service-Public — Allocation de base de la Paje",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2552",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      },
+      {
+        "id": "caf-bareme-paje-2026",
+        "label": "Caf — Barème prime à la naissance et allocation de base",
+        "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-la-naissance-et-allocation-de-base",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      }
+    ],
+    "applicationProcedure": {
+      "status": "partially_complete",
+      "steps": [
+        {
+          "text": "Vérifier l’âge de l’enfant et le plafond de ressources applicable à la situation familiale.",
+          "status": "verified",
+          "sourceIds": [
+            "sp-paje-allocation-base-2026"
+          ]
+        },
+        {
+          "text": "Transmettre à la Caf ou à la MSA les pages lisibles du livret de famille et l’acte de naissance de l’enfant, selon la page officielle.",
+          "status": "verified_conditional",
+          "sourceIds": [
+            "sp-paje-allocation-base-2026"
+          ]
+        }
+      ],
+      "followUp": {
+        "status": "unverified",
+        "text": "Modalités de suivi à vérifier selon la caisse, le formulaire et la situation individuelle.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "Durée ou renouvellement à vérifier selon le droit ouvert et le cas individuel.",
+        "sourceIds": [
+          "sp-paje-allocation-base-2026"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Caf / MSA",
+      "remainingChecks": [
+        "Les conditions d’adoption ont une fiche et des règles séparées. Les seuils exacts varient selon la composition familiale.",
+        "Vérifier le formulaire courant et le parcours de dépôt correspondant au régime et à la situation."
+      ]
+    },
+    "applicationUrl": null,
+    "notes": [
+      "Les conditions d’adoption ont une fiche et des règles séparées. Les seuils exacts varient selon la composition familiale."
+    ],
+    "procedurePublicationStatus": "pending"
+  },
+  "paje-prime-adoption": {
+    "publicationStatus": "pending",
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "Règles nationales documentées à partir des pages listées; seuils et montants à revalider selon le barème applicable au dépôt.",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [
+      {
+        "id": "sp-paje-prime-adoption-2026",
+        "label": "Service-Public — Prime à l’adoption de la Paje",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13220",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      },
+      {
+        "id": "caf-bareme-paje-2026",
+        "label": "Caf — Barème prime à la naissance et allocation de base",
+        "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-la-naissance-et-allocation-de-base",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Prestation présentée comme en vigueur sur la page officielle consultée; règles à revalider lors de chaque mise à jour.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026"
+        ],
+        "validFor": "Page Service-Public vérifiée 2026-04-01"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Dispositif national; demandes auprès de la Caf ou de la MSA selon le régime.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026"
+        ],
+        "validFor": "Consulté le 2026-11-23"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Personne adoptant ou accueillant en vue d’adoption un enfant de moins de 20 ans par l’intermédiaire de l’Aide sociale à l’enfance, d’un organisme français autorisé/Agence française de l’adoption ou d’une autorité étrangère compétente.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Plafond de ressources applicable selon les revenus nets catégoriels de 2024 pour 2026 et la composition familiale, avec barème parent isolé. Les justificatifs et étapes varient notamment selon le pays d’origine et le statut Caf.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01; vérifier les barèmes au dépôt"
+      },
+      {
+        "field": "amount",
+        "status": "conflict",
+        "value": "Service-Public affiche 2 186,21 €; le barème Caf au 1er avril 2026 affiche 2 186,17 €. Montant à confirmer auprès de la caisse; non affiché comme montant certain.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026",
+          "caf-bareme-paje-2026"
+        ],
+        "validFor": "Pages consultées 2026-11-23; conflit signalé, ne pas traiter comme valeur certaine"
+      },
+      {
+        "field": "documents",
+        "status": "partially_verified",
+        "value": "Les justificatifs varient selon le pays d’origine, la procédure d’adoption et le statut Caf/MSA; Service-Public cite notamment l’attestation ASE/organisme autorisé ou le procès-verbal du conseil de famille pour certains cas. La liste complète doit être contrôlée pour chaque parcours.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026"
+        ],
+        "validFor": "Page vérifiée 2026-04-01"
+      }
+    ],
+    "factSources": [
+      {
+        "id": "sp-paje-prime-adoption-2026",
+        "label": "Service-Public — Prime à l’adoption de la Paje",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13220",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      },
+      {
+        "id": "caf-bareme-paje-2026",
+        "label": "Caf — Barème prime à la naissance et allocation de base",
+        "url": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-prime-la-naissance-et-allocation-de-base",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-04-01"
+      }
+    ],
+    "applicationProcedure": {
+      "status": "partially_complete",
+      "steps": [
+        {
+          "text": "Identifier le parcours applicable selon le pays d’origine de l’enfant et la situation Caf/MSA; les pièces justificatives ne sont pas les mêmes dans tous les cas.",
+          "status": "verified_conditional",
+          "sourceIds": [
+            "sp-paje-prime-adoption-2026"
+          ]
+        },
+        {
+          "text": "Pour certains dossiers Caf, transmettre l’attestation ASE/organisme autorisé ou procès-verbal du conseil de famille; d’autres situations nécessitent les formulaires de déclaration et pièces d’adoption décrits par Service-Public.",
+          "status": "verified_conditional",
+          "sourceIds": [
+            "sp-paje-prime-adoption-2026"
+          ]
+        }
+      ],
+      "followUp": {
+        "status": "unverified",
+        "text": "Modalités de suivi à vérifier selon la caisse, le formulaire et la situation individuelle.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "Durée ou renouvellement à vérifier selon le droit ouvert et le cas individuel.",
+        "sourceIds": [
+          "sp-paje-prime-adoption-2026"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Caf / MSA",
+      "remainingChecks": [
+        "Les pièces, interlocuteurs et formulaires dépendent du parcours d’adoption; la procédure complète doit être vérifiée individuellement.",
+        "Vérifier le formulaire courant et le parcours de dépôt correspondant au régime et à la situation."
+      ]
+    },
+    "applicationUrl": null,
+    "notes": [
+      "Les pièces, interlocuteurs et formulaires dépendent du parcours d’adoption; la procédure complète doit être vérifiée individuellement."
+    ],
+    "procedurePublicationStatus": "pending"
+  },
+  "ajpp": {
+    "publicationStatus": "pending",
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "Règles nationales documentées à partir des pages listées; seuils et montants à revalider selon le barème applicable au dépôt.",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [
+      {
+        "id": "sp-ajpp-2026",
+        "label": "Service-Public — AJPP",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15132",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-06-14"
+      },
+      {
+        "id": "caf-ajpp-form",
+        "label": "Service-Public — Demande AJPP auprès de la Caf (Cerfa 12666)",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R15336",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2021-03-09"
+      },
+      {
+        "id": "msa-ajpp-form",
+        "label": "Service-Public — Demande AJPP auprès de la MSA",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R67539",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2024-02-28"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Prestation présentée comme en vigueur sur la page officielle consultée; règles à revalider lors de chaque mise à jour.",
+        "sourceIds": [
+          "sp-ajpp-2026"
+        ],
+        "validFor": "Page Service-Public vérifiée 2026-06-14"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Dispositif national; demandes auprès de la Caf ou de la MSA selon le régime.",
+        "sourceIds": [
+          "sp-ajpp-2026"
+        ],
+        "validFor": "Consulté le 2026-11-23"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Personne cessant temporairement son activité pour s’occuper d’un enfant à charge de moins de 20 ans nécessitant une présence soutenue et des soins contraignants en raison d’une maladie, d’un handicap ou d’un accident d’une particulière gravité.",
+        "sourceIds": [
+          "sp-ajpp-2026"
+        ],
+        "validFor": "Page vérifiée 2026-06-14"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "La Caf/MSA apprécie les conditions médicales sur certificat du médecin traitant. Plusieurs statuts professionnels sont couverts; le droit est limité à 22 jours par mois et peut être accordé sur une période de trois ans, sous les plafonds de jours prévus.",
+        "sourceIds": [
+          "sp-ajpp-2026"
+        ],
+        "validFor": "Page vérifiée 2026-06-14; vérifier les barèmes au dépôt"
+      },
+      {
+        "field": "amount",
+        "status": "verified",
+        "value": "Service-Public affiche 66,64 € par journée et 33,32 € par demi-journée; barème indiqué sur la page vérifiée le 14 juin 2026, à revalider au dépôt.",
+        "sourceIds": [
+          "sp-ajpp-2026",
+          "caf-ajpp-form",
+          "msa-ajpp-form"
+        ],
+        "validFor": "Pages consultées 2026-11-23; conflit signalé, ne pas traiter comme valeur certaine"
+      },
+      {
+        "field": "documents",
+        "status": "verified",
+        "value": "Formulaire de demande AJPP du régime concerné (Caf : Cerfa 12666; MSA : formulaire dédié), certificat médical sous pli confidentiel détaillant la présence soutenue et les soins contraignants, et justificatif professionnel demandé selon la situation.",
+        "sourceIds": [
+          "sp-ajpp-2026"
+        ],
+        "validFor": "Page vérifiée 2026-06-14"
+      }
+    ],
+    "factSources": [
+      {
+        "id": "sp-ajpp-2026",
+        "label": "Service-Public — AJPP",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15132",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-06-14"
+      },
+      {
+        "id": "caf-ajpp-form",
+        "label": "Service-Public — Demande AJPP auprès de la Caf (Cerfa 12666)",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R15336",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2021-03-09"
+      },
+      {
+        "id": "msa-ajpp-form",
+        "label": "Service-Public — Demande AJPP auprès de la MSA",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R67539",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2024-02-28"
+      }
+    ],
+    "applicationProcedure": {
+      "status": "partially_complete",
+      "steps": [
+        {
+          "text": "Faire établir par le médecin traitant le certificat médical détaillant les soins contraignants et la présence soutenue; le volet médical est transmis sous pli confidentiel au service médical.",
+          "status": "verified",
+          "sourceIds": [
+            "sp-ajpp-2026"
+          ]
+        },
+        {
+          "text": "Adresser à la Caf ou à la MSA le formulaire AJPP adapté au régime avec les éléments de situation professionnelle demandés.",
+          "status": "verified_conditional",
+          "sourceIds": [
+            "sp-ajpp-2026"
+          ]
+        },
+        {
+          "text": "Après ouverture du droit, transmettre les attestations mensuelles de jours ou demi-journées utilisés; l’employeur complète sa partie lorsque la situation le requiert.",
+          "status": "verified_conditional",
+          "sourceIds": [
+            "sp-ajpp-2026"
+          ]
+        }
+      ],
+      "followUp": {
+        "status": "unverified",
+        "text": "Modalités de suivi à vérifier selon la caisse, le formulaire et la situation individuelle.",
+        "sourceIds": [
+          "sp-ajpp-2026"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "Durée ou renouvellement à vérifier selon le droit ouvert et le cas individuel.",
+        "sourceIds": [
+          "sp-ajpp-2026"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Caf / MSA",
+      "remainingChecks": [
+        "L’attribution dépend d’une évaluation médicale et de la situation d’activité; l’AJPP n’est pas réservée aux parents isolés. Vérifier les règles de partage entre parents au moment de la demande.",
+        "Vérifier le formulaire courant et le parcours de dépôt correspondant au régime et à la situation."
+      ]
+    },
+    "applicationUrl": null,
+    "notes": [
+      "L’attribution dépend d’une évaluation médicale et de la situation d’activité; l’AJPP n’est pas réservée aux parents isolés. Vérifier les règles de partage entre parents au moment de la demande."
+    ],
+    "procedurePublicationStatus": "pending"
   }
 }

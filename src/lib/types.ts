@@ -71,4 +71,5 @@ export interface Aid {
   facts?: AidFact[];
   applicationProcedure?: ApplicationProcedure;
   verifiedFacts: AidFact[];
+  uncertainties: string[];
 }

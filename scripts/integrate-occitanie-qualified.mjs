@@ -78,9 +78,12 @@ for (const record of candidates) {
       url: officialUrl,
     });
     added += 1;
-  } else {
+  } else if (review[existing.id]?.informationPublicationStatus !== "verified") {
     existing.description = description;
     existing.when = audience;
+    alreadyPresent += 1;
+  } else {
+    // A refreshed dataset must not replace editor-verified public facts.
     alreadyPresent += 1;
   }
   const facts = [];
@@ -89,6 +92,7 @@ for (const record of candidates) {
   facts.push({ field: "validity_period", status: "unverified", value: record.normalized.validFrom || record.normalized.validUntil ? `${record.normalized.validFrom ?? "début non précisé"} – ${record.normalized.validUntil ?? "fin non précisée"}` : null, sourceIds: [`${id}:dataset`], validFor: "Le dataset ne suffit pas à établir la période juridique" });
   facts.push({ field: "documents", status: "unverified", value: null, sourceIds: [`${id}:region-page`], validFor: null });
   const prior = review[id];
+  if (prior?.informationPublicationStatus === "verified") continue;
   const original = {
     sourceRecordId: record.sourceRecordId,
     sourceRecordHash: record.sourceRecordHash,

@@ -93,3 +93,19 @@ La relation est une table de correspondance et non une relation un-à-un : plusi
 - Vérifier la date et le règlement applicables pour les aides annuelles ou les campagnes.
 - Identifier les dispositifs distincts derrière les pages de synthèse; ne pas transformer une page d'orientation agrégée en plusieurs fausses prestations.
 - La base cible PostgreSQL n'est pas raccordée dans cet environnement; le registre JSON versionné est le stockage reproductible actuel.
+
+## Mise à jour du 23 novembre 2026
+
+Une revue complémentaire de pages officielles a qualifié 6 entrées supplémentaires du dataset : 1 aide directe pertinente et 5 aides réservées à des porteurs de projet ou personnes morales. La qualification du catalogue régional est désormais : 23 pertinentes, 34 hors cible, 2 expirées et 94 en attente sur 153 enregistrements de type aide. La voiture électrique d’occasion est le 23e candidat régional intégré; ses critères, barème, pièces et dépôt sont documentés depuis la page et le règlement 2026. L’information est publiable, mais le parcours reste partiel car délais d’instruction et recours ne sont pas établis.
+
+Quatre fiches nationales supplémentaires ont été intégrées : prime à la naissance, allocation de base, prime à l’adoption et AJPP. Leurs faits essentiels et dates de vérification sont enregistrés. Les montants PAJE en conflit entre Caf et Service-Public sont signalés dans chaque fiche et ne sont pas présentés comme certains. Les étapes de demande sont sourcées, mais les procédures ne satisfont pas encore le contrôle de complétude.
+
+Le catalogue compte 50 fiches canoniques, dont 15 fiches d’information consultables (14 nationales et une régionale). Aucune procédure n’est déclarée complète. La couverture publiée comprend Famille (8), Revenus (2), Santé (1), Logement (3) et Mobilité (1). Elle n’est pas exhaustive; les variantes locales et les autres domaines restent à documenter.
+
+Les imports régionaux et nationaux ont été rendus conservateurs lors d’une réexécution : les imports régionaux préservent désormais les fiches d’information marquées vérifiées; l’import des fiches nationales PAJE/AJPP ignore ces fiches déjà vérifiées. Le snapshot brut et les identifiants/hash source sont conservés.
+
+### Contrôle du MVP
+
+Le build de production a généré les routes du catalogue; un smoke test HTTP sur le serveur de production local a obtenu 200 pour l’accueil, les pages ASF, PAJE, AJPP et éco-chèque, Mes démarches et Mes aides, et 404 pour un slug inconnu. Les tests unitaires couvrent la sauvegarde locale et son retrait. L’automatisation navigateur n’étant pas disponible dans la session, les interactions réelles souris/clavier et le rendu responsive n’ont pas été certifiés sur desktop/mobile.
+
+Vérifications exécutées : `npm.cmd run data:test`, `npm.cmd run lint`, `npm.cmd run typecheck`, `npm.cmd run build`.

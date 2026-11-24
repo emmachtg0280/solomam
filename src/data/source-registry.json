@@ -113,14 +113,14 @@
       "coverage": "229 official dataset records; 153 rows categorized Aides; 76 other categories excluded from this aid qualification run",
       "limitations": [
         "Dataset has no beneficiary, eligibility, documents, application process or validity fields",
-        "Qualification register has 22 relevant candidates, 28 confirmed non-relevant items, 2 expired items and 101 manual reviews",
+        "Qualification register has 23 relevant candidates, 34 confirmed non-relevant items, 2 expired items and 94 manual reviews",
         "No regional aid card is published until full current rules and application routes are normalized",
         "Live source page and dataset metadata need to be rechecked for updates and reuse terms"
       ],
-      "candidateAidRowsQualifiedRelevant": 22,
+      "candidateAidRowsQualifiedRelevant": 23,
       "candidateAidRowsExpired": 2,
-      "candidateAidRowsExcluded": 28,
-      "candidateAidRowsPendingReview": 101,
+      "candidateAidRowsExcluded": 34,
+      "candidateAidRowsPendingReview": 94,
       "attribution": "Source : R?gion Occitanie ? Aides et appels ? projets; cite the source and last update date.",
       "portalObservation": {
         "observedAt": "2026-11-23",
@@ -130,7 +130,7 @@
         "localSnapshotAidRows": 153,
         "discrepancy": "The locally captured snapshot has one more total record and one more Aides row than the portal observation; reconcile on next import."
       },
-      "candidateRecordsIntegrated": 22,
+      "candidateRecordsIntegrated": 23,
       "publishableRecords": 0
     },
     {
@@ -147,17 +147,17 @@
       "candidateResultsObserved": 357,
       "coverage": "Catalogue contains schemes and calls for multiple types of applicants",
       "limitations": [
-        "Review is partial: 52 of 153 aid records have a decision supported by the linked official detail page",
+        "Review is partial: 59 of 153 aid records have a decision supported by the linked official detail page",
         "No complete individual application journey has yet been normalized into a publishable aid card",
-        "The remaining 101 official pages still require beneficiary, validity and application-path review"
+        "The remaining 94 official pages still require beneficiary, validity and application-path review"
       ],
-      "pagesReviewed": 52,
-      "relevantCandidates": 22,
-      "confirmedNonRelevant": 28,
+      "pagesReviewed": 59,
+      "relevantCandidates": 23,
+      "confirmedNonRelevant": 34,
       "expired": 2,
-      "pendingManualReview": 101,
-      "candidateRecordsIntegrated": 22,
-      "publishableRecords": 0,
+      "pendingManualReview": 94,
+      "candidateRecordsIntegrated": 23,
+      "publishableRecords": 1,
       "reviewedAt": "2026-11-23"
     },
     {
@@ -344,7 +344,7 @@
       "name": "Service-Public.fr",
       "url": "https://www.service-public.gouv.fr/",
       "role": "Official citizen guidance, eligibility summaries and forms for national procedures",
-      "status": "ten-national-aid-records-reviewed-three-new-information-pages-published",
+      "status": "thirteen-national-aid-records-reviewed-seven-information-pages-published-with-PAJE-amount-conflicts",
       "version": "Individual pages have their own update dates",
       "license": "Content reuse conditions not reviewed as a bulk dataset",
       "retrievedAt": "2026-11-23",
@@ -355,9 +355,9 @@
         "Not a bulk structured aid dataset",
         "Must use aid-specific current pages and primary legal/administrator sources for exact rules"
       ],
-      "candidateRecordsIntegrated": 5,
-      "factsEnrichedForAids": 5,
-      "publishableRecords": 3,
+      "candidateRecordsIntegrated": 12,
+      "factsEnrichedForAids": 12,
+      "publishableRecords": 12,
       "consultedAt": "2026-11-23",
       "evidence": [
         {
@@ -371,19 +371,9 @@
           "pageVerifiedAt": "2026-06-01"
         },
         {
-          "aidId": "af",
-          "url": "https://www.service-public.fr/particuliers/vosdroits/F13212",
-          "pageVerifiedAt": "2026-06-01"
-        },
-        {
           "aidId": "apl",
           "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
           "pageVerifiedAt": "2026-07-01"
-        },
-        {
-          "aidId": "apl",
-          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R1292",
-          "pageVerifiedAt": "2026-03-02"
         },
         {
           "aidId": "alf",
@@ -391,19 +381,44 @@
           "pageVerifiedAt": "2026-07-01"
         },
         {
-          "aidId": "alf",
-          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R1292",
-          "pageVerifiedAt": "2026-03-02"
-        },
-        {
           "aidId": "als",
           "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1280",
           "pageVerifiedAt": "2026-07-01"
         },
         {
-          "aidId": "als",
-          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/R1292",
-          "pageVerifiedAt": "2026-03-02"
+          "aidId": "paje-prime-naissance",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2550",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "paje-allocation-base",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2552",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "paje-prime-adoption",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13220",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "ajpp",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15132",
+          "pageVerifiedAt": "2026-06-14"
+        },
+        {
+          "aidId": "rsa-parent-isole",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15553",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "prepare",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32485",
+          "pageVerifiedAt": "2026-06-01"
+        },
+        {
+          "aidId": "aeeh",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14809",
+          "pageVerifiedAt": "2026-06-01"
         }
       ]
     },

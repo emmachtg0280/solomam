@@ -112,7 +112,7 @@ test("all 153 imported aid records receive traceable, conservative qualification
   t.after(() => Promise.all(generatedFiles.map((file, index) => writeFile(path.join(repo, file), originals[index]))));
   const result = await qualifyOccitanieRecords();
   assert.equal(result.qualifications.length, 153);
-  assert.deepEqual(result.counts, { relevant: 22, not_relevant: 28, expired: 2, needs_manual_review: 101 });
+  assert.deepEqual(result.counts, { relevant: 23, not_relevant: 34, expired: 2, needs_manual_review: 94 });
   assert.equal(new Set(result.qualifications.map((item) => item.id)).size, 153);
   assert.ok(result.qualifications.every((item) => item.sourceRecordHash.length === 64 && item.rawRecordReference.file.endsWith("raw/dataset.json")));
   const rawSnapshot = JSON.parse(await readFile(path.join(repo, "src/data/imports/occitanie/raw/dataset.json"), "utf8"));
@@ -120,7 +120,7 @@ test("all 153 imported aid records receive traceable, conservative qualification
   assert.ok(result.qualifications.every((item) => item.classification.justification.length > 0));
   assert.ok(result.qualifications.every((item) => item.normalized.territory.regionCode === "76"));
   const duplicateCandidates = result.qualifications.filter((item) => item.deduplication.status === "duplicate-candidate");
-  assert.equal(duplicateCandidates.length, 22);
+  assert.equal(duplicateCandidates.length, 23);
   const catalogue = JSON.parse(await readFile(path.join(repo, "src/data/catalogue.json"), "utf8"));
   assert.ok(duplicateCandidates.every((item) => catalogue.some((record) => record.id === item.deduplication.existingCatalogueId && record.url === item.normalized.officialUrl)));
   assert.ok(result.qualifications.every((item) => item.dataQuality.publicationStatus === "not-published"));
