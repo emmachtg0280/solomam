@@ -4,7 +4,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { classifyAid, decodeCsvBytes, deduplicateCandidates, normalizeGeoPostalMappings, normalizePostalRows, normalizeRegionRecord, parseCsv, validateRequiredCommunes } from "./import-official-data.mjs";
+import { classifyAid, decodeCsvBytes, deduplicateCandidates, getResponse, normalizeGeoPostalMappings, normalizePostalRows, normalizeRegionRecord, parseCsv, validateRequiredCommunes } from "./import-official-data.mjs";
 import { qualifyOccitanieRecords } from "./qualify-occitanie.mjs";
 
 test("CSV parser handles delimiter, quoted delimiter, escaped quote and CRLF", () => {
@@ -13,6 +13,10 @@ test("CSV parser handles delimiter, quoted delimiter, escaped quote and CRLF", (
     { Code_commune_INSEE: "34172", Nom: "Montpellier; centre", Code_postal: "34000" },
     { Code_commune_INSEE: "34301", Nom: 'Sète "centre"', Code_postal: "34200" },
   ]);
+});
+
+test("CSV parser rejects an unterminated quoted field", () => {
+  assert.throws(() => parseCsv('name;description\nA;"incomplete'), (error) => error.kind === "CSV_PARSE_ERROR");
 });
 
 test("La Poste headers and Windows-1252 encoding preserve leading zero codes", () => {
@@ -52,6 +56,32 @@ test("La Poste duplicate rows collapse only to the same INSEE/postal pair", () =
 
 test("UTF-8 CSV is detected before the Windows-1252 fallback", () => {
   assert.deepEqual(decodeCsvBytes(Buffer.from("Nom_de_la_commune\nSète\n", "utf8")), { text: "Nom_de_la_commune\nSète\n", encoding: "utf-8" });
+});
+
+test("HTTP transient failures retry, while environment network denial is reported immediately", async () => {
+  const originalFetch = globalThis.fetch;
+  let attempts = 0;
+  try {
+    globalThis.fetch = async () => {
+      attempts += 1;
+      return attempts === 1 ? new Response("busy", { status: 503 }) : new Response("ok", { status: 200 });
+    };
+    const response = await getResponse("https://example.test/data");
+    assert.equal(await response.text(), "ok");
+    assert.equal(attempts, 2);
+
+    attempts = 0;
+    globalThis.fetch = async () => {
+      attempts += 1;
+      const error = new Error("permission denied");
+      error.cause = { code: "EACCES" };
+      throw error;
+    };
+    await assert.rejects(getResponse("https://example.test/data"), (error) => error.kind === "ENVIRONMENT_NETWORK_DENIED" && error.details.attempts === 1);
+    assert.equal(attempts, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("classification only promotes explicit individual audience to manual review candidate", () => {
@@ -165,6 +195,8 @@ test("persisted official API Géo snapshot contains the requested towns and vali
   const postalPairs = normalizeGeoPostalMappings(snapshot.communes);
   assert.equal(postalPairs.length, 4482);
   assert.equal(new Set(postalPairs.map((item) => `${item.inseeCode}|${item.postalCode}`)).size, postalPairs.length);
+  const normalizedGeo = JSON.parse(await readFile(path.join(repo, "src/data/imports/geography/normalized/geo-api-postal-codes-occitanie.json"), "utf8"));
+  assert.ok(normalizedGeo.every((item) => item.retrievedAt === snapshot.retrievedAt));
   for (const [name, code, postalCode] of [["Montpellier", "34172", "34000"], ["Frontignan", "34108", "34110"], ["Sète", "34301", "34200"], ["Béziers", "34032", "34500"]]) {
     assert.ok(postalPairs.some((item) => item.communeName === name && item.inseeCode === code && item.postalCode === postalCode));
   }
@@ -177,6 +209,8 @@ test("La Poste repeated commune/postal pairs are preserved routing variants, not
   const sourceRows = parseCsv(decodeCsvBytes(bytes).text);
   const source = normalizePostalRows(sourceRows);
   const normalized = JSON.parse(await readFile(path.join(repo, "src/data/imports/geography/normalized/postal-codes-occitanie.json"), "utf8"));
+  const postalSnapshot = JSON.parse(await readFile(path.join(repo, "src/data/imports/geography/raw/postal-codes-dataset.json"), "utf8"));
+  assert.ok(normalized.every((item) => item.retrievedAt === postalSnapshot.retrievedAt && item.sourceDataset === postalSnapshot.datasetId && item.sourceResourceId === postalSnapshot.resource.id));
   const byPair = new Map(normalized.map((item) => [`${item.inseeCode}|${item.postalCode}`, item]));
   const occitanieDepartments = new Set(["09", "11", "12", "30", "31", "32", "34", "46", "48", "65", "66", "81", "82"]);
   for (const mapping of source.mappings.filter((item) => occitanieDepartments.has(item.inseeCode.slice(0, 2)))) {

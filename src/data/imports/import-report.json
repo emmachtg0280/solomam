@@ -1,9 +1,31 @@
 {
-  "importerVersion": 1,
-  "startedAt": "2026-11-24T00:53:03.529Z",
-  "completedAt": "2026-11-24T00:53:10.483Z",
+  "importerVersion": 2,
+  "startedAt": "2026-11-24T06:29:17.491Z",
+  "completedAt": "2026-11-24T06:29:18.046Z",
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "transientHttpStatuses": [
+      429,
+      "5xx"
+    ],
+    "transientNetworkCodes": [
+      "ECONNREFUSED",
+      "ETIMEDOUT",
+      "UND_ERR_CONNECT_TIMEOUT",
+      "EHOSTUNREACH",
+      "ENETUNREACH",
+      "ECONNRESET",
+      "UND_ERR_SOCKET"
+    ],
+    "nonRetryableNetworkCodes": [
+      "EACCES",
+      "EPERM",
+      "ENOTFOUND",
+      "EAI_AGAIN"
+    ]
+  },
   "previousAttempt": {
-    "startedAt": "2026-11-24T00:51:43.775Z",
+    "startedAt": "2026-11-24T06:24:54.501Z",
     "counts": {
       "regionRecordsRetrieved": 0,
       "uniqueRegionAidCandidates": 0,
@@ -18,24 +40,43 @@
       "postalCommunesMatched": 4446,
       "postalDuplicates": 3681
     },
-    "errors": [],
+    "errors": [
+      {
+        "kind": "DNS_ERROR",
+        "message": "DNS_ERROR: https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true: fetch failed",
+        "url": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true",
+        "details": {
+          "code": "ENOTFOUND",
+          "cause": "getaddrinfo ENOTFOUND data.laregion.fr",
+          "attempts": 1
+        }
+      },
+      {
+        "kind": "DNS_ERROR",
+        "message": "DNS_ERROR: https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json: fetch failed",
+        "url": "https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json",
+        "details": {
+          "code": "ENOTFOUND",
+          "cause": "getaddrinfo ENOTFOUND geo.api.gouv.fr",
+          "attempts": 1
+        }
+      },
+      {
+        "kind": "DNS_ERROR",
+        "message": "DNS_ERROR: https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/: fetch failed",
+        "url": "https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/",
+        "details": {
+          "code": "ENOTFOUND",
+          "cause": "getaddrinfo ENOTFOUND www.data.gouv.fr",
+          "attempts": 1
+        }
+      }
+    ],
     "priorPostalResponse": null
   },
-  "historicalPostalResponse": {
-    "responseReceived": true,
-    "rawSaved": false,
-    "rowCount": "not recorded",
-    "fields": [
-      "#Code_commune_INSEE",
-      "Nom_de_la_commune",
-      "Code_postal",
-      "Libell�_d_acheminement",
-      "Ligne_5"
-    ],
-    "error": "SCHEMA_ERROR"
-  },
+  "historicalPostalResponse": null,
   "counts": {
-    "regionRecordsRetrieved": 229,
+    "regionRecordsRetrieved": 0,
     "uniqueRegionAidCandidates": 0,
     "regionDuplicates": 0,
     "geographyDepartments": 13,
@@ -58,84 +99,11 @@
     "status": "accepted"
   },
   "region": {
-    "retrievedRecords": 229,
-    "normalizedUniqueRecords": 229,
-    "individualAidCandidates": 0,
-    "organizationAndNonAidExcluded": 76,
-    "manualAudienceReview": 153,
-    "duplicateRecords": 0,
-    "schema": [
-      {
-        "name": "titre",
-        "description": null,
-        "annotations": {},
-        "label": "titre",
-        "type": "text"
-      },
-      {
-        "name": "type",
-        "description": null,
-        "annotations": {
-          "facet": true,
-          "disjunctive": true,
-          "sortable": true
-        },
-        "label": "Type",
-        "type": "text"
-      },
-      {
-        "name": "chapo",
-        "description": null,
-        "annotations": {},
-        "label": "Chapeau",
-        "type": "text"
-      },
-      {
-        "name": "introduction",
-        "description": null,
-        "annotations": {},
-        "label": "Extrait du contenu",
-        "type": "text"
-      },
-      {
-        "name": "date_publication",
-        "description": null,
-        "annotations": {},
-        "label": "date_publication",
-        "type": "text"
-      },
-      {
-        "name": "date_modification",
-        "description": null,
-        "annotations": {},
-        "label": "date_modification",
-        "type": "text"
-      },
-      {
-        "name": "url",
-        "description": null,
-        "annotations": {},
-        "label": "url",
-        "type": "text"
-      },
-      {
-        "name": "thematiques",
-        "description": null,
-        "annotations": {},
-        "label": "thematiques",
-        "type": "text"
-      },
-      {
-        "name": "logo",
-        "description": null,
-        "annotations": {},
-        "label": "logo",
-        "type": "text"
-      }
-    ]
+    "status": "failed",
+    "retrievedRecords": 0
   },
   "geography": {
-    "status": "fresh",
+    "status": "stored-snapshot-reused",
     "sourceRetrievedAt": "2026-11-24T00:53:03.529Z",
     "departmentCount": 13,
     "communeCount": 4446,
@@ -149,21 +117,50 @@
       "Béziers": true
     }
   },
-  "postalStatus": "fresh",
+  "postalStatus": "saved-raw-reprocessed",
   "postal": {
-    "status": "fresh",
+    "status": "saved-raw-reprocessed",
     "sourceRows": 39192,
     "occitanieRows": 4482,
     "matchedCommunes": 4446,
     "duplicateCount": 3681,
     "encoding": "windows-1252",
-    "matchedAgainst": "API Géo commune codes",
-    "datasetLastUpdate": "2023-07-09T07:01:18+00:00",
-    "resourceUrl": "https://data.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw"
+    "matchedAgainst": "API Géo commune codes"
   },
-  "errors": [],
+  "errors": [
+    {
+      "kind": "DNS_ERROR",
+      "message": "DNS_ERROR: https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true: fetch failed",
+      "url": "https://data.laregion.fr/api/explore/v2.1/catalog/datasets/aides-et-appels-a-projets-de-la-region-occitanie?include_app_metas=true",
+      "details": {
+        "code": "ENOTFOUND",
+        "cause": "getaddrinfo ENOTFOUND data.laregion.fr",
+        "attempts": 1
+      }
+    },
+    {
+      "kind": "DNS_ERROR",
+      "message": "DNS_ERROR: https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json: fetch failed",
+      "url": "https://geo.api.gouv.fr/regions/76/departements?fields=nom,code,codeRegion&format=json",
+      "details": {
+        "code": "ENOTFOUND",
+        "cause": "getaddrinfo ENOTFOUND geo.api.gouv.fr",
+        "attempts": 1
+      }
+    },
+    {
+      "kind": "DNS_ERROR",
+      "message": "DNS_ERROR: https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/: fetch failed",
+      "url": "https://www.data.gouv.fr/api/1/datasets/base-officielle-des-codes-postaux/",
+      "details": {
+        "code": "ENOTFOUND",
+        "cause": "getaddrinfo ENOTFOUND www.data.gouv.fr",
+        "attempts": 1
+      }
+    }
+  ],
   "qualification": {
-    "completedAt": "2026-11-24T05:06:32.104Z",
+    "completedAt": "2026-11-24T06:36:19.259Z",
     "sourceRecordsReviewed": 153,
     "counts": {
       "relevant": 23,

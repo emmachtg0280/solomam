@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { canPublishInformation, canPublishProcedure } from "../src/lib/publication.mjs";
@@ -12,7 +13,7 @@ const readJson = async (name) => JSON.parse(await readFile(path.join(root, name)
 
 test("canonical catalogue has unique IDs and source URLs", async () => {
   const catalogue = await readJson("src/data/catalogue.json");
-  assert.equal(catalogue.length, 50);
+  assert.equal(catalogue.length, 54);
   assert.equal(new Set(catalogue.map((record) => record.id)).size, catalogue.length);
   assert.equal(new Set(catalogue.map((record) => record.url)).size, catalogue.length);
   assert.ok(catalogue.every((record) => record.id && record.name && record.url));
@@ -85,7 +86,7 @@ test("information publication is independent from procedure completeness", async
   assert.match(review.asf.facts.find((fact) => fact.field === "core_conditions").value, /incohérence/);
   assert.equal(review.asf.facts.find((fact) => fact.field === "amount").status, "conflict");
   assert.ok(review.css.applicationProcedure.renewal.text.includes("un an"));
-  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 17);
+  assert.equal(catalogue.filter((item) => canPublishInformation(item, review[item.id])).length, 19);
   assert.deepEqual(catalogue.filter((item) => ["apl", "alf", "als"].includes(item.id)).map(({ id }) => id).sort(), ["alf", "als", "apl"]);
   assert.equal(catalogue.some((item) => item.id === "logement"), false);
   assert.equal(review.logement.recordLifecycle, "superseded");
@@ -104,6 +105,73 @@ test("information publication is independent from procedure completeness", async
   for (const id of ["asf", "af", "prime", "css", "rsa-parent-isole", "prepare", "aeeh"]) {
     assert.equal(review[id].notes.filter((note) => note.startsWith("Fiche d'information publiée après vérification des faits essentiels.")).length, 1);
   }
+});
+
+test("Hérault local candidates preserve source evidence and publish only the verified AFIE summary", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  const afie = catalogue.find((item) => item.id === "afie-herault");
+  assert.ok(afie);
+  assert.equal(review[afie.id].informationPublicationStatus, "verified");
+  assert.equal(canPublishInformation(afie, review[afie.id]), true);
+  assert.equal(review[afie.id].publicationStatus, "pending");
+  assert.ok(review[afie.id].facts.some((fact) => fact.field === "amount" && fact.status === "unverified" && fact.value === null));
+
+  for (const id of ["caf-herault-secours-prets", "bouclier-social-petite-enfance-montpellier"]) {
+    const record = catalogue.find((item) => item.id === id);
+    assert.ok(record);
+    assert.equal(review[id].informationPublicationStatus, "pending");
+    assert.equal(canPublishInformation(record, review[id]), false);
+    assert.ok(review[id].factSources.some((source) => source.url.startsWith("https://")));
+  }
+});
+
+test("Gard FSL access aid is separate, sourced, and limited to verified 2026 criteria", async () => {
+  const catalogue = await readJson("src/data/catalogue.json");
+  const review = await readJson("src/data/review.json");
+  const record = catalogue.find((item) => item.id === "fsl-gard-acces");
+  assert.ok(record);
+  assert.equal(review[record.id].informationPublicationStatus, "verified");
+  assert.equal(canPublishInformation(record, review[record.id]), true);
+  assert.equal(review[record.id].publicationStatus, "pending");
+  assert.equal(review[record.id].procedurePublicationStatus, "pending");
+  assert.match(review[record.id].facts.find((fact) => fact.field === "core_conditions").value, /33 %/);
+  assert.ok(review[record.id].factSources.some((source) => source.url.includes("baremes-fsl.html")));
+});
+
+test("departmental source registry contains stable entries for all Occitanie departments", async () => {
+  const registry = await readJson("src/data/source-registry.json");
+  const coverage = await readJson("src/data/coverage-matrix.json");
+  const territorialSources = registry.sources.filter((source) => source.id.startsWith("territory-"));
+  assert.equal(new Set(territorialSources.map((source) => source.territory.departmentCode)).size, 13);
+  assert.equal(territorialSources.length, 26);
+  assert.equal(registry.sources.filter((source) => ["caf-herault-individual-aid-page", "caf-herault-rias-2026", "herault-rdas-2026", "herault-fsl-overview", "montpellier-ccas-rights", "montpellier-bouclier-page", "montpellier-bouclier-regulation-2025", "frontignan-ccas", "sete-ccas-discovery", "beziers-ccas-social"].includes(source.id)).length, 10);
+  const ariegeSource = registry.sources.find((source) => source.id === "ariege-rdas-pdf");
+  assert.equal(ariegeSource.status, "official-source-current-version-unconfirmed");
+  assert.ok(territorialSources.every((source) => source.lastCollection === null && source.recordsImported === 0));
+  assert.equal(coverage.territories.filter((territory) => territory.status === "identified").length, 11);
+  assert.equal(coverage.territories.find((territory) => territory.id === "30").status, "partially_integrated");
+});
+
+test("local aid integration and departmental registry rebuild idempotently", async () => {
+  const ids = ["afie-herault", "caf-herault-secours-prets", "bouclier-social-petite-enfance-montpellier", "fsl-gard-acces"];
+  const readManaged = async () => {
+    const catalogue = await readJson("src/data/catalogue.json");
+    const review = await readJson("src/data/review.json");
+    const registry = await readJson("src/data/source-registry.json");
+    const coverage = await readJson("src/data/coverage-matrix.json");
+    return {
+      records: catalogue.filter((item) => ids.includes(item.id)),
+      audits: Object.fromEntries(ids.map((id) => [id, review[id]])),
+      sources: registry.sources.filter((source) => source.id.startsWith("territory-") || source.id.startsWith("adhl-gard-") || source.id === "ariege-rdas-pdf"),
+      coverage,
+    };
+  };
+  const before = await readManaged();
+  for (const script of ["scripts/integrate-herault-local-aids.mjs", "scripts/integrate-gard-fsl.mjs", "scripts/register-departmental-sources.mjs"]) {
+    execFileSync(process.execPath, [script], { cwd: root, stdio: "ignore" });
+  }
+  assert.deepEqual(await readManaged(), before);
 });
 
 test("new PAJE and AJPP records retain official evidence, uncertainty, and separate procedure status", async () => {

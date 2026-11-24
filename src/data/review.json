@@ -5579,5 +5579,423 @@
       "L’attribution dépend d’une évaluation médicale et de la situation d’activité; l’AJPP n’est pas réservée aux parents isolés. Vérifier les règles de partage entre parents au moment de la demande."
     ],
     "procedurePublicationStatus": "pending"
+  },
+  "afie-herault": {
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "publicationStatus": "pending",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "RDAS Hérault consulté 2026-11-23",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [],
+    "factSources": [
+      {
+        "id": "afie-herault-rdas",
+        "label": "Département de l'Hérault — Règlement départemental d'aide sociale, section AFIE",
+        "url": "https://mda.herault.fr/cms_viewFilePublication.php?id=668",
+        "kind": "official-regulation",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Dispositif décrit dans le Règlement départemental d’aide sociale de l’Hérault; la section AFIE indique une mobilisation dans les 3 mois suivant la reprise (6 mois pour certaines formations en contrat aidé).",
+        "sourceIds": [
+          "afie-herault-rdas"
+        ],
+        "validFor": "RDAS consulté le 23-11-2026; le règlement indique son application au 01-01-2025"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Département de l’Hérault.",
+        "sourceIds": [
+          "afie-herault-rdas"
+        ],
+        "validFor": "RDAS Hérault consulté le 23-11-2026"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Allocataires du RSA relevant des droits et devoirs, avec contrat d’engagement réciproque ou suivi France Travail, qui débutent/reprennent une activité, une formation ou une immersion professionnelle; critères spécifiques pour les travailleurs indépendants.",
+        "sourceIds": [
+          "afie-herault-rdas"
+        ],
+        "validFor": "RDAS Hérault, section AFIE, consulté le 23-11-2026"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Demande dans les 3 mois de la reprise (6 mois pour frais de formation de certains contrats aidés); la demande est transmise par un instructeur habilité et examinée par la commission d’équipe pluridisciplinaire. Dépenses postérieures à la demande en règle générale. Les volets comprennent mobilité, garde d’enfants et coûts de formation/reprise d’activité.",
+        "sourceIds": [
+          "afie-herault-rdas"
+        ],
+        "validFor": "RDAS Hérault consulté le 23-11-2026"
+      },
+      {
+        "field": "amount",
+        "status": "unverified",
+        "value": null,
+        "sourceIds": [
+          "afie-herault-rdas"
+        ],
+        "validFor": "L'annexe des montants n'a pas été normalisée dans cette passe; aucun montant n'est affiché."
+      },
+      {
+        "field": "documents",
+        "status": "unverified",
+        "value": null,
+        "sourceIds": [
+          "afie-herault-rdas"
+        ],
+        "validFor": "Pièces à confirmer avec l'instructeur habilité selon le poste de dépense."
+      }
+    ],
+    "applicationProcedure": {
+      "status": "partial",
+      "steps": [],
+      "followUp": {
+        "status": "unverified",
+        "text": "À vérifier avec l'organisme instructeur.",
+        "sourceIds": [
+          "afie-herault-rdas"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "À vérifier selon le règlement en vigueur.",
+        "sourceIds": [
+          "afie-herault-rdas"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Conseil départemental de l'Hérault",
+      "remainingChecks": [
+        "Extraire et vérifier les plafonds de l'annexe AFIE selon chaque dépense.",
+        "Confirmer l'instructeur compétent selon la situation et la liste des pièces applicables.",
+        "Normaliser le dépôt, le suivi, les modalités de paiement et les recours avant de déclarer une procédure complète."
+      ]
+    },
+    "notes": [
+      "Extraire et vérifier les plafonds de l'annexe AFIE selon chaque dépense.",
+      "Confirmer l'instructeur compétent selon la situation et la liste des pièces applicables.",
+      "Normaliser le dépôt, le suivi, les modalités de paiement et les recours avant de déclarer une procédure complète."
+    ],
+    "procedurePublicationStatus": "pending"
+  },
+  "caf-herault-secours-prets": {
+    "informationPublicationStatus": "pending",
+    "informationVerifiedAt": null,
+    "publicationStatus": "pending",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": null,
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [],
+    "factSources": [
+      {
+        "id": "caf-herault-secours-page",
+        "label": "Caf de l'Hérault — Les secours et prêts sociaux",
+        "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      },
+      {
+        "id": "caf-herault-rias-source",
+        "label": "Caf de l'Hérault — RIAS 2026 (lien officiel; extraction bloquée)",
+        "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
+        "kind": "official-regulation",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": null
+      }
+    ],
+    "facts": [
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Familles allocataires de la Caf de l’Hérault avec enfant à charge ou à naître.",
+        "sourceIds": [
+          "caf-herault-secours-page"
+        ],
+        "validFor": "Page Caf consultée le 23-11-2026"
+      },
+      {
+        "field": "eligible_situations",
+        "status": "verified",
+        "value": "La page cite les situations de célibat avec enfant, séparation/divorce, décès, certains impayés de loyer pour les familles en ALF et des difficultés de foyers modestes percevant la prime d’activité et n’ayant pas le RSA.",
+        "sourceIds": [
+          "caf-herault-secours-page"
+        ],
+        "validFor": "Page Caf consultée le 23-11-2026; liste présentée comme exemples/situations d'examen"
+      },
+      {
+        "field": "amount",
+        "status": "unverified",
+        "value": null,
+        "sourceIds": [
+          "caf-herault-secours-page",
+          "caf-herault-rias-source"
+        ],
+        "validFor": "Le RIAS 2026 lié par la Caf n'a pas pu être extrait: serveur en page de maintenance."
+      }
+    ],
+    "applicationProcedure": {
+      "status": "blocked",
+      "steps": [],
+      "followUp": {
+        "status": "unverified",
+        "text": "À vérifier avec l'organisme instructeur.",
+        "sourceIds": [
+          "caf-herault-secours-page"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "À vérifier selon le règlement en vigueur.",
+        "sourceIds": [
+          "caf-herault-secours-page"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Caisse d'Allocations familiales de l'Hérault",
+      "remainingChecks": [
+        "Extraire le RIAS 2026 lié par la page officielle et vérifier ses règles, plafonds et critères généraux.",
+        "Confirmer les pièces, l'accès au travailleur social, l'instruction et le paiement."
+      ]
+    },
+    "notes": [
+      "Extraire le RIAS 2026 lié par la page officielle et vérifier ses règles, plafonds et critères généraux.",
+      "Confirmer les pièces, l'accès au travailleur social, l'instruction et le paiement."
+    ],
+    "procedurePublicationStatus": "pending"
+  },
+  "bouclier-social-petite-enfance-montpellier": {
+    "informationPublicationStatus": "pending",
+    "informationVerifiedAt": null,
+    "publicationStatus": "pending",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": null,
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [],
+    "factSources": [
+      {
+        "id": "montpellier-bouclier-page",
+        "label": "Ville de Montpellier — Bouclier social petite enfance",
+        "url": "https://www.montpellier.fr/vie-quotidienne/vivre-ici/j-ai-un-enfant-entre-0-et-3-ans/je-recherche-un-mode-d-accueil/bouclier-social-petite-enfance",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": null
+      },
+      {
+        "id": "montpellier-bouclier-2025",
+        "label": "Ville de Montpellier — Règlement d'attribution 2025",
+        "url": "https://www.montpellier.fr/sites/default/files/2025-04/R%C3%A8glement%20d%27attribution%202025.pdf",
+        "kind": "official-regulation",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      }
+    ],
+    "facts": [
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Commune de Montpellier uniquement.",
+        "sourceIds": [
+          "montpellier-bouclier-2025"
+        ],
+        "validFor": "Règlement municipal 2025 consulté le 23-11-2026"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Familles monoparentales résidant à Montpellier avec enfant de moins de 3 ans et horaires de formation ou d’emploi hors des horaires d’accueil classiques.",
+        "sourceIds": [
+          "montpellier-bouclier-2025"
+        ],
+        "validFor": "Règlement et documents municipaux 2025 consultés le 23-11-2026"
+      },
+      {
+        "field": "core_conditions",
+        "status": "partially_verified",
+        "value": "Documents municipaux 2025 mentionnent quotient familial ≤ 1 200 €, éligibilité au CMG structure, non-bénéfice du CMG emploi direct, recours à un organisme affilié et accueil du lundi au samedi sur horaires atypiques.",
+        "sourceIds": [
+          "montpellier-bouclier-2025"
+        ],
+        "validFor": "Règles de la version 2025; version/campagne 2026 non confirmée"
+      },
+      {
+        "field": "current_status",
+        "status": "unverified",
+        "value": null,
+        "sourceIds": [
+          "montpellier-bouclier-page",
+          "montpellier-bouclier-2025"
+        ],
+        "validFor": "La page actuelle renvoie une erreur 405 à l'ouverture; règlement consulté daté 2025."
+      }
+    ],
+    "applicationProcedure": {
+      "status": "partial",
+      "steps": [],
+      "followUp": {
+        "status": "unverified",
+        "text": "À vérifier avec l'organisme instructeur.",
+        "sourceIds": [
+          "montpellier-bouclier-page"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "À vérifier selon le règlement en vigueur.",
+        "sourceIds": [
+          "montpellier-bouclier-page"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Ville de Montpellier",
+      "remainingChecks": [
+        "Confirmer la validité du règlement et du dispositif pour 2026.",
+        "Vérifier les organismes affiliés et le dossier courant, les délais, le montant de participation et le budget disponible."
+      ]
+    },
+    "notes": [
+      "Confirmer la validité du règlement et du dispositif pour 2026.",
+      "Vérifier les organismes affiliés et le dossier courant, les délais, le montant de participation et le budget disponible."
+    ],
+    "procedurePublicationStatus": "pending"
+  },
+  "fsl-gard-acces": {
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-23",
+    "publicationStatus": "pending",
+    "procedurePublicationStatus": "pending",
+    "reviewedAt": "2026-11-23",
+    "currentForPeriod": "Barème FSL au 01-04-2026",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "sources": [],
+    "factSources": [
+      {
+        "id": "adhl-gard-fsl-access",
+        "label": "ADHL Gard — FSL volet Accès",
+        "url": "https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces.html",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      },
+      {
+        "id": "adhl-gard-fsl-scale-2026",
+        "label": "ADHL Gard — Barèmes FSL au 1er avril 2026",
+        "url": "https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces/baremes-fsl.html",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-23",
+        "pageVerifiedAt": "2026-11-23"
+      }
+    ],
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "Barème du FSL affiché comme applicable au 1er avril 2026.",
+        "sourceIds": [
+          "adhl-gard-fsl-scale-2026"
+        ],
+        "validFor": "Barèmes au 01-04-2026"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Département du Gard.",
+        "sourceIds": [
+          "adhl-gard-fsl-access"
+        ],
+        "validFor": "Page officielle consultée le 23-11-2026"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Ménages rencontrant des difficultés pour accéder à un logement; soumis aux plafonds de ressources FSL établis selon la composition du ménage.",
+        "sourceIds": [
+          "adhl-gard-fsl-access",
+          "adhl-gard-fsl-scale-2026"
+        ],
+        "validFor": "Page FSL et barème du 01-04-2026"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Pour le volet Accès, taux d’effort logement inférieur à 33 % et DPE classé A à E. La demande doit être signée par les membres du ménage signataires du bail, adressée par un service social avec accompagnement et évaluation sociale. Le barème au 01-04-2026 plafonne les ressources à 1 288 € pour une personne isolée, 1 803 € avec 1 enfant, 2 318 € avec 2, 2 834 € avec 3, puis +515 € par enfant supplémentaire.",
+        "sourceIds": [
+          "adhl-gard-fsl-access",
+          "adhl-gard-fsl-scale-2026"
+        ],
+        "validFor": "Barèmes au 01-04-2026; critères d’accès vérifiés le 23-11-2026"
+      },
+      {
+        "field": "eligible_needs",
+        "status": "verified",
+        "value": "Dépôt de garantie (plafond d’un mois de loyer hors charges, deux mois en logement meublé; prêt), premier mois de loyer dans certains cas d’accès ou changement ouvrant un droit au logement, frais d’agence, déménagement via structure d’insertion conventionnée (plafond 300 €), assurance locative lorsque le paiement échelonné ne peut être négocié.",
+        "sourceIds": [
+          "adhl-gard-fsl-access"
+        ],
+        "validFor": "Page officielle consultée le 23-11-2026"
+      },
+      {
+        "field": "documents",
+        "status": "partially_verified",
+        "value": "Justificatifs utiles à l’instruction; demande signée par le ou les membres du ménage signataires du bail. La liste exhaustive dépend de l’aide sollicitée.",
+        "sourceIds": [
+          "adhl-gard-fsl-access"
+        ],
+        "validFor": "Page officielle consultée le 23-11-2026"
+      }
+    ],
+    "applicationProcedure": {
+      "status": "incomplete",
+      "steps": [
+        {
+          "text": "Prendre contact avec un service social pour constituer et transmettre le dossier avec accompagnement et évaluation sociale.",
+          "status": "verified",
+          "sourceIds": [
+            "adhl-gard-fsl-access"
+          ]
+        }
+      ],
+      "documents": {
+        "status": "unverified",
+        "sourceIds": [
+          "adhl-gard-fsl-access"
+        ]
+      },
+      "followUp": {
+        "status": "unverified",
+        "text": "Délais, décision et suivi du dossier à vérifier dans le règlement intérieur complet.",
+        "sourceIds": [
+          "adhl-gard-fsl-access"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "À vérifier selon l’aide et la situation.",
+        "sourceIds": [
+          "adhl-gard-fsl-access"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Conseil départemental du Gard (financeur); ADHL Gard (instructeur).",
+      "remainingChecks": [
+        "Vérifier les délais, voies de recours et documents détaillés dans le règlement intérieur complet.",
+        "Vérifier les règles FSL distinctes pour maintien et charges; cette fiche ne couvre que le volet accès."
+      ]
+    },
+    "notes": [
+      "Fiche limitée au volet Accès; ne pas la confondre avec les volets FSL Maintien et Charges."
+    ]
   }
 }

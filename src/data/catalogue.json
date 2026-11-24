@@ -654,5 +654,48 @@
       "Après ouverture du droit, transmettre les attestations mensuelles de jours ou demi-journées utilisés; l’employeur complète sa partie lorsque la situation le requiert."
     ],
     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15132"
+  },
+  {
+    "id": "afie-herault",
+    "name": "Aide financière pour l’insertion et l’emploi (AFIE) — Hérault",
+    "category": "Emploi",
+    "zone": "34",
+    "org": "Conseil départemental de l'Hérault",
+    "description": "Aide départementale aux bénéficiaires du RSA qui débutent ou reprennent une activité professionnelle. Les dépenses admises peuvent concerner la mobilité, la garde d’enfants ou la formation/reprise d’activité; montants et plafonds varient selon le poste de dépense et l’annexe du règlement.",
+    "when": "Bénéficiaires du RSA relevant des droits et devoirs et ayant signé un contrat d’engagement réciproque ou bénéficiant d’un suivi France Travail; conditions complémentaires selon emploi salarié, formation, immersion ou activité indépendante.",
+    "steps": [],
+    "url": "https://mda.herault.fr/cms_viewFilePublication.php?id=668"
+  },
+  {
+    "id": "caf-herault-secours-prets",
+    "name": "Secours et prêts sociaux — Caf de l’Hérault",
+    "category": "Famille",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Aides exceptionnelles sous forme de secours ou de prêts sans intérêt, examinées avec un travailleur social de la Caf. Les montants et modalités renvoient au règlement intérieur d’action sociale 2026, dont l’extraction a échoué lors de cette collecte.",
+    "when": "Familles allocataires avec enfant à charge ou à naître; la page cite notamment séparation, décès, certains impayés ALF et des difficultés de familles à revenus d’activité modestes.",
+    "steps": [],
+    "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux"
+  },
+  {
+    "id": "bouclier-social-petite-enfance-montpellier",
+    "name": "Bouclier social Petite Enfance — Montpellier",
+    "category": "Garde",
+    "zone": "34",
+    "org": "Ville de Montpellier",
+    "description": "Dispositif municipal documenté par un règlement 2025, qui réduit le reste à charge d’une garde à domicile sur horaires atypiques pour des familles monoparentales éligibles. La version en vigueur et l’ouverture de la campagne actuelle restent à confirmer.",
+    "when": "Parents isolés domiciliés à Montpellier avec un enfant de moins de 3 ans, en emploi ou en formation sur des horaires atypiques, sous conditions de quotient familial et de CMG; recours à un organisme de garde affilié requis.",
+    "steps": [],
+    "url": "https://www.montpellier.fr/vie-quotidienne/vivre-ici/j-ai-un-enfant-entre-0-et-3-ans/je-recherche-un-mode-d-accueil/bouclier-social-petite-enfance"
+  },
+  {
+    "id": "fsl-gard-acces",
+    "name": "Fonds de solidarité pour le logement — accès au logement (Gard)",
+    "category": "Logement",
+    "zone": "30",
+    "org": "Conseil départemental du Gard (financeur); Agence Départementale de l’Habitat et du Logement (instructeur)",
+    "description": "Le volet Accès du FSL du Gard aide les ménages à accéder à un logement. Il peut contribuer au dépôt de garantie, premier loyer, frais d’agence, déménagement ou assurance locative, selon les règles et ressources applicables. L’ADHL instruit; le Département verse.",
+    "when": "Ménages du Gard qui rencontrent des difficultés pour accéder à un logement, sous plafonds de ressources variables selon la composition du foyer et selon les conditions propres à l’aide demandée.",
+    "url": "https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces.html"
   }
 ]

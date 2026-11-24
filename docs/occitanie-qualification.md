@@ -9,13 +9,13 @@ Dernière qualification manuelle : 23 novembre 2026. Le snapshot source est cons
 | Lignes source récupérées | 229 |
 | Lignes dont `type` vaut `Aides` | 153 |
 | Hors type aide dans cette revue | 76 |
-| `relevant` après consultation de pages officielles | 22 |
-| `not_relevant` confirmé par la page officielle | 28 |
+| `relevant` après consultation de pages officielles | 23 |
+| `not_relevant` confirmé par la page officielle | 41 |
 | `expired` selon la période explicitement indiquée | 2 |
-| À examiner manuellement faute de preuve suffisante | 101 |
+| À examiner manuellement faute de preuve suffisante | 87 |
 | Cartes nouvelles publiées | 0 |
 
-Une page régionale détaillée et la fiche source ont été consultées pour les 52 décisions qui ne sont pas en attente. Les 22 éléments pertinents sont des pistes de catalogue, pas des fiches prêtes à publier : la normalisation complète des pièces, des procédures de dépôt et de suivi, ainsi que la validité annuelle reste à faire. Ces 22 éléments sont maintenant projetés dans le catalogue canonique avec le statut `pending`; ils ne sont pas publiés. Les 101 autres enregistrements demeurent en revue manuelle plutôt que d'être déclarés non pertinents sur le seul titre.
+Une page régionale détaillée et la fiche source ont été consultées pour les 66 décisions qui ne sont pas en attente. Les 23 éléments pertinents sont des pistes de catalogue, pas des fiches prêtes à publier : la normalisation complète des pièces, des procédures de dépôt et de suivi, ainsi que la validité annuelle reste à faire. Ces 23 éléments sont maintenant projetés dans le catalogue canonique avec le statut `pending`; ils ne sont pas publiés. Les 87 autres enregistrements demeurent en revue manuelle plutôt que d'être déclarés non pertinents sur le seul titre.
 
 Une absence de dates de validité dans la ligne du dataset n'est pas interprétée comme une aide active. `date_publication` et `date_modification` sont conservées comme métadonnées éditoriales et jamais prises pour les dates d'application.
 
@@ -96,7 +96,7 @@ La relation est une table de correspondance et non une relation un-à-un : plusi
 
 ## Mise à jour du 23 novembre 2026
 
-Une revue complémentaire de pages officielles a qualifié 6 entrées supplémentaires du dataset : 1 aide directe pertinente et 5 aides réservées à des porteurs de projet ou personnes morales. La qualification du catalogue régional est désormais : 23 pertinentes, 34 hors cible, 2 expirées et 94 en attente sur 153 enregistrements de type aide. La voiture électrique d’occasion est le 23e candidat régional intégré; ses critères, barème, pièces et dépôt sont documentés depuis la page et le règlement 2026. L’information est publiable, mais le parcours reste partiel car délais d’instruction et recours ne sont pas établis.
+Une revue complémentaire de pages officielles a qualifié 6 entrées supplémentaires du dataset : 1 aide directe pertinente et 5 aides réservées à des porteurs de projet ou personnes morales. La qualification du catalogue régional est désormais : 23 pertinentes, 41 hors cible, 2 expirées et 87 en attente sur 153 enregistrements de type aide. La voiture électrique d’occasion est le 23e candidat régional intégré; ses critères, barème, pièces et dépôt sont documentés depuis la page et le règlement 2026. L’information est publiable, mais le parcours reste partiel car délais d’instruction et recours ne sont pas établis.
 
 Quatre fiches nationales supplémentaires ont été intégrées : prime à la naissance, allocation de base, prime à l’adoption et AJPP. Leurs faits essentiels et dates de vérification sont enregistrés. Les montants PAJE en conflit entre Caf et Service-Public sont signalés dans chaque fiche et ne sont pas présentés comme certains. Les étapes de demande sont sourcées, mais les procédures ne satisfont pas encore le contrôle de complétude.
 
