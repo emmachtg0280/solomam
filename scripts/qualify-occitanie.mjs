@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { repairText } from "./lib/repair-text.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rawPath = path.join(root, "src/data/imports/occitanie/raw/dataset.json");
@@ -91,6 +92,8 @@ export async function qualifyOccitanieRecords() {
   const catalogue = JSON.parse(await readFile(cataloguePath, "utf8"));
   const aidRecords = records.map((record, sourceIndex) => ({ record, sourceIndex })).filter(({ record }) => /^aides?$/i.test(record.type ?? ""));
   const qualifications = aidRecords.map(({ record, sourceIndex }) => {
+    const rawHash = stableHash(record);
+    record = Object.fromEntries(Object.entries(record).map(([key, value]) => [key, typeof value === "string" ? repairText(value) : value]));
     const specific = verifiedRelevant[record.url] ?? verifiedNotRelevant[record.url];
     const expiredReason = verifiedExpired[record.url];
     let reviewStatus = "needs_manual_review";
@@ -104,7 +107,7 @@ export async function qualifyOccitanieRecords() {
     } else if (expiredReason) {
       reviewStatus = "expired"; justification = expiredReason;
     }
-    const hash = stableHash(record);
+    const hash = rawHash;
     const id = `occitanie:${record.url ? normalizedKey(record.url.split("/").pop()) : hash.slice(0, 20)}`;
     const duplicateOf = catalogue.find((item) => normalizedKey(item.name) === normalizedKey(record.titre) || (item.url && item.url === record.url));
     const introduction = [record.chapo, record.introduction].filter(Boolean).join("\n\n");

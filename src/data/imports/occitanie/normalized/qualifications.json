@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T01:57:48.968Z",
+  "generatedAt": "2026-11-24T03:38:23.337Z",
   "source": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
   "sourceSnapshot": "src/data/imports/occitanie/raw/dataset.json",
   "records": [
@@ -161,13 +161,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-aide-a-la-lecture-de-loisirs",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -430,13 +432,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-pass-mutuelle-etudiant-e",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -521,13 +525,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-remuneration-des-stagiaires-de-la-formation-professionnelle",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -1325,13 +1331,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-campagne-d-incitation-financiere-aux-covoitureurs",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -1863,13 +1871,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-aide-au-merite-pour-les-etudiants-en-formations-sanitaires-et-sociales",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -2133,13 +2143,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-eco-cheque-mobilite-bonus-velo-adapte-pmr",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -3027,13 +3039,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-hebergement-en-centre-afpa-occitanie",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -3119,13 +3133,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-eco-cheque-mobilite-achat-d-un-velo-a-assistance-electrique",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -3211,13 +3227,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-eco-cheque-mobilite-bonus-forfait-mobilite-durable",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -4018,13 +4036,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-aide-a-l-acquisition-d-un-ordinateur-portable-lordi",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -6089,13 +6109,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-ecocheque-mobilite-lyceen-boursier-de-classe-de-seconde",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -6540,13 +6562,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-livre-aide-individuelle-aux-auteurs-et-aux-autrices-projet-d-ecriture",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -6811,13 +6835,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-les-bons-plans-ou-les-je-m-engage-de-la-carte-jeune-region",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -6992,13 +7018,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-bourses-d-etudes-sanitaires-et-sociales",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -8253,13 +8281,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-le-pacte-pour-l-embauche",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -8434,13 +8464,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-solutions-d-hebergement-et-de-logement-pour-les-jeunes-de-moins-de-30-ans",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -9335,13 +9367,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-premier-equipement-professionnel",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -9427,13 +9461,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-aide-a-l-acquisition-d-une-licence-sportive-unss",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -9518,13 +9554,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-la-mobilite-internationale-des-etudiants-avec-mouv-occitanie",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -10958,13 +10996,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-formation-aux-premiers-secours-citoyen-un-jeune-forme-une-vie-sauvee",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -11858,13 +11898,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-pret-des-manuels-scolaires",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [
@@ -12040,13 +12082,15 @@
       ],
       "dataQuality": {
         "unresolved": [
-          "conditions détailées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
+          "conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel",
           "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"
         ],
         "publicationStatus": "not-published"
       },
       "deduplication": {
-        "status": "no-match-found"
+        "status": "duplicate-candidate",
+        "existingCatalogueId": "occ-aide-a-la-garde-d-enfants",
+        "reason": "normalized title or identical official URL"
       },
       "importMetadata": {
         "schema": [

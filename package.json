@@ -10,7 +10,14 @@
     "typecheck": "tsc --noEmit",
     "data:import": "node scripts/import-official-data.mjs",
     "data:qualify": "node scripts/qualify-occitanie.mjs",
-    "data:test": "node --test scripts/import-official-data.test.mjs"
+    "data:integrate": "node scripts/integrate-occitanie-qualified.mjs",
+    "data:integrate:fsl34": "node scripts/integrate-herault-fsl.mjs",
+    "data:integrate:national": "node scripts/integrate-national-aids.mjs",
+    "data:registry": "node scripts/update-enrichment-registry.mjs",
+    "data:publish-national-info": "node scripts/publish-national-information.mjs",
+    "data:repair-encoding": "node scripts/repair-catalogue-encoding.mjs",
+    "data:refresh-local-catalogue": "node scripts/qualify-occitanie.mjs && node scripts/integrate-occitanie-qualified.mjs && node scripts/integrate-herault-fsl.mjs && node scripts/integrate-national-aids.mjs && node scripts/update-enrichment-registry.mjs && node scripts/repair-catalogue-encoding.mjs",
+    "data:test": "node --test scripts/import-official-data.test.mjs scripts/data-quality.test.mjs"
   },
   "dependencies": {
     "next": "16.4.6",

@@ -116,7 +116,10 @@ test("all 153 imported aid records receive traceable, conservative qualification
   assert.ok(result.qualifications.every((item) => createHash("sha256").update(JSON.stringify(rawSnapshot.records[item.sourceIndex])).digest("hex") === item.sourceRecordHash));
   assert.ok(result.qualifications.every((item) => item.classification.justification.length > 0));
   assert.ok(result.qualifications.every((item) => item.normalized.territory.regionCode === "76"));
-  assert.equal(result.qualifications.filter((item) => item.deduplication.status === "duplicate-candidate").length, 0);
+  const duplicateCandidates = result.qualifications.filter((item) => item.deduplication.status === "duplicate-candidate");
+  assert.equal(duplicateCandidates.length, 22);
+  const catalogue = JSON.parse(await readFile(path.join(repo, "src/data/catalogue.json"), "utf8"));
+  assert.ok(duplicateCandidates.every((item) => catalogue.some((record) => record.id === item.deduplication.existingCatalogueId && record.url === item.normalized.officialUrl)));
   assert.ok(result.qualifications.every((item) => item.dataQuality.publicationStatus === "not-published"));
   assert.ok(result.qualifications.filter((item) => item.classification.status === "relevant" || item.classification.status === "not_relevant" || item.classification.status === "expired").every((item) => item.sources.some((source) => source.kind === "official-programme-page" && source.status === "official-page-checked")));
   assert.ok(result.qualifications.every((item) => item.normalized.validFrom === null && item.normalized.validUntil === null));

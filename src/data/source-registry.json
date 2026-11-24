@@ -97,7 +97,7 @@
       "role": "Potential structured source for regional schemes",
       "status": "official-snapshot-imported-qualification-in-progress",
       "version": "Snapshot captured 2026-11-24T00:53:03.529Z; live dataset revision not separately pinned",
-      "license": "Licence Ouverte / Open Licence 2.0 (confirmed on the dataset portal)",
+      "license": "Licence Ouverte / Open Licence 2.0 (previously observed in source metadata; snapshot lacks license metadata)",
       "retrievedAt": "2026-11-24T00:53:03.529Z",
       "endpointProbe": {
         "consent": "accepted for the recorded import",
@@ -112,10 +112,10 @@
       "candidateAidRowsObserved": 153,
       "coverage": "229 official dataset records; 153 rows categorized Aides; 76 other categories excluded from this aid qualification run",
       "limitations": [
-        "Dataset has no beneficiary, eligibility, documents, application process or legal validity fields",
+        "Dataset has no beneficiary, eligibility, documents, application process or validity fields",
         "Qualification register has 22 relevant candidates, 28 confirmed non-relevant items, 2 expired items and 101 manual reviews",
-        "No regional aid card is published until current rules and application routes are normalized",
-        "Local snapshot count differs from the portal observation and needs reconciliation at the next import"
+        "No regional aid card is published until full current rules and application routes are normalized",
+        "Live source page and dataset metadata need to be rechecked for updates and reuse terms"
       ],
       "candidateAidRowsQualifiedRelevant": 22,
       "candidateAidRowsExpired": 2,
@@ -129,7 +129,9 @@
         "localSnapshotRecords": 229,
         "localSnapshotAidRows": 153,
         "discrepancy": "The locally captured snapshot has one more total record and one more Aides row than the portal observation; reconcile on next import."
-      }
+      },
+      "candidateRecordsIntegrated": 22,
+      "publishableRecords": 0
     },
     {
       "id": "region-official-catalogue",
@@ -153,7 +155,10 @@
       "relevantCandidates": 22,
       "confirmedNonRelevant": 28,
       "expired": 2,
-      "pendingManualReview": 101
+      "pendingManualReview": 101,
+      "candidateRecordsIntegrated": 22,
+      "publishableRecords": 0,
+      "reviewedAt": "2026-11-23"
     },
     {
       "id": "caf-herault",
@@ -211,34 +216,36 @@
       "id": "fsl-herault",
       "name": "Département de l'Hérault — FSL",
       "url": "https://herault.fr/402-aide-financiere.htm",
-      "role": "Departmental housing solidarity fund information",
-      "status": "official-guidance-reviewed-no-normalized-record",
-      "version": "Current web page; regulation version not established",
-      "license": "Reuse terms not verified",
+      "role": "Departmental FSL scope and supported housing needs",
+      "status": "official-guidance-reviewed-local-variant-pending-regulation",
+      "version": "Consulted 2026-11-23",
+      "license": "No bulk dataset copied; sourced facts retained with URL",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
-      "uniqueUsableAids": 0,
-      "coverage": "FSL purposes and territorial split; department's coverage excludes Montpellier Méditerranée Métropole",
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "Department of Hérault outside the 31 Montpellier Métropole communes, subject to confirmation of exact commune list",
       "limitations": [
-        "The linked departmental regulation found was dated several years earlier and cannot establish current terms",
-        "Do not apply departmental process to 31 metropolitan communes"
+        "Current departmental regulation, criteria, resources, documents and application path not extracted"
       ]
     },
     {
       "id": "fsl-montpellier-metropole",
       "name": "Montpellier Méditerranée Métropole — FSL",
       "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement",
-      "role": "Metropolitan FSL guidance and rules for 31 communes",
-      "status": "official-guidance-and-2025-regulation-reviewed-no-normalized-record",
-      "version": "Regulation dated 2025-01-01: https://www.montpellier.fr/sites/default/files/2025-11/20250101%20R%C3%A8glement%20int%C3%A9rieur_FSL%203M.pdf",
-      "license": "Reuse terms not verified",
+      "role": "Metropolitan FSL territory, supported needs and social-worker application procedure",
+      "status": "official-guidance-reviewed-local-variant-pending-current-regulation",
+      "version": "Page consulted 2026-11-23; 2025 regulation must be checked for continued effect",
+      "license": "No bulk dataset copied; sourced facts retained with URL",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
-      "uniqueUsableAids": 0,
-      "coverage": "Montpellier Méditerranée Métropole, 31 communes; social-worker-initiated route observed",
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "Residents of 31 Montpellier Méditerranée Métropole communes",
       "limitations": [
-        "Separate territorial variant from departmental FSL",
-        "Verify whether 2025 document remains in force and extract each intervention branch"
+        "Confirm current regulation and exact commune list; criteria, resource bands, documentary list, delays and follow-up remain unverified"
       ]
     },
     {
@@ -337,7 +344,7 @@
       "name": "Service-Public.fr",
       "url": "https://www.service-public.gouv.fr/",
       "role": "Official citizen guidance, eligibility summaries and forms for national procedures",
-      "status": "official-pages-consulted-per-aid-no-bulk-import",
+      "status": "four-guidance-pages-opened-facts-integrated-pending-review",
       "version": "Individual pages have their own update dates",
       "license": "Content reuse conditions not reviewed as a bulk dataset",
       "retrievedAt": "2026-11-23",
@@ -347,6 +354,105 @@
       "limitations": [
         "Not a bulk structured aid dataset",
         "Must use aid-specific current pages and primary legal/administrator sources for exact rules"
+      ],
+      "candidateRecordsIntegrated": 3,
+      "factsEnrichedForAids": 3,
+      "publishableRecords": 0,
+      "consultedAt": "2026-11-23",
+      "evidence": [
+        {
+          "aidId": "asf",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/F815",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "af",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/F13213",
+          "pageVerifiedAt": "2026-06-01"
+        },
+        {
+          "aidId": "af",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/F13212",
+          "pageVerifiedAt": "2026-06-01"
+        },
+        {
+          "aidId": "logement",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/F12006",
+          "pageVerifiedAt": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "id": "assurance-maladie-css",
+      "name": "Assurance Maladie — Complémentaire santé solidaire",
+      "url": "https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire",
+      "role": "Official benefit guidance, 2026 resource bands and application route",
+      "status": "official-page-reviewed-facts-integrated-pending-form-level-audit",
+      "version": "Page dated 2026-09-18; thresholds effective 2026-04-01",
+      "license": "No bulk dataset copied; short factual fields are normalized with source attribution",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "CSS criteria, indicative thresholds, request channels, processing and annual renewal",
+      "limitations": [
+        "Precise household/resource scope and exhaustive document list still to check against the current form"
+      ]
+    },
+    {
+      "id": "caf-herault-housing",
+      "name": "Caf de l'Hérault — étapes de l'aide au logement",
+      "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/logement/aideaulogementmontpellier/les-3-etapes-de-l-aide-au-logement",
+      "role": "Local procedural guidance for housing benefit applicants",
+      "status": "official-page-reviewed-procedure-integrated-pending-complete-document-list",
+      "version": "Consulted 2026-11-23; page has no displayed review date",
+      "license": "No bulk dataset copied; short factual fields are normalized with source attribution",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "Caf de l'Hérault housing-aid steps, including post-move application, examples of documents and account follow-up",
+      "limitations": [
+        "Complete linked document list and its current date have not been checked",
+        "Does not cover MSA route or distinguish the legal rules of APL, ALF and ALS"
+      ]
+    },
+    {
+      "id": "fsl-herault",
+      "name": "Département de l'Hérault — FSL",
+      "url": "https://herault.fr/402-aide-financiere.htm",
+      "role": "Departmental FSL scope and supported housing needs",
+      "status": "official-guidance-reviewed-local-variant-pending-regulation",
+      "version": "Consulted 2026-11-23",
+      "license": "No bulk dataset copied; sourced facts retained with URL",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "Department of Hérault outside the 31 Montpellier Métropole communes, subject to confirmation of exact commune list",
+      "limitations": [
+        "Current departmental regulation, criteria, resources, documents and application path not extracted"
+      ]
+    },
+    {
+      "id": "fsl-montpellier-metropole",
+      "name": "Montpellier Méditerranée Métropole — FSL",
+      "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement",
+      "role": "Metropolitan FSL territory, supported needs and social-worker application procedure",
+      "status": "official-guidance-reviewed-local-variant-pending-current-regulation",
+      "version": "Page consulted 2026-11-23; 2025 regulation must be checked for continued effect",
+      "license": "No bulk dataset copied; sourced facts retained with URL",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "Residents of 31 Montpellier Méditerranée Métropole communes",
+      "limitations": [
+        "Confirm current regulation and exact commune list; criteria, resource bands, documentary list, delays and follow-up remain unverified"
       ]
     }
   ]

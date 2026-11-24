@@ -9,13 +9,13 @@ Dernière qualification manuelle : 23 novembre 2026. Le snapshot source est cons
 | Lignes source récupérées | 229 |
 | Lignes dont `type` vaut `Aides` | 153 |
 | Hors type aide dans cette revue | 76 |
-| `relevant` après consultation de pages officielles | 21 |
+| `relevant` après consultation de pages officielles | 22 |
 | `not_relevant` confirmé par la page officielle | 28 |
 | `expired` selon la période explicitement indiquée | 2 |
 | À examiner manuellement faute de preuve suffisante | 101 |
 | Cartes nouvelles publiées | 0 |
 
-Une page régionale détaillée et la fiche source ont été consultées pour les 52 décisions qui ne sont pas en attente. Les 22 éléments pertinents sont des pistes de catalogue, pas des fiches prêtes à publier : la normalisation complète des pièces, des procédures de dépôt et de suivi, ainsi que la validité annuelle reste à faire. Les 101 autres enregistrements demeurent en revue manuelle plutôt que d'être déclarés non pertinents sur le seul titre.
+Une page régionale détaillée et la fiche source ont été consultées pour les 52 décisions qui ne sont pas en attente. Les 22 éléments pertinents sont des pistes de catalogue, pas des fiches prêtes à publier : la normalisation complète des pièces, des procédures de dépôt et de suivi, ainsi que la validité annuelle reste à faire. Ces 22 éléments sont maintenant projetés dans le catalogue canonique avec le statut `pending`; ils ne sont pas publiés. Les 101 autres enregistrements demeurent en revue manuelle plutôt que d'être déclarés non pertinents sur le seul titre.
 
 Une absence de dates de validité dans la ligne du dataset n'est pas interprétée comme une aide active. `date_publication` et `date_modification` sont conservées comme métadonnées éditoriales et jamais prises pour les dates d'application.
 
@@ -89,7 +89,7 @@ La relation est une table de correspondance et non une relation un-à-un : plusi
 ## Suite nécessaire avant publication
 
 - Revoir les 101 lignes en attente sur leurs pages officielles; confirmer cible et statut courant.
-- Pour les 21 pertinentes, extraire les critères complets, règles ressources/composition/âge, justificatifs, étapes, portail, suivi et renouvellement depuis les pages et règlements en vigueur.
+- Pour les 22 pertinentes, extraire les critères complets, règles ressources/composition/âge, justificatifs, étapes, portail, suivi et renouvellement depuis les pages et règlements en vigueur.
 - Vérifier la date et le règlement applicables pour les aides annuelles ou les campagnes.
 - Identifier les dispositifs distincts derrière les pages de synthèse; ne pas transformer une page d'orientation agrégée en plusieurs fausses prestations.
 - La base cible PostgreSQL n'est pas raccordée dans cet environnement; le registre JSON versionné est le stockage reproductible actuel.
