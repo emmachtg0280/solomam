@@ -344,7 +344,7 @@
       "name": "Service-Public.fr",
       "url": "https://www.service-public.gouv.fr/",
       "role": "Official citizen guidance, eligibility summaries and forms for national procedures",
-      "status": "thirteen-national-aid-records-reviewed-seven-information-pages-published-with-PAJE-amount-conflicts",
+      "status": "national-aid-source-evidence-linked; PAJE amount conflicts explicitly surfaced; application procedures incomplete",
       "version": "Individual pages have their own update dates",
       "license": "Content reuse conditions not reviewed as a bulk dataset",
       "retrievedAt": "2026-11-23",

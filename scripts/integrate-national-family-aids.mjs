@@ -60,7 +60,11 @@ const definitions = [
 for (const item of definitions) {
   const existing = catalogue.find((record) => record.id === item.id || record.url === item.url);
   if (existing && existing.id !== item.id) throw new Error(`Possible duplicate canonical aid ${item.id}: ${existing.id}`);
-  if (review[item.id]?.informationPublicationStatus === "verified" && review[item.id]?.procedurePublicationStatus && (item.documents === null || review[item.id]?.facts?.some((fact) => fact.field === "documents"))) continue;
+  if (review[item.id]?.informationPublicationStatus === "verified" && review[item.id]?.procedurePublicationStatus && (item.documents === null || review[item.id]?.facts?.some((fact) => fact.field === "documents"))) {
+    const amountFact = review[item.id].facts?.find((fact) => fact.field === "amount");
+    if (item.amount.status === "verified" && amountFact?.validFor === `Pages consultées ${consultedAt}; conflit signalé, ne pas traiter comme valeur certaine`) amountFact.validFor = `Page Service-Public vérifiée ${item.sources[0].pageVerifiedAt}; montant affiché à revalider au dépôt`;
+    continue;
+  }
   const record = existing ?? { id: item.id, name: item.name, category: item.category, zone: "national", org: item.org, description: item.description, when: item.audience, steps: item.steps.map((step) => step.text), url: item.url };
   if (!existing) catalogue.push(record);
   const ids = item.sources.map((entry) => entry.id);
@@ -104,5 +108,7 @@ const sourceRecord = registry.sources.find((entry) => entry.id === "service-publ
 sourceRecord.candidateRecordsIntegrated = (sourceRecord.candidateRecordsIntegrated ?? 0) + definitions.filter((item) => !sourceRecord.evidence?.some((entry) => entry.aidId === item.id)).length;
 sourceRecord.evidence = [...(sourceRecord.evidence ?? []), ...definitions.map((item) => ({ aidId: item.id, url: item.url, pageVerifiedAt: item.sources[0].pageVerifiedAt }))].filter((entry, index, all) => all.findIndex((candidate) => candidate.aidId === entry.aidId) === index);
 sourceRecord.factsEnrichedForAids = sourceRecord.evidence.length;
+sourceRecord.publishableRecords = sourceRecord.evidence.filter((entry) => review[entry.aidId]?.informationPublicationStatus === "verified").length;
+sourceRecord.status = "national-aid-source-evidence-linked; PAJE amount conflicts explicitly surfaced; application procedures incomplete";
 await Promise.all([write("src/data/catalogue.json", catalogue), write("src/data/review.json", review), write("src/data/source-registry.json", registry)]);
 console.log(JSON.stringify({ integrated: definitions.length, totalCatalogue: catalogue.length, informationVerified: definitions.filter((item) => review[item.id].informationPublicationStatus === "verified").length, proceduresComplete: definitions.filter((item) => review[item.id].applicationProcedure.status === "complete").length }, null, 2));
