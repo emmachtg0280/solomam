@@ -90,8 +90,7 @@
     "remainingChecks": [
       "Confirmer le site et les disponibilités auprès du centre concerné."
     ],
-    "rubric": "vie-quotidienne",
-    "cardImage": "https://herault.fr/uploads/Image/c7/IMF_ACCROCHE/GAB_D34/10520_261_sante-et-sexualite.png"
+    "rubric": "vie-quotidienne"
   },
   {
     "id": "pmi-herault",
@@ -404,4 +403,3 @@
     "rubric": "vie-quotidienne"
   }
 ]
-
