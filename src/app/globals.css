@@ -265,7 +265,7 @@ button, select { cursor: pointer; }
   --radius: 16px;
 }
 body { background: var(--paper); color: var(--ink); font-family: "DM Sans", "Trebuchet MS", Arial, sans-serif; }
-.site-header { position: sticky; top: 0; z-index: 30; padding-block: 10px; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(12px); }
+.site-header { position: sticky; top: 0; z-index: 30; padding-block: 10px; background: transparent; backdrop-filter: none; }
 .nav-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "brand nav actions"; min-height: 68px; column-gap: clamp(18px, 2.4vw, 34px); align-items: center; padding: 8px clamp(16px, 2vw, 24px); border: 1px solid #eee8e2; border-radius: 18px; background: var(--surface); box-shadow: 0 5px 20px rgb(33 27 24 / 4%); }
 .wordmark { grid-area: brand; justify-self: start; color: var(--olive); font-family: "Lora", Georgia, serif; font-size: 35px; font-weight: 700; line-height: 1; letter-spacing: -.055em; }
 .wordmark span { color: inherit; }
