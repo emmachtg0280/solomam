@@ -90,7 +90,8 @@
     "remainingChecks": [
       "Confirmer le site et les disponibilités auprès du centre concerné."
     ],
-    "rubric": "vie-quotidienne"
+    "rubric": "vie-quotidienne",
+    "cardImage": "https://herault.fr/uploads/Image/c7/IMF_ACCROCHE/GAB_D34/10520_261_sante-et-sexualite.png"
   },
   {
     "id": "pmi-herault",
@@ -241,7 +242,8 @@
     "remainingChecks": [
       "Vérifier les horaires, numéros et modalités médicales sur la page avant chaque mise à jour de la fiche."
     ],
-    "rubric": "vie-quotidienne"
+    "rubric": "vie-quotidienne",
+    "cardImage": "https://www.planning-familial.org/sites/default/files/2026-11/Pr%C3%A9home%20-%20800x800.png"
   },
   {
     "id": "mamensolo",
@@ -369,7 +371,8 @@
     "remainingChecks": [
       "Vérifier les prix, promotions et modalités de livraison lors de la prochaine mise à jour de la fiche."
     ],
-    "rubric": "vie-quotidienne"
+    "rubric": "vie-quotidienne",
+    "cardImage": "https://bumpy.love/cdn/shop/files/creme-hydratante-romarin-mains-corps-photo.webp?v=1760707824&width=2000"
   },
   {
     "id": "parents-solos",
@@ -401,3 +404,4 @@
     "rubric": "vie-quotidienne"
   }
 ]
+
