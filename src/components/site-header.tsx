@@ -2,14 +2,52 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useTerritory } from "@/components/territory-provider";
 import { departmentCoverages, territoryLabel } from "@/lib/territories";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const { territory, setTerritory } = useTerritory();
+  const [isHidden, setIsHidden] = useState(false);
 
-  return <header className="site-header">
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+    setIsHidden(false);
+    const updateHeaderState = () => {
+      const hero = document.querySelector<HTMLElement>(".home-hero");
+      const header = document.querySelector<HTMLElement>(".site-header");
+      if (header) {
+        const overlap = `${header.getBoundingClientRect().height}px`;
+        if (document.documentElement.style.getPropertyValue("--header-overlap") !== overlap) {
+          document.documentElement.style.setProperty("--header-overlap", overlap);
+        }
+      }
+      const currentScrollY = window.scrollY;
+      const hasPassedHero = !hero || !header || hero.getBoundingClientRect().bottom <= header.getBoundingClientRect().bottom;
+
+      if (currentScrollY < 8 || currentScrollY < previousScrollY - 3) {
+        setIsHidden(false);
+      } else if (currentScrollY > previousScrollY + 3 && hasPassedHero) {
+        setIsHidden(true);
+      }
+      previousScrollY = currentScrollY;
+    };
+
+    updateHeaderState();
+    const header = document.querySelector<HTMLElement>(".site-header");
+    const resizeObserver = header ? new ResizeObserver(updateHeaderState) : null;
+    if (header) resizeObserver?.observe(header);
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+    window.addEventListener("resize", updateHeaderState);
+    return () => {
+      resizeObserver?.disconnect();
+      window.removeEventListener("scroll", updateHeaderState);
+      window.removeEventListener("resize", updateHeaderState);
+    };
+  }, [pathname]);
+
+  return <header className={`site-header${isHidden ? " site-header-hidden" : ""}`} inert={isHidden}>
     <div className="container nav-row">
       <Link className="wordmark" href="/" aria-label="Solomam, accueil">solomam</Link>
       <nav className="main-nav" aria-label="Rubriques principales">
@@ -31,4 +69,3 @@ export function SiteHeader() {
     </div>
   </header>;
 }
-
