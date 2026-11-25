@@ -9,9 +9,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params; const service = getService(slug); if (!service) notFound();
+  const parentRubric = service.rubric === "droits-demarches" ? { href: "/droits-demarches", label: "Droits & démarches" }
+    : service.rubric === "vie-quotidienne" ? { href: "/vie-a-soi", label: "Vie quotidienne" }
+    : { href: "/famille", label: "Famille & enfants" };
   return <main className="container page"><article className="detail-layout">
-    <Link className="back-link" href="/services">Retour aux services</Link>
-    <div className="detail-meta"><span className="badge">{service.category}</span><span className="badge">{service.kind === "private-platform" ? "Plateforme privée" : service.kind === "association" ? "Association" : service.kind === "public-directory" ? "Répertoire public" : "Service public"}</span></div>
+    <Link className="back-link" href={parentRubric.href}>Retour à {parentRubric.label}</Link>
+    <div className="detail-meta"><span className="badge">{service.kind === "private-platform" ? "Plateforme privée" : service.kind === "association" ? "Association" : service.kind === "public-directory" ? "Répertoire public" : "Service public"}</span></div>
     <h1 className="detail-title">{service.name}</h1><p className="detail-description">{service.description}</p>
     <section className="detail-section"><h2>Public concerné</h2><p>{service.audience}</p></section>
     <section className="detail-section"><h2>Territoire et accès</h2><p>{service.coverage}</p><p>{service.accessConditions}</p></section>

@@ -21,17 +21,17 @@ function SearchPromptRow({ prompts, reverse = false }: { prompts: SearchPrompt[]
 const firstSearchPrompts: SearchPrompt[] = [
   { text: "aide pour la rentrée de ma fille", href: "/aides?search=rentrée", image: "/inspiration/rentree.jpg" },
   { text: "où trouver une aide pour mon logement ?", href: "/aides?search=logement", image: "/inspiration/logement.jpg" },
-  { text: "produits cosmétiques à petit prix", href: "/services?search=cosmétiques", image: "/brands/bumpy-homepage-preview.jpg" },
-  { text: "trouver un lieu d’accueil pour mon enfant", href: "/services?search=accueil", image: "/inspiration/famille.jpg" },
+  { text: "produits cosmétiques à petit prix", href: "/vie-a-soi?search=cosmétiques", image: "/brands/bumpy-homepage-preview.jpg" },
+  { text: "trouver un lieu d’accueil pour mon enfant", href: "/famille?search=enfant", image: "/inspiration/famille.jpg" },
   { text: "quelle aide financière pour ma famille ?", href: "/aides?search=revenus", image: "/inspiration/rentree.jpg" },
 ];
 
 const secondSearchPrompts: SearchPrompt[] = [
-  { text: "je voudrais parler à d’autres mamans solos", href: "/services?search=entraide", image: "/inspiration/entraide.jpg" },
-  { text: "prendre soin de moi sans culpabiliser", href: "/services?search=santé", image: "/inspiration/bien-etre.jpg" },
-  { text: "mes droits après une séparation", href: "/services?search=médiation", image: "/inspiration/famille.jpg" },
-  { text: "une association pour mes démarches", href: "/services?search=CIDFF", image: "/inspiration/entraide.jpg" },
-  { text: "un lieu d’accueil pour mon bébé", href: "/services?search=accueil", image: "/inspiration/famille.jpg" },
+  { text: "je voudrais parler à d’autres mamans solos", href: "/famille?search=solo", image: "/inspiration/entraide.jpg" },
+  { text: "prendre soin de moi sans culpabiliser", href: "/vie-a-soi?search=santé", image: "/inspiration/bien-etre.jpg" },
+  { text: "mes droits après une séparation", href: "/droits-demarches?search=CIDFF", image: "/inspiration/famille.jpg" },
+  { text: "une association pour mes démarches", href: "/droits-demarches?search=CIDFF", image: "/inspiration/entraide.jpg" },
+  { text: "un lieu d’accueil pour mon bébé", href: "/famille?search=enfant", image: "/inspiration/famille.jpg" },
 ];
 
 export const metadata = {

@@ -13,10 +13,20 @@
     "pricing": "Consultations et lieux présentés comme gratuits.",
     "accessLabel": "Contacter une Maison des 1000 jours",
     "officialUrl": "https://herault.fr/2135-maisons-des-1000-jours.htm",
-    "sources": [{ "id": "herault-maisons-1000-jours", "url": "https://herault.fr/2135-maisons-des-1000-jours.htm", "label": "Département de l'Hérault — Maisons des 1000 jours", "consultedAt": "2026-11-23" }],
+    "sources": [
+      {
+        "id": "herault-maisons-1000-jours",
+        "url": "https://herault.fr/2135-maisons-des-1000-jours.htm",
+        "label": "Département de l'Hérault — Maisons des 1000 jours",
+        "consultedAt": "2026-11-23"
+      }
+    ],
     "verifiedAt": "2026-11-23",
     "publicationStatus": "published",
-    "remainingChecks": ["Confirmer auprès de chaque site les horaires, l'accès sans rendez-vous et les activités du moment."]
+    "remainingChecks": [
+      "Confirmer auprès de chaque site les horaires, l'accès sans rendez-vous et les activités du moment."
+    ],
+    "rubric": "famille-enfants"
   },
   {
     "id": "laep-herault",
@@ -32,10 +42,26 @@
     "pricing": "Non précisé dans la page de présentation consultée.",
     "accessLabel": "Consulter la liste officielle des LAEP",
     "officialUrl": "https://herault.fr/publication/493/16-ici-la-liste-des-lieux-d-accueil-enfants-parents-laep.htm",
-    "sources": [{ "id": "herault-laep-list", "url": "https://herault.fr/1324-mode-de-garde-enfant.htm", "label": "Département de l'Hérault — Modes d'accueil et LAEP", "consultedAt": "2026-11-23" }, { "id": "herault-laep-publication", "url": "https://herault.fr/publication/493/16-ici-la-liste-des-lieux-d-accueil-enfants-parents-laep.htm", "label": "Département de l'Hérault — Liste officielle des LAEP", "consultedAt": "2026-11-23" }],
+    "sources": [
+      {
+        "id": "herault-laep-list",
+        "url": "https://herault.fr/1324-mode-de-garde-enfant.htm",
+        "label": "Département de l'Hérault — Modes d'accueil et LAEP",
+        "consultedAt": "2026-11-23"
+      },
+      {
+        "id": "herault-laep-publication",
+        "url": "https://herault.fr/publication/493/16-ici-la-liste-des-lieux-d-accueil-enfants-parents-laep.htm",
+        "label": "Département de l'Hérault — Liste officielle des LAEP",
+        "consultedAt": "2026-11-23"
+      }
+    ],
     "verifiedAt": "2026-11-23",
     "publicationStatus": "published",
-    "remainingChecks": ["Récupérer et contrôler la dernière version de la liste des lieux et leurs horaires avant d'afficher des coordonnées détaillées."]
+    "remainingChecks": [
+      "Récupérer et contrôler la dernière version de la liste des lieux et leurs horaires avant d'afficher des coordonnées détaillées."
+    ],
+    "rubric": "famille-enfants"
   },
   {
     "id": "centres-sante-sexuelle-herault",
@@ -51,10 +77,20 @@
     "pricing": "Accueil des centres présenté comme gratuit; certaines délivrances gratuites sont précisées par public dans la page officielle.",
     "accessLabel": "Trouver un centre de santé sexuelle",
     "officialUrl": "https://herault.fr/1142-sante-et-sexualite.htm",
-    "sources": [{ "id": "herault-centres-sante-sexuelle", "url": "https://herault.fr/1142-sante-et-sexualite.htm", "label": "Département de l'Hérault — Centres de santé sexuelle", "consultedAt": "2026-11-23" }],
+    "sources": [
+      {
+        "id": "herault-centres-sante-sexuelle",
+        "url": "https://herault.fr/1142-sante-et-sexualite.htm",
+        "label": "Département de l'Hérault — Centres de santé sexuelle",
+        "consultedAt": "2026-11-23"
+      }
+    ],
     "verifiedAt": "2026-11-23",
     "publicationStatus": "published",
-    "remainingChecks": ["Confirmer le site et les disponibilités auprès du centre concerné."]
+    "remainingChecks": [
+      "Confirmer le site et les disponibilités auprès du centre concerné."
+    ],
+    "rubric": "vie-quotidienne"
   },
   {
     "id": "pmi-herault",
@@ -70,10 +106,20 @@
     "pricing": "Service départemental gratuit, y compris les consultations de PMI.",
     "accessLabel": "Trouver un lieu d'accueil PMI",
     "officialUrl": "https://herault.fr/1288-protection-maternelle-et-infantile-pmi.htm",
-    "sources": [{ "id": "herault-pmi", "url": "https://herault.fr/1288-protection-maternelle-et-infantile-pmi.htm", "label": "Département de l'Hérault — Protection maternelle et infantile", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "herault-pmi",
+        "url": "https://herault.fr/1288-protection-maternelle-et-infantile-pmi.htm",
+        "label": "Département de l'Hérault — Protection maternelle et infantile",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Confirmer les coordonnées et les horaires de l'antenne PMI ou le calendrier du bus avant de se déplacer."]
+    "remainingChecks": [
+      "Confirmer les coordonnées et les horaires de l'antenne PMI ou le calendrier du bus avant de se déplacer."
+    ],
+    "rubric": "famille-enfants"
   },
   {
     "id": "services-solidarites-herault",
@@ -89,10 +135,20 @@
     "pricing": "L'annuaire ne précise pas de frais pour l'accompagnement social; confirmer les modalités auprès de l'antenne.",
     "accessLabel": "Trouver le service des solidarités près de chez vous",
     "officialUrl": "https://herault.fr/620-des-services-de-proximite.htm",
-    "sources": [{ "id": "herault-services-proximite", "url": "https://herault.fr/620-des-services-de-proximite.htm", "label": "Département de l'Hérault — Services de proximité", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "herault-services-proximite",
+        "url": "https://herault.fr/620-des-services-de-proximite.htm",
+        "label": "Département de l'Hérault — Services de proximité",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Confirmer les horaires, les modalités de rendez-vous et les éventuelles conditions d'accueil auprès de l'antenne locale."]
+    "remainingChecks": [
+      "Confirmer les horaires, les modalités de rendez-vous et les éventuelles conditions d'accueil auprès de l'antenne locale."
+    ],
+    "rubric": "droits-demarches"
   },
   {
     "id": "cidff-herault",
@@ -108,10 +164,26 @@
     "pricing": "Tarifs ou éventuels frais non précisés sur la liste des permanences; à confirmer auprès du CIDFF.",
     "accessLabel": "Voir les permanences du CIDFF",
     "officialUrl": "https://herault.cidff.info/liste-des-permanences/",
-    "sources": [{ "id": "cidff-herault-permanences", "url": "https://herault.cidff.info/liste-des-permanences/", "label": "CIDFF de l'Hérault — Liste des permanences", "consultedAt": "2026-11-24" }, { "id": "cidff-herault-home", "url": "https://herault.cidff.info/", "label": "CIDFF de l'Hérault — Services", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "cidff-herault-permanences",
+        "url": "https://herault.cidff.info/liste-des-permanences/",
+        "label": "CIDFF de l'Hérault — Liste des permanences",
+        "consultedAt": "2026-11-24"
+      },
+      {
+        "id": "cidff-herault-home",
+        "url": "https://herault.cidff.info/",
+        "label": "CIDFF de l'Hérault — Services",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Vérifier par téléphone les horaires et conditions de chaque permanence avant un déplacement."]
+    "remainingChecks": [
+      "Vérifier par téléphone les horaires et conditions de chaque permanence avant un déplacement."
+    ],
+    "rubric": "droits-demarches"
   },
   {
     "id": "adages-espace-famille",
@@ -127,10 +199,20 @@
     "pricing": "Maison France Services : gratuit. Pour la médiation et les autres accompagnements, demander les conditions et éventuels frais au service.",
     "accessLabel": "Découvrir les services de l'Espace Famille",
     "officialUrl": "https://www.adages.net/espace-famille-2/",
-    "sources": [{ "id": "adages-espace-famille", "url": "https://www.adages.net/espace-famille-2/", "label": "ADAGES — Espace Famille", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "adages-espace-famille",
+        "url": "https://www.adages.net/espace-famille-2/",
+        "label": "ADAGES — Espace Famille",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Confirmer les coordonnées, horaires et modalités de rendez-vous propres à chaque service avant d'ajouter des détails pratiques."]
+    "remainingChecks": [
+      "Confirmer les coordonnées, horaires et modalités de rendez-vous propres à chaque service avant d'ajouter des détails pratiques."
+    ],
+    "rubric": "famille-enfants"
   },
   {
     "id": "planning-familial-herault",
@@ -146,10 +228,20 @@
     "pricing": "L'écoute individuelle est annoncée gratuite. Pour les consultations médicales, confirmer la prise en charge et les conditions lors de la prise de rendez-vous.",
     "accessLabel": "Trouver un accueil du Planning Familial",
     "officialUrl": "https://www.planning-familial.org/fr/le-planning-familial-de-lherault-34",
-    "sources": [{ "id": "planning-familial-herault", "url": "https://www.planning-familial.org/fr/le-planning-familial-de-lherault-34", "label": "Planning Familial de l'Hérault — Présentation, accueils et permanences", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "planning-familial-herault",
+        "url": "https://www.planning-familial.org/fr/le-planning-familial-de-lherault-34",
+        "label": "Planning Familial de l'Hérault — Présentation, accueils et permanences",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Vérifier les horaires, numéros et modalités médicales sur la page avant chaque mise à jour de la fiche."]
+    "remainingChecks": [
+      "Vérifier les horaires, numéros et modalités médicales sur la page avant chaque mise à jour de la fiche."
+    ],
+    "rubric": "vie-quotidienne"
   },
   {
     "id": "mamensolo",
@@ -165,10 +257,20 @@
     "pricing": "Conditions d'adhésion et éventuels frais d'activités à vérifier auprès de l'association.",
     "accessLabel": "Découvrir l'association Mam'enSolo",
     "officialUrl": "https://mamensolo.fr/qui-sommes-nous/",
-    "sources": [{ "id": "mamensolo-about", "url": "https://mamensolo.fr/qui-sommes-nous/", "label": "Mam'enSolo — Présentation et communauté", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "mamensolo-about",
+        "url": "https://mamensolo.fr/qui-sommes-nous/",
+        "label": "Mam'enSolo — Présentation et communauté",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Confirmer les conditions d'adhésion et la disponibilité des groupes et rencontres au moment de la prochaine mise à jour."]
+    "remainingChecks": [
+      "Confirmer les conditions d'adhésion et la disponibilité des groupes et rencontres au moment de la prochaine mise à jour."
+    ],
+    "rubric": "famille-enfants"
   },
   {
     "id": "maison-des-familles-toulouse",
@@ -184,10 +286,20 @@
     "pricing": "Aucun tarif indiqué sur la page consultée; à confirmer auprès de l'équipe.",
     "accessLabel": "Contacter la Maison des Familles",
     "officialUrl": "https://www.apprentis-auteuil.org/etablissements/maison-des-familles-de-toulouse",
-    "sources": [{ "id": "maison-familles-toulouse", "url": "https://www.apprentis-auteuil.org/etablissements/maison-des-familles-de-toulouse", "label": "Apprentis d'Auteuil — Maison des Familles de Toulouse", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "maison-familles-toulouse",
+        "url": "https://www.apprentis-auteuil.org/etablissements/maison-des-familles-de-toulouse",
+        "label": "Apprentis d'Auteuil — Maison des Familles de Toulouse",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Confirmer l'adresse d'accueil et les horaires avant la première visite; le site peut aussi aider à prendre contact par téléphone ou courriel."]
+    "remainingChecks": [
+      "Confirmer l'adresse d'accueil et les horaires avant la première visite; le site peut aussi aider à prendre contact par téléphone ou courriel."
+    ],
+    "rubric": "famille-enfants"
   },
   {
     "id": "projet-caps-parents-solos",
@@ -203,10 +315,26 @@
     "pricing": "Rejoindre le réseau et répondre aux questionnaires est annoncé comme gratuit; adhésion ou don proposés à partir d'1 €.",
     "accessLabel": "Découvrir le réseau CAPS",
     "officialUrl": "https://www.projet-caps.org/rejoignez-le-reseau/",
-    "sources": [{ "id": "caps-network", "url": "https://www.projet-caps.org/rejoignez-le-reseau/", "label": "Projet CAPS — Rejoindre le réseau", "consultedAt": "2026-11-24" }, { "id": "caps-project-status", "url": "https://www.projet-caps.org/le-projet-en-bref/", "label": "Projet CAPS — État du projet et outil numérique", "consultedAt": "2026-11-24" }],
+    "sources": [
+      {
+        "id": "caps-network",
+        "url": "https://www.projet-caps.org/rejoignez-le-reseau/",
+        "label": "Projet CAPS — Rejoindre le réseau",
+        "consultedAt": "2026-11-24"
+      },
+      {
+        "id": "caps-project-status",
+        "url": "https://www.projet-caps.org/le-projet-en-bref/",
+        "label": "Projet CAPS — État du projet et outil numérique",
+        "consultedAt": "2026-11-24"
+      }
+    ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Le projet indique que son application n'est pas encore disponible; revérifier son état avant toute mention future d'un service numérique actif."]
+    "remainingChecks": [
+      "Le projet indique que son application n'est pas encore disponible; revérifier son état avant toute mention future d'un service numérique actif."
+    ],
+    "rubric": "famille-enfants"
   },
   {
     "id": "bumpy-anti-gaspi",
@@ -223,12 +351,25 @@
     "accessLabel": "Voir les offres Bumpy",
     "officialUrl": "https://bumpy.love/",
     "sources": [
-      { "id": "bumpy-home", "url": "https://bumpy.love/", "label": "Bumpy — Boutique et sélection anti-gaspi", "consultedAt": "2026-11-24" },
-      { "id": "bumpy-shipping", "url": "https://bumpy.love/policies/shipping-policy", "label": "Bumpy — Politique d’expédition", "consultedAt": "2026-11-24" }
+      {
+        "id": "bumpy-home",
+        "url": "https://bumpy.love/",
+        "label": "Bumpy — Boutique et sélection anti-gaspi",
+        "consultedAt": "2026-11-24"
+      },
+      {
+        "id": "bumpy-shipping",
+        "url": "https://bumpy.love/policies/shipping-policy",
+        "label": "Bumpy — Politique d’expédition",
+        "consultedAt": "2026-11-24"
+      }
     ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
-    "remainingChecks": ["Vérifier les prix, promotions et modalités de livraison lors de la prochaine mise à jour de la fiche."]
+    "remainingChecks": [
+      "Vérifier les prix, promotions et modalités de livraison lors de la prochaine mise à jour de la fiche."
+    ],
+    "rubric": "vie-quotidienne"
   },
   {
     "id": "parents-solos",
@@ -244,9 +385,19 @@
     "pricing": "Lecture du site et inscription gratuites; abonnement facultatif payant. Le prix est affiché dans l'application avant validation.",
     "accessLabel": "Accéder au site Parents Solos",
     "officialUrl": "https://www.parents-solos.com/",
-    "sources": [{ "id": "parents-solos-terms", "url": "https://www.parents-solos.com/conditions-utilisation/", "label": "Parents Solos — Conditions d'utilisation et de vente", "consultedAt": "2026-11-23" }],
+    "sources": [
+      {
+        "id": "parents-solos-terms",
+        "url": "https://www.parents-solos.com/conditions-utilisation/",
+        "label": "Parents Solos — Conditions d'utilisation et de vente",
+        "consultedAt": "2026-11-23"
+      }
+    ],
     "verifiedAt": "2026-11-23",
     "publicationStatus": "pending",
-    "remainingChecks": ["Cette plateforme réserve son public aux parents solos et ne correspond pas à l'offre de rencontres généraliste entre adultes prévue pour Dating & relations; ne pas publier cette fiche tant qu'une offre conforme n'est pas vérifiée."]
+    "remainingChecks": [
+      "Cette plateforme réserve son public aux parents solos et ne correspond pas à l'offre de rencontres généraliste entre adultes prévue pour Dating & relations; ne pas publier cette fiche tant qu'une offre conforme n'est pas vérifiée."
+    ],
+    "rubric": "vie-quotidienne"
   }
 ]

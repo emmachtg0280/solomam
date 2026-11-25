@@ -20,7 +20,7 @@ export default async function AidPage({ params }: { params: Promise<{ slug: stri
   const hasSteps = aid.steps.length > 0;
   return <main className="container page"><article className="detail-layout">
     <Link className="back-link" href="/aides">Toutes les aides</Link>
-    <div className="detail-topline"><div className="detail-meta"><span className="badge">{aid.category}</span><span className="badge badge-verified">✓ Information vérifiée</span></div><TerritoryMark coverage={aid.coverage} /></div>
+    <div className="detail-topline"><div className="detail-meta"><span className="badge badge-verified">✓ Information vérifiée</span></div><TerritoryMark coverage={aid.coverage} /></div>
     <h1 className="detail-title">{aid.name}</h1>
     <p className="detail-description">{aid.description}</p>
     <AidActions aid={aid} />
