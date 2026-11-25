@@ -1,13 +1,11 @@
-import { ServicesCatalogue } from "@/components/services-catalogue";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Ressources locales et services", description: "Des lieux et services utiles, avec leurs conditions d’accès et leur territoire." };
-
-export default async function ServicesPage({ searchParams }: { searchParams: Promise<{ search?: string | string[] }> }) {
+export default async function ServicesRedirect({ searchParams }: { searchParams: Promise<{ search?: string | string[] }> }) {
   const params = await searchParams;
-  const initialQuery = Array.isArray(params.search) ? params.search[0] ?? "" : params.search ?? "";
-  return <main className="container page">
-    <div className="catalogue-intro"><p className="eyebrow">Ressources locales et nationales</p><h1 className="page-heading">Lieux, services et activités</h1><p>Des structures publiques, associatives et privées, avec leur statut et leurs conditions d’accès.</p></div>
-    <ServicesCatalogue initialQuery={initialQuery} />
-    <p className="footer">Les conditions d’accès et la disponibilité peuvent dépendre de chaque structure. Vérifie les informations auprès de l’organisme avant de te déplacer.</p>
-  </main>;
+  const term = Array.isArray(params.search) ? params.search[0] ?? "" : params.search ?? "";
+  const normalized = term.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr");
+  const destination = /cidff|droit|demarche/.test(normalized) ? "/droits-demarches?search=CIDFF"
+    : /cosmetique|produit|prix|reduction|sante|soin|bien etre/.test(normalized) ? `/vie-a-soi${term ? `?search=${encodeURIComponent(/sante|soin|bien etre/.test(normalized) ? "santé" : "cosmétiques")}` : ""}`
+    : `/famille${term ? `?search=${encodeURIComponent(/solo|mamans solos/.test(normalized) ? "solo" : "enfant")}` : ""}`;
+  redirect(destination);
 }

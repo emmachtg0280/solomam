@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo } from "react";
 import { publishedServices } from "@/lib/services";
+import type { ServiceRubric } from "@/lib/services";
 import { useTerritory } from "@/components/territory-provider";
 
 function matchesTerritory(coverage: string, territory: string) {
@@ -15,23 +16,21 @@ function matchesTerritory(coverage: string, territory: string) {
   return /en ligne|france entière/.test(normalized) || (names[territory] ?? []).some((name) => normalized.includes(name));
 }
 
-export function ServicesCatalogue({ initialQuery = "" }: { initialQuery?: string }) {
+function normalize(value: string) {
+  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr");
+}
+
+export function ServicesCatalogue({ initialQuery = "", rubric }: { initialQuery?: string; rubric: ServiceRubric }) {
   const { territory } = useTerritory();
   const services = useMemo(() => publishedServices.filter((service) => {
-    const normalized = initialQuery.trim().toLocaleLowerCase("fr");
-    const matchesQuery = !normalized || `${service.name} ${service.description} ${service.category}`.toLocaleLowerCase("fr").includes(normalized);
-    return matchesTerritory(service.coverage, territory) && matchesQuery;
-  }), [initialQuery, territory]);
+    const normalized = normalize(initialQuery.trim());
+    const resourceText = normalize(`${service.name} ${service.description} ${service.category} ${service.organization} ${service.rubric}`);
+    const matchesQuery = !normalized || normalized.split(/\s+/).some((word) => word.length > 2 && resourceText.includes(word));
+    return service.rubric === rubric && matchesTerritory(service.coverage, territory) && matchesQuery;
+  }), [initialQuery, rubric, territory]);
 
-  const categories = ["Famille & accompagnement", "Santé & bien-être"] as const;
-  const groupedServices = categories.map((category) => ({ category, items: services.filter((service) => service.category === category) })).filter((group) => group.items.length > 0);
-
-  return services.length ? <div className="service-groups">{groupedServices.map(({ category, items }) => <section className="service-group" key={category} aria-labelledby={`service-group-${category}`}>
-    <div className="service-group-heading"><h2 id={`service-group-${category}`}>{category}</h2><span>{items.length} {items.length > 1 ? "ressources" : "ressource"}</span></div>
-    <div className="aid-grid">{items.map((service) => <Link className="aid-card" href={`/services/${service.slug}`} key={service.id}>
-      <div className="aid-card-top"><span className="badge">{service.category}</span></div>
+  return services.length ? <div className="aid-grid">{services.map((service) => <Link className="aid-card" href={`/services/${service.slug}`} key={service.id}>
       <div><h2>{service.name}</h2><p>{service.description}</p></div>
       <div className="service-card-bottom"><span className="service-kind">{service.kind === "private-platform" ? "Service privé" : service.kind === "association" ? "Association" : service.kind === "public-directory" ? "Répertoire public" : "Service public"}</span><span className="service-location">{service.coverage}</span><span>{service.pricing}</span></div>
-    </Link>)}</div>
-  </section>)}</div> : <div className="empty-state"><h2>Pas encore de ressource vérifiée ici</h2><p>Les aides nationales restent accessibles dans <Link href="/aides">Aides et démarches</Link>.</p></div>;
+    </Link>)}</div> : <div className="empty-state"><h2>Aucune ressource ne correspond à cette recherche</h2><p>Essaie un autre mot-clé ou change de rubrique.</p></div>;
 }

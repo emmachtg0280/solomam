@@ -1,6 +1,6 @@
 import { Catalogue } from "@/components/catalogue";
 
-export const metadata = { title: "Aides et démarches", description: "Parcourir les aides financières, droits et démarches pour mamans solos." };
+export const metadata = { title: "Aides & budget", description: "Parcourir les aides financières et les dispositifs pratiques pour mamans solos." };
 
 export default async function AidesPage({ searchParams }: { searchParams: Promise<{ search?: string | string[] }> }) {
   const params = await searchParams;

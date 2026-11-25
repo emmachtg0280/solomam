@@ -4,58 +4,61 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
-type SearchDestination = { label: string; href: (query: string) => string };
+type SearchDestination = { label: string; href: string };
 
 function normalize(value: string) {
   return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr");
 }
 
+function searchParam(term: string) {
+  return `?search=${encodeURIComponent(term)}`;
+}
+
 function getSearchDestination(value: string): SearchDestination {
   const query = value.trim();
   const normalized = normalize(query);
-  const search = (term = query) => `?search=${encodeURIComponent(term)}`;
+
+  if (/\b(droit|droits|demarche|demarches|juridique|cidff)\b/.test(normalized)) {
+    return { label: "Droits & démarches", href: `/droits-demarches${searchParam("CIDFF")}` };
+  }
 
   if (/\b(emploi|travail|formation|budget|facture|chomage|salaire|fin du mois|revenus?)\b/.test(normalized)) {
-    return { label: "Travail & budget", href: () => "/travail-argent" };
+    const term = /emploi|travail/.test(normalized) ? "emploi" : /formation/.test(normalized) ? "formation" : "revenus";
+    return { label: "Aides & budget", href: `/aides${searchParam(term)}` };
+  }
+
+  if (/\b(aide|aides|allocation|allocations|caf|logement|rentree|prime|subvention|pension|financier|financiere)\b/.test(normalized)) {
+    const term = normalized.includes("rentree") ? "rentrée" : normalized.includes("logement") ? "logement" : /revenu|financier|budget|argent/.test(normalized) ? "revenus" : query;
+    return { label: "Aides & budget", href: `/aides${searchParam(term)}` };
+  }
+
+  if (/\b(enfant|enfants|fille|fils|bebe|garde|parent|famille|separation|mediation|coparentalite|ecole|scolaire|entraide|reseau|reseaux|mamans solos)\b/.test(normalized)) {
+    const term = /separation|mediation/.test(normalized) ? "médiation" : /mamans solos/.test(normalized) ? "solo" : /entraide|reseau/.test(normalized) ? "entraide" : "enfant";
+    return { label: "Famille & enfants", href: `/famille${searchParam(term)}` };
+  }
+
+  if (/\b(cosmetique|cosmetiques|produit|produits|prix|reduction|reductions|bon plan|bons plans|sante|bien etre|soin|soins)\b/.test(normalized)) {
+    const term = /sante|bien etre|soin/.test(normalized) ? "santé" : "cosmétiques";
+    return { label: "Vie quotidienne", href: `/vie-a-soi${searchParam(term)}` };
   }
 
   if (/\b(association|associations|organisme)\b/.test(normalized)) {
-    const hint = /droit|demarche/.test(normalized) ? "CIDFF" : "entraide";
-    return { label: "Vie quotidienne · ressources", href: () => `/services${search(hint)}` };
+    return { label: "Famille & enfants", href: `/famille${searchParam("entraide")}` };
   }
 
-  if (/\b(aide|aides|allocation|allocations|droit|droits|demarche|demarches|caf|logement|rentee|prime|subvention|pension)\b/.test(normalized)) {
-    const hint = normalized.includes("rentee") ? "rentrée" : normalized.includes("logement") ? "logement" : query;
-    return { label: "Aides & démarches", href: () => `/aides${search(hint)}` };
-  }
-
-  if (/\b(enfant|enfants|fille|fils|bebe|garde|parent|famille|separation|mediation|coparentalite|ecole|scolaire)\b/.test(normalized)) {
-    return { label: "Famille & enfants", href: () => "/famille" };
-  }
-
-  if (/\b(cosmetique|cosmetiques|produit|produits|prix|reduction|reductions|bon plan|bons plans|sante|bien etre|soin|soins|entraide|reseau|reseaux|association|associations|accueil|organisme|mamans solos)\b/.test(normalized)) {
-    const hint = /cosmetique|produit|prix|reduction/.test(normalized) ? "cosmétiques" : /droit|demarche|association/.test(normalized) ? "CIDFF" : /entraide|reseau|mamans solos/.test(normalized) ? "entraide" : /accueil|enfant|bebe/.test(normalized) ? "enfant" : /soin|sante|bien etre/.test(normalized) ? "santé" : query;
-    return { label: "Vie quotidienne · ressources", href: () => `/services${search(hint)}` };
-  }
-
-  return { label: "Aides & démarches", href: () => `/aides${search()}` };
+  return { label: "Aides & budget", href: `/aides${searchParam(query)}` };
 }
 
 export function AidSearch({ compact = false }: { compact?: boolean }) {
   const [query, setQuery] = useState("");
   const router = useRouter();
+  const destination = query.trim() ? getSearchDestination(query) : null;
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const term = query.trim();
-    if (!term) {
-      router.push("/aides");
-      return;
-    }
-    router.push(getSearchDestination(term).href(term));
+    router.push(term ? getSearchDestination(term).href : "/aides");
   }
-
-  const destination = query.trim() ? getSearchDestination(query) : null;
 
   return <>
     <form className={`aid-search${compact ? " aid-search-compact" : ""}`} onSubmit={submit} role="search">

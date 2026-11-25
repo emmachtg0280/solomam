@@ -1,15 +1,13 @@
-import { TopicPage } from "@/components/topic-page";
+import { ServicesCatalogue } from "@/components/services-catalogue";
 
-export const metadata = { title: "Famille & enfants" };
+export const metadata = { title: "Famille & enfants", description: "Lieux et associations pour accompagner les enfants et leurs parents." };
 
-export default function FamillePage() {
-  return <TopicPage topic={{
-    title: "Famille & enfants",
-    description: "Repères et ressources pour les enfants, les périodes de séparation et l’accompagnement familial.",
-    subjects: [
-      { id: "parents-enfants", title: "Parents et enfants", description: "Santé, développement, accueil et soutien autour des enfants.", href: "/services?search=enfant" },
-      { id: "separation", title: "Séparation et médiation", description: "Un accompagnement familial pour traverser les désaccords et les séparations.", href: "/services?search=médiation" },
-      { id: "ressources-famille", title: "Ressources familiales", description: "Services publics et associations pour les familles et les parents solos.", href: "/services?search=famille" },
-    ],
-  }} />;
+export default async function FamillePage({ searchParams }: { searchParams: Promise<{ search?: string | string[] }> }) {
+  const params = await searchParams;
+  const initialQuery = Array.isArray(params.search) ? params.search[0] ?? "" : params.search ?? "";
+  return <main className="container page">
+    <div className="catalogue-intro"><p className="eyebrow">Accompagnement des parents et des enfants</p><h1 className="page-heading">Famille & enfants</h1><p>Des lieux, services et associations pour la parentalité, les enfants et les liens familiaux.</p></div>
+    <ServicesCatalogue initialQuery={initialQuery} rubric="famille-enfants" />
+    <p className="footer">Les conditions d’accueil et les horaires varient selon chaque structure. Vérifie les informations avant de te déplacer.</p>
+  </main>;
 }

@@ -19,12 +19,11 @@ export function AidHighlights() {
   return <section className="aid-preview-section" id="coups-de-pouce">
     <div className="aid-preview-container">
       <div className="aid-preview-heading">
-        <div><p className="eyebrow">Des aides fiables, plus faciles à comprendre</p><h2>Aides et démarches</h2><p>Une première sélection pour découvrir les fiches, les conditions et les sources.</p></div>
+        <div><p className="eyebrow">Des informations fiables, plus faciles à comprendre</p><h2>Aides & budget</h2><p>Une première sélection de dispositifs, avec leurs conditions et leurs sources.</p></div>
         <Link className="button button-secondary" href="/aides">Voir toutes les aides</Link>
       </div>
       {featuredAids.length ? <div className="aid-preview-results">
         {featuredAids.map((aid) => <Link href={`/aides/${aid.slug}`} className="aid-preview-card" key={aid.id}>
-          <span className="badge badge-light">{aid.category}</span>
           <strong>{aid.name}</strong>
           <span className="aid-preview-description">{aid.description}</span>
           <div className="aid-preview-card-footer"><TerritoryMark coverage={aid.coverage} compact /><span className="verified-mini">Information vérifiée</span></div>
@@ -41,7 +40,7 @@ export function LocalDiscovery() {
 
   return <section className="local-section" id="dans-le-coin">
     <div className="container local-layout">
-      <div className="local-copy"><p className="eyebrow">{localLabel}</p><h2>Ressources près de chez toi</h2><p>Associations, services publics et réseaux d’entraide. Choisis ton département dans le menu pour adapter les résultats à ton territoire.</p><Link className="button button-dark" href="/services">Voir les ressources locales</Link></div>
+      <div className="local-copy"><p className="eyebrow">{localLabel}</p><h2>Des soutiens près de chez toi</h2><p>Associations, services publics et réseaux d’entraide classés selon ton besoin. Choisis ton département dans le menu pour adapter les résultats.</p><Link className="button button-dark" href="/famille">Découvrir les accompagnements</Link></div>
     </div>
   </section>;
 }
