@@ -242,7 +242,8 @@
       "Vérifier les horaires, numéros et modalités médicales sur la page avant chaque mise à jour de la fiche."
     ],
     "rubric": "vie-quotidienne",
-    "cardImage": "https://www.planning-familial.org/sites/default/files/2026-11/Pr%C3%A9home%20-%20800x800.png"
+    "cardImage": "https://www.planning-familial.org/sites/default/files/2026-11/Pr%C3%A9home%20-%20800x800.png",
+    "cardImageFit": "contain"
   },
   {
     "id": "mamensolo",
