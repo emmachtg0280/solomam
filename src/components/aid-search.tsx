@@ -21,7 +21,7 @@ function getSearchDestination(value: string): SearchDestination {
 
   if (/\b(association|associations|organisme)\b/.test(normalized)) {
     const hint = /droit|demarche/.test(normalized) ? "CIDFF" : "entraide";
-    return { label: "Vie quotidienne · ressources", href: () => `/services${search(hint)}` };
+    return { label: hint === "CIDFF" ? "Droits & démarches" : "Réseaux & entraide", href: () => `/services${search(hint)}` };
   }
 
   if (/\b(aide|aides|allocation|allocations|droit|droits|demarche|demarches|caf|logement|rentee|prime|subvention|pension)\b/.test(normalized)) {
@@ -34,8 +34,9 @@ function getSearchDestination(value: string): SearchDestination {
   }
 
   if (/\b(cosmetique|cosmetiques|produit|produits|prix|reduction|reductions|bon plan|bons plans|sante|bien etre|soin|soins|entraide|reseau|reseaux|association|associations|accueil|organisme|mamans solos)\b/.test(normalized)) {
-    const hint = /cosmetique|produit|prix|reduction/.test(normalized) ? "cosmétiques" : /droit|demarche|association/.test(normalized) ? "CIDFF" : /entraide|reseau|mamans solos/.test(normalized) ? "entraide" : /accueil|enfant|bebe/.test(normalized) ? "enfant" : /soin|sante|bien etre/.test(normalized) ? "santé" : query;
-    return { label: "Vie quotidienne · ressources", href: () => `/services${search(hint)}` };
+    const hint = /cosmetique|produit|prix|reduction|bon plan/.test(normalized) ? "cosmétiques" : /droit|demarche|association/.test(normalized) ? "CIDFF" : /entraide|reseau|mamans solos/.test(normalized) ? "entraide" : /accueil|enfant|bebe/.test(normalized) ? "enfant" : /soin|sante|bien etre/.test(normalized) ? "santé" : query;
+    const label = hint === "cosmétiques" ? "Vie quotidienne" : hint === "entraide" ? "Réseaux & entraide" : hint === "santé" ? "Santé & bien-être" : hint === "CIDFF" ? "Droits & démarches" : "Famille & enfants";
+    return { label, href: () => `/services${search(hint)}` };
   }
 
   return { label: "Aides & démarches", href: () => `/aides${search()}` };
