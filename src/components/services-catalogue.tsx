@@ -33,10 +33,13 @@ export function ServicesCatalogue({ initialQuery = "", rubric }: { initialQuery?
     return service.rubric === rubric && matchesTerritory(service.coverage, territory) && matchesQuery;
   }), [initialQuery, rubric, territory]);
 
-  return services.length ? <div className="resource-grid">{services.map((service) => <Link className={"resource-card" + (service.cardImage ? " resource-card-with-image" : " resource-card-no-image")} href={`/services/${service.slug}`} key={service.id} style={service.cardImage ? { backgroundImage: 'url("' + service.cardImage + '")' } : undefined}>
-      <div className="resource-card-heading"><span className="resource-kind">{serviceKindLabel(service.kind)}</span></div>
-      <h2>{service.name}</h2>
-      <p>{service.description}</p>
-      <div className="resource-card-footer"><span className="resource-location" title={service.coverage}>{service.coverage}</span><span className="resource-card-link">Voir la fiche</span></div>
+  return services.length ? <div className="resource-grid">{services.map((service) => <Link className={"resource-card" + (service.cardImage ? " resource-card-with-image" : " resource-card-no-image")} href={`/services/${service.slug}`} key={service.id}>
+      {service.cardImage ? <span className={`resource-card-image${service.cardImageFit === "contain" ? " resource-card-image-contain" : ""}`} style={{ backgroundImage: 'url("' + service.cardImage + '")' }} aria-hidden="true" /> : null}
+      <div className="resource-card-copy">
+        <div className="resource-card-heading"><span className="resource-kind">{serviceKindLabel(service.kind)}</span></div>
+        <h2>{service.name}</h2>
+        <p>{service.description}</p>
+        <div className="resource-card-footer"><span className="resource-location" title={service.coverage}>{service.coverage}</span><span className="resource-card-link">Voir la fiche</span></div>
+      </div>
     </Link>)}</div> : <div className="empty-state"><h2>Aucune ressource ne correspond à cette recherche</h2><p>Essaie un autre mot-clé ou change de rubrique.</p></div>;
 }
