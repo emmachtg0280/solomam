@@ -35,7 +35,7 @@ const secondSearchPrompts: SearchPrompt[] = [
 ];
 
 export const metadata = {
-  title: "Aides, associations et vie quotidienne",
+  title: "Solomam | Aides, associations et vie quotidienne",
   description: "Aides, droits, associations et ressources du quotidien pour les mamans solos. Solomam rassemble des informations sourcées et adaptées à ton territoire.",
 };
 
