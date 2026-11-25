@@ -19,8 +19,8 @@ export function Demarches() {
 
   const removeAid = (id: string) => setStorageError(!setAidSaved(id, false, validAidIds));
 
-  return <main className="container page">
-    <h1 className="page-heading">Mes démarches</h1>
+  return <main className="container page favorites-page">
+    <div className="catalogue-intro"><p className="eyebrow">Aides enregistrées</p><h1 className="page-heading">Mes favoris</h1><p>Cette liste reste dans ce navigateur, sans compte.</p></div>
     {storageError && <p role="alert">Le navigateur n’a pas pu modifier cette liste. Vérifiez ses réglages de stockage.</p>}
     {unavailableCount > 0 && <p className="muted">{unavailableCount === 1 ? "Une aide enregistrée n’est pas consultable" : `${unavailableCount} aides enregistrées ne sont pas consultables`} publiquement car les fiches sont en cours de vérification. {unavailableCount === 1 ? "Son identifiant reste conservé" : "Leurs identifiants restent conservés"} dans cette liste locale.</p>}
     {items.length ? <div className="track-list">{items.map((aid) => <article className="track-card" key={aid.id}>
@@ -36,10 +36,10 @@ export function Demarches() {
           ? <a className="button button-primary" href={aid.applicationUrl} target="_blank" rel="noopener noreferrer">Faire la demande sur le site officiel</a>
           : <a className="button button-primary" href={aid.officialUrl} target="_blank" rel="noopener noreferrer">Consulter les informations officielles</a>}
         <Link className="button button-secondary" href={`/aides/${aid.slug}`}>Voir la fiche</Link>
-        <Button type="button" variant="ghost" aria-label={`Retirer ${aid.name} de Mes démarches`} onClick={() => removeAid(aid.id)}>Retirer</Button>
+        <Button type="button" variant="ghost" aria-label={`Retirer ${aid.name} des favoris`} onClick={() => removeAid(aid.id)}>Retirer des favoris</Button>
       </div>
     </article>)}</div> : <div className="empty-state">
-      Aucune aide enregistrée pour le moment. <Link href="/">Parcourir les aides publiées</Link>.
+      <h2>Aucune aide enregistrée</h2><p>Parcours les aides et enregistre celles que tu veux retrouver.</p><Link className="button button-dark" href="/aides">Parcourir les aides</Link>
     </div>}
   </main>;
 }

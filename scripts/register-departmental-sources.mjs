@@ -13,7 +13,7 @@ const checkedAt = "2026-11-23";
 const departments = [
   ["09", "Ariège", "ariege.fr", "ariege"], ["11", "Aude", "aude.fr", "aude"],
   ["12", "Aveyron", "aveyron.fr", "aveyron"], ["30", "Gard", "gard.fr", "du-gard"],
-  ["31", "Haute-Garonne", "haute-garonne.fr", "haute-garonne"], ["32", "Gers", "gers.fr", "du-gers"],
+  ["31", "Haute-Garonne", "haute-garonne.fr", "de-la-haute-garonne"], ["32", "Gers", "gers.fr", "du-gers"],
   ["34", "Hérault", "herault.fr", "de-l-herault"], ["46", "Lot", "lot.fr", "du-lot"],
   ["48", "Lozère", "lozere.fr", "de-la-lozere"], ["65", "Hautes-Pyrénées", "hautespyrenees.fr", "des-hautes-pyrenees"],
   ["66", "Pyrénées-Orientales", "ledepartement66.fr", "des-pyrenees-orientales"], ["81", "Tarn", "tarn.fr", "du-tarn"],
@@ -21,6 +21,7 @@ const departments = [
 ];
 
 function discoverySource(department, organization, url, role) {
+  const reviewedCaf31 = department[0] === "31" && organization === "caf";
   return {
     id: `territory-${department[0]}-${organization}`,
     name: `${organization === "council" ? "Conseil départemental" : "Caf"} — ${department[1]}`,
@@ -30,14 +31,14 @@ function discoverySource(department, organization, url, role) {
     sourceType: "html-directory",
     updateFrequency: "Non documentée; contrôler les publications et règlements chaque année",
     termsOfUse: "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
-    status: "identified-discovery-only",
-    accessibility: "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+    status: reviewedCaf31 ? "official-local-aid-page-reviewed" : "identified-discovery-only",
+    accessibility: reviewedCaf31 ? "Page officielle Caf examinée; une aide mobilité publiée en 2026 est qualifiée à partir de sa page dédiée." : "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
     lastCollection: null,
-    coverage: "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+    coverage: reviewedCaf31 ? "Point de découverte et aide locale de réparation/entretien véhicule examinée; la source ne constitue pas un RIAS complet." : "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
     retrievedAt: checkedAt,
     recordsImported: 0,
     uniqueUsableAids: 0,
-    limitations: ["Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.", "Ne pas dupliquer les prestations nationales par département.", "L'URL de découverte CAF est à confirmer sur le portail officiel local."],
+    limitations: reviewedCaf31 ? ["Le RIAS 2026 est listé sur le site professionnel, mais son lien Calaméo n'a pas pu être ouvert; aucune autre aide n'est déduite de son contenu.", "Vérifier l'ouverture du prêt mobilité et les crédits disponibles; la page du 15 juillet 2026 ne donne pas de date de fin."] : ["Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.", "Ne pas dupliquer les prestations nationales par département.", "L'URL de découverte CAF est à confirmer sur le portail officiel local."],
   };
 }
 
@@ -70,12 +71,14 @@ sources.push({ id: "ariege-rdas-pdf", name: "Département de l'Ariège — Règl
 const registry = JSON.parse(await readFile(registryPath, "utf8"));
 const byId = new Map(registry.sources.map((item) => [item.id, item]));
 for (const source of sources) byId.set(source.id, { ...source, ...(byId.get(source.id) ?? {}) });
+const caf31Discovery = byId.get("territory-31-caf");
+if (caf31Discovery) byId.set("territory-31-caf", { ...caf31Discovery, url:"https://www.caf.fr/allocataires/caf-de-la-haute-garonne", status:"official-local-aid-page-reviewed", accessibility:"Page officielle Caf examinée; une aide mobilité publiée en 2026 est qualifiée à partir de sa page dédiée.", coverage:"Point de découverte et aide locale de réparation/entretien véhicule examinée; la source ne constitue pas un RIAS complet.", limitations:["Le RIAS 2026 est listé sur le site professionnel, mais son lien Calaméo n’a pas pu être ouvert; aucune autre aide n’est déduite de son contenu.","Vérifier l’ouverture du prêt mobilité et les crédits disponibles; la page du 15 juillet 2026 ne donne pas de date de fin."] });
 registry.sources = [...byId.values()];
-registry.auditedAt = checkedAt;
+registry.auditedAt = "2026-11-24";
 await writeFile(registryPath, `${JSON.stringify(registry, null, 2)}\n`, "utf8");
 
 const coverage = JSON.parse(await readFile(coveragePath, "utf8"));
-coverage.checkedAt = checkedAt;
+coverage.checkedAt = "2026-11-24";
 const discoveryScopeNote = "Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné.";
 coverage.scopeNote = `${coverage.scopeNote.split(discoveryScopeNote)[0].trim()} ${discoveryScopeNote}`;
 for (const department of departments) {

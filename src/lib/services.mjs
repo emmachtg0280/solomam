@@ -1,11 +1,11 @@
-export const SERVICE_CATEGORIES = ["Parentalité", "Santé & bien-être", "Dating & relations"];
+export const SERVICE_CATEGORIES = ["Famille & accompagnement", "Santé & bien-être", "Dating & relations"];
 
 export function canPublishService(service) {
   return Boolean(service
     && service.publicationStatus === "published"
     && service.name
     && SERVICE_CATEGORIES.includes(service.category)
-    && ["public-service", "public-directory", "private-platform"].includes(service.kind)
+    && ["public-service", "public-directory", "association", "private-platform"].includes(service.kind)
     && service.organization
     && service.description
     && service.audience

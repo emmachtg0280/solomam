@@ -1,6 +1,6 @@
 {
   "registryVersion": 1,
-  "auditedAt": "2026-11-23",
+  "auditedAt": "2026-11-24",
   "countingPolicy": "Only distinct normalized aid records actually retrieved, mapped to the canonical model, stored and usable count as imported records. Consultation, code inspection, metadata, or a link alone count as zero.",
   "sources": [
     {
@@ -700,7 +700,7 @@
     {
       "id": "territory-31-caf",
       "name": "Caf — Haute-Garonne",
-      "url": "https://www.caf.fr/allocataires/caf-haute-garonne",
+      "url": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne",
       "role": "Point de découverte des aides d'action sociale locales de la Caf.",
       "territory": {
         "departmentCode": "31",
@@ -709,17 +709,16 @@
       "sourceType": "html-directory",
       "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
       "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
-      "status": "identified-discovery-only",
-      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "status": "official-local-aid-page-reviewed",
+      "accessibility": "Page officielle Caf examinée; une aide mobilité publiée en 2026 est qualifiée à partir de sa page dédiée.",
       "lastCollection": null,
-      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "coverage": "Point de découverte et aide locale de réparation/entretien véhicule examinée; la source ne constitue pas un RIAS complet.",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
       "limitations": [
-        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
-        "Ne pas dupliquer les prestations nationales par département.",
-        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+        "Le RIAS 2026 est listé sur le site professionnel, mais son lien Calaméo n’a pas pu être ouvert; aucune autre aide n’est déduite de son contenu.",
+        "Vérifier l’ouverture du prêt mobilité et les crédits disponibles; la page du 15 juillet 2026 ne donne pas de date de fin."
       ]
     },
     {
@@ -1448,36 +1447,36 @@
     },
     {
       "id": "fsl-haute-garonne-departement",
-      "name": "Département de la Haute-Garonne — FSL",
+      "name": "Département de la Haute-Garonne — page FSL actuelle",
       "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
       "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
-      "status": "official-page-or-regulation-reviewed-candidate-only",
-      "retrievedAt": "2026-11-23",
+      "status": "official-current-overview-2026-rules-and-application-incomplete",
+      "retrievedAt": "2026-11-24",
       "candidateRecordsIntegrated": 1,
       "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
       "coverage": "31",
       "limitations": [
-        "La Métropole de Toulouse exerce le FSL sur son territoire; la liste des communes est conservée séparément par codes INSEE. Vérifier barèmes et formulaire du volet départemental."
+        "Aucune règle financière, aucun plafond ni aucune pièce issus des PDF 2023/2024 n’est repris comme règle 2026."
       ],
-      "version": "Page consultée le 24/11/2026; règlement annoncé 2024 mais PDF mis à jour 2023; plafonds 2024",
+      "version": "Sources consultées le 24/11/2026; plafonds, règles détaillées et pièces applicables en 2026 non confirmés",
       "recordsImported": 0,
       "factsEnrichedForAids": 1,
       "publishableRecords": 0
     },
     {
       "id": "fsl-toulouse-metropole",
-      "name": "Département de la Haute-Garonne — répartition de compétence et règlement FSL",
+      "name": "Département de la Haute-Garonne — compétence et renvoi FSL Métropole",
       "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
       "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
-      "status": "official-page-or-regulation-reviewed-candidate-only",
-      "retrievedAt": "2026-11-23",
+      "status": "official-current-overview-2026-rules-and-application-incomplete",
+      "retrievedAt": "2026-11-24",
       "candidateRecordsIntegrated": 1,
       "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
       "coverage": "31",
       "limitations": [
-        "Candidate distincte du FSL départemental. Vérifier la version locale du règlement, le guichet, les montants et les pièces avant publication."
+        "Aucune règle financière, aucun plafond ni aucune pièce issus des PDF 2023/2024 ou de la fiche JEM 2021 n’est repris comme règle 2026."
       ],
-      "version": "Page consultée le 24/11/2026; règlement annoncé 2024 mais PDF mis à jour 2023; plafonds 2024",
+      "version": "Sources consultées le 24/11/2026; plafonds, règles détaillées et pièces applicables en 2026 non confirmés",
       "recordsImported": 0,
       "factsEnrichedForAids": 1,
       "publishableRecords": 0
@@ -1693,33 +1692,35 @@
     },
     {
       "id": "fsl-haute-garonne-reglement-2023",
-      "name": "Règlement intérieur commun FSL Haute-Garonne / Toulouse Métropole — mise à jour 2023",
+      "name": "Règlement intérieur FSL commun — version commentée mise à jour en 2023 (historique, non utilisé comme preuve des règles 2026)",
       "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/YjBmYmQzMTMtY2ExOC00MDVhLTg1OTQtMDU3NTA3ZDIyNThj",
-      "role": "Règles communes, partage des compétences, conditions générales, volets et instruction",
-      "status": "official-source-reviewed-information-pending",
+      "role": "Source officielle consultée pour dater une version antérieure; non retenue comme preuve des règles 2026",
+      "status": "official-historical-version-not-proof-of-2026-rules",
       "retrievedAt": "2026-11-24",
       "candidateRecordsIntegrated": 0,
       "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
       "coverage": "31",
-      "version": "PDF officiel, 48 pages, mise à jour 2023",
+      "version": "Règlement intérieur FSL commun — version commentée mise à jour en 2023 (historique, non utilisé comme preuve des règles 2026)",
       "limitations": [
-        "Page actuelle l’intitule règlement 2024 mais le PDF dit mise à jour 2023; aucune version postérieure confirmée."
-      ]
+        "Référence historique uniquement; ne confirme pas les règles, plafonds, pièces ou procédures en vigueur en 2026."
+      ],
+      "recordsImported": 0
     },
     {
       "id": "fsl-haute-garonne-plafonds-2024",
-      "name": "Annexe plafonds de ressources FSL Haute-Garonne 2024",
+      "name": "Annexe des plafonds FSL explicitement datée 2024 (non utilisée comme barème 2026)",
       "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/MTI0YjE4OTYtZTJhNC00OWZkLTk0MzUtODE2OWQxNTc3Zjc1",
-      "role": "Plafonds par composition familiale",
-      "status": "official-source-reviewed-information-pending",
+      "role": "Source officielle consultée pour dater une version antérieure; non retenue comme preuve des règles 2026",
+      "status": "official-historical-version-not-proof-of-2026-rules",
       "retrievedAt": "2026-11-24",
       "candidateRecordsIntegrated": 0,
       "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
       "coverage": "31",
-      "version": "PDF officiel, plafonds 2024",
+      "version": "Annexe des plafonds FSL explicitement datée 2024 (non utilisée comme barème 2026)",
       "limitations": [
-        "Annexe explicitement datée 2024; elle ne confirme pas les plafonds courants 2026."
-      ]
+        "Référence historique uniquement; ne confirme pas les règles, plafonds, pièces ou procédures en vigueur en 2026."
+      ],
+      "recordsImported": 0
     },
     {
       "id": "fsl-toulouse-metropole-jem",
@@ -1740,16 +1741,80 @@
       "id": "toulouse-metropole-communes-api-2026",
       "name": "API Géo officielle — communes de l’EPCI Toulouse Métropole (243100518)",
       "url": "https://geo.api.gouv.fr/epcis/243100518/communes?fields=nom,code&format=json",
-      "role": "Référentiel actuel des communes de l’EPCI Toulouse Métropole",
-      "status": "official-api-queried",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
       "retrievedAt": "2026-11-24",
       "recordsImported": 0,
       "candidateRecordsIntegrated": 0,
-      "license": "Faits synthétisés; aucun dataset tiers recopié dans cette passe",
-      "coverage": "Toulouse Métropole (EPCI 243100518)",
-      "version": "Requête live API Géo le 24/11/2026; 37 communes",
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "API Géo officielle — communes de l’EPCI Toulouse Métropole (243100518)",
       "limitations": [
-        "L’API confirme le périmètre administratif courant, mais ne définit pas la compétence FSL; celle-ci est attribuée par le règlement FSL."
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "fsl-haute-garonne-mds-directory-2026",
+      "name": "Département de la Haute-Garonne — annuaire des Maisons des solidarités",
+      "url": "https://www.haute-garonne.fr/les-maisons-des-solidarites-mds",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Département de la Haute-Garonne — annuaire des Maisons des solidarités",
+      "limitations": [
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-fsl-housing-page-2026",
+      "name": "Toulouse Métropole — louer un logement, informations FSL",
+      "url": "https://metropole.toulouse.fr/mon-environnement/logement-et-urbanisme/se-loger/louer-un-logement",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Toulouse Métropole — louer un logement, informations FSL",
+      "limitations": [
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-fsl-agenda-2026",
+      "name": "Toulouse Métropole — ordre du jour du Conseil du 15 octobre 2026, points FSL 2026",
+      "url": "https://deliberations.toulouse.fr/ordreJour/2.pdf",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Toulouse Métropole — ordre du jour du Conseil du 15 octobre 2026, points FSL 2026",
+      "limitations": [
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-fsl-jem-2021",
+      "name": "Toulouse Métropole — fiche JEM FSL, passage étudiants daté de 2021 (historique, non utilisé comme preuve 2026)",
+      "url": "https://jem.metropole.toulouse.fr/decouvrir/479-fonds-de-solidarite-logement-fsl",
+      "role": "Source officielle consultée pour dater une version antérieure; non retenue comme preuve des règles 2026",
+      "status": "official-historical-version-not-proof-of-2026-rules",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Toulouse Métropole — fiche JEM FSL, passage étudiants daté de 2021 (historique, non utilisé comme preuve 2026)",
+      "limitations": [
+        "Référence historique uniquement; ne confirme pas les règles, plafonds, pièces ou procédures en vigueur en 2026."
       ]
     },
     {
@@ -1813,6 +1878,52 @@
         "Le formulaire indique le retour du dossier à la Caf sous trois mois."
       ],
       "snapshot": "src/data/imports/local/herault/raw/bafa-aide-locale-2026.pdf"
+    },
+    {
+      "id": "caf31-pret-mobilite-reparation-2026",
+      "name": "Caf de la Haute-Garonne — prêt mobilité véhicule pour réparations (15 juillet 2026)",
+      "url": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne/actualites-departementales/le-pret-mobilite-vehicule-une-solution-pour-alleger-vos-depenses-de-reparation",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-local-aid-2026-information-published-procedure-partial",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "limitations": [
+        "Les faits publiés proviennent de la page Caf datée du 15 juillet 2026. Le RIAS 2026 est mentionné sur le site professionnel Caf, mais le document lié via Calaméo n’a pas pu être ouvert; aucun fait n’en est extrapolé."
+      ],
+      "version": "Page d’actualité publiée le 15 juillet 2026; consultée le 24 novembre 2026",
+      "publishableRecords": 1,
+      "factsEnrichedForAids": 1
+    },
+    {
+      "id": "caf31-rias-2026-listing",
+      "name": "Caf de la Haute-Garonne — RIAS 2026 listé sur la page professionnelle (document Calaméo inaccessible)",
+      "url": "https://www.calameo.com/read/00385782351796c8dde7b",
+      "role": "Règlement intérieur d’action sociale 2026 signalé par la Caf; document consulté uniquement comme référence de disponibilité",
+      "status": "official-current-document-listed-content-unavailable",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Aucun contenu du document reproduit ou utilisé comme preuve",
+      "coverage": "31",
+      "limitations": [
+        "La page officielle de la Caf présente un lien vers le RIAS 2026, mais l’ouverture du document Calaméo a renvoyé une erreur 502.",
+        "Les faits de la fiche prêt mobilité proviennent uniquement de la page allocataire dédiée du 15 juillet 2026; aucune autre aide n’est extrapolée du RIAS inaccessible."
+      ]
+    },
+    {
+      "id": "caf31-rias-2026-index",
+      "name": "Caf de la Haute-Garonne — page professionnelle listant le RIAS 2026",
+      "url": "https://www.caf.fr/professionnels/nous-connaitre/caf-de-la-haute-garonne/qui-sommes-nous",
+      "role": "Page officielle confirmant que la Caf met en ligne son RIAS 2026",
+      "status": "official-page-lists-current-document",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Aucun contenu du RIAS reproduit",
+      "coverage": "31",
+      "limitations": [
+        "La page indique que le RIAS 2026 est disponible via Calaméo; le contenu lié n’a pas pu être récupéré (erreur 502)."
+      ]
     }
   ]
 }

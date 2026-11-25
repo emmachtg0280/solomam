@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-23",
+  "checkedAt": "2026-11-24",
   "scopeNote": "Matrice de travail, non exhaustive. Un territoire marqué non_examined n'est pas réputé dépourvu de dispositif; les sources et domaines explorés sont énumérés sans préjuger des résultats hors de ce périmètre. Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné.",
   "statuses": [
     "non_examined",
@@ -188,9 +188,8 @@
         "aide_financiere"
       ],
       "categories": [
-        "all aid categories",
-        "Parentalité",
-        "Santé & bien-être"
+        "Logement",
+        "Mobilité"
       ],
       "sources": [
         "Conseil départemental Haute-Garonne — page FSL et annexes liées",
@@ -201,11 +200,18 @@
         "Département de la Haute-Garonne — répartition de compétence et règlement FSL",
         "Conseil départemental Haute-Garonne (découverte)",
         "Caf Haute-Garonne (découverte)",
-        "API Géo — communes EPCI 243100518, requête live du 24/11/2026"
+        "API Géo — communes EPCI 243100518, requête live du 24/11/2026",
+        "Département de la Haute-Garonne — page FSL actuelle",
+        "Département de la Haute-Garonne — compétence et renvoi FSL Métropole",
+        "Toulouse Métropole — page logement/FSL consultée en 2026",
+        "Toulouse Métropole — ordre du jour FSL 2026",
+        "Caf de la Haute-Garonne — prêt mobilité véhicule pour réparations (15 juillet 2026)",
+        "Caf de la Haute-Garonne — RIAS 2026 listé, document Calaméo inaccessible",
+        "Caf de la Haute-Garonne — page professionnelle listant le RIAS 2026"
       ],
       "checkedAt": "2026-11-24",
-      "notes": "Règlement commun consulté : le Département exerce et finance le FSL en Haute-Garonne hors Toulouse Métropole; Toulouse Métropole exerce et finance sur son périmètre (37 communes, EPCI 243100518, liste recoupée avec API Géo live le 24/11/2026). Volets Accès, Maintien, énergie/téléphonie-internet et accompagnements sociaux confirmés. Deux fiches candidates non publiées : le règlement PDF est mis à jour en 2023 malgré l’étiquette page 2024; l’annexe de plafonds est datée 2024, donc valeurs 2026 inconnues. Guichets pratiques, formulaires et pièces à confirmer par volet, surtout côté Toulouse Métropole. Aucun autre département ni CCAS examiné dans cette passe.",
-      "verifiedPublishedAidCount": 0
+      "notes": "La Caf de la Haute-Garonne a publié le 15 juillet 2026 les conditions et la démarche d’un prêt mobilité véhicule pour réparations ou entretien; une fiche d’information est publiée, la date de fin et le budget disponible restent à vérifier. Le RIAS 2026 est listé par la Caf, mais son lien Calaméo n’a pas pu être ouvert; aucune autre aide n’est extrapolée. Les deux fiches FSL restent en attente : la page du Département oriente les demandes vers la MDS de secteur et décrit les volets, mais les plafonds, formulaires, justificatifs et circuits de dépôt 2026 ne sont pas confirmés; Toulouse Métropole conseille de se renseigner auprès d’une MDS ou d’un CCAS sans confirmer qu’ils reçoivent les dossiers. Le règlement lié est une version commentée mise à jour en 2023, l’annexe des plafonds est datée 2024, et le passage JEM sur les étudiants date de 2021 : aucun n’est utilisé comme preuve des règles 2026. L’ordre du jour métropolitain 2026 documente des financements associatifs, pas les conditions des aides individuelles. Aucune collecte CCAS ni hors Haute-Garonne n’a été menée.",
+      "verifiedPublishedAidCount": 1
     },
     {
       "id": "32",

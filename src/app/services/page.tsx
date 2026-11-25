@@ -1,15 +1,13 @@
-import Link from "next/link";
-import { publishedServices } from "@/lib/services";
+import { ServicesCatalogue } from "@/components/services-catalogue";
 
-export const metadata = { title: "Services d'accompagnement — Solomam", description: "Services de parentalité, de santé et ressources de vie amoureuse vérifiés." };
+export const metadata = { title: "Ressources locales et services", description: "Des lieux et services utiles, avec leurs conditions d’accès et leur territoire." };
 
-export default function ServicesPage() {
+export default async function ServicesPage({ searchParams }: { searchParams: Promise<{ search?: string | string[] }> }) {
+  const params = await searchParams;
+  const initialQuery = Array.isArray(params.search) ? params.search[0] ?? "" : params.search ?? "";
   return <main className="container page">
-    <h1 className="page-heading">Services d&apos;accompagnement</h1>
-    <p className="muted">Structures publiques et ressources privées, présentées séparément des aides financières.</p>
-    {publishedServices.length ? <div className="aid-grid">{publishedServices.map((service) => <Link className="aid-card" href={`/services/${service.slug}`} key={service.id}>
-      <div><div className="card-meta"><span className="badge">{service.category}</span><span>{service.kind === "private-platform" ? "Service privé" : "Service public"}</span></div><h2>{service.name}</h2><p>{service.description}</p></div>
-      <div className="card-meta"><span>{service.organization}</span><span>{service.coverage}</span></div>
-    </Link>)}</div> : <p className="empty-state">Aucun service vérifié n&apos;est disponible.</p>}
+    <div className="catalogue-intro"><p className="eyebrow">Ressources locales et nationales</p><h1 className="page-heading">Lieux, services et activités</h1><p>Des structures publiques, associatives et privées, avec leur statut et leurs conditions d’accès.</p></div>
+    <ServicesCatalogue initialQuery={initialQuery} />
+    <p className="footer">Les conditions d’accès et la disponibilité peuvent dépendre de chaque structure. Vérifie les informations auprès de l’organisme avant de te déplacer.</p>
   </main>;
 }

@@ -6950,7 +6950,8 @@
       "Le nom de fichier RDAS-2026.pdf ne prouve pas une adoption 2026 : le préambule indique une adoption le 14 mars 2022. Confirmer la version applicable avant publication.",
       "Vérifier le règlement intérieur FUH lié depuis le RDAS et les barèmes/aides par poste avant de compléter le parcours.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+    ],
+    "applicationUrl": null
   },
   "fsl-11": {
     "informationPublicationStatus": "verified",
@@ -7121,79 +7122,140 @@
     "notes": [
       "Le montant et les pièces relèvent des annexes du règlement intérieur; les règles par poste restent à vérifier.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+    ],
+    "applicationUrl": null
   },
   "fsl-31-departement": {
     "informationPublicationStatus": "pending",
     "informationVerifiedAt": null,
     "publicationStatus": "pending",
     "procedurePublicationStatus": "pending",
-    "reviewedAt": "2026-11-23",
+    "reviewedAt": "2026-11-24",
     "currentForPeriod": null,
     "eligibilityRulesReady": false,
     "testCases": 0,
     "facts": [
       {
         "field": "current_status",
-        "status": "verified",
-        "value": "Le règlement intérieur FSL 2024 est affiché par la page officielle.",
+        "status": "partially_verified",
+        "value": "La page départementale consultée le 24/11/2026 présente le FSL et indique un règlement intitulé 2024; le PDF lié est une version commentée mise à jour en 2023. Les documents actuellement liés ne confirment pas la version réglementaire en vigueur en 2026.",
         "sourceIds": [
-          "fsl-haute-garonne-departement"
+          "fsl-haute-garonne-departement",
+          "fsl-haute-garonne-reglement-2023"
         ],
-        "validFor": "Règlement intérieur FSL 2024"
+        "validFor": "Page officielle active consultée le 24/11/2026; règlement PDF mis à jour en 2023; validité 2026 à confirmer"
       },
       {
         "field": "territory",
         "status": "verified",
-        "value": "Territoire départemental hors Toulouse Métropole, qui détient la compétence FSL sur son propre périmètre depuis le 1er janvier 2017.",
+        "value": "Le Département exerce le FSL pour les logements situés en Haute-Garonne hors Toulouse Métropole.",
         "sourceIds": [
-          "fsl-haute-garonne-departement"
+          "fsl-haute-garonne-departement",
+          "toulouse-metropole-communes-api-2026"
         ],
-        "validFor": "Page FSL Département et préambule du règlement"
+        "validFor": "Page officielle FSL; la Métropole couvre son EPCI propre"
       },
       {
         "field": "audience",
-        "status": "verified",
-        "value": "Toute personne ou famille en difficulté en raison notamment de ressources ou conditions d’existence inadaptées, pour accéder ou se maintenir dans un logement décent et indépendant.",
+        "status": "partially_verified",
+        "value": "La page indique que les habitants en situation régulière peuvent solliciter le FSL, locataires ou propriétaires selon le volet; les règles particulières de chaque volet n’ont pas été confirmées pour 2026.",
         "sourceIds": [
           "fsl-haute-garonne-departement"
         ],
-        "validFor": "Règlement intérieur FSL 2024"
+        "validFor": "Page officielle consultée le 24/11/2026; critères complets par volet à confirmer"
+      },
+      {
+        "field": "aid_types",
+        "status": "verified",
+        "value": "La page officielle présente les aides Accès, Maintien, énergie, eau-assainissement, téléphonie/box internet et les mesures d’accompagnement social.",
+        "sourceIds": [
+          "fsl-haute-garonne-departement"
+        ],
+        "validFor": "Contenu de la page officielle consulté le 24/11/2026; information descriptive, sans validation des règles 2026"
       },
       {
         "field": "core_conditions",
         "status": "partially_verified",
-        "value": "Plafonds de revenus selon la composition familiale calculés sur le seuil de pauvreté INSEE; l’ensemble des droits doit d’abord être ouvert. Volets à préciser au règlement 2024.",
+        "value": "La page présente un plafond selon la composition familiale, un taux d’effort maximal de 33% ou 40% si le chauffage est compris, et le principe de subsidiarité. L’annexe liée de plafonds est datée 2024; aucun barème 2026 ni dossier de pièces actuel n’a été confirmé.",
         "sourceIds": [
-          "fsl-haute-garonne-departement"
+          "fsl-haute-garonne-departement",
+          "fsl-haute-garonne-plafonds-2024"
         ],
-        "validFor": "Page officielle FSL et règlement 2024"
+        "validFor": "Page consultée le 24/11/2026; annexe liée datée 2024; valeurs et pièces 2026 non établies"
       }
     ],
     "factSources": [
       {
         "id": "fsl-haute-garonne-departement",
-        "label": "Département de la Haute-Garonne — FSL",
+        "label": "Département de la Haute-Garonne — page FSL",
         "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
         "kind": "official-guidance",
-        "consultedAt": "2026-11-23",
-        "pageVerifiedAt": "2026-11-23"
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "fsl-haute-garonne-reglement-2023",
+        "label": "Règlement intérieur FSL commun — version commentée mise à jour en 2023 (historique, non utilisé comme preuve des règles 2026)",
+        "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/YjBmYmQzMTMtY2ExOC00MDVhLTg1OTQtMDU3NTA3ZDIyNThj",
+        "kind": "official-regulation-historical-version",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "fsl-haute-garonne-plafonds-2024",
+        "label": "Annexe des plafonds FSL explicitement datée 2024 (non utilisée comme barème 2026)",
+        "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/MTI0YjE4OTYtZTJhNC00OWZkLTk0MzUtODE2OWQxNTc3Zjc1",
+        "kind": "official-regulation-annex-historical",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "fsl-haute-garonne-mds-directory-2026",
+        "label": "Département de la Haute-Garonne — annuaire des Maisons des solidarités",
+        "url": "https://www.haute-garonne.fr/les-maisons-des-solidarites-mds",
+        "kind": "official-service-directory",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "toulouse-metropole-communes-api-2026",
+        "label": "API Géo officielle — communes de l’EPCI Toulouse Métropole (243100518)",
+        "url": "https://geo.api.gouv.fr/epcis/243100518/communes?fields=nom,code&format=json",
+        "kind": "official-geography-api",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
       }
     ],
     "sources": [],
     "applicationProcedure": {
       "status": "incomplete",
-      "steps": [],
+      "steps": [
+        {
+          "text": "La page départementale demande de s’adresser à la Maison des solidarités du secteur de résidence; la demande peut être portée par le foyer ou, avec son accord, par un organisme ayant intérêt ou vocation. Cela confirme un point d’entrée et une voie de saisine générale, pas les formulaires ou pièces en vigueur par volet.",
+          "sourceIds": [
+            "fsl-haute-garonne-departement"
+          ],
+          "status": "verified"
+        }
+      ],
+      "documents": {
+        "status": "unverified",
+        "sourceIds": [
+          "fsl-haute-garonne-departement",
+          "fsl-haute-garonne-reglement-2023"
+        ]
+      },
       "followUp": {
         "status": "unverified",
-        "text": "Point d’entrée, suivi et délais à confirmer auprès de l’organisme local.",
+        "text": "La MDS de secteur est le point d’entrée indiqué par la page actuelle; le service doit confirmer le canal d’instruction, le formulaire et le suivi applicables au volet demandé.",
         "sourceIds": [
-          "fsl-haute-garonne-departement"
+          "fsl-haute-garonne-departement",
+          "fsl-haute-garonne-mds-directory-2026"
         ]
       },
       "renewal": {
         "status": "unverified",
-        "text": "Renouvellement selon la nature de l’aide; à vérifier.",
+        "text": "Périodicité à confirmer selon le volet dans la règle courante.",
         "sourceIds": [
           "fsl-haute-garonne-departement"
         ]
@@ -7201,99 +7263,186 @@
       "portalUrl": null,
       "competentOrganization": "Conseil départemental de la Haute-Garonne",
       "remainingChecks": [
-        "La Métropole de Toulouse exerce le FSL sur son territoire; la liste des communes est conservée séparément par codes INSEE. Vérifier barèmes et formulaire du volet départemental."
+        "Confirmer par source officielle que le règlement applicable en 2026 est bien celui mis à jour en 2023 ou obtenir sa version à jour.",
+        "Obtenir les plafonds applicables en 2026; l’annexe liée porte sur 2024 et n’est pas réutilisée comme valeur courante.",
+        "Obtenir les formulaires et pièces actuels par volet financier; les documents repérés dans la version commentée 2023 ne sont pas validés comme actuels.",
+        "Confirmer avec la MDS de secteur la procédure d’instruction, les destinataires et le suivi pour chaque volet."
       ]
     },
     "notes": [
-      "La Métropole de Toulouse exerce le FSL sur son territoire; la liste des communes est conservée séparément par codes INSEE. Vérifier barèmes et formulaire du volet départemental.",
-      "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+      "Fiche maintenue en attente : les règles essentielles et la procédure courante doivent être confirmées avant publication.",
+      "Aucune règle financière, aucun plafond ni aucune pièce issus des PDF 2023/2024 n’est repris comme règle 2026."
+    ],
+    "applicationUrl": null
   },
   "fsl-31-toulouse-metropole": {
     "informationPublicationStatus": "pending",
     "informationVerifiedAt": null,
     "publicationStatus": "pending",
     "procedurePublicationStatus": "pending",
-    "reviewedAt": "2026-11-23",
+    "reviewedAt": "2026-11-24",
     "currentForPeriod": null,
     "eligibilityRulesReady": false,
     "testCases": 0,
     "facts": [
       {
         "field": "current_status",
-        "status": "verified",
-        "value": "La page et le règlement FSL 2024 documentent le dispositif; Toulouse Métropole détient la compétence FSL sur son territoire.",
+        "status": "partially_verified",
+        "value": "Les sources publiques de Toulouse Métropole consultées en 2026 présentent le FSL comme aide au logement; un ordre du jour du Conseil d’octobre 2026 comporte des financements FSL aux associations et des dispositifs ASLT/ILS pour l’année 2026. Ces actes d’activité ne confirment pas les règles d’éligibilité ni la procédure individuelle.",
         "sourceIds": [
-          "fsl-toulouse-metropole"
+          "toulouse-metropole-fsl-housing-page-2026",
+          "toulouse-metropole-fsl-agenda-2026"
         ],
-        "validFor": "Page FSL Département et préambule du règlement 2024"
+        "validFor": "Page publique consultée le 24/11/2026; ordre du jour du 15/10/2026; règles individuelles courantes non confirmées"
       },
       {
         "field": "territory",
         "status": "verified",
-        "value": "Communes rattachées à l’EPCI Toulouse Métropole (243100518), à partir des codes INSEE du snapshot officiel Géo API.",
+        "value": "Toulouse Métropole exerce le FSL sur son propre territoire; l’API Géo interrogée le 24/11/2026 renvoie 37 communes pour l’EPCI 243100518, en correspondance avec le fichier local des codes INSEE.",
         "sourceIds": [
-          "fsl-toulouse-metropole"
+          "fsl-toulouse-metropole",
+          "toulouse-metropole-communes-api-2026"
         ],
-        "validFor": "Règlement FSL Haute-Garonne et référentiel Géo API"
+        "validFor": "Page officielle FSL et API Géo live du 24/11/2026"
       },
       {
         "field": "audience",
-        "status": "verified",
-        "value": "Personnes ou familles en difficulté pour accéder ou se maintenir dans un logement décent et indépendant.",
+        "status": "partially_verified",
+        "value": "La page métropolitaine présente le FSL comme soutien aux ménages ayant des difficultés à payer le loyer ou à accéder au logement; les publics et exceptions par volet ne sont pas détaillés dans cette source.",
         "sourceIds": [
-          "fsl-toulouse-metropole"
+          "toulouse-metropole-fsl-housing-page-2026"
         ],
-        "validFor": "Règlement intérieur FSL 2024"
+        "validFor": "Page Toulouse Métropole consultée le 24/11/2026; critères particuliers non publiés sur cette page"
+      },
+      {
+        "field": "aid_types",
+        "status": "partially_verified",
+        "value": "La page métropolitaine évoque des aides à l’accès et au paiement du loyer et des factures d’eau; les exemples monétaires qu’elle affiche ne sont pas datés et ne sont pas repris comme barème 2026. Les autres volets ne sont pas décrits par cette page.",
+        "sourceIds": [
+          "toulouse-metropole-fsl-housing-page-2026"
+        ],
+        "validFor": "Page Toulouse Métropole consultée le 24/11/2026; montants sans période, exclus de la fiche"
       },
       {
         "field": "core_conditions",
         "status": "unverified",
-        "value": "Les modalités précises propres à la gestion métropolitaine, ses critères et ses formulaires doivent être confirmés auprès de Toulouse Métropole.",
+        "value": "La page officielle renvoie vers une Maison des solidarités ou un CCAS pour se renseigner, mais ne détaille pas les critères 2026, le dépôt, les pièces ni les étapes. Cette voie de renseignement ne confirme pas qu’un de ces lieux reçoit directement tous les dossiers FSL.",
         "sourceIds": [
-          "fsl-toulouse-metropole"
+          "toulouse-metropole-fsl-housing-page-2026",
+          "toulouse-metropole-fsl-jem-2021",
+          "fsl-haute-garonne-reglement-2023"
         ],
-        "validFor": "Page FSL Département, renvoi territorial"
+        "validFor": "Page consultée le 24/11/2026; dépôt et critères 2026 non confirmés"
       }
     ],
     "factSources": [
       {
         "id": "fsl-toulouse-metropole",
-        "label": "Département de la Haute-Garonne — répartition de compétence et règlement FSL",
+        "label": "Département de la Haute-Garonne — partage de compétence FSL",
         "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
         "kind": "official-guidance",
-        "consultedAt": "2026-11-23",
-        "pageVerifiedAt": "2026-11-23"
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "toulouse-metropole-fsl-housing-page-2026",
+        "label": "Toulouse Métropole — louer un logement, informations FSL",
+        "url": "https://metropole.toulouse.fr/mon-environnement/logement-et-urbanisme/se-loger/louer-un-logement",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "toulouse-metropole-fsl-agenda-2026",
+        "label": "Toulouse Métropole — ordre du jour du Conseil du 15 octobre 2026, points FSL 2026",
+        "url": "https://deliberations.toulouse.fr/ordreJour/2.pdf",
+        "kind": "official-deliberative-agenda",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "toulouse-metropole-fsl-jem-2021",
+        "label": "Toulouse Métropole — fiche JEM FSL, passage étudiants daté de 2021 (historique, non utilisé comme preuve 2026)",
+        "url": "https://jem.metropole.toulouse.fr/decouvrir/479-fonds-de-solidarite-logement-fsl",
+        "kind": "official-guidance-historical-procedure",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "fsl-haute-garonne-reglement-2023",
+        "label": "Règlement intérieur FSL commun — version commentée mise à jour en 2023 (historique, non utilisé comme preuve des règles 2026)",
+        "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/YjBmYmQzMTMtY2ExOC00MDVhLTg1OTQtMDU3NTA3ZDIyNThj",
+        "kind": "official-regulation-historical-version",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "fsl-haute-garonne-plafonds-2024",
+        "label": "Annexe des plafonds FSL explicitement datée 2024 (non utilisée comme barème 2026)",
+        "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/MTI0YjE4OTYtZTJhNC00OWZkLTk0MzUtODE2OWQxNTc3Zjc1",
+        "kind": "official-regulation-annex-historical",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
+      },
+      {
+        "id": "toulouse-metropole-communes-api-2026",
+        "label": "API Géo officielle — communes de l’EPCI Toulouse Métropole (243100518)",
+        "url": "https://geo.api.gouv.fr/epcis/243100518/communes?fields=nom,code&format=json",
+        "kind": "official-geography-api",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-11-24"
       }
     ],
     "sources": [],
     "applicationProcedure": {
       "status": "incomplete",
-      "steps": [],
+      "steps": [
+        {
+          "text": "Pour obtenir des renseignements, la page officielle de Toulouse Métropole indique de contacter une Maison des solidarités ou un CCAS. Elle ne confirme pas le point de dépôt ni le service qui instruit les demandes FSL.",
+          "sourceIds": [
+            "toulouse-metropole-fsl-housing-page-2026"
+          ],
+          "status": "verified"
+        }
+      ],
+      "documents": {
+        "status": "unverified",
+        "sourceIds": [
+          "toulouse-metropole-fsl-housing-page-2026",
+          "fsl-haute-garonne-reglement-2023"
+        ]
+      },
       "followUp": {
         "status": "unverified",
-        "text": "Point d’entrée, suivi et délais à confirmer auprès de l’organisme local.",
+        "text": "Confirmer avec Toulouse Métropole qui reçoit les demandes, par quel canal et selon quelle démarche pour chacun des volets.",
         "sourceIds": [
+          "toulouse-metropole-fsl-housing-page-2026",
           "fsl-toulouse-metropole"
         ]
       },
       "renewal": {
         "status": "unverified",
-        "text": "Renouvellement selon la nature de l’aide; à vérifier.",
+        "text": "Fréquence de renouvellement par volet à confirmer dans la règle en vigueur.",
         "sourceIds": [
-          "fsl-toulouse-metropole"
+          "fsl-toulouse-metropole",
+          "fsl-haute-garonne-reglement-2023"
         ]
       },
       "portalUrl": null,
       "competentOrganization": "Toulouse Métropole",
       "remainingChecks": [
-        "Candidate distincte du FSL départemental. Vérifier la version locale du règlement, le guichet, les montants et les pièces avant publication."
+        "Obtenir la version officielle des règles 2026 pour chaque volet; le règlement commenté 2023 et les plafonds 2024 ne sont pas traités comme preuve de ces règles.",
+        "Obtenir les plafonds et critères applicables en 2026; les montants de la page logement ne sont pas assortis d’une période et sont exclus.",
+        "Confirmer le point de dépôt effectif, les étapes, formulaires et justificatifs par volet; la page indique uniquement des lieux de renseignement MDS/CCAS.",
+        "Clarifier la divergence entre l’orientation actuelle du Département vers la MDS de secteur et celle de la page métropolitaine vers une MDS ou un CCAS.",
+        "Ne pas utiliser la procédure étudiante de la fiche JEM, dont le passage repéré date de 2021, sans confirmation actuelle."
       ]
     },
     "notes": [
-      "Candidate distincte du FSL départemental. Vérifier la version locale du règlement, le guichet, les montants et les pièces avant publication.",
-      "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+      "Fiche maintenue en attente : les règles essentielles et la procédure courante doivent être confirmées avant publication.",
+      "Aucune règle financière, aucun plafond ni aucune pièce issus des PDF 2023/2024 ou de la fiche JEM 2021 n’est repris comme règle 2026."
+    ],
+    "applicationUrl": null
   },
   "aide-urgence-gers": {
     "informationPublicationStatus": "verified",
@@ -7550,7 +7699,8 @@
     "notes": [
       "Le règlement affiche annexes de barème, formulaire unique et pièces; extraire les plafonds et le détail avant de compléter la fiche.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+    ],
+    "applicationUrl": null
   },
   "fsl-65": {
     "informationPublicationStatus": "pending",
@@ -7636,7 +7786,8 @@
     "notes": [
       "La page de maintien mentionne une démarche directe au FSL; vérifier l’entrée d’accès, les formulaires et barèmes applicables à chaque volet.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+    ],
+    "applicationUrl": null
   },
   "fsl-66": {
     "informationPublicationStatus": "pending",
@@ -7722,7 +7873,8 @@
     "notes": [
       "Vérifier la version courante du règlement, le barème, l’application exacte du seuil de 800 € et les formulaires.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+    ],
+    "applicationUrl": null
   },
   "fsl-81": {
     "informationPublicationStatus": "pending",
@@ -7808,7 +7960,8 @@
     "notes": [
       "Le règlement intérieur complet et les barèmes n’ont pas été récupérés dans cette passe; la fiche ne doit pas présenter de plafond.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+    ],
+    "applicationUrl": null
   },
   "fsl-82": {
     "informationPublicationStatus": "pending",
@@ -7894,7 +8047,8 @@
     "notes": [
       "Le barème affiché ne garantit pas l’attribution; vérifier les règles détaillées par volet et les pièces au règlement en vigueur.",
       "Fiche candidate issue d’une source officielle effectivement examinée; elle reste masquée tant que les informations essentielles ne sont pas complètes."
-    ]
+    ],
+    "applicationUrl": null
   },
   "caf-aveyron-projet-familial": {
     "informationPublicationStatus": "verified",
@@ -8597,6 +8751,155 @@
       "Le formulaire BAFA 1 officiel 2026 confirme le délai de trois mois après la session et les justificatifs indiqués.",
       "Le canal de dépôt actuel reste à confirmer; les étapes de procédure ne sont donc pas publiées.",
       "Le formulaire indique un retour à la Caf dans les trois mois après la session; confirmer si un canal numérique de dépôt est disponible."
+    ]
+  },
+  "caf-haute-garonne-pret-mobilite-reparation": {
+    "informationPublicationStatus": "verified",
+    "informationVerifiedAt": "2026-11-24",
+    "publicationStatus": "published",
+    "procedurePublicationStatus": "pending",
+    "reviewedAt": "2026-11-24",
+    "applicationUrl": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne/actualites-departementales/le-pret-mobilite-vehicule-une-solution-pour-alleger-vos-depenses-de-reparation",
+    "currentForPeriod": "Page locale de la Caf datée du 15 juillet 2026, consultée le 24 novembre 2026. La date de fin ou le budget disponible ne sont pas précisés; vérifier auprès de la Caf avant la demande.",
+    "eligibilityRulesReady": false,
+    "testCases": 0,
+    "facts": [
+      {
+        "field": "current_status",
+        "status": "verified",
+        "value": "La Caf de la Haute-Garonne a annoncé le 15 juillet 2026 la mise en place d’un prêt mobilité pour l’entretien ou la réparation des véhicules.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ],
+        "validFor": "Actualité Caf du 15 juillet 2026, consultée le 24 novembre 2026"
+      },
+      {
+        "field": "territory",
+        "status": "verified",
+        "value": "Aide locale de la Caf de la Haute-Garonne.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ],
+        "validFor": "Page de la Caf de la Haute-Garonne, actualité du 15 juillet 2026"
+      },
+      {
+        "field": "audience",
+        "status": "verified",
+        "value": "Allocataires de la Caf bénéficiant d’au moins une prestation familiale et dont le quotient familial Caf est inférieur ou égal à 950 €. Le véhicule doit être immatriculé au nom de l’allocataire ou de son conjoint.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ],
+        "validFor": "Page de la Caf, critères publiés le 15 juillet 2026"
+      },
+      {
+        "field": "core_conditions",
+        "status": "verified",
+        "value": "Le prêt concerne l’entretien ou la réparation d’un véhicule; les frais de contrôle technique ne sont pas financés. Les familles en situation de surendettement doivent joindre les justificatifs de la Banque de France. Les prêts d’action sociale non remboursés ne sont pas cumulables.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ],
+        "validFor": "Page de la Caf, conditions et remboursement publiés le 15 juillet 2026"
+      },
+      {
+        "field": "amount",
+        "status": "verified",
+        "value": "Prêt sans intérêt, jusqu’à 500 €. Remboursement par retenues mensuelles de 30 €; première mensualité deux mois après le règlement du prêt au professionnel.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ],
+        "validFor": "Page de la Caf, montants et remboursement publiés le 15 juillet 2026"
+      },
+      {
+        "field": "documents",
+        "status": "verified",
+        "value": "Devis du professionnel, RIB du professionnel, carte grise et justificatifs selon la situation; les justificatifs de la Banque de France sont requis en cas de surendettement.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ],
+        "validFor": "Page de la Caf, liste des pièces publiée le 15 juillet 2026"
+      }
+    ],
+    "factSources": [
+      {
+        "id": "caf31-pret-mobilite-reparation-2026",
+        "label": "Caf de la Haute-Garonne — prêt mobilité véhicule pour réparations (15 juillet 2026)",
+        "url": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne/actualites-departementales/le-pret-mobilite-vehicule-une-solution-pour-alleger-vos-depenses-de-reparation",
+        "kind": "official-guidance",
+        "consultedAt": "2026-11-24",
+        "pageVerifiedAt": "2026-07-15"
+      }
+    ],
+    "sources": [],
+    "applicationProcedure": {
+      "status": "partially_complete",
+      "steps": [
+        {
+          "text": "Télécharger et compléter le formulaire de demande depuis la page officielle de la Caf.",
+          "sourceIds": [
+            "caf31-pret-mobilite-reparation-2026"
+          ],
+          "status": "verified"
+        },
+        {
+          "text": "Faire établir un devis par le professionnel et réunir le RIB du professionnel, la carte grise et les justificatifs nécessaires selon la situation.",
+          "sourceIds": [
+            "caf31-pret-mobilite-reparation-2026"
+          ],
+          "status": "verified"
+        },
+        {
+          "text": "Envoyer le dossier complet par courriel à afi@caf31.caf.fr.",
+          "sourceIds": [
+            "caf31-pret-mobilite-reparation-2026"
+          ],
+          "status": "verified"
+        },
+        {
+          "text": "Après acceptation, signer et retourner le contrat de prêt; le conjoint doit également signer en cas de vie commune.",
+          "sourceIds": [
+            "caf31-pret-mobilite-reparation-2026"
+          ],
+          "status": "verified"
+        },
+        {
+          "text": "La Caf règle directement le professionnel après réception du contrat signé et de la facture conforme au devis.",
+          "sourceIds": [
+            "caf31-pret-mobilite-reparation-2026"
+          ],
+          "status": "verified"
+        }
+      ],
+      "documents": {
+        "status": "verified",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ]
+      },
+      "followUp": {
+        "status": "unverified",
+        "text": "Le délai de décision et le suivi du dossier ne sont pas indiqués sur la page; les confirmer auprès de la Caf.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ]
+      },
+      "renewal": {
+        "status": "unverified",
+        "text": "La page ne précise pas le nombre de demandes possibles ni leur fréquence; vérifier auprès de la Caf.",
+        "sourceIds": [
+          "caf31-pret-mobilite-reparation-2026"
+        ]
+      },
+      "portalUrl": null,
+      "competentOrganization": "Caf de la Haute-Garonne",
+      "remainingChecks": [
+        "Récupérer et vérifier le formulaire lié depuis la page Caf, dont le lien de téléchargement n’a pas pu être extrait indépendamment.",
+        "Confirmer que le dispositif est toujours ouvert et doté de crédits avant toute demande; la page ne précise pas sa période de fin.",
+        "Confirmer les règles de nouvelle demande et les délais de décision."
+      ]
+    },
+    "notes": [
+      "Fiche d’information publiée après vérification des faits essentiels; la procédure de demande reste partielle.",
+      "Les faits publiés proviennent de la page Caf datée du 15 juillet 2026. Le RIAS 2026 est mentionné sur le site professionnel Caf, mais le document lié via Calaméo n’a pas pu être ouvert; aucun fait n’en est extrapolé."
     ]
   }
 }

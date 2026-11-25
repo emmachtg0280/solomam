@@ -784,8 +784,8 @@
     "category": "Logement",
     "zone": "31",
     "org": "Conseil départemental de la Haute-Garonne",
-    "description": "Le FSL comprend des aides pour accéder à un logement (dépôt de garantie, cautionnement du loyer, frais d’agence, premier loyer, assurance et installation), s’y maintenir (dettes locatives et certaines charges de copropriété), régler des factures d’énergie, d’eau ou de téléphone/internet, ainsi que des accompagnements sociaux. Conditions, plafonds, pièces et démarches varient selon le volet.",
-    "when": "Le logement concerné doit être situé dans le périmètre compétent de Haute-Garonne. L’examen tient compte de la situation et des ressources du ménage, du logement et du volet demandé; le FSL intervient en complément des droits et aides de droit commun. Les plafonds courants ne sont pas établis dans les sources consultées.",
+    "description": "La page officielle du Département présente les volets Accès, Maintien, énergie, eau-assainissement, téléphonie/internet et accompagnement social. Les critères détaillés, plafonds courants, pièces et modalités par volet restent à confirmer pour 2026.",
+    "when": "Logement situé en Haute-Garonne hors Toulouse Métropole. La page départementale indique que la demande dépend du volet et de la situation du ménage; les plafonds et critères financiers courants 2026 ne sont pas établis.",
     "steps": [],
     "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
   },
@@ -795,8 +795,8 @@
     "category": "Logement",
     "zone": "31",
     "org": "Toulouse Métropole",
-    "description": "Le FSL comprend des aides pour accéder à un logement (dépôt de garantie, cautionnement du loyer, frais d’agence, premier loyer, assurance et installation), s’y maintenir (dettes locatives et certaines charges de copropriété), régler des factures d’énergie, d’eau ou de téléphone/internet, ainsi que des accompagnements sociaux. Conditions, plafonds, pièces et démarches varient selon le volet.",
-    "when": "Le logement concerné doit être situé dans le périmètre compétent de Haute-Garonne. L’examen tient compte de la situation et des ressources du ménage, du logement et du volet demandé; le FSL intervient en complément des droits et aides de droit commun. Les plafonds courants ne sont pas établis dans les sources consultées.",
+    "description": "Toulouse Métropole exerce le FSL sur son périmètre de 37 communes. Ses pages publiques présentent des aides au logement et invitent à se renseigner auprès d’une Maison des solidarités ou d’un CCAS; le point de dépôt FSL et les critères 2026 restent à confirmer.",
+    "when": "Logement situé dans une des 37 communes de Toulouse Métropole (EPCI 243100518). Conditions et aides par volet soumises à confirmation des règles métropolitaines en vigueur en 2026.",
     "steps": [],
     "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
   },
@@ -960,5 +960,22 @@
     "when": "Tout allocataire de la Caf de l’Hérault, y compris en cours d’affiliation, ou enfant à charge d’un allocataire; aucune condition de ressources.",
     "steps": [],
     "url": "https://www.caf.fr/professionnels/caf-de-l-herault/offre-de-service/vie-professionnelle/le-bafa"
+  },
+  {
+    "id": "caf-haute-garonne-pret-mobilite-reparation",
+    "name": "Prêt mobilité véhicule — réparations et entretien — Caf de la Haute-Garonne",
+    "category": "Mobilité",
+    "zone": "31",
+    "org": "Caisse d’Allocations Familiales de la Haute-Garonne",
+    "description": "Prêt sans intérêt de la Caf de la Haute-Garonne pour aider les familles allocataires à financer l’entretien ou la réparation d’un véhicule.",
+    "when": "Allocataire de la Caf de la Haute-Garonne bénéficiant d’au moins une prestation familiale et ayant un quotient familial Caf inférieur ou égal à 950 €. Le véhicule doit être immatriculé au nom de l’allocataire ou de son conjoint.",
+    "steps": [
+      "Télécharger et compléter le formulaire de demande depuis la page officielle de la Caf.",
+      "Faire établir un devis par le professionnel et réunir le RIB du professionnel, la carte grise et les justificatifs demandés selon la situation.",
+      "Envoyer le dossier complet à afi@caf31.caf.fr.",
+      "Si la demande est acceptée, signer et retourner le contrat de prêt; le conjoint doit aussi le signer en cas de vie commune.",
+      "Après réception du contrat signé et de la facture conforme au devis, la Caf règle directement le professionnel."
+    ],
+    "url": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne/actualites-departementales/le-pret-mobilite-vehicule-une-solution-pour-alleger-vos-depenses-de-reparation"
   }
 ]

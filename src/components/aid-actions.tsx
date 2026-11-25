@@ -18,12 +18,11 @@ export function AidActions({ aid }: { aid: Aid }) {
 
   const toggle = () => setStorageError(!setAidSaved(aid.id, !saved, validAidIds));
 
-  return <section className="detail-section" aria-labelledby="save-aid-title">
-    <h2 id="save-aid-title">Mes démarches</h2>
+  return <section className="save-aid-panel" aria-labelledby="save-aid-title">
+    <div><p className="eyebrow">Favoris</p><h2 id="save-aid-title">Enregistrer cette aide</h2><p className="muted">La liste reste dans ce navigateur, sans compte.</p></div>
     <Button type="button" variant={saved ? "secondary" : "primary"} aria-pressed={saved} onClick={toggle}>
-      {saved ? "Retirer de Mes démarches" : "Enregistrer dans Mes démarches"}
+      {saved ? "Enregistrée · Retirer" : "Ajouter à mes favoris"}
     </Button>
-    <p className="muted">Cette liste est enregistrée dans ce navigateur, sans compte.</p>
     {storageError && <p role="alert">Le navigateur n’a pas pu enregistrer ce choix. Vérifiez ses réglages de stockage.</p>}
   </section>;
 }
