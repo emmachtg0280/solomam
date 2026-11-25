@@ -33,7 +33,7 @@ export function ServicesCatalogue({ initialQuery = "", rubric }: { initialQuery?
     return service.rubric === rubric && matchesTerritory(service.coverage, territory) && matchesQuery;
   }), [initialQuery, rubric, territory]);
 
-  return services.length ? <div className="resource-grid">{services.map((service) => <Link className={"resource-card" + (service.cardImage ? " resource-card-with-image" : "")} href={`/services/${service.slug}`} key={service.id} style={service.cardImage ? { backgroundImage: 'url("' + service.cardImage + '")' } : undefined}>
+  return services.length ? <div className="resource-grid">{services.map((service) => <Link className={"resource-card" + (service.cardImage ? " resource-card-with-image" : " resource-card-no-image")} href={`/services/${service.slug}`} key={service.id} style={service.cardImage ? { backgroundImage: 'url("' + service.cardImage + '")' } : undefined}>
       <div className="resource-card-heading"><span className="resource-kind">{serviceKindLabel(service.kind)}</span></div>
       <h2>{service.name}</h2>
       <p>{service.description}</p>
