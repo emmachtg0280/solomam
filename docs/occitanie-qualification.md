@@ -9,13 +9,13 @@ Dernière qualification manuelle : 23 novembre 2026. Le snapshot source est cons
 | Lignes source récupérées | 229 |
 | Lignes dont `type` vaut `Aides` | 153 |
 | Hors type aide dans cette revue | 76 |
-| `relevant` après consultation de pages officielles | 21 |
-| `not_relevant` confirmé par la page officielle | 28 |
+| `relevant` après consultation de pages officielles | 23 |
+| `not_relevant` confirmé par la page officielle | 41 |
 | `expired` selon la période explicitement indiquée | 2 |
-| À examiner manuellement faute de preuve suffisante | 101 |
+| À examiner manuellement faute de preuve suffisante | 87 |
 | Cartes nouvelles publiées | 0 |
 
-Une page régionale détaillée et la fiche source ont été consultées pour les 52 décisions qui ne sont pas en attente. Les 22 éléments pertinents sont des pistes de catalogue, pas des fiches prêtes à publier : la normalisation complète des pièces, des procédures de dépôt et de suivi, ainsi que la validité annuelle reste à faire. Les 101 autres enregistrements demeurent en revue manuelle plutôt que d'être déclarés non pertinents sur le seul titre.
+Une page régionale détaillée et la fiche source ont été consultées pour les 66 décisions qui ne sont pas en attente. Les 23 éléments pertinents sont des pistes de catalogue, pas des fiches prêtes à publier : la normalisation complète des pièces, des procédures de dépôt et de suivi, ainsi que la validité annuelle reste à faire. Ces 23 éléments sont maintenant projetés dans le catalogue canonique avec le statut `pending`; ils ne sont pas publiés. Les 87 autres enregistrements demeurent en revue manuelle plutôt que d'être déclarés non pertinents sur le seul titre.
 
 Une absence de dates de validité dans la ligne du dataset n'est pas interprétée comme une aide active. `date_publication` et `date_modification` sont conservées comme métadonnées éditoriales et jamais prises pour les dates d'application.
 
@@ -89,7 +89,23 @@ La relation est une table de correspondance et non une relation un-à-un : plusi
 ## Suite nécessaire avant publication
 
 - Revoir les 101 lignes en attente sur leurs pages officielles; confirmer cible et statut courant.
-- Pour les 21 pertinentes, extraire les critères complets, règles ressources/composition/âge, justificatifs, étapes, portail, suivi et renouvellement depuis les pages et règlements en vigueur.
+- Pour les 22 pertinentes, extraire les critères complets, règles ressources/composition/âge, justificatifs, étapes, portail, suivi et renouvellement depuis les pages et règlements en vigueur.
 - Vérifier la date et le règlement applicables pour les aides annuelles ou les campagnes.
 - Identifier les dispositifs distincts derrière les pages de synthèse; ne pas transformer une page d'orientation agrégée en plusieurs fausses prestations.
 - La base cible PostgreSQL n'est pas raccordée dans cet environnement; le registre JSON versionné est le stockage reproductible actuel.
+
+## Mise à jour du 23 novembre 2026
+
+Une revue complémentaire de pages officielles a qualifié 6 entrées supplémentaires du dataset : 1 aide directe pertinente et 5 aides réservées à des porteurs de projet ou personnes morales. La qualification du catalogue régional est désormais : 23 pertinentes, 41 hors cible, 2 expirées et 87 en attente sur 153 enregistrements de type aide. La voiture électrique d’occasion est le 23e candidat régional intégré; ses critères, barème, pièces et dépôt sont documentés depuis la page et le règlement 2026. L’information est publiable, mais le parcours reste partiel car délais d’instruction et recours ne sont pas établis.
+
+Quatre fiches nationales supplémentaires ont été intégrées : prime à la naissance, allocation de base, prime à l’adoption et AJPP. Leurs faits essentiels et dates de vérification sont enregistrés. Les montants PAJE en conflit entre Caf et Service-Public sont signalés dans chaque fiche et ne sont pas présentés comme certains. Les étapes de demande sont sourcées, mais les procédures ne satisfont pas encore le contrôle de complétude.
+
+Le catalogue compte 50 fiches canoniques, dont 15 fiches d’information consultables (14 nationales et une régionale). Aucune procédure n’est déclarée complète. La couverture publiée comprend Famille (8), Revenus (2), Santé (1), Logement (3) et Mobilité (1). Elle n’est pas exhaustive; les variantes locales et les autres domaines restent à documenter.
+
+Les imports régionaux et nationaux ont été rendus conservateurs lors d’une réexécution : les imports régionaux préservent désormais les fiches d’information marquées vérifiées; l’import des fiches nationales PAJE/AJPP ignore ces fiches déjà vérifiées. Le snapshot brut et les identifiants/hash source sont conservés.
+
+### Contrôle du MVP
+
+Le build de production a généré les routes du catalogue; un smoke test HTTP sur le serveur de production local a obtenu 200 pour l’accueil, les pages ASF, PAJE, AJPP et éco-chèque, Mes démarches et Mes aides, et 404 pour un slug inconnu. Les tests unitaires couvrent la sauvegarde locale et son retrait. L’automatisation navigateur n’étant pas disponible dans la session, les interactions réelles souris/clavier et le rendu responsive n’ont pas été certifiés sur desktop/mobile.
+
+Vérifications exécutées : `npm.cmd run data:test`, `npm.cmd run lint`, `npm.cmd run typecheck`, `npm.cmd run build`.

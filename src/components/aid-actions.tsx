@@ -1,55 +1,28 @@
 "use client";
 
-import { useCallback, useState, useSyncExternalStore } from "react";
+import { useCallback, useSyncExternalStore, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { emptyProgress, readProgress, saveAidProgress, statuses } from "@/lib/progress";
-import type { Aid, AidProgress } from "@/lib/types";
+import { aids } from "@/lib/aids";
+import { readSavedAidIds, setAidSaved, subscribeSavedAids } from "@/lib/saved-aids.mjs";
+import type { Aid } from "@/lib/types";
+
+const validAidIds = aids.map(({ id }) => id);
 
 export function AidActions({ aid }: { aid: Aid }) {
-  const subscribe = useCallback((onChange: () => void) => {
-    window.addEventListener("storage", onChange);
-    window.addEventListener("solomam:progress-change", onChange);
-    return () => {
-      window.removeEventListener("storage", onChange);
-      window.removeEventListener("solomam:progress-change", onChange);
-    };
-  }, []);
-  const snapshot = useSyncExternalStore(
-    subscribe,
-    () => JSON.stringify(readProgress()[aid.id] ?? null),
-    () => "null",
-  );
-  const stored = JSON.parse(snapshot) as AidProgress | null;
-  const progress: AidProgress = stored
-    ? { ...emptyProgress(aid.steps.length), ...stored, steps: aid.steps.map((_, i) => Boolean(stored.steps?.[i])) }
-    : emptyProgress(aid.steps.length);
-  const saved = stored !== null;
+  const subscribe = useCallback((onChange: () => void) => subscribeSavedAids(onChange), []);
+  const getSnapshot = useCallback(() => JSON.stringify(readSavedAidIds(validAidIds)), []);
+  const snapshot = useSyncExternalStore(subscribe, getSnapshot, () => "[]");
+  const savedIds = JSON.parse(snapshot) as string[];
+  const saved = savedIds.includes(aid.id);
   const [storageError, setStorageError] = useState(false);
-  const update = (next: AidProgress, keep = true) => {
-    const persisted = saveAidProgress(aid.id, keep ? next : null);
-    setStorageError(!persisted);
-  };
-  return <>
-    <section className="detail-section" aria-labelledby="follow-title">
-      <h2 id="follow-title">Suivre cette démarche</h2>
-      <div className="status-row">
-        <label htmlFor="application-status">Statut</label>
-        <select id="application-status" className="field" value={progress.status} onChange={(event) => update({ ...progress, status: event.target.value as AidProgress["status"] })}>
-          {statuses.map((status) => <option key={status}>{status}</option>)}
-        </select>
-        {saved && <Button type="button" onClick={() => update(emptyProgress(aid.steps.length), false)}>Retirer de mes démarches</Button>}
-      </div>
-      <p className="muted">Le suivi est conservé dans ce navigateur.</p>
-      {storageError && <p role="alert">Le navigateur n’a pas pu enregistrer ce suivi. Vérifiez ses réglages de stockage.</p>}
-      <ul className="check-list">{aid.steps.map((step, index) => <li key={step}><label>
-        <input type="checkbox" checked={progress.steps[index] ?? false} onChange={(event) => {
-          const steps = [...progress.steps]; steps[index] = event.target.checked;
-          const next = { ...progress, steps };
-          if (steps.some(Boolean)) update(next); else update(next, saved);
-        }} />
-        <span>{step}</span>
-      </label></li>)}</ul>
-      {!saved && <Button variant="primary" type="button" onClick={() => update(progress)}>Enregistrer dans mes démarches</Button>}
-    </section>
-  </>;
+
+  const toggle = () => setStorageError(!setAidSaved(aid.id, !saved, validAidIds));
+
+  return <section className="save-aid-panel" aria-labelledby="save-aid-title">
+    <div><p className="eyebrow">Favoris</p><h2 id="save-aid-title">Enregistrer cette aide</h2><p className="muted">La liste reste dans ce navigateur, sans compte.</p></div>
+    <Button type="button" variant={saved ? "secondary" : "primary"} aria-pressed={saved} onClick={toggle}>
+      {saved ? "Enregistrée · Retirer" : "Ajouter à mes favoris"}
+    </Button>
+    {storageError && <p role="alert">Le navigateur n’a pas pu enregistrer ce choix. Vérifiez ses réglages de stockage.</p>}
+  </section>;
 }

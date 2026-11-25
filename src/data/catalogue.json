@@ -46,21 +46,6 @@
     "url": "https://www.service-public.fr/particuliers/vosdroits/N31477"
   },
   {
-    "id": "logement",
-    "name": "Aides au logement",
-    "category": "Logement",
-    "zone": "national",
-    "org": "CAF / MSA",
-    "description": "APL, ALF ou ALS selon le logement et la situation familiale. Un point de départ utile pour les locataires.",
-    "when": "Type de logement, loyer, composition du foyer et ressources.",
-    "steps": [
-      "Rassembler les informations du logement et du loyer.",
-      "Réaliser une estimation sur le site officiel de la CAF/MSA.",
-      "Compléter la demande de logement auprès de l’organisme compétent."
-    ],
-    "url": "https://www.caf.fr/allocataires/aides-et-demarches/droits-et-prestations/logement"
-  },
-  {
     "id": "cf",
     "name": "Complément familial",
     "category": "Famille",
@@ -107,17 +92,15 @@
   },
   {
     "id": "fsl",
-    "name": "Fonds de solidarité pour le logement",
+    "name": "Fonds de solidarité pour le logement — Hérault hors Métropole",
     "category": "Logement",
     "zone": "34",
-    "org": "Département de l’Hérault",
-    "description": "Une piste d’aide en cas de difficultés pour accéder à un logement ou s’y maintenir.",
-    "when": "Difficulté de logement, résidence dans l’Hérault, ressources et règlement applicable.",
+    "org": "Conseil départemental de l'Hérault",
+    "description": "Accès au logement (dépôt de garantie, frais d'agence, premier loyer, assurance habitation, frais associés et ouverture de compteurs); maintien dans le logement (loyers/charges, frais de procédure, énergie et eau); accompagnement social lié au logement.",
+    "when": "Habitants rencontrant des difficultés d'accès ou de maintien dans un logement décent et relevant du public défini par le PDALHPD. La demande est examinée au regard des ressources et de la situation du foyer.",
     "steps": [
-      "Identifier ton besoin : accès au logement, loyer impayé ou maintien dans le logement.",
-      "Lire le dispositif du Département et repérer le service compétent.",
-      "Contacter le service indiqué pour connaître la procédure actuelle et les pièces nécessaires.",
-      "Déposer le dossier selon les indications du service social."
+      "Contacter un travailleur social d'un service habilité, qui construit et transmet la demande FSL.",
+      "Le dossier est examiné selon le règlement; la décision est adressée au demandeur et à l'instructeur."
     ],
     "url": "https://herault.fr/402-aide-financiere.htm"
   },
@@ -255,5 +238,744 @@
       "Contacter le centre pour connaître les modalités de rendez-vous."
     ],
     "url": "https://www.planning-familial.org/fr/le-planning-familial-de-lherault-34"
+  },
+  {
+    "id": "occ-aide-a-la-lecture-de-loisirs",
+    "name": "Aide à la lecture de loisirs",
+    "category": "Accompagnement",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Lycéens titulaires de la Carte Jeune Région; la page de la Région identifie le lycéen comme bénéficiaire.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Aide-a-la-lecture-de-loisirs"
+  },
+  {
+    "id": "occ-pass-mutuelle-etudiant-e",
+    "name": "Pass Mutuelle Etudiant.e",
+    "category": "Santé",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Étudiants boursiers en Occitanie ne disposant pas de la CSS, d'une couverture complémentaire employeur ou d'une couverture comme ayant droit d'un parent.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Pass-Mutuelle-Etudiant-e"
+  },
+  {
+    "id": "occ-remuneration-des-stagiaires-de-la-formation-professionnelle",
+    "name": "Rémunération des stagiaires de la formation professionnelle",
+    "category": "Emploi",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Demandeurs d'emploi de plus de 16 ans suivant un stage de formation professionnelle et non indemnisés par France Travail, selon les conditions de la page régionale.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Remuneration-des-stagiaires-de-la-formation-professionnelle"
+  },
+  {
+    "id": "occ-campagne-d-incitation-financiere-aux-covoitureurs",
+    "name": "Campagne d’incitation financière aux covoitureurs",
+    "category": "Accompagnement",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Adultes réalisant des trajets quotidiens éligibles en covoiturage via un opérateur partenaire.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Campagne-d-incitation-financiere-aux-covoitureurs"
+  },
+  {
+    "id": "occ-aide-au-merite-pour-les-etudiants-en-formations-sanitaires-et-sociales",
+    "name": "Aide au mérite pour les étudiants en formations sanitaires et sociales",
+    "category": "Emploi",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Étudiants boursiers inscrits dans une formation sanitaire ou sociale éligible en Occitanie et titulaires d'une mention très bien au baccalauréat.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Aide-au-merite"
+  },
+  {
+    "id": "occ-eco-cheque-mobilite-bonus-velo-adapte-pmr",
+    "name": "\"Eco-chèque mobilité\" - Bonus vélo adapté PMR",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Personnes majeures résidant principalement en Occitanie et disposant d'un justificatif de handicap établissant l'impossibilité d'utiliser un vélo classique, selon les conditions de la Région.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Eco-cheque-mobilite-Bonus-velo-adapte-PMR"
+  },
+  {
+    "id": "occ-hebergement-en-centre-afpa-occitanie",
+    "name": "Hébergement en centre AFPA Occitanie",
+    "category": "Logement",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Demandeurs d'emploi en formation du Plan régional de formation qui rencontrent une difficulté d'hébergement ou de mobilité, selon les conditions publiées.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Hebergement-en-centre-AFPA-Occitanie"
+  },
+  {
+    "id": "occ-eco-cheque-mobilite-achat-d-un-velo-a-assistance-electrique",
+    "name": "\"Éco-chèque mobilité\" - Achat d’un vélo à assistance électrique",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Personnes majeures résidant principalement en Occitanie, sous le plafond de revenu fiscal de référence et les conditions d'achat précisées par la Région.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Eco-cheque-mobilite-velo-a-assistance-electrique"
+  },
+  {
+    "id": "occ-eco-cheque-mobilite-bonus-forfait-mobilite-durable",
+    "name": "\"Éco-chèque mobilité\" - Bonus forfait mobilité durable",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Personnes majeures résidant principalement en Occitanie et percevant le forfait mobilités durables de leur employeur; plafond de ressources et conditions de cycle à confirmer dans le règlement courant.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Eco-cheque-mobilite-Bonus-forfait-mobilite-durable"
+  },
+  {
+    "id": "occ-aide-a-l-acquisition-d-un-ordinateur-portable-lordi",
+    "name": "Aide à l’acquisition d’un ordinateur portable : loRdi",
+    "category": "Accompagnement",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Jeunes entrant dans un lycée éligible avec une Carte Jeune Région; le type d'aide dépend de l'établissement et des ressources du foyer.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Aide-a-l-acquisition-d-un-ordinateur-portable-loRdi"
+  },
+  {
+    "id": "occ-ecocheque-mobilite-lyceen-boursier-de-classe-de-seconde",
+    "name": "Écochèque mobilité - Lycéen boursier de classe de seconde",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Lycéens boursiers entrant en classe de seconde dans un établissement d'Occitanie et résidant principalement dans la région.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Ecocheque-mobilite-lyceen-boursier"
+  },
+  {
+    "id": "occ-livre-aide-individuelle-aux-auteurs-et-aux-autrices-projet-d-ecriture",
+    "name": "Livre - Aide individuelle aux auteurs et aux autrices : Projet d’écriture",
+    "category": "Culture",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Auteurs et autrices professionnels résidant principalement en Occitanie et répondant aux conditions de publications antérieures et d'obligations fiscales/sociales.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Livre-Aide-individuelle-aux-auteurs-et-aux-autrices-Projet-d-ecriture"
+  },
+  {
+    "id": "occ-les-bons-plans-ou-les-je-m-engage-de-la-carte-jeune-region",
+    "name": "\"Les Bons Plans\" ou les \"Je m’engage\" de la Carte Jeune Région",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Jeunes titulaires de la Carte Jeune Région pendant l'année scolaire concernée.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Les-Bons-Plans-ou-les-Je-m-engage-de-la-Carte-Jeune-Region"
+  },
+  {
+    "id": "occ-bourses-d-etudes-sanitaires-et-sociales",
+    "name": "Bourses d’Etudes Sanitaires et Sociales",
+    "category": "Études",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Personnes inscrites dans une formation paramédicale, maïeutique ou sociale éligible d'un établissement autorisé ou agréé par la Région.",
+    "steps": [],
+    "url": "https://www.laregion.fr/bourses-etudes-sanitaires-sociales"
+  },
+  {
+    "id": "occ-le-pacte-pour-l-embauche",
+    "name": "Le Pacte pour l’Embauche",
+    "category": "Emploi",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Personnes résidant en Occitanie qui recherchent un emploi ou reprennent une activité; dispositif d'orientation vers des aides et accompagnements partenaires.",
+    "steps": [],
+    "url": "https://www.laregion.fr/pacte-embauche"
+  },
+  {
+    "id": "occ-solutions-d-hebergement-et-de-logement-pour-les-jeunes-de-moins-de-30-ans",
+    "name": "Solutions d’hébergement et de logement pour les jeunes de moins de 30 ans",
+    "category": "Logement",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Jeunes de moins de 30 ans en entrée d'études, stage, emploi ou formation professionnelle; service d'information et d'orientation logement.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Solutions-hebergement-et-logement-jeunes"
+  },
+  {
+    "id": "occ-premier-equipement-professionnel",
+    "name": "Premier équipement professionnel",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Élèves de lycée professionnel en formation éligible dans un établissement concerné, titulaires de la Carte Jeune Région.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Premier-equipement-professionnel"
+  },
+  {
+    "id": "occ-aide-a-l-acquisition-d-une-licence-sportive-unss",
+    "name": "Aide à l’acquisition d’une licence sportive (UNSS)",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Lycéens titulaires de la Carte Jeune Région dans un lycée ayant une association sportive affiliée à l'UNSS.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Aide-a-l-acquisition-d-une-licence-sportive-UNSS"
+  },
+  {
+    "id": "occ-la-mobilite-internationale-des-etudiants-avec-mouv-occitanie",
+    "name": "Aides à la mobilité internationale — Mouv’Occitanie",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Aides de la Région pour certains séjours d’études ou stages à l’étranger intégrés à une formation en Occitanie. Selon le dispositif, le soutien peut inclure une bourse de 75 € par semaine ou des aides forfaitaires; sélection par l’établissement, critères propres à chaque aide et budget annuel.",
+    "when": "Étudiants inscrits dans un établissement partenaire d’Occitanie et réalisant une mobilité d’études ou de stage à l’étranger valorisée dans leur diplôme. Les critères de durée, de ressources, de formation et de destination dépendent de l’aide; une sélection par l’établissement est requise.",
+    "steps": [
+      "Demander au bureau des relations internationales de son établissement les critères et la procédure de sélection.",
+      "Après sélection, déposer les justificatifs demandés sur le Portail des Aides à l’aide du lien personnel reçu par courriel, dans le délai indiqué par la Région."
+    ],
+    "url": "https://www.laregion.fr/Aides-Mouv-Occitanie"
+  },
+  {
+    "id": "occ-formation-aux-premiers-secours-citoyen-un-jeune-forme-une-vie-sauvee",
+    "name": "Formation aux premiers secours citoyen - \"Un jeune formé = une vie sauvée \"",
+    "category": "Emploi",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Jeunes titulaires de la Carte Jeune Région inscrits auprès d'un organisme agréé et affilié.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Formation-premiers-secours"
+  },
+  {
+    "id": "occ-pret-des-manuels-scolaires",
+    "name": "Prêt des manuels scolaires",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Lycéens inscrits dans des formations générales, technologiques ou professionnelles éligibles d'un établissement d'Occitanie, titulaires de la Carte Jeune Région.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Pret-des-manuels-scolaires"
+  },
+  {
+    "id": "occ-aide-a-la-garde-d-enfants",
+    "name": "Aide à la Garde d’Enfants",
+    "category": "Accompagnement",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Parents ayant un enfant à charge de moins de 10 ans et suivant une formation régionale éligible ou reprenant un emploi sous les conditions de durée et de délai indiquées par la Région.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Aide-a-la-Garde-d-Enfants"
+  },
+  {
+    "id": "fsl-m3m",
+    "name": "Fonds de solidarité pour le logement — Montpellier Méditerranée Métropole",
+    "category": "Logement",
+    "zone": "34",
+    "org": "Montpellier Méditerranée Métropole",
+    "description": "Aides à l'accès et au maintien dans le logement selon le règlement. Le dossier est construit avec un travailleur social habilité à partir des justificatifs propres à l'aide demandée; identité, ressources, charges et situation sont contrôlées.",
+    "when": "Demandeurs majeurs ou mineurs émancipés résidant dans la Métropole, relevant du public du PDALHPD et satisfaisant aux critères du règlement. Les étudiants sans enfant à charge sont exclus; une personne étrangère doit être en situation administrative régulière. Priorité notamment aux personnes sans logement, menacées d'expulsion sans relogement ou en situation économique et sociale cumulée.",
+    "steps": [
+      "S'adresser à un travailleur social d'un service instructeur habilité par la Métropole ou le Département.",
+      "Le travailleur social constitue le formulaire métropolitain et joint les justificatifs de l'aide demandée.",
+      "Le dossier transmis est instruit et soumis à la décision de l'instance compétente; la page de la Métropole décrit l'examen par une équipe pluridisciplinaire."
+    ],
+    "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement"
+  },
+  {
+    "id": "rsa-parent-isole",
+    "name": "Revenu de solidarité active (RSA) — parent isolé",
+    "category": "Revenus",
+    "zone": "national",
+    "org": "Caf / MSA et services du département",
+    "description": "Le RSA prend en compte les ressources et la composition du foyer; des règles spécifiques décrivent la majoration pour parent isolé.",
+    "when": "Parent célibataire, divorcé, séparé ou veuf avec enfant à charge, ou femme enceinte, ne vivant pas en couple de manière déclarée et permanente et ne partageant pas ses ressources; la séparation géographique d'un conjoint ne suffit pas.",
+    "steps": [
+      "Vérifier la définition du parent isolé, la résidence, le droit au séjour éventuel et les ressources du foyer; le simulateur Caf donne une estimation, pas une décision.",
+      "Déposer la première demande en ligne auprès de la Caf; selon le territoire et le régime, vérifier les guichets de dépôt compétents du département, CCAS ou association habilitée.",
+      "Par voie papier, remplir le Cerfa 15481 (ou 15482 si non-salariée) et le Cerfa 14130, puis joindre les pièces listées sur le formulaire courant.",
+      "Après ouverture, vérifier et valider la déclaration trimestrielle préremplie, y ajouter les ressources manquantes et déclarer rapidement tout changement.",
+      "Les bénéficiaires sont inscrits automatiquement à France Travail et doivent signer un contrat d'engagement; la page prévoit une réduction possible des obligations horaires pour certaines difficultés familiales, dont parent isolé avec enfant de moins de 12 ans."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15553"
+  },
+  {
+    "id": "prepare",
+    "name": "Prestation partagée d'éducation de l'enfant (PreParE)",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Prestation liée à l'interruption ou à la réduction de l'activité professionnelle pour s'occuper d'un jeune enfant.",
+    "when": "Parent ayant interrompu ou réduit son activité professionnelle pour s'occuper d'au moins un enfant de moins de 3 ans, ou de moins de 20 ans en cas d'adoption.",
+    "steps": [
+      "Vérifier âge de l'enfant, réduction/cessation effective de l'activité et huit trimestres de cotisation dans la période de référence correspondant au nombre d'enfants.",
+      "Caf non allocataire ou MSA non allocataire : envoyer les Cerfa 11423 et 12324; personne déjà allocataire : mettre à jour son dossier et envoyer le Cerfa 12324.",
+      "Si un congé maternité, paternité, adoption ou maladie indemnisé est en cours, attendre la fin de l'indemnisation avant d'envoyer la demande.",
+      "Déclarer rapidement tout changement familial ou professionnel à la Caf/MSA; vérifier les règles de cumul avant de choisir la PreParE majorée, choix définitif si au moins trois enfants."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32485"
+  },
+  {
+    "id": "aeeh",
+    "name": "Allocation d'éducation de l'enfant handicapé (AEEH)",
+    "category": "Famille",
+    "zone": "national",
+    "org": "MDPH puis Caf / MSA",
+    "description": "Aide destinée à compenser certaines dépenses liées au handicap d'un enfant; des compléments et une majoration parent isolé peuvent s'appliquer selon décision.",
+    "when": "Enfant de moins de 20 ans ayant un taux d'incapacité d'au moins 80 %, ou de 50 % à moins de 80 % avec accompagnement/dispositif/soins préconisés par la CDAPH; l'enfant doit résider de façon permanente en France.",
+    "steps": [
+      "Constituer une demande MDPH avec le Cerfa 15692*01 et le certificat médical de moins d'un an; ajouter les justificatifs obligatoires et les documents de situation précisés par le formulaire.",
+      "Déposer en ligne si la MDPH du lieu de résidence propose ce téléservice, ou envoyer le dossier à la MDPH du lieu de résidence, de préférence en recommandé avec accusé de réception.",
+      "La CDAPH instruit la demande; le délai annoncé est de quatre mois. L'absence de réponse à l'issue du délai vaut rejet implicite selon Service-Public.",
+      "Après décision favorable, le versement est assuré par la Caf ou la MSA; les compléments et la majoration parent isolé dépendent de l'évaluation et de la situation de l'aidant."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14809"
+  },
+  {
+    "id": "apl",
+    "name": "Aide personnalisée au logement (APL)",
+    "category": "Logement",
+    "org": "Caf ou MSA selon le régime",
+    "zone": "national",
+    "description": "Aide au logement attribuée sous conditions, notamment lorsque le logement est conventionné.",
+    "when": "Locataires ou certains résidents en logement conventionné, sous conditions de logement, de résidence et de ressources.",
+    "steps": [
+      "Faire la demande en ligne auprès de la Caf; les personnes sans compte doivent créer leur espace personnel.",
+      "Renseigner le logement et le foyer, transmettre les justificatifs demandés, vérifier les informations puis valider la demande."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006"
+  },
+  {
+    "id": "alf",
+    "name": "Allocation de logement familiale (ALF)",
+    "category": "Logement",
+    "org": "Caf ou MSA selon le régime",
+    "zone": "national",
+    "description": "Aide au logement destinée à certains foyers qui ne relèvent pas de l'APL.",
+    "when": "Foyers remplissant une situation familiale définie et ne pouvant pas bénéficier de l'APL, sous conditions.",
+    "steps": [
+      "Faire la demande d'aide au logement en ligne auprès de la Caf; les personnes sans compte doivent créer leur espace personnel.",
+      "Renseigner le logement et le foyer, transmettre les justificatifs demandés, vérifier les informations puis valider la demande."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13132"
+  },
+  {
+    "id": "als",
+    "name": "Allocation de logement sociale (ALS)",
+    "category": "Logement",
+    "org": "Caf ou MSA selon le régime",
+    "zone": "national",
+    "description": "Aide au logement attribuée sous conditions lorsque le foyer ne peut bénéficier ni de l'APL ni de l'ALF.",
+    "when": "Locataires ou certains résidents qui ne relèvent ni de l'APL ni de l'ALF, sous conditions.",
+    "steps": [
+      "Faire la demande en ligne auprès de la Caf ou de la MSA selon le régime; suivre le parcours de l'organisme compétent.",
+      "Renseigner le logement et le foyer, transmettre les justificatifs demandés, vérifier les informations puis valider la demande."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1280"
+  },
+  {
+    "id": "occ-eco-cheque-mobilite-achat-d-une-voiture-particuliere-electrique-d-occasion",
+    "name": "Éco-chèque mobilité — voiture électrique d’occasion",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Aide régionale à l’achat d’une voiture particulière électrique d’occasion, soumise aux conditions de ressources, de véhicule et de dépôt.",
+    "when": "Personne physique majeure domiciliée en Occitanie et non imposable sur les revenus, n’ayant pas bénéficié de cette aide ni des versions antérieures de l’éco-chèque voiture neuve ou d’occasion.",
+    "steps": [],
+    "url": "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion"
+  },
+  {
+    "id": "paje-prime-naissance",
+    "name": "PAJE — prime à la naissance",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Prime sous conditions de ressources versée pendant la grossesse pour préparer l’arrivée de l’enfant.",
+    "when": "Personne attendant un enfant, relevant de la Caf ou de la MSA, sous plafond de ressources tenant compte de la composition familiale; un barème spécifique existe pour le parent isolé.",
+    "steps": [
+      "Effectuer le premier examen prénatal et déclarer la grossesse avant la fin du troisième mois.",
+      "Déposer la demande auprès de la Caf ou de la MSA selon le régime; le téléservice ou formulaire dépend de la situation de l’allocataire."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2550"
+  },
+  {
+    "id": "paje-allocation-base",
+    "name": "PAJE — allocation de base",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Prestation sous conditions de ressources pour contribuer à l’entretien et à l’éducation d’un enfant de moins de trois ans.",
+    "when": "Parent ayant un enfant à charge de moins de trois ans et dont les ressources respectent le plafond applicable; un barème spécifique existe pour le parent isolé.",
+    "steps": [
+      "Vérifier l’âge de l’enfant et le plafond de ressources applicable à la situation familiale.",
+      "Transmettre à la Caf ou à la MSA les pages lisibles du livret de famille et l’acte de naissance de l’enfant, selon la page officielle."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2552"
+  },
+  {
+    "id": "paje-prime-adoption",
+    "name": "PAJE — prime à l’adoption",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Prime sous conditions de ressources liée à l’adoption ou à l’accueil en vue d’adoption d’un enfant.",
+    "when": "Personne adoptant ou accueillant en vue d’adoption un enfant de moins de 20 ans par l’intermédiaire de l’Aide sociale à l’enfance, d’un organisme français autorisé/Agence française de l’adoption ou d’une autorité étrangère compétente.",
+    "steps": [
+      "Identifier le parcours applicable selon le pays d’origine de l’enfant et la situation Caf/MSA; les pièces justificatives ne sont pas les mêmes dans tous les cas.",
+      "Pour certains dossiers Caf, transmettre l’attestation ASE/organisme autorisé ou procès-verbal du conseil de famille; d’autres situations nécessitent les formulaires de déclaration et pièces d’adoption décrits par Service-Public."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13220"
+  },
+  {
+    "id": "ajpp",
+    "name": "Allocation journalière de présence parentale (AJPP)",
+    "category": "Famille",
+    "zone": "national",
+    "org": "Caf / MSA",
+    "description": "Aide journalière liée à la cessation temporaire d’activité pour s’occuper d’un enfant gravement malade, accidenté ou handicapé.",
+    "when": "Personne cessant temporairement son activité pour s’occuper d’un enfant à charge de moins de 20 ans nécessitant une présence soutenue et des soins contraignants en raison d’une maladie, d’un handicap ou d’un accident d’une particulière gravité.",
+    "steps": [
+      "Faire établir par le médecin traitant le certificat médical détaillant les soins contraignants et la présence soutenue; le volet médical est transmis sous pli confidentiel au service médical.",
+      "Adresser à la Caf ou à la MSA le formulaire AJPP adapté au régime avec les éléments de situation professionnelle demandés.",
+      "Après ouverture du droit, transmettre les attestations mensuelles de jours ou demi-journées utilisés; l’employeur complète sa partie lorsque la situation le requiert."
+    ],
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15132"
+  },
+  {
+    "id": "afie-herault",
+    "name": "Aide financière pour l’insertion et l’emploi (AFIE) — Hérault",
+    "category": "Emploi",
+    "zone": "34",
+    "org": "Conseil départemental de l'Hérault",
+    "description": "Aide départementale aux bénéficiaires du RSA qui débutent ou reprennent une activité professionnelle. Les dépenses admises peuvent concerner la mobilité, la garde d’enfants ou la formation/reprise d’activité; montants et plafonds varient selon le poste de dépense et l’annexe du règlement.",
+    "when": "Bénéficiaires du RSA relevant des droits et devoirs et ayant signé un contrat d’engagement réciproque ou bénéficiant d’un suivi France Travail; conditions complémentaires selon emploi salarié, formation, immersion ou activité indépendante.",
+    "steps": [],
+    "url": "https://mda.herault.fr/cms_viewFilePublication.php?id=668"
+  },
+  {
+    "id": "caf-herault-secours-prets",
+    "name": "Secours et prêts sociaux — Caf de l’Hérault",
+    "category": "Famille",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Aides exceptionnelles sous forme de secours ou de prêts sans intérêt, après ouverture des droits légaux et étude au cas par cas par la commission des aides individuelles sur proposition d’un travailleur social Caf. Les montants ne sont pas forfaitaires.",
+    "when": "Familles allocataires avec enfant à charge ou à naître; situations citées : parent seul avec enfants, séparation/divorce/décès, impayé de loyer avec ALF pour une famille avec enfant à charge, ou difficultés de familles percevant la prime d’activité avec QF inférieur à 800 € et sans RSA.",
+    "steps": [],
+    "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux"
+  },
+  {
+    "id": "bouclier-social-petite-enfance-montpellier",
+    "name": "Bouclier social Petite Enfance — Montpellier",
+    "category": "Garde",
+    "zone": "34",
+    "org": "Ville de Montpellier",
+    "description": "Dispositif municipal documenté par un règlement 2025, qui réduit le reste à charge d’une garde à domicile sur horaires atypiques pour des familles monoparentales éligibles. La version en vigueur et l’ouverture de la campagne actuelle restent à confirmer.",
+    "when": "Parents isolés domiciliés à Montpellier avec un enfant de moins de 3 ans, en emploi ou en formation sur des horaires atypiques, sous conditions de quotient familial et de CMG; recours à un organisme de garde affilié requis.",
+    "steps": [],
+    "url": "https://www.montpellier.fr/vie-quotidienne/vivre-ici/j-ai-un-enfant-entre-0-et-3-ans/je-recherche-un-mode-d-accueil/bouclier-social-petite-enfance"
+  },
+  {
+    "id": "fsl-gard-acces",
+    "name": "Fonds de solidarité pour le logement — accès au logement (Gard)",
+    "category": "Logement",
+    "zone": "30",
+    "org": "Conseil départemental du Gard (financeur); Agence Départementale de l’Habitat et du Logement (instructeur)",
+    "description": "Le volet Accès du FSL du Gard aide les ménages à accéder à un logement. Il peut contribuer au dépôt de garantie, premier loyer, frais d’agence, déménagement ou assurance locative, selon les règles et ressources applicables. L’ADHL instruit; le Département verse.",
+    "when": "Ménages du Gard qui rencontrent des difficultés pour accéder à un logement, sous plafonds de ressources variables selon la composition du foyer et selon les conditions propres à l’aide demandée.",
+    "url": "https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces.html"
+  },
+  {
+    "id": "occ-aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire",
+    "name": "Aides en faveur du développement de la pratique du sport scolaire",
+    "category": "Enfants & école",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Public bénéficiaire à confirmer sur la page officielle du dispositif.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire"
+  },
+  {
+    "id": "occ-avec-mouv-occitanie-la-region-t-aide-pour-ta-mobilite-internationale",
+    "name": "Avec Mouv’Occitanie, la Région t’aide pour ta mobilité internationale",
+    "category": "Mobilité",
+    "zone": "regional",
+    "org": "Région Occitanie",
+    "description": "Dispositif régional identifié comme potentiellement pertinent; conditions détaillées et modalités en cours de vérification.",
+    "when": "Public bénéficiaire à confirmer sur la page officielle du dispositif.",
+    "steps": [],
+    "url": "https://www.laregion.fr/Avec-Mouv-Occitanie-la-Region-t-aide-pour-ta-mobilite-internationale"
+  },
+  {
+    "id": "caf-herault-pret-equipement-logement",
+    "name": "Prêt à l’équipement du logement — Caf de l’Hérault",
+    "category": "Logement",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Prêt Caf destiné à l’équipement ménager, mobilier et de puériculture, plafonné à 95 % du devis et 650 €. Le règlement 2026 inclut les parents non-gardiens et encadre le fournisseur, les biens et le remboursement.",
+    "when": "Allocataires Caf de l’Hérault avec quotient familial ≤ 900 €, percevant au moins une prestation légale (RSA, prime d’activité ou APL) le mois de la demande et n’ayant pas de prêt de même nature en cours; les parents sans charge de l’enfant et non-gardiens sont expressément inclus.",
+    "steps": [],
+    "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf"
+  },
+  {
+    "id": "caf-herault-mobilite-insertion",
+    "name": "Aide à la mobilité pour l’insertion professionnelle — Caf de l’Hérault",
+    "category": "Mobilité",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Aide locale Caf pour le permis (code/heures de conduite) ou la location d’un véhicule, dans le cadre d’un parcours d’insertion. La demande passe par un organisme d’accompagnement conventionné avec la Caf.",
+    "when": "Allocataires avec enfant(s) à charge qui perçoivent des minima sociaux et sont accompagnés vers l’insertion professionnelle par un organisme conventionné par la Caf de l’Hérault.",
+    "steps": [],
+    "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf"
+  },
+  {
+    "id": "fsl-09",
+    "name": "FSL / Fonds unique habitat — Ariège",
+    "category": "Logement",
+    "zone": "09",
+    "org": "Conseil départemental de l’Ariège",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf"
+  },
+  {
+    "id": "fsl-11",
+    "name": "Fonds de solidarité pour le logement — Aude",
+    "category": "Logement",
+    "zone": "11",
+    "org": "Conseil départemental de l’Aude",
+    "description": "Le FSL départemental de l’Aude peut soutenir l’accès ou le maintien dans le logement et certaines factures d’eau, d’énergie ou de télécommunications. Le règlement de mars 2026 prévoit une évaluation des ressources et des charges; critères, plafonds et pièces varient selon le volet.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf"
+  },
+  {
+    "id": "fsl-12",
+    "name": "Fonds de solidarité pour le logement — Aveyron",
+    "category": "Logement",
+    "zone": "12",
+    "org": "Conseil départemental de l’Aveyron",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://aveyron.fr/sites/default/files/documents/Solidarite/2025/08-aout/2025_03_28_RDAS.pdf"
+  },
+  {
+    "id": "fsl-31-departement",
+    "name": "Fonds de solidarité pour le logement — Haute-Garonne hors Toulouse Métropole",
+    "category": "Logement",
+    "zone": "31",
+    "org": "Conseil départemental de la Haute-Garonne",
+    "description": "La page officielle du Département présente les volets Accès, Maintien, énergie, eau-assainissement, téléphonie/internet et accompagnement social. Les critères détaillés, plafonds courants, pièces et modalités par volet restent à confirmer pour 2026.",
+    "when": "Logement situé en Haute-Garonne hors Toulouse Métropole. La page départementale indique que la demande dépend du volet et de la situation du ménage; les plafonds et critères financiers courants 2026 ne sont pas établis.",
+    "steps": [],
+    "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
+  },
+  {
+    "id": "fsl-31-toulouse-metropole",
+    "name": "Fonds de solidarité pour le logement — Toulouse Métropole",
+    "category": "Logement",
+    "zone": "31",
+    "org": "Toulouse Métropole",
+    "description": "Toulouse Métropole exerce le FSL sur son périmètre de 37 communes. Ses pages publiques présentent des aides au logement et invitent à se renseigner auprès d’une Maison des solidarités ou d’un CCAS; le point de dépôt FSL et les critères 2026 restent à confirmer.",
+    "when": "Logement situé dans une des 37 communes de Toulouse Métropole (EPCI 243100518). Conditions et aides par volet soumises à confirmation des règles métropolitaines en vigueur en 2026.",
+    "steps": [],
+    "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl"
+  },
+  {
+    "id": "aide-urgence-gers",
+    "name": "Fonds d’aide d’urgence — Gers",
+    "category": "Revenus",
+    "zone": "32",
+    "org": "Conseil départemental du Gers",
+    "description": "Aide départementale ponctuelle pour les personnes ou ménages confrontés à une détresse grave ou à un événement exceptionnel. Le service social évalue la situation et les autres droits mobilisables; l’aide n’est pas automatique et aucun montant forfaitaire n’est publié.",
+    "when": "Résider principalement dans le Gers et rencontrer une détresse grave compromettant ses conditions d’existence, des difficultés importantes de charges quotidiennes ou un événement exceptionnel; évaluation par le service social départemental.",
+    "steps": [
+      "Contacter le service social départemental pour une évaluation de la situation et des droits déjà mobilisables."
+    ],
+    "url": "https://www.gers.fr/aides-infos-pratiques/insertion-et-solidarites/aides-financieres"
+  },
+  {
+    "id": "fsl-46",
+    "name": "Fonds de solidarité pour le logement — Lot",
+    "category": "Logement",
+    "zone": "46",
+    "org": "Département du Lot",
+    "description": "Le FSL du Lot peut aider des ménages en difficulté à accéder à un logement indépendant ou à s’y maintenir. Les ressources des occupants sont comparées à des plafonds indexés sur l’AAH; conditions et subsidiarité varient selon les volets accès, maintien, énergie et accompagnement.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf"
+  },
+  {
+    "id": "fsl-48",
+    "name": "Fonds de solidarité pour le logement — Lozère",
+    "category": "Logement",
+    "zone": "48",
+    "org": "Conseil départemental de la Lozère",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://lozere.fr/sites/default/files/upload/05-solidarite/documents/260101_ri_fsl_complet_cd_lozere_2.pdf"
+  },
+  {
+    "id": "fsl-65",
+    "name": "Fonds de solidarité pour le logement — Hautes-Pyrénées",
+    "category": "Logement",
+    "zone": "65",
+    "org": "Département des Hautes-Pyrénées",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.hautespyrenees.fr/download/462/2025/27005/publication-n685-du-3-fevrier-2025-commission-permanente-du-31-janvier-2025-deliberations.pdf"
+  },
+  {
+    "id": "fsl-66",
+    "name": "Fonds de solidarité pour le logement — Pyrénées-Orientales",
+    "category": "Logement",
+    "zone": "66",
+    "org": "Département des Pyrénées-Orientales",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.ledepartement66.fr/fonds-de-solidarite-pour-le-logement-mode-demploi/"
+  },
+  {
+    "id": "fsl-81",
+    "name": "Fonds de solidarité pour le logement — Tarn",
+    "category": "Logement",
+    "zone": "81",
+    "org": "Conseil départemental du Tarn",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.tarn.fr/fileadmin/mediatheque/Tarn/Documents/Actualites/2025/Logement/FSL-Fonds-de-solidarite-pour-le-logement_Tarn.pdf"
+  },
+  {
+    "id": "fsl-82",
+    "name": "Fonds de solidarité pour le logement — Tarn-et-Garonne",
+    "category": "Logement",
+    "zone": "82",
+    "org": "Conseil départemental de Tarn-et-Garonne",
+    "description": "Dispositif local candidat du Fonds de solidarité pour le logement. La page officielle confirme son existence; les critères détaillés et le parcours doivent être contrôlés dans le règlement applicable.",
+    "when": "Ménages en difficulté de logement résidant sur le territoire compétent; l’éligibilité dépend du règlement local.",
+    "steps": [],
+    "url": "https://www.tarnetgaronne.fr/social-insertion/fonds-de-solidarite-pour-le-logement"
+  },
+  {
+    "id": "caf-aveyron-projet-familial",
+    "name": "Aide au projet familial — Caf de l’Aveyron",
+    "category": "Famille",
+    "zone": "12",
+    "org": "Caisse d’Allocations familiales de l’Aveyron",
+    "description": "Aide ponctuelle par subvention ou prêt pour soutenir une famille après une difficulté ou un changement fragilisant son équilibre. L’aide est complémentaire aux droits légaux, examinée par une commission et modulée selon le projet.",
+    "when": "Familles aveyronnaises allocataires ou parents non hébergeants/non allocataires du régime général ou assimilé avec au moins un enfant à charge de moins de 21 ans ou à naître, concernées notamment par une séparation, un décès, la monoparentalité ou un impayé de loyer. Sans condition de ressources.",
+    "steps": [
+      "Être accompagné par un travailleur social de la Caf de l’Aveyron pour établir le projet familial.",
+      "Le dossier est examiné par la Commission des aides financières individuelles; en cas d’accord, paiement privilégié à un tiers."
+    ],
+    "url": "https://www.caf.fr/sites/default/files/medias/121/Images/Partenaires/RIAS%202026%20Version%20D%C3%A9finitive%2001%202026.pdf"
+  },
+  {
+    "id": "fdaj-herault",
+    "name": "Fonds départemental d’aide aux jeunes — Hérault hors Métropole",
+    "category": "Emploi",
+    "zone": "34",
+    "org": "Conseil départemental de l’Hérault",
+    "description": "Aide financière ponctuelle aux jeunes en difficulté d’insertion sociale ou professionnelle; elle peut soutenir des besoins urgents, selon l’évaluation et la décision du fonds.",
+    "when": "Jeunes de 18 à 25 ans sans emploi, sans ressources ou avec faibles ressources; la demande doit être instruite avec un travailleur social de la Mission Locale.",
+    "steps": [
+      "Contacter la Mission Locale pour être accompagné et constituer le dossier.",
+      "Le dossier est présenté à la commission d’attribution.",
+      "Pour l’accès au logement, solliciter prioritairement le FSL compétent."
+    ],
+    "url": "https://herault.fr/615-fdaj.htm"
+  },
+  {
+    "id": "faj3m-montpellier",
+    "name": "Fonds métropolitain d’aide aux jeunes (FAJ3M)",
+    "category": "Emploi",
+    "zone": "34",
+    "org": "Montpellier Méditerranée Métropole",
+    "description": "Aide financière ponctuelle aux jeunes en difficulté d’insertion sociale ou professionnelle; elle peut soutenir des besoins urgents, selon l’évaluation et la décision du fonds.",
+    "when": "Jeunes de 18 à 25 ans sans emploi, sans ressources ou avec faibles ressources; la demande doit être instruite avec un travailleur social de la Mission Locale.",
+    "steps": [
+      "Contacter la Mission Locale pour être accompagné et constituer le dossier.",
+      "Le dossier est présenté à la commission d’attribution.",
+      "Pour l’accès au logement, solliciter prioritairement le FSL compétent."
+    ],
+    "url": "https://www.montpellier3m.fr/sites/default/files/fiche_e.pdf"
+  },
+  {
+    "id": "ccas-montpellier-aide-facultative",
+    "name": "Aides financières facultatives — CCAS de Montpellier",
+    "category": "Famille",
+    "zone": "34",
+    "org": "CCAS de Montpellier",
+    "description": "Le CCAS reçoit les demandes d’aide financière facultative pour les ménages accompagnés par un travailleur social, notamment en attente d’ouverture de droits ou en rupture de parcours. La page officielle ne fixe pas de montant ni de barème.",
+    "when": "Ménages montpelliérains accompagnés par un travailleur social du CCAS; chaque demande relève d’une appréciation individuelle.",
+    "steps": [
+      "Être reçu par le service d’accompagnement social et d’accès aux droits du CCAS.",
+      "Présenter la situation au travailleur social, qui accompagne l’évaluation et la demande."
+    ],
+    "url": "https://www.montpellier.fr/actions/competences/solidarites/centre-communal-daction-sociale-ccas"
+  },
+  {
+    "id": "ccas-frontignan-energy-aid",
+    "name": "Aide du CCAS au paiement des factures énergétiques — Frontignan",
+    "category": "Logement",
+    "zone": "34",
+    "org": "CCAS de Frontignan",
+    "description": "Une page officielle ancienne du CCAS décrit une aide de 175 € versée aux ménages recevables après dépôt d’un dossier pour des factures d’énergie. La période actuelle et les critères d’accès ne sont pas confirmés; l’aide reste une candidate à revalider.",
+    "when": "Ménages de Frontignan en situation de précarité énergétique; les conditions détaillées et l’ouverture actuelle de l’aide doivent être confirmées par le CCAS.",
+    "steps": [
+      "Contacter le CCAS de Frontignan pour vérifier que le dispositif est encore ouvert et obtenir le dossier ainsi que les conditions de recevabilité."
+    ],
+    "url": "https://www.frontignan.fr/aide-au-paiement-des-factures-energetiques/"
+  },
+  {
+    "id": "caf-herault-bafa",
+    "name": "Aide locale au BAFA — Caf de l’Hérault",
+    "category": "Formation",
+    "zone": "34",
+    "org": "Caisse d'Allocations familiales de l'Hérault",
+    "description": "Aide locale plafonnée à 100 € pour la session générale du BAFA, versée après validation de la session et dans la limite des fonds disponibles. Cumulable avec l’aide nationale.",
+    "when": "Tout allocataire de la Caf de l’Hérault, y compris en cours d’affiliation, ou enfant à charge d’un allocataire; aucune condition de ressources.",
+    "steps": [],
+    "url": "https://www.caf.fr/professionnels/caf-de-l-herault/offre-de-service/vie-professionnelle/le-bafa"
+  },
+  {
+    "id": "caf-haute-garonne-pret-mobilite-reparation",
+    "name": "Prêt mobilité véhicule — réparations et entretien — Caf de la Haute-Garonne",
+    "category": "Mobilité",
+    "zone": "31",
+    "org": "Caisse d’Allocations Familiales de la Haute-Garonne",
+    "description": "Prêt sans intérêt de la Caf de la Haute-Garonne pour aider les familles allocataires à financer l’entretien ou la réparation d’un véhicule.",
+    "when": "Allocataire de la Caf de la Haute-Garonne bénéficiant d’au moins une prestation familiale et ayant un quotient familial Caf inférieur ou égal à 950 €. Le véhicule doit être immatriculé au nom de l’allocataire ou de son conjoint.",
+    "steps": [
+      "Télécharger et compléter le formulaire de demande depuis la page officielle de la Caf.",
+      "Faire établir un devis par le professionnel et réunir le RIB du professionnel, la carte grise et les justificatifs demandés selon la situation.",
+      "Envoyer le dossier complet à afi@caf31.caf.fr.",
+      "Si la demande est acceptée, signer et retourner le contrat de prêt; le conjoint doit aussi le signer en cas de vie commune.",
+      "Après réception du contrat signé et de la facture conforme au devis, la Caf règle directement le professionnel."
+    ],
+    "url": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne/actualites-departementales/le-pret-mobilite-vehicule-une-solution-pour-alleger-vos-depenses-de-reparation"
   }
 ]

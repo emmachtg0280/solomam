@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
+import { TerritoryProvider } from "@/components/territory-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Solomam — Aides et démarches pour mamans solos",
-  description: "Aides et démarches pour mamans solos. Consultez les aides nationales et locales en Occitanie, leurs conditions et les étapes pour les demander.",
+  title: {
+    default: "Aides, associations et vie quotidienne",
+    template: "Solomam | %s",
+  },
+  description: "Aides, droits, associations et ressources du quotidien pour les mamans solos. Solomam rassemble des informations sourcées et adaptées à ton territoire.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="fr"><body><SiteHeader />{children}</body></html>;
+  return <html lang="fr"><body><TerritoryProvider><SiteHeader />{children}</TerritoryProvider></body></html>;
 }

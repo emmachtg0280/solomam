@@ -1,0 +1,395 @@
+{
+  "checkedAt": "2026-11-24",
+  "scopeNote": "Matrice de travail, non exhaustive. Un territoire marqué non_examined n'est pas réputé dépourvu de dispositif; les sources et domaines explorés sont énumérés sans préjuger des résultats hors de ce périmètre. Le registre départemental fournit des points de découverte; les URLs non contrôlées ne sont pas réputées accessibles et aucun territoire sans collecte détaillée n'est marqué examiné.",
+  "statuses": [
+    "non_examined",
+    "identified",
+    "partially_integrated",
+    "verified_and_integrated",
+    "examined_no_relevant_record_identified",
+    "verification_blocked"
+  ],
+  "territories": [
+    {
+      "id": "national",
+      "label": "France",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories"
+      ],
+      "verifiedPublishedAidCount": 14,
+      "sources": [
+        "Service-Public",
+        "CAF",
+        "Ameli",
+        "France Travail"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "14 fiches nationales publiées; la couverture n'est pas exhaustive."
+    },
+    {
+      "id": "occitanie",
+      "label": "Région Occitanie",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere",
+        "aide_materielle",
+        "service_accompagnement"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "verifiedPublishedAidCount": 2,
+      "sources": [
+        "Dataset Région Occitanie",
+        "Pages détaillées Région Occitanie"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "Deux dispositifs régionaux publiés; 87 des 153 lignes Aides restent à examiner après cette passe, plus les autres dossiers non publiés."
+    },
+    {
+      "id": "34",
+      "label": "Hérault",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere",
+        "service_accompagnement",
+        "ressource_structure"
+      ],
+      "categories": [
+        "Logement",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "verifiedPublishedAidCount": 9,
+      "verifiedPublishedServiceCount": 3,
+      "sources": [
+        "Conseil départemental Hérault (découverte)",
+        "Caf Hérault (découverte)",
+        "Caf Hérault — page secours/prêts",
+        "Caf Hérault — RIAS 2026 (extraction bloquée)",
+        "RDAS Hérault 2026 — AFIE/FSL",
+        "CCAS Montpellier — aides facultatives",
+        "Ville Montpellier — Bouclier social (règlement 2025)",
+        "CCAS Frontignan",
+        "CCAS Sète (point de découverte)",
+        "CCAS Béziers",
+        "Département de l'Hérault RDAS septembre 2026",
+        "Règlement FSL M3M 2025",
+        "CAF Hérault",
+        "Pages de services du Département",
+        "Caf Hérault — RIAS 2026 extrait",
+        "CCAS Frontignan — aide énergie à reconfirmer",
+        "CCAS Sète (aucun dispositif financier nommé confirmé)",
+        "CCAS Béziers — accompagnement social",
+        "Caf Hérault — BAFA 2026 et formulaire BAFA 1"
+      ],
+      "checkedAt": "2026-11-24",
+      "notes": "FSL départemental et métropolitain distincts. RIAS Caf 2026 récupéré et extrait : secours/prêts, prêt équipement, aide mobilité et BAFA sont documentés; le BAFA 2026 est publié pour information après vérification du formulaire, le canal de dépôt reste à confirmer. AFIE Hérault vérifiée; règles d'attribution/annexe de montants encore partielles. FDAJ/FAJ3M conservés séparément selon le territoire. CCAS Montpellier aide facultative reste candidate faute de barème; aide énergie Frontignan non publiée car la campagne et les critères courants restent à confirmer. Le dispositif Bouclier petite enfance s'appuie sur un règlement 2025 sans statut/campagne 2026 confirmés."
+    },
+    {
+      "id": "09",
+      "label": "Ariège",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Ariège (découverte)",
+        "Caf Ariège (découverte)",
+        "Département Ariège — RDAS/FUH (PDF; version courante à confirmer)",
+        "Département de l’Ariège — RDAS 2026, fiche FSL/FUH",
+        "Département Ariège — RDAS 2026, fiche FSL/FUH",
+        "Département de l’Ariège — PDF RDAS nommé 2026, préambule adopté le 14 mars 2022",
+        "Département Ariège — PDF RDAS nommé 2026, préambule adopté en 2022"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "Le PDF officiel nommé RDAS-2026.pdf indique dans son préambule une adoption au 14 mars 2022; l’actualité du règlement reste à confirmer. La fiche 69 n’est pas publiée et le règlement intérieur FUH courant reste à vérifier.",
+      "verifiedPublishedAidCount": 0
+    },
+    {
+      "id": "11",
+      "label": "Aude",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Aude (découverte)",
+        "Caf Aude (découverte)",
+        "Département de l’Aude — règlement d’attribution des aides financières, avril 2026"
+      ],
+      "checkedAt": "2026-11-24",
+      "notes": "Le règlement départemental adopté le 27 mars 2026 a été consulté; une fiche FSL est publiée pour information. Les critères et parcours par volet restent partiels; publication ne signifie pas confirmation individuelle d’éligibilité.",
+      "verifiedPublishedAidCount": 1
+    },
+    {
+      "id": "12",
+      "label": "Aveyron",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Aveyron (découverte)",
+        "Caf Aveyron (découverte)",
+        "Département de l’Aveyron — RDAS, fiche FSL",
+        "Caf de l’Aveyron — RIAS aides financières individuelles 2026"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 1
+    },
+    {
+      "id": "30",
+      "label": "Gard",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "Logement"
+      ],
+      "sources": [
+        "Conseil départemental Gard (découverte)",
+        "Caf Gard (découverte)",
+        "ADHL Gard — FSL Accès",
+        "ADHL Gard — Barèmes au 1er avril 2026"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "Un volet du FSL Gard (accès au logement) est vérifié et intégré avec information publiée; procédure complète et autres volets non examinés.",
+      "verifiedPublishedAidCount": 1
+    },
+    {
+      "id": "31",
+      "label": "Haute-Garonne",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "Logement",
+        "Mobilité"
+      ],
+      "sources": [
+        "Conseil départemental Haute-Garonne — page FSL et annexes liées",
+        "Règlement intérieur commun Haute-Garonne/Toulouse Métropole — mise à jour 2023",
+        "Annexe plafonds FSL 2024",
+        "Toulouse Métropole — fiche FSL JEM",
+        "Département de la Haute-Garonne — FSL",
+        "Département de la Haute-Garonne — répartition de compétence et règlement FSL",
+        "Conseil départemental Haute-Garonne (découverte)",
+        "Caf Haute-Garonne (découverte)",
+        "API Géo — communes EPCI 243100518, requête live du 24/11/2026",
+        "Département de la Haute-Garonne — page FSL actuelle",
+        "Département de la Haute-Garonne — compétence et renvoi FSL Métropole",
+        "Toulouse Métropole — page logement/FSL consultée en 2026",
+        "Toulouse Métropole — ordre du jour FSL 2026",
+        "Caf de la Haute-Garonne — prêt mobilité véhicule pour réparations (15 juillet 2026)",
+        "Caf de la Haute-Garonne — RIAS 2026 listé, document Calaméo inaccessible",
+        "Caf de la Haute-Garonne — page professionnelle listant le RIAS 2026"
+      ],
+      "checkedAt": "2026-11-24",
+      "notes": "La Caf de la Haute-Garonne a publié le 15 juillet 2026 les conditions et la démarche d’un prêt mobilité véhicule pour réparations ou entretien; une fiche d’information est publiée, la date de fin et le budget disponible restent à vérifier. Le RIAS 2026 est listé par la Caf, mais son lien Calaméo n’a pas pu être ouvert; aucune autre aide n’est extrapolée. Les deux fiches FSL restent en attente : la page du Département oriente les demandes vers la MDS de secteur et décrit les volets, mais les plafonds, formulaires, justificatifs et circuits de dépôt 2026 ne sont pas confirmés; Toulouse Métropole conseille de se renseigner auprès d’une MDS ou d’un CCAS sans confirmer qu’ils reçoivent les dossiers. Le règlement lié est une version commentée mise à jour en 2023, l’annexe des plafonds est datée 2024, et le passage JEM sur les étudiants date de 2021 : aucun n’est utilisé comme preuve des règles 2026. L’ordre du jour métropolitain 2026 documente des financements associatifs, pas les conditions des aides individuelles. Aucune collecte CCAS ni hors Haute-Garonne n’a été menée.",
+      "verifiedPublishedAidCount": 1
+    },
+    {
+      "id": "32",
+      "label": "Gers",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Gers (découverte)",
+        "Caf Gers (découverte)",
+        "Département du Gers — aides financières (Fonds d’aide d’urgence et FAJ)",
+        "Département du Gers — Fonds d’aide d’urgence et Fonds d’aide aux jeunes"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "2 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive. Le lien officiel du FSL apparaît dans le plan du site, mais le domaine bloque la consultation par l’outil de recherche; sa règle n’est pas marquée examinée.",
+      "verifiedPublishedAidCount": 1
+    },
+    {
+      "id": "46",
+      "label": "Lot",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Lot (découverte)",
+        "Caf Lot (découverte)",
+        "Département du Lot — règlement intérieur FSL au 1er juillet 2025"
+      ],
+      "checkedAt": "2026-11-24",
+      "notes": "Le règlement FSL applicable depuis le 1er juillet 2025 a été consulté; une fiche FSL est publiée pour information. Les critères et parcours par volet restent partiels; publication ne signifie pas confirmation individuelle d’éligibilité.",
+      "verifiedPublishedAidCount": 1
+    },
+    {
+      "id": "48",
+      "label": "Lozère",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Lozère (découverte)",
+        "Caf Lozère (découverte)",
+        "Département de la Lozère — règlement intérieur FSL, actualisé au 18 décembre 2025"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
+    },
+    {
+      "id": "65",
+      "label": "Hautes-Pyrénées",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Hautes-Pyrénées (découverte)",
+        "Caf Hautes-Pyrénées (découverte)",
+        "Département des Hautes-Pyrénées — règlement intérieur FSL, 1er mars 2025"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
+    },
+    {
+      "id": "66",
+      "label": "Pyrénées-Orientales",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Pyrénées-Orientales (découverte)",
+        "Caf Pyrénées-Orientales (découverte)",
+        "Département des Pyrénées-Orientales — mode d’emploi FSL"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
+    },
+    {
+      "id": "81",
+      "label": "Tarn",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Tarn (découverte)",
+        "Caf Tarn (découverte)",
+        "Département du Tarn — fiche FSL"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
+    },
+    {
+      "id": "82",
+      "label": "Tarn-et-Garonne",
+      "status": "partially_integrated",
+      "types": [
+        "aide_financiere"
+      ],
+      "categories": [
+        "all aid categories",
+        "Parentalité",
+        "Santé & bien-être"
+      ],
+      "sources": [
+        "Conseil départemental Tarn-et-Garonne (découverte)",
+        "Caf Tarn-et-Garonne (découverte)",
+        "Département de Tarn-et-Garonne — FSL et règlement 2025-2026"
+      ],
+      "checkedAt": "2026-11-23",
+      "notes": "1 candidat(s) issus de sources officielles effectivement consultées. Les fiches non vérifiées restent non publiées; la matrice ne signifie pas couverture exhaustive.",
+      "verifiedPublishedAidCount": 0
+    }
+  ],
+  "communeAndIntercommunalScopes": [
+    {
+      "id": "montpellier-mediterranee-metropole",
+      "status": "verified_and_integrated",
+      "inseeCodeCount": 31,
+      "sourceFile": "src/data/territories/montpellier-metropole.json",
+      "checkedAt": "2026-11-23"
+    },
+    {
+      "id": "frontignan",
+      "status": "identified",
+      "inseeCode": "34108",
+      "checkedAt": "2026-11-23",
+      "notes": "Présence d'une Maison des 1000 jours; autres dispositifs communaux non examinés."
+    },
+    {
+      "id": "sete",
+      "status": "identified",
+      "inseeCode": "34301",
+      "checkedAt": "2026-11-23",
+      "notes": "Centres de santé sexuelle répertoriés par le Département; autres dispositifs communaux non examinés."
+    },
+    {
+      "id": "beziers",
+      "status": "identified",
+      "inseeCode": "34032",
+      "checkedAt": "2026-11-23",
+      "notes": "Maison des 1000 jours et centre de santé sexuelle répertoriés par le Département; autres dispositifs communaux non examinés."
+    }
+  ]
+}

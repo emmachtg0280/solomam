@@ -1,0 +1,57 @@
+{
+  "sourceId": "caf-herault-rias-2026",
+  "sourceUrl": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
+  "rawSnapshot": "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf",
+  "retrievedAt": "2026-11-23",
+  "officialPage": "https://www.caf.fr/professionnels/offres-et-services/caf-de-l-herault/partenaires-locaux",
+  "extractedSections": [
+    {
+      "section": "5. Secours et prêts sociaux",
+      "pdfPages": [
+        14,
+        15
+      ],
+      "findings": [
+        "Familles allocataires; situations de parent seul avec enfants, séparation/divorce/décès; impayé de loyer en ALF pour familles avec enfant à charge; prime d’activité avec revenus modestes, QF < 800 €, sans RSA.",
+        "Droits légaux préalablement ouverts; proposition d’un travailleur social; décision de la Commission des aides individuelles; secours ou prêt sans intérêt au cas par cas.",
+        "Évaluation sociale décrivant la situation, l’origine des difficultés et les aides/accompagnements sollicités.",
+        "Les dettes de loyer, électricité, gaz, eau et téléphone sont prioritairement examinées au FSL."
+      ]
+    },
+    {
+      "section": "4. Prêt à l’équipement du logement",
+      "pdfPages": [
+        13,
+        14
+      ],
+      "findings": [
+        "QF ≤ 900 €; parents non-gardiens inclus; percevoir RSA, prime d’activité ou APL le mois de demande; aucun prêt de même nature en cours.",
+        "Montant ≤ 95 % du devis et ≤ 650 €; devis d’un fournisseur partenaire agréé; mensualités de 25 €, 35 €, 45 € ou 55 €."
+      ]
+    },
+    {
+      "section": "6. Mobilité pour insertion professionnelle",
+      "pdfPages": [
+        15
+      ],
+      "findings": [
+        "Allocataires avec enfants à charge percevant des minima sociaux et accompagnés par un organisme conventionné Caf.",
+        "Permis/code/heures de conduite ou location de véhicule 2/4 roues; plafond 2 000 € par année civile, jusqu’à deux mobilisations, dans la limite du coût du projet."
+      ]
+    },
+    {
+      "section": "7. Aide locale BAFA 1",
+      "pdfPages": [
+        15
+      ],
+      "findings": [
+        "Stagiaire allocataire ou enfant à charge, sans condition de ressources; aide plafonnée à 100 €, sous réserve de budget, après validation de la première session. La page officielle et le formulaire BAFA 1 2026 ont été vérifiés; retour du dossier à la Caf sous 3 mois."
+      ]
+    }
+  ],
+  "scopeLimitations": [
+    "Le RIAS fixe les règles d'aides locales sous enveloppe annuelle; il ne garantit pas l'octroi individuel.",
+    "Les pages précisent que l’aide aux dettes locatives et aux charges concernées relève prioritairement du FSL.",
+    "La mobilité reste une orientation via un organisme conventionné, qui n'est pas encore identifié pour chaque demandeuse."
+  ]
+}

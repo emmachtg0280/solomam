@@ -1,33 +1,53 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AidActions } from "@/components/aid-actions";
+import { TerritoryMark } from "@/components/territory-mark";
 import { publishedAids, getAid } from "@/lib/aids";
-
-const coverageLabel = { national: "National", regional: "Occitanie", "34": "Hérault (34)" };
 
 export const dynamicParams = false;
 export function generateStaticParams() { return publishedAids.map(({ slug }) => ({ slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; const aid = getAid(slug);
-  return { title: aid ? `${aid.name} — Solomam` : "Aide introuvable — Solomam", description: aid?.description };
+  const { slug } = await params;
+  const aid = getAid(slug);
+  return { title: aid ? aid.name : "Aide introuvable", description: aid?.description };
 }
 
 export default async function AidPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; const aid = getAid(slug);
+  const { slug } = await params;
+  const aid = getAid(slug);
   if (!aid) notFound();
+  const hasSteps = aid.steps.length > 0;
   return <main className="container page"><article className="detail-layout">
-    <Link className="back-link" href="/">Retour au catalogue</Link>
-    <div className="detail-meta"><span className="badge">{aid.category}</span><span className="badge">{coverageLabel[aid.coverage]}</span><span className="badge">{aid.validationStatus}</span></div>
+    <Link className="back-link" href="/aides">Toutes les aides</Link>
+    <div className="detail-topline"><div className="detail-meta"><span className="badge">{aid.category}</span><span className="badge badge-verified">✓ Information vérifiée</span></div><TerritoryMark coverage={aid.coverage} /></div>
     <h1 className="detail-title">{aid.name}</h1>
     <p className="detail-description">{aid.description}</p>
-    <section className="detail-section"><h2>Organisme responsable</h2><p>{aid.organization}</p></section>
-    <section className="detail-section"><h2>Zone géographique</h2><p>{coverageLabel[aid.coverage]}</p></section>
-    <section className="detail-section"><h2>Conditions d’accès</h2><ul>{aid.conditions.map((condition) => <li key={condition}>{condition}</li>)}</ul></section>
-    <section className="detail-section"><h2>Informations ou documents nécessaires</h2><ul>{aid.documents.map((document) => <li key={document}>{document}</li>)}</ul></section>
-    <section className="detail-section"><h2>Étapes de demande</h2><ol>{aid.steps.map((step) => <li key={step}>{step}</li>)}</ol></section>
-    <section className="detail-section"><h2>Lien officiel</h2><p><a href={aid.officialUrl} target="_blank" rel="noopener noreferrer">Consulter le site officiel</a></p></section>
-    <section className="detail-section"><h2>Source et vérification</h2><p>Source : {aid.sources.map((source) => <a href={source.url} target="_blank" rel="noopener noreferrer" key={source.url}>{source.label}</a>)}.</p><p>{aid.verifiedAt ? `Vérifiée le ${aid.verifiedAt}` : "Date de vérification : non renseignée. Informations à vérifier auprès de l’organisme."}</p></section>
     <AidActions aid={aid} />
+
+    {aid.audience && <section className="detail-section"><h2>À qui s’adresse cette aide ?</h2><p>{aid.audience}</p></section>}
+    {aid.conditions.length > 0 && <section className="detail-section"><h2>Conditions essentielles</h2><ul>{aid.conditions.map((condition) => <li key={condition}>{condition}</li>)}</ul></section>}
+    {aid.amount && <section className="detail-section"><h2>Montant ou nature de l’aide</h2><p>{aid.amount}</p></section>}
+    {aid.uncertainties.length > 0 && <section className="detail-section" aria-labelledby="uncertainties-title"><h2 id="uncertainties-title">Points à confirmer</h2><ul>{aid.uncertainties.map((uncertainty) => <li key={uncertainty}>{uncertainty}</li>)}</ul></section>}
+    {aid.documents.length > 0 && <section className="detail-section"><h2>Documents indiqués par la source</h2><ul>{aid.documents.map((document) => <li key={document}>{document}</li>)}</ul></section>}
+    <section className="detail-section"><h2>Qui la propose ?</h2><p>{aid.organization}</p></section>
+    <section className="detail-section"><h2>Comment faire la demande ?</h2>
+      {hasSteps ? <>
+        {aid.procedurePublicationStatus !== "complete" && <p className="muted">Étapes confirmées par les sources ci-dessous; certains cas ou canaux peuvent différer.</p>}
+        <ol>{aid.steps.map((step) => <li key={step}>{step}</li>)}</ol>
+      </> : <p>Les étapes détaillées ne sont pas encore documentées. La source officielle présente les informations disponibles.</p>}
+      <p className="official-action">{aid.applicationUrl
+        ? <a className="button button-primary" href={aid.applicationUrl} target="_blank" rel="noopener noreferrer">Faire la demande sur le site officiel</a>
+        : <a className="button button-primary" href={aid.officialUrl} target="_blank" rel="noopener noreferrer">Consulter les informations officielles</a>}
+      </p>
+    </section>
+    <section className="detail-section"><h2>Sources et vérification</h2>
+      <ul>{aid.sources.map((source) => <li key={source.id ?? source.url}>
+        <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a>
+        {source.pageVerifiedAt ? ` — page vérifiée le ${source.pageVerifiedAt}` : ""}
+        {source.consultedAt ? `; consultée le ${source.consultedAt}` : ""}
+      </li>)}</ul>
+      <p>Fiche d’information vérifiée le {aid.verifiedAt}.</p>
+    </section>
   </article></main>;
 }

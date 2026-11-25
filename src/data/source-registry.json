@@ -1,6 +1,6 @@
 {
   "registryVersion": 1,
-  "auditedAt": "2026-11-23",
+  "auditedAt": "2026-11-24",
   "countingPolicy": "Only distinct normalized aid records actually retrieved, mapped to the canonical model, stored and usable count as imported records. Consultation, code inspection, metadata, or a link alone count as zero.",
   "sources": [
     {
@@ -96,9 +96,9 @@
       "url": "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/",
       "role": "Potential structured source for regional schemes",
       "status": "official-snapshot-imported-qualification-in-progress",
-      "version": "Snapshot captured 2026-11-24T00:53:03.529Z; live dataset revision not separately pinned",
-      "license": "Licence Ouverte / Open Licence 2.0 (confirmed on the dataset portal)",
-      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "version": "229 records captured 2026-11-24T08:09:48.590Z; live dataset revision not separately pinned",
+      "license": "Licence Ouverte / Open Licence 2.0 (previously observed in source metadata; snapshot lacks license metadata)",
+      "retrievedAt": "2026-11-24T08:09:48.590Z",
       "endpointProbe": {
         "consent": "accepted for the recorded import",
         "metadataRetrieved": true,
@@ -112,15 +112,15 @@
       "candidateAidRowsObserved": 153,
       "coverage": "229 official dataset records; 153 rows categorized Aides; 76 other categories excluded from this aid qualification run",
       "limitations": [
-        "Dataset has no beneficiary, eligibility, documents, application process or legal validity fields",
-        "Qualification register has 22 relevant candidates, 28 confirmed non-relevant items, 2 expired items and 101 manual reviews",
-        "No regional aid card is published until current rules and application routes are normalized",
-        "Local snapshot count differs from the portal observation and needs reconciliation at the next import"
+        "Dataset has no beneficiary, eligibility, documents, application process or validity fields",
+        "Qualification register has 28 relevant candidates, 119 confirmed non-relevant items, 6 expired items and 0 manual reviews",
+        "No regional aid card is published until full current rules and application routes are normalized",
+        "Live source page and dataset metadata need to be rechecked for updates and reuse terms"
       ],
-      "candidateAidRowsQualifiedRelevant": 22,
-      "candidateAidRowsExpired": 2,
-      "candidateAidRowsExcluded": 28,
-      "candidateAidRowsPendingReview": 101,
+      "candidateAidRowsQualifiedRelevant": 28,
+      "candidateAidRowsExpired": 6,
+      "candidateAidRowsExcluded": 119,
+      "candidateAidRowsPendingReview": 0,
       "attribution": "Source : R?gion Occitanie ? Aides et appels ? projets; cite the source and last update date.",
       "portalObservation": {
         "observedAt": "2026-11-23",
@@ -129,31 +129,36 @@
         "localSnapshotRecords": 229,
         "localSnapshotAidRows": 153,
         "discrepancy": "The locally captured snapshot has one more total record and one more Aides row than the portal observation; reconcile on next import."
-      }
+      },
+      "candidateRecordsIntegrated": 23,
+      "publishableRecords": 1
     },
     {
       "id": "region-official-catalogue",
       "name": "Région Occitanie — aides et appels à projets",
       "url": "https://www.laregion.fr/Les-aides-et-appels-a-projets",
       "role": "Official detailed regional scheme pages and application routes",
-      "status": "official-pages-reviewed-partially",
+      "status": "official-pages-reviewed-for-relevance",
       "version": "Live catalogue; individual page dates vary",
       "license": "Reuse terms not verified for page content",
-      "retrievedAt": "2026-11-23",
+      "retrievedAt": "2026-11-24T07:39:15.835Z",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
       "candidateResultsObserved": 357,
       "coverage": "Catalogue contains schemes and calls for multiple types of applicants",
       "limitations": [
-        "Review is partial: 52 of 153 aid records have a decision supported by the linked official detail page",
+        "Relevance review covers 153 of 153 aid records; this is not legal or regulatory validation",
         "No complete individual application journey has yet been normalized into a publishable aid card",
-        "The remaining 101 official pages still require beneficiary, validity and application-path review"
+        "All relevant candidates still require current eligibility, validity, document and application-process checks before publication"
       ],
-      "pagesReviewed": 52,
-      "relevantCandidates": 22,
-      "confirmedNonRelevant": 28,
-      "expired": 2,
-      "pendingManualReview": 101
+      "pagesReviewed": 153,
+      "relevantCandidates": 28,
+      "confirmedNonRelevant": 119,
+      "expired": 6,
+      "pendingManualReview": 0,
+      "candidateRecordsIntegrated": 23,
+      "publishableRecords": 1,
+      "reviewedAt": "2026-11-23"
     },
     {
       "id": "caf-herault",
@@ -170,23 +175,6 @@
       "limitations": [
         "Landing page is not a full rule or process source",
         "Dynamic pages and content dates require aid-by-aid capture"
-      ]
-    },
-    {
-      "id": "caf-herault-rias",
-      "name": "CAF Hérault — Règlement intérieur d'action sociale (RIAS)",
-      "url": "https://www.caf.fr/professionnels/offres-et-services/caf-de-l-herault/partenaires-locaux",
-      "role": "Annual rules for local social-action aids and holiday assistance",
-      "status": "official-document-found-not-fully-extracted",
-      "version": "2026 PDF surfaced: https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
-      "license": "Reuse terms not independently verified",
-      "retrievedAt": "2026-11-23",
-      "recordsImported": 0,
-      "uniqueUsableAids": 0,
-      "coverage": "2026 local CAF terms, including holiday aids in the surfaced document",
-      "limitations": [
-        "Provided landing page served maintenance during direct review",
-        "PDF located but not fully extracted and mapped; annual validity must be retained"
       ]
     },
     {
@@ -211,34 +199,36 @@
       "id": "fsl-herault",
       "name": "Département de l'Hérault — FSL",
       "url": "https://herault.fr/402-aide-financiere.htm",
-      "role": "Departmental housing solidarity fund information",
-      "status": "official-guidance-reviewed-no-normalized-record",
-      "version": "Current web page; regulation version not established",
-      "license": "Reuse terms not verified",
+      "role": "FSL départemental, règlement d'action sociale et parcours d'instruction",
+      "status": "current-regulation-reviewed-information-published-procedure-partial",
+      "version": "RDAS édition septembre 2026; règles FSL applicables depuis le 1er janvier 2025",
+      "license": "Aucun dataset copié; faits attribués aux sources officielles",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
-      "uniqueUsableAids": 0,
-      "coverage": "FSL purposes and territorial split; department's coverage excludes Montpellier Méditerranée Métropole",
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 1,
+      "coverage": "Hérault hors des 31 communes de Montpellier Méditerranée Métropole",
       "limitations": [
-        "The linked departmental regulation found was dated several years earlier and cannot establish current terms",
-        "Do not apply departmental process to 31 metropolitan communes"
+        "Les justificatifs détaillés varient par aide et formulaire; délais, suivi et contacts d'instruction restent à confirmer."
       ]
     },
     {
       "id": "fsl-montpellier-metropole",
       "name": "Montpellier Méditerranée Métropole — FSL",
       "url": "https://www.montpellier.fr/actions/competences/acces-au-logement/fonds-de-solidarite-pour-le-logement",
-      "role": "Metropolitan FSL guidance and rules for 31 communes",
-      "status": "official-guidance-and-2025-regulation-reviewed-no-normalized-record",
-      "version": "Regulation dated 2025-01-01: https://www.montpellier.fr/sites/default/files/2025-11/20250101%20R%C3%A8glement%20int%C3%A9rieur_FSL%203M.pdf",
-      "license": "Reuse terms not verified",
+      "role": "FSL métropolitain, règlement 2025, critères et instruction",
+      "status": "current-regulation-reviewed-information-published-procedure-partial",
+      "version": "Règlement intérieur FSL 2025, listé sur la page officielle et consulté le 23 novembre 2026",
+      "license": "Aucun dataset copié; faits attribués aux sources officielles",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
-      "uniqueUsableAids": 0,
-      "coverage": "Montpellier Méditerranée Métropole, 31 communes; social-worker-initiated route observed",
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 1,
+      "coverage": "31 communes de Montpellier Méditerranée Métropole (EPCI 243400017)",
       "limitations": [
-        "Separate territorial variant from departmental FSL",
-        "Verify whether 2025 document remains in force and extract each intervention branch"
+        "Le règlement cite encore l'ancien seuil ACS; aucun seuil chiffré actuel n'est repris avant confirmation. Délais et suivi restent à confirmer."
       ]
     },
     {
@@ -247,9 +237,9 @@
       "url": "https://geo.api.gouv.fr/",
       "role": "Resolve communes, INSEE codes, departments, regions, EPCI and postal-code relations",
       "status": "official-snapshot-imported-and-normalized",
-      "version": "Snapshot retrieved 2026-11-24T00:53:03.529Z",
+      "version": "Snapshot retrieved 2026-11-24T08:09:48.590Z",
       "license": "Open Data licences (data.gouv.fr service metadata); field-level licence is not named as one uniform licence in the API metadata.",
-      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "retrievedAt": "2026-11-24T08:09:48.590Z",
       "endpointProbe": {
         "latestRefreshHttpStatus": 200,
         "latestRefreshNetworkCause": null,
@@ -274,9 +264,9 @@
       "url": "https://www.data.gouv.fr/datasets/base-officielle-des-codes-postaux",
       "role": "Postal-code to commune/INSEE-code crosswalk",
       "status": "official-snapshot-imported-and-normalized",
-      "version": "Source updated 2023-07-09T07:01:18+00:00; fetched 2026-11-24T00:53:03.529Z",
+      "version": "Source updated 2023-07-09T07:01:18+00:00; fetched 2026-11-24T08:09:48.590Z",
       "license": "Licence Ouverte / Open Licence 2.0 (confirmed on data.gouv.fr)",
-      "retrievedAt": "2026-11-24T00:53:03.529Z",
+      "retrievedAt": "2026-11-24T08:09:48.590Z",
       "endpointProbe": {
         "latestRefreshHttpStatus": 200,
         "latestRefreshNetworkCause": null,
@@ -337,16 +327,1602 @@
       "name": "Service-Public.fr",
       "url": "https://www.service-public.gouv.fr/",
       "role": "Official citizen guidance, eligibility summaries and forms for national procedures",
-      "status": "official-pages-consulted-per-aid-no-bulk-import",
+      "status": "national-aid-source-evidence-linked; PAJE amount conflicts explicitly surfaced; application procedures incomplete",
       "version": "Individual pages have their own update dates",
       "license": "Content reuse conditions not reviewed as a bulk dataset",
       "retrievedAt": "2026-11-23",
       "recordsImported": 0,
       "uniqueUsableAids": 0,
-      "coverage": "Several prototype national aids received initial page-level review, recorded in review.json",
+      "coverage": "National official guidance pages for ASF, family benefits, activity bonus, CSS, RSA parent isolé, PreParE, AEEH, APL, ALF and ALS; information-publication and request-procedure states remain independent in review.json",
       "limitations": [
         "Not a bulk structured aid dataset",
         "Must use aid-specific current pages and primary legal/administrator sources for exact rules"
+      ],
+      "candidateRecordsIntegrated": 12,
+      "factsEnrichedForAids": 12,
+      "publishableRecords": 12,
+      "consultedAt": "2026-11-23",
+      "evidence": [
+        {
+          "aidId": "asf",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/F815",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "af",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/F13213",
+          "pageVerifiedAt": "2026-06-01"
+        },
+        {
+          "aidId": "apl",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F12006",
+          "pageVerifiedAt": "2026-07-01"
+        },
+        {
+          "aidId": "alf",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13132",
+          "pageVerifiedAt": "2026-07-01"
+        },
+        {
+          "aidId": "als",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1280",
+          "pageVerifiedAt": "2026-07-01"
+        },
+        {
+          "aidId": "paje-prime-naissance",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2550",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "paje-allocation-base",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2552",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "paje-prime-adoption",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F13220",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "ajpp",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15132",
+          "pageVerifiedAt": "2026-06-14"
+        },
+        {
+          "aidId": "rsa-parent-isole",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F15553",
+          "pageVerifiedAt": "2026-04-01"
+        },
+        {
+          "aidId": "prepare",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32485",
+          "pageVerifiedAt": "2026-06-01"
+        },
+        {
+          "aidId": "aeeh",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14809",
+          "pageVerifiedAt": "2026-06-01"
+        }
+      ]
+    },
+    {
+      "id": "assurance-maladie-css",
+      "name": "Assurance Maladie — Complémentaire santé solidaire",
+      "url": "https://www.ameli.fr/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire",
+      "role": "Official benefit guidance, 2026 resource bands and application route",
+      "status": "official-page-reviewed-facts-integrated-pending-form-level-audit",
+      "version": "Page dated 2026-09-18; thresholds effective 2026-04-01",
+      "license": "No bulk dataset copied; short factual fields are normalized with source attribution",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "CSS criteria, indicative thresholds, request channels, processing and annual renewal",
+      "limitations": [
+        "Precise household/resource scope and exhaustive document list still to check against the current form"
+      ]
+    },
+    {
+      "id": "caf-herault-housing",
+      "name": "Caf de l'Hérault — étapes de l'aide au logement",
+      "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/logement/aideaulogementmontpellier/les-3-etapes-de-l-aide-au-logement",
+      "role": "Local procedural guidance for housing benefit applicants",
+      "status": "official-page-reviewed-procedure-integrated-pending-complete-document-list",
+      "version": "Consulted 2026-11-23; page has no displayed review date",
+      "license": "No bulk dataset copied; short factual fields are normalized with source attribution",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0,
+      "coverage": "Caf de l'Hérault housing-aid steps, including post-move application, examples of documents and account follow-up",
+      "limitations": [
+        "Complete linked document list and its current date have not been checked",
+        "Does not cover MSA route or distinguish the legal rules of APL, ALF and ALS"
+      ]
+    },
+    {
+      "id": "herault-family-services",
+      "name": "Services départementaux aux familles de l'Hérault",
+      "url": "https://herault.fr/2135-maisons-des-1000-jours.htm",
+      "role": "Maisons des 1000 jours, LAEP et Centres de santé sexuelle",
+      "status": "official-service-pages-reviewed-services-published",
+      "version": "Pages officielles consultées le 23 novembre 2026",
+      "license": "Pas de copie de contenu tiers; descriptions factuelles avec attribution et URL",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableServices": 3,
+      "limitations": [
+        "Les horaires, disponibilités, accès sans rendez-vous et mise à jour des annuaires locaux sont à confirmer auprès de chaque structure."
+      ]
+    },
+    {
+      "id": "parents-solos-platform",
+      "name": "Parents Solos — plateforme privée",
+      "url": "https://www.parents-solos.com/conditions-utilisation/",
+      "role": "Vérification de l'éditeur, de l'accès et de la tarification déclarée",
+      "status": "private-service-terms-reviewed-service-published",
+      "version": "Conditions affichant une mise à jour au 15 novembre 2026; consultées le 23 novembre 2026",
+      "license": "Aucun contenu éditorial reproduit; informations factuelles attribuées",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableServices": 1,
+      "limitations": [
+        "La disponibilité de membres locaux n'est pas garantie; le service n'est ni une aide sociale, ni un partenariat ou une recommandation de Solomam."
+      ]
+    },
+    {
+      "id": "territory-09-council",
+      "name": "Conseil départemental — Ariège",
+      "url": "https://www.ariege.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "09",
+        "label": "Ariège"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-09-caf",
+      "name": "Caf — Ariège",
+      "url": "https://www.caf.fr/allocataires/caf-ariege",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "09",
+        "label": "Ariège"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-11-council",
+      "name": "Conseil départemental — Aude",
+      "url": "https://www.aude.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "11",
+        "label": "Aude"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-11-caf",
+      "name": "Caf — Aude",
+      "url": "https://www.caf.fr/allocataires/caf-aude",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "11",
+        "label": "Aude"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-12-council",
+      "name": "Conseil départemental — Aveyron",
+      "url": "https://www.aveyron.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "12",
+        "label": "Aveyron"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-12-caf",
+      "name": "Caf — Aveyron",
+      "url": "https://www.caf.fr/allocataires/caf-aveyron",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "12",
+        "label": "Aveyron"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-30-council",
+      "name": "Conseil départemental — Gard",
+      "url": "https://www.gard.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "30",
+        "label": "Gard"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-30-caf",
+      "name": "Caf — Gard",
+      "url": "https://www.caf.fr/allocataires/caf-du-gard",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "30",
+        "label": "Gard"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-31-council",
+      "name": "Conseil départemental — Haute-Garonne",
+      "url": "https://www.haute-garonne.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "31",
+        "label": "Haute-Garonne"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-31-caf",
+      "name": "Caf — Haute-Garonne",
+      "url": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "31",
+        "label": "Haute-Garonne"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "official-local-aid-page-reviewed",
+      "accessibility": "Page officielle Caf examinée; une aide mobilité publiée en 2026 est qualifiée à partir de sa page dédiée.",
+      "lastCollection": null,
+      "coverage": "Point de découverte et aide locale de réparation/entretien véhicule examinée; la source ne constitue pas un RIAS complet.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Le RIAS 2026 est listé sur le site professionnel, mais son lien Calaméo n’a pas pu être ouvert; aucune autre aide n’est déduite de son contenu.",
+        "Vérifier l’ouverture du prêt mobilité et les crédits disponibles; la page du 15 juillet 2026 ne donne pas de date de fin."
+      ]
+    },
+    {
+      "id": "territory-32-council",
+      "name": "Conseil départemental — Gers",
+      "url": "https://www.gers.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "32",
+        "label": "Gers"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-32-caf",
+      "name": "Caf — Gers",
+      "url": "https://www.caf.fr/allocataires/caf-du-gers",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "32",
+        "label": "Gers"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-34-council",
+      "name": "Conseil départemental — Hérault",
+      "url": "https://www.herault.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-34-caf",
+      "name": "Caf — Hérault",
+      "url": "https://www.caf.fr/allocataires/caf-de-l-herault",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-46-council",
+      "name": "Conseil départemental — Lot",
+      "url": "https://www.lot.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "46",
+        "label": "Lot"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-46-caf",
+      "name": "Caf — Lot",
+      "url": "https://www.caf.fr/allocataires/caf-du-lot",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "46",
+        "label": "Lot"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-48-council",
+      "name": "Conseil départemental — Lozère",
+      "url": "https://www.lozere.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "48",
+        "label": "Lozère"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-48-caf",
+      "name": "Caf — Lozère",
+      "url": "https://www.caf.fr/allocataires/caf-de-la-lozere",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "48",
+        "label": "Lozère"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-65-council",
+      "name": "Conseil départemental — Hautes-Pyrénées",
+      "url": "https://www.hautespyrenees.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "65",
+        "label": "Hautes-Pyrénées"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-65-caf",
+      "name": "Caf — Hautes-Pyrénées",
+      "url": "https://www.caf.fr/allocataires/caf-des-hautes-pyrenees",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "65",
+        "label": "Hautes-Pyrénées"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-66-council",
+      "name": "Conseil départemental — Pyrénées-Orientales",
+      "url": "https://www.ledepartement66.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "66",
+        "label": "Pyrénées-Orientales"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-66-caf",
+      "name": "Caf — Pyrénées-Orientales",
+      "url": "https://www.caf.fr/allocataires/caf-des-pyrenees-orientales",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "66",
+        "label": "Pyrénées-Orientales"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-81-council",
+      "name": "Conseil départemental — Tarn",
+      "url": "https://www.tarn.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "81",
+        "label": "Tarn"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-81-caf",
+      "name": "Caf — Tarn",
+      "url": "https://www.caf.fr/allocataires/caf-du-tarn",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "81",
+        "label": "Tarn"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-82-council",
+      "name": "Conseil départemental — Tarn-et-Garonne",
+      "url": "https://www.tarnetgaronne.fr/",
+      "role": "Point de découverte des aides sociales locales, règlements départementaux, FSL et services familiaux.",
+      "territory": {
+        "departmentCode": "82",
+        "label": "Tarn-et-Garonne"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "territory-82-caf",
+      "name": "Caf — Tarn-et-Garonne",
+      "url": "https://www.caf.fr/allocataires/caf-de-tarn-et-garonne",
+      "role": "Point de découverte des aides d'action sociale locales de la Caf.",
+      "territory": {
+        "departmentCode": "82",
+        "label": "Tarn-et-Garonne"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler les publications et règlements chaque année",
+      "termsOfUse": "Aucune collecte de masse prévue; examiner les mentions légales et conditions propres aux exports avant réutilisation",
+      "status": "identified-discovery-only",
+      "accessibility": "URL officielle candidate; disponibilité et profondeur des pages non testées dans cette passe",
+      "lastCollection": null,
+      "coverage": "Point de découverte uniquement. Une page d'accueil ou de territoire ne suffit pas à vérifier les critères d'une aide.",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "limitations": [
+        "Identifier puis enregistrer les pages détaillées, règlements, formulaires et dates de mise à jour avant toute qualification.",
+        "Ne pas dupliquer les prestations nationales par département.",
+        "L'URL de découverte CAF est à confirmer sur le portail officiel local."
+      ]
+    },
+    {
+      "id": "caf-herault-individual-aid-page",
+      "name": "Caf de l'Hérault — Secours et prêts sociaux",
+      "url": "https://www.caf.fr/allocataires/caf-de-l-herault/offre-de-service/accident-de-vie/les-secours-et-prets-sociaux",
+      "role": "Aides exceptionnelles aux familles allocataires avec enfant à charge ou à naître; détail et montants renvoyés au RIAS 2026.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-page",
+      "updateFrequency": "Non documentée; contrôler la page et les liens associés",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "identified-page-review-required",
+      "accessibility": "page accessible via indexation; RIAS lié renvoie une page de maintenance lors de l'extraction",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Aides exceptionnelles aux familles allocataires avec enfant à charge ou à naître; détail et montants renvoyés au RIAS 2026.",
+      "limitations": [
+        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
+      ]
+    },
+    {
+      "id": "herault-rdas-2026",
+      "name": "Département de l'Hérault — Règlement départemental d'aide sociale 2026",
+      "url": "https://mda.herault.fr/cms_viewFilePublication.php?id=668",
+      "role": "RDAS, AFIE et FSL départemental; document PDF indexé et extractible.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "pdf",
+      "updateFrequency": "Annuel ou à chaque délibération; version en vigueur à contrôler",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "identified-page-review-required",
+      "accessibility": "Accessible et extrait par indexation web; vérifier le fichier daté et ses annexes avant reprise des barèmes",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "RDAS, AFIE et FSL départemental; document PDF indexé et extractible.",
+      "limitations": [
+        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
+      ]
+    },
+    {
+      "id": "herault-fsl-overview",
+      "name": "Département de l'Hérault — Aides financières au logement",
+      "url": "https://herault.fr/402-aide-financiere.htm",
+      "role": "FSL, séparation de périmètre des 31 communes de la Métropole, accompagnement social lié au logement.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-page",
+      "updateFrequency": "Non documentée; contrôler la page et les liens associés",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "identified-page-review-required",
+      "accessibility": "Page HTML accessible",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "FSL, séparation de périmètre des 31 communes de la Métropole, accompagnement social lié au logement.",
+      "limitations": [
+        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
+      ]
+    },
+    {
+      "id": "montpellier-ccas-rights",
+      "name": "CCAS de Montpellier — Accès aux droits et aides facultatives",
+      "url": "https://www.montpellier.fr/vie-quotidienne/vivre-ici/j-ai-besoin-d-accompagnement/j-ai-besoin-de-connaitre-mes-droits",
+      "role": "Conditions d'orientation et d'accès aux aides facultatives accompagnées par un travailleur social.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-page",
+      "updateFrequency": "Non documentée; contrôler la page et les liens associés",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "identified-page-review-required",
+      "accessibility": "Page officielle indexée; collecte structurée non exécutée",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Conditions d'orientation et d'accès aux aides facultatives accompagnées par un travailleur social.",
+      "limitations": [
+        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
+      ]
+    },
+    {
+      "id": "montpellier-bouclier-page",
+      "name": "Ville de Montpellier — Bouclier social petite enfance",
+      "url": "https://www.montpellier.fr/vie-quotidienne/vivre-ici/j-ai-un-enfant-entre-0-et-3-ans/je-recherche-un-mode-d-accueil/bouclier-social-petite-enfance",
+      "role": "Aide municipale de garde atypique pour familles monoparentales; critères et actualité à vérifier.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-page",
+      "updateFrequency": "Non documentée; contrôler la page et les liens associés",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "identified-page-review-required",
+      "accessibility": "Indexée; ouverture directe temporairement renvoyée en erreur 405 dans cette passe",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Aide municipale de garde atypique pour familles monoparentales; critères et actualité à vérifier.",
+      "limitations": [
+        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
+      ]
+    },
+    {
+      "id": "montpellier-bouclier-regulation-2025",
+      "name": "Ville de Montpellier — Règlement d'attribution Bouclier social petite enfance",
+      "url": "https://www.montpellier.fr/sites/default/files/2025-04/R%C3%A8glement%20d%27attribution%202025.pdf",
+      "role": "Conditions détaillées et calcul de participation municipale; version 2025, validité actuelle à confirmer.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "pdf",
+      "updateFrequency": "Annuel ou à chaque délibération; version en vigueur à contrôler",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "identified-page-review-required",
+      "accessibility": "PDF indexé; règles 2025 extraites, version 2026 non trouvée dans cette passe",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Conditions détaillées et calcul de participation municipale; version 2025, validité actuelle à confirmer.",
+      "limitations": [
+        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
+      ]
+    },
+    {
+      "id": "frontignan-ccas",
+      "name": "CCAS de Frontignan — coordonnées et accueil",
+      "url": "https://www.frontignan.fr/lieu/centre-communal-daction-sociale/",
+      "role": "Point de contact pour rechercher les aides et services locaux; conditions d'aides non détaillées sur cette page.",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler la page et les liens associés",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "identified-page-review-required",
+      "accessibility": "Page officielle indexée; collecte structurée non exécutée",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Point de contact pour rechercher les aides et services locaux; conditions d'aides non détaillées sur cette page.",
+      "limitations": [
+        "Cette entrée documente une source à examiner; elle ne vaut pas qualification ni publication d'une aide."
+      ]
+    },
+    {
+      "id": "beziers-ccas-social",
+      "name": "Béziers — accompagnement social CCAS",
+      "url": "https://www.ville-beziers.fr/jhabite-a-beziers/solidarites/actions-sociales",
+      "role": "Recherche d’un dispositif local d’aide aux particuliers",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-page",
+      "updateFrequency": "Non documentée; contrôler la page et les liens associés",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "official-service-page-consulted-not-a-named-aid",
+      "accessibility": "Page officielle indexée; détails réglementaires des aides facultatives non vérifiés",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Commune de Béziers",
+      "limitations": [
+        "La page confirme l’évaluation/orientation vers des aides éventuelles, pas un dispositif local avec critères propres."
+      ],
+      "license": "Aucun contenu reproduit; statut descriptif",
+      "candidateRecordsIntegrated": 0
+    },
+    {
+      "id": "sete-ccas-discovery",
+      "name": "CCAS de Sète — recherche de dispositifs individuels",
+      "url": "https://www.sete.fr/",
+      "role": "Recherche d’un dispositif local d’aide aux particuliers",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "html-directory",
+      "updateFrequency": "Non documentée; contrôler la page et les liens associés",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "official-site-identified-no-specific-aid-confirmed",
+      "accessibility": "URL de portail candidate; disponibilité et page détaillée non testées",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Commune de Sète",
+      "limitations": [
+        "La recherche publique consultée n’a pas permis d’identifier une page de dispositif financier nommée ni un règlement; ne pas conclure à l’absence d’aide."
+      ],
+      "license": "Aucun contenu reproduit; statut descriptif",
+      "candidateRecordsIntegrated": 0
+    },
+    {
+      "id": "adhl-gard-fsl-access",
+      "name": "ADHL Gard — FSL volet Accès",
+      "url": "https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces.html",
+      "role": "Conditions, dépenses d'accès couvertes, instruction et orientation sociale du FSL Gard.",
+      "territory": {
+        "departmentCode": "30",
+        "label": "Gard"
+      },
+      "sourceType": "html-page",
+      "updateFrequency": "Page continue; le barème de ressources est actualisé séparément",
+      "termsOfUse": "Pas de jeu de données importé; faits courts attribués à l'ADHL et au Département.",
+      "status": "official-page-reviewed",
+      "accessibility": "Page officielle accessible et examinée; volet Accès seulement",
+      "lastCollection": "2026-11-23",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "FSL Gard — accès au logement; ne couvre pas le maintien ni les charges.",
+      "limitations": [
+        "Règlement complet, délais et liste exhaustive des pièces à examiner."
+      ]
+    },
+    {
+      "id": "adhl-gard-fsl-scale-2026",
+      "name": "ADHL Gard — barèmes FSL au 1er avril 2026",
+      "url": "https://adhl.gard.fr/acceder-a-un-logement/le-fonds-solidarite-logement-fsl-volet-acces/baremes-fsl.html",
+      "role": "Plafonds de ressources FSL selon la composition du ménage.",
+      "territory": {
+        "departmentCode": "30",
+        "label": "Gard"
+      },
+      "sourceType": "html-page",
+      "updateFrequency": "Mise à jour périodique; version affichée du 1er avril 2026",
+      "termsOfUse": "Pas de jeu de données importé; montants attribués à la source officielle.",
+      "status": "official-page-reviewed",
+      "accessibility": "Page officielle accessible et examinée",
+      "lastCollection": "2026-11-23",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Barèmes de ressources; les ressources autorisant une demande ne garantissent pas l'octroi.",
+      "limitations": [
+        "Recontrôler le barème lors de toute actualisation de source."
+      ]
+    },
+    {
+      "id": "ariege-rdas-pdf",
+      "name": "Département de l'Ariège — Règlement départemental d'aide sociale",
+      "url": "https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf",
+      "role": "Document-cadre avec fiche FSL/Fonds unique habitat (accès, maintien, énergie, eau, télécommunications). Le document précise une adoption en 2022; la version en vigueur doit être confirmée.",
+      "territory": {
+        "departmentCode": "09",
+        "label": "Ariège"
+      },
+      "sourceType": "pdf",
+      "updateFrequency": "À contrôler à chaque publication ou délibération; date affichée du fichier ne suffit pas à établir la date d'entrée en vigueur",
+      "termsOfUse": "Pas de téléchargement massif; source officielle consultée pour examen individuel.",
+      "status": "official-rdas-2026-consulted-fsl-inner-regulation-unconfirmed",
+      "accessibility": "RDAS 2026 accessible; critères FSL/FUH examinés, mais le règlement intérieur dédié du FUH reste à confirmer.",
+      "lastCollection": "2026-11-23",
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "Règlement départemental large; FSL/FUH identifié, aucun candidat intégré avant confirmation de la version en vigueur.",
+      "limitations": [
+        "Le préambule cite une adoption en 2022 malgré le nom du fichier et sa mise à jour de mars 2026; confirmer le règlement intérieur FUH en vigueur avant publication."
+      ],
+      "lastConsultedAt": "2026-11-24"
+    },
+    {
+      "id": "fsl-ariege-rdas-2026",
+      "name": "Département de l’Ariège — PDF RDAS nommé 2026, préambule adopté le 14 mars 2022",
+      "url": "https://ariege.fr/app/uploads/2026/03/RDAS-2026.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "09",
+      "limitations": [
+        "Vérifier le règlement intérieur FUH lié depuis le RDAS et les barèmes/aides par poste avant de compléter le parcours."
+      ]
+    },
+    {
+      "id": "fsl-aude-rafi-2026",
+      "name": "Département de l’Aude — règlement d’attribution des aides financières, avril 2026",
+      "url": "https://www.aude.fr/sites/default/files/media/downloads/RAFI%20avril%202026.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-current-regulation-reviewed",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "11",
+      "limitations": [
+        "Les plafonds chiffrés et pièces varient par volet; la fiche résume les conditions communes et ne remplace pas l’examen du règlement."
+      ],
+      "lastConsultedAt": "2026-11-24"
+    },
+    {
+      "id": "fsl-aveyron-rdas-2025",
+      "name": "Département de l’Aveyron — RDAS, fiche FSL",
+      "url": "https://aveyron.fr/sites/default/files/documents/Solidarite/2025/08-aout/2025_03_28_RDAS.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "12",
+      "limitations": [
+        "Le montant et les pièces relèvent des annexes du règlement intérieur; les règles par poste restent à vérifier."
+      ]
+    },
+    {
+      "id": "fsl-haute-garonne-departement",
+      "name": "Département de la Haute-Garonne — page FSL actuelle",
+      "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-current-overview-2026-rules-and-application-incomplete",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "limitations": [
+        "Aucune règle financière, aucun plafond ni aucune pièce issus des PDF 2023/2024 n’est repris comme règle 2026."
+      ],
+      "version": "Sources consultées le 24/11/2026; plafonds, règles détaillées et pièces applicables en 2026 non confirmés",
+      "recordsImported": 0,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0
+    },
+    {
+      "id": "fsl-toulouse-metropole",
+      "name": "Département de la Haute-Garonne — compétence et renvoi FSL Métropole",
+      "url": "https://www.haute-garonne.fr/fonds-de-solidarite-logement-fsl",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-current-overview-2026-rules-and-application-incomplete",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "limitations": [
+        "Aucune règle financière, aucun plafond ni aucune pièce issus des PDF 2023/2024 ou de la fiche JEM 2021 n’est repris comme règle 2026."
+      ],
+      "version": "Sources consultées le 24/11/2026; plafonds, règles détaillées et pièces applicables en 2026 non confirmés",
+      "recordsImported": 0,
+      "factsEnrichedForAids": 1,
+      "publishableRecords": 0
+    },
+    {
+      "id": "gers-aides-financieres",
+      "name": "Département du Gers — aides financières (Fonds d’aide d’urgence et FAJ)",
+      "url": "https://www.gers.fr/aides-infos-pratiques/insertion-et-solidarites/aides-financieres",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "32",
+      "limitations": [
+        "Aucun barème, liste de dépenses ni montant n’est publié sur la page consultée; ne pas en déduire un montant."
+      ]
+    },
+    {
+      "id": "fsl-lot-regulation-2025",
+      "name": "Département du Lot — règlement intérieur FSL au 1er juillet 2025",
+      "url": "https://lot.fr/sites/lot.fr/files/reglement_interieur_fsl_01.07.2025.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-current-regulation-reviewed",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "46",
+      "limitations": [
+        "Les plafonds de ressources sont indexés sur l’AAH et évoluent; vérifier la valeur applicable au dépôt. Conditions et pièces différentes selon le volet."
+      ],
+      "lastConsultedAt": "2026-11-24"
+    },
+    {
+      "id": "fsl-lozere-regulation-2026",
+      "name": "Département de la Lozère — règlement intérieur FSL, actualisé au 18 décembre 2025",
+      "url": "https://lozere.fr/sites/default/files/upload/05-solidarite/documents/260101_ri_fsl_complet_cd_lozere_2.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "48",
+      "limitations": [
+        "Le règlement affiche annexes de barème, formulaire unique et pièces; extraire les plafonds et le détail avant de compléter la fiche."
+      ]
+    },
+    {
+      "id": "fsl-hautes-pyrenees-regulation-2025",
+      "name": "Département des Hautes-Pyrénées — règlement intérieur FSL, 1er mars 2025",
+      "url": "https://www.hautespyrenees.fr/download/462/2025/27005/publication-n685-du-3-fevrier-2025-commission-permanente-du-31-janvier-2025-deliberations.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "65",
+      "limitations": [
+        "La page de maintien mentionne une démarche directe au FSL; vérifier l’entrée d’accès, les formulaires et barèmes applicables à chaque volet."
+      ]
+    },
+    {
+      "id": "fsl-pyrenees-orientales-page",
+      "name": "Département des Pyrénées-Orientales — mode d’emploi FSL",
+      "url": "https://www.ledepartement66.fr/fonds-de-solidarite-pour-le-logement-mode-demploi/",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "66",
+      "limitations": [
+        "Vérifier la version courante du règlement, le barème, l’application exacte du seuil de 800 € et les formulaires."
+      ]
+    },
+    {
+      "id": "fsl-tarn-page-2025",
+      "name": "Département du Tarn — fiche FSL",
+      "url": "https://www.tarn.fr/fileadmin/mediatheque/Tarn/Documents/Actualites/2025/Logement/FSL-Fonds-de-solidarite-pour-le-logement_Tarn.pdf",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "81",
+      "limitations": [
+        "Le règlement intérieur complet et les barèmes n’ont pas été récupérés dans cette passe; la fiche ne doit pas présenter de plafond."
+      ]
+    },
+    {
+      "id": "fsl-tarn-et-garonne-page-2025-2026",
+      "name": "Département de Tarn-et-Garonne — FSL et règlement 2025-2026",
+      "url": "https://www.tarnetgaronne.fr/social-insertion/fonds-de-solidarite-pour-le-logement",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-page-or-regulation-reviewed-candidate-only",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "82",
+      "limitations": [
+        "Le barème affiché ne garantit pas l’attribution; vérifier les règles détaillées par volet et les pièces au règlement en vigueur."
+      ]
+    },
+    {
+      "id": "caf-aveyron-rias-2026",
+      "name": "Caf de l’Aveyron — RIAS aides financières individuelles 2026",
+      "url": "https://www.caf.fr/sites/default/files/medias/121/Images/Partenaires/RIAS%202026%20Version%20D%C3%A9finitive%2001%202026.pdf",
+      "role": "RIAS 2026 des aides financières individuelles aux familles",
+      "status": "official-document-consulted-key-family-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec pages du règlement; aucun texte intégral recopié",
+      "coverage": "CAF Aveyron",
+      "limitations": [
+        "Aide ponctuelle et discrétionnaire; somme fixée par la commission au vu du projet et des interventions partenariales."
+      ]
+    },
+    {
+      "id": "herault-fdaj-page",
+      "name": "Département de l’Hérault — Fonds d’aide aux jeunes",
+      "url": "https://herault.fr/615-fdaj.htm",
+      "role": "Source officielle de définition et d’orientation du FDAJ/FAJ3M",
+      "status": "official-pages-consulted-youth-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits résumés avec attribution",
+      "coverage": "Hérault",
+      "limitations": [
+        "Montants individuels et pièces ne sont pas publiés sur les pages examinées."
+      ]
+    },
+    {
+      "id": "herault-faj-m3m-scope",
+      "name": "Département de l’Hérault — répartition FDAJ et délégations",
+      "url": "https://herault.fr/cms_viewFile.php?dl=1&idtf=9891&path=2022-04-11-Deliberations-de-l-Assemblee-departementale-du-11-avril-2022.pdf",
+      "role": "Source officielle de définition et d’orientation du FDAJ/FAJ3M",
+      "status": "official-pages-consulted-youth-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits résumés avec attribution",
+      "coverage": "Hérault",
+      "limitations": [
+        "Montants individuels et pièces ne sont pas publiés sur les pages examinées."
+      ]
+    },
+    {
+      "id": "faj3m-montpellier-metropole",
+      "name": "Montpellier Méditerranée Métropole — FAJ3M",
+      "url": "https://www.montpellier3m.fr/sites/default/files/fiche_e.pdf",
+      "role": "Source officielle de définition et d’orientation du FDAJ/FAJ3M",
+      "status": "official-pages-consulted-youth-aid-verified",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits résumés avec attribution",
+      "coverage": "31 communes M3M",
+      "limitations": [
+        "Montants individuels et pièces ne sont pas publiés sur les pages examinées."
+      ]
+    },
+    {
+      "id": "montpellier-ccas-facultative-aid",
+      "name": "Ville de Montpellier — aides facultatives et accompagnement CCAS",
+      "url": "https://www.montpellier.fr/actions/competences/solidarites/centre-communal-daction-sociale-ccas",
+      "role": "Aide facultative pour ménages accompagnés par un travailleur social CCAS",
+      "status": "official-page-consulted-candidate-eligibility-rules-incomplete",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits synthétisés avec attribution",
+      "coverage": "Commune de Montpellier",
+      "limitations": [
+        "Pas de barème, liste de besoins, montant ni pièces publiés sur la page."
+      ]
+    },
+    {
+      "id": "frontignan-ccas-energy-aid",
+      "name": "Ville de Frontignan — aide au paiement des factures énergétiques",
+      "url": "https://www.frontignan.fr/aide-au-paiement-des-factures-energetiques/",
+      "status": "official-page-consulted-period-and-criteria-unverified",
+      "coverage": "Commune de Frontignan",
+      "limitations": [
+        "La page consultée évoque 175 € et un dépôt de dossier au CCAS, mais sa date ancienne ne permet pas de confirmer la campagne actuelle ni les conditions de recevabilité."
+      ],
+      "role": "Aide financière locale aux factures d’énergie par le CCAS",
+      "retrievedAt": "2026-11-23",
+      "license": "Faits synthétisés avec attribution",
+      "candidateRecordsIntegrated": 0
+    },
+    {
+      "id": "mouv-occitanie-official-guidance-2026",
+      "name": "Région Occitanie — Aides à la mobilité internationale Mouv’Occitanie",
+      "url": "https://www.laregion.fr/Aides-Mouv-Occitanie",
+      "role": "Conditions, bénéficiaires, aides financières et parcours Mouv’Occitanie",
+      "status": "official-guidance-reviewed-current-2026-11-24",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun contenu intégral reproduit",
+      "coverage": "Région Occitanie; établissements partenaires",
+      "limitations": [
+        "Les conditions et montants diffèrent entre les aides; sélection par établissement et enveloppe budgétaire annuelles."
+      ]
+    },
+    {
+      "id": "region-school-sport-page-2026",
+      "name": "Région Occitanie — Aides en faveur du développement de la pratique du sport scolaire",
+      "url": "https://www.laregion.fr/Aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire",
+      "role": "Bénéficiaires, soutien aux déplacements sportifs scolaires et calendrier annuel",
+      "status": "official-page-reviewed-current-campaign-unconfirmed",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits résumés avec attribution",
+      "coverage": "Région Occitanie",
+      "limitations": [
+        "L’aide de 20 € par sportif et par nuitée est versée à des associations UNSS; campagne et ligne budgétaire courantes à confirmer."
+      ]
+    },
+    {
+      "id": "fsl-haute-garonne-reglement-2023",
+      "name": "Règlement intérieur FSL commun — version commentée mise à jour en 2023 (historique, non utilisé comme preuve des règles 2026)",
+      "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/YjBmYmQzMTMtY2ExOC00MDVhLTg1OTQtMDU3NTA3ZDIyNThj",
+      "role": "Source officielle consultée pour dater une version antérieure; non retenue comme preuve des règles 2026",
+      "status": "official-historical-version-not-proof-of-2026-rules",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Règlement intérieur FSL commun — version commentée mise à jour en 2023 (historique, non utilisé comme preuve des règles 2026)",
+      "limitations": [
+        "Référence historique uniquement; ne confirme pas les règles, plafonds, pièces ou procédures en vigueur en 2026."
+      ],
+      "recordsImported": 0
+    },
+    {
+      "id": "fsl-haute-garonne-plafonds-2024",
+      "name": "Annexe des plafonds FSL explicitement datée 2024 (non utilisée comme barème 2026)",
+      "url": "https://saturne.haute-garonne.fr/api/v1/sync/media/document/MTI0YjE4OTYtZTJhNC00OWZkLTk0MzUtODE2OWQxNTc3Zjc1",
+      "role": "Source officielle consultée pour dater une version antérieure; non retenue comme preuve des règles 2026",
+      "status": "official-historical-version-not-proof-of-2026-rules",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Annexe des plafonds FSL explicitement datée 2024 (non utilisée comme barème 2026)",
+      "limitations": [
+        "Référence historique uniquement; ne confirme pas les règles, plafonds, pièces ou procédures en vigueur en 2026."
+      ],
+      "recordsImported": 0
+    },
+    {
+      "id": "fsl-toulouse-metropole-jem",
+      "name": "Toulouse Métropole — fiche FSL sur JEM",
+      "url": "https://jem.metropole.toulouse.fr/decouvrir/479-fonds-de-solidarite-logement-fsl",
+      "role": "Présentation institutionnelle du FSL métropolitain",
+      "status": "official-source-reviewed-information-pending",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "Toulouse Métropole",
+      "version": "Page consultée le 24/11/2026",
+      "limitations": [
+        "Présentation générale; le passage procédure étudiant date de janvier 2021 et n’établit pas un canal de dépôt courant pour tous les ménages."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-communes-api-2026",
+      "name": "API Géo officielle — communes de l’EPCI Toulouse Métropole (243100518)",
+      "url": "https://geo.api.gouv.fr/epcis/243100518/communes?fields=nom,code&format=json",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "API Géo officielle — communes de l’EPCI Toulouse Métropole (243100518)",
+      "limitations": [
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "fsl-haute-garonne-mds-directory-2026",
+      "name": "Département de la Haute-Garonne — annuaire des Maisons des solidarités",
+      "url": "https://www.haute-garonne.fr/les-maisons-des-solidarites-mds",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Département de la Haute-Garonne — annuaire des Maisons des solidarités",
+      "limitations": [
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-fsl-housing-page-2026",
+      "name": "Toulouse Métropole — louer un logement, informations FSL",
+      "url": "https://metropole.toulouse.fr/mon-environnement/logement-et-urbanisme/se-loger/louer-un-logement",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Toulouse Métropole — louer un logement, informations FSL",
+      "limitations": [
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-fsl-agenda-2026",
+      "name": "Toulouse Métropole — ordre du jour du Conseil du 15 octobre 2026, points FSL 2026",
+      "url": "https://deliberations.toulouse.fr/ordreJour/2.pdf",
+      "role": "Source officielle consultée pour vérifier le périmètre ou les renseignements FSL actuels",
+      "status": "official-current-information-scope-limited",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Toulouse Métropole — ordre du jour du Conseil du 15 octobre 2026, points FSL 2026",
+      "limitations": [
+        "Confirme uniquement les informations explicitement affichées; ne confirme pas à elle seule les règles d’attribution ou les pièces applicables en 2026."
+      ]
+    },
+    {
+      "id": "toulouse-metropole-fsl-jem-2021",
+      "name": "Toulouse Métropole — fiche JEM FSL, passage étudiants daté de 2021 (historique, non utilisé comme preuve 2026)",
+      "url": "https://jem.metropole.toulouse.fr/decouvrir/479-fonds-de-solidarite-logement-fsl",
+      "role": "Source officielle consultée pour dater une version antérieure; non retenue comme preuve des règles 2026",
+      "status": "official-historical-version-not-proof-of-2026-rules",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "recordsImported": 0,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "version": "Toulouse Métropole — fiche JEM FSL, passage étudiants daté de 2021 (historique, non utilisé comme preuve 2026)",
+      "limitations": [
+        "Référence historique uniquement; ne confirme pas les règles, plafonds, pièces ou procédures en vigueur en 2026."
+      ]
+    },
+    {
+      "id": "caf-herault-rias-2026",
+      "name": "Caf de l'Hérault — RIAS 2026, aides financières individuelles",
+      "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Rias/RIAS-2026-maj-AVE-Web.pdf",
+      "role": "Règlement officiel des aides locales aux familles allocataires; secours, prêts sociaux, équipement, mobilité et vacances",
+      "territory": {
+        "departmentCode": "34",
+        "label": "Hérault"
+      },
+      "sourceType": "pdf",
+      "updateFrequency": "Annuel ou à chaque délibération; version en vigueur à contrôler",
+      "termsOfUse": "Pas de jeu de données importé; faits courts à attribuer aux sources. Vérifier les mentions et conditions avant toute réutilisation.",
+      "status": "official-pdf-downloaded-extracted-key-sections-reviewed",
+      "accessibility": "URL liée depuis la page officielle; l'extraction renvoie une page de maintenance, contenu non vérifié",
+      "lastCollection": null,
+      "retrievedAt": "2026-11-23",
+      "recordsImported": 0,
+      "uniqueUsableAids": 0,
+      "coverage": "CAF Hérault",
+      "limitations": [
+        "L'octroi des secours/prêts est discrétionnaire et décidé au cas par cas; le circuit précis d'orientation reste à confirmer.",
+        "Les fenêtres et critères 2026 des aides aux vacances ne sont pas pérennes; les aides saisonnières ne sont pas ajoutées à cette passe."
+      ],
+      "version": "RIAS 2026; sections 4 à 7 extraites, secours/prêts, équipement, mobilité et BAFA",
+      "license": "Aucun texte intégral reproduit; faits résumés avec source et pages PDF",
+      "candidateRecordsIntegrated": 4,
+      "factsEnrichedForAids": 4,
+      "publishableRecords": 5,
+      "snapshot": "src/data/imports/local/herault/raw/rias-caf-herault-2026.pdf",
+      "extractedSummary": "src/data/imports/local/herault/normalized/rias-aides-extract-2026.json"
+    },
+    {
+      "id": "caf-herault-bafa-page",
+      "name": "Caf de l'Hérault — aide locale BAFA",
+      "url": "https://www.caf.fr/professionnels/caf-de-l-herault/offre-de-service/vie-professionnelle/le-bafa",
+      "role": "Conditions officielles 2026 de l’aide locale BAFA",
+      "status": "official-guidance-and-current-form-reviewed",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution",
+      "coverage": "Caf Hérault",
+      "limitations": [
+        "Dépôt dans les trois mois après session; canal numérique éventuel à confirmer."
+      ]
+    },
+    {
+      "id": "caf-herault-bafa-form-2026",
+      "name": "Caf de l'Hérault — formulaire BAFA 1, session générale 2026",
+      "url": "https://www.caf.fr/sites/default/files/medias/348/partenaires/Le%20Bafa/DDE%20AIDE%20BAFA%20LOCALE%202026.pdf",
+      "role": "Formulaire et pièces BAFA 1 2026",
+      "status": "official-form-reviewed",
+      "retrievedAt": "2026-11-24",
+      "recordsImported": 0,
+      "candidateRecordsIntegrated": 1,
+      "license": "Formulaire officiel conservé comme source; champs résumés avec attribution",
+      "coverage": "Caf Hérault",
+      "limitations": [
+        "Le formulaire indique le retour du dossier à la Caf sous trois mois."
+      ],
+      "snapshot": "src/data/imports/local/herault/raw/bafa-aide-locale-2026.pdf"
+    },
+    {
+      "id": "caf31-pret-mobilite-reparation-2026",
+      "name": "Caf de la Haute-Garonne — prêt mobilité véhicule pour réparations (15 juillet 2026)",
+      "url": "https://www.caf.fr/allocataires/caf-de-la-haute-garonne/actualites-departementales/le-pret-mobilite-vehicule-une-solution-pour-alleger-vos-depenses-de-reparation",
+      "role": "Source officielle de qualification d’un dispositif local aux personnes et ménages",
+      "status": "official-local-aid-2026-information-published-procedure-partial",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 1,
+      "license": "Faits synthétisés avec attribution; aucun document tiers intégral recopié",
+      "coverage": "31",
+      "limitations": [
+        "Les faits publiés proviennent de la page Caf datée du 15 juillet 2026. Le RIAS 2026 est mentionné sur le site professionnel Caf, mais le document lié via Calaméo n’a pas pu être ouvert; aucun fait n’en est extrapolé."
+      ],
+      "version": "Page d’actualité publiée le 15 juillet 2026; consultée le 24 novembre 2026",
+      "publishableRecords": 1,
+      "factsEnrichedForAids": 1
+    },
+    {
+      "id": "caf31-rias-2026-listing",
+      "name": "Caf de la Haute-Garonne — RIAS 2026 listé sur la page professionnelle (document Calaméo inaccessible)",
+      "url": "https://www.calameo.com/read/00385782351796c8dde7b",
+      "role": "Règlement intérieur d’action sociale 2026 signalé par la Caf; document consulté uniquement comme référence de disponibilité",
+      "status": "official-current-document-listed-content-unavailable",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Aucun contenu du document reproduit ou utilisé comme preuve",
+      "coverage": "31",
+      "limitations": [
+        "La page officielle de la Caf présente un lien vers le RIAS 2026, mais l’ouverture du document Calaméo a renvoyé une erreur 502.",
+        "Les faits de la fiche prêt mobilité proviennent uniquement de la page allocataire dédiée du 15 juillet 2026; aucune autre aide n’est extrapolée du RIAS inaccessible."
+      ]
+    },
+    {
+      "id": "caf31-rias-2026-index",
+      "name": "Caf de la Haute-Garonne — page professionnelle listant le RIAS 2026",
+      "url": "https://www.caf.fr/professionnels/nous-connaitre/caf-de-la-haute-garonne/qui-sommes-nous",
+      "role": "Page officielle confirmant que la Caf met en ligne son RIAS 2026",
+      "status": "official-page-lists-current-document",
+      "retrievedAt": "2026-11-24",
+      "candidateRecordsIntegrated": 0,
+      "license": "Aucun contenu du RIAS reproduit",
+      "coverage": "31",
+      "limitations": [
+        "La page indique que le RIAS 2026 est disponible via Calaméo; le contenu lié n’a pas pu être récupéré (erreur 502)."
       ]
     }
   ]

@@ -5,45 +5,54 @@ import { useMemo, useState } from "react";
 import { publishedAids, categories, organizations, pendingCount } from "@/lib/aids";
 import { Select, Input } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
+import { TerritoryMark } from "@/components/territory-mark";
+import { useTerritory } from "@/components/territory-provider";
+import { aidMatchesTerritory, territoryPriority } from "@/lib/territories";
+import type { Aid } from "@/lib/types";
 
-const coverageLabel = { national: "National", regional: "Occitanie", "34": "Hérault (34)" };
+function aidSort(a: Aid, b: Aid, selectedTerritory: string) {
+  const priority = selectedTerritory === "occitanie" || selectedTerritory === "all"
+    ? territoryPriority(a.coverage) - territoryPriority(b.coverage)
+    : (a.coverage === selectedTerritory ? -1 : 0) - (b.coverage === selectedTerritory ? -1 : 0);
+  return priority || a.name.localeCompare(b.name, "fr");
+}
 
-export function Catalogue() {
-  const [query, setQuery] = useState("");
+export function Catalogue({ initialQuery = "" }: { initialQuery?: string }) {
+  const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState("Toutes");
-  const [territory, setTerritory] = useState("34");
   const [organization, setOrganization] = useState("Toutes");
+  const { territory } = useTerritory();
+
   const results = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase("fr");
     return publishedAids.filter((aid) => {
       const textMatch = !normalized || `${aid.name} ${aid.description} ${aid.organization} ${aid.category}`.toLocaleLowerCase("fr").includes(normalized);
-      const territoryMatch = territory === "all" || (territory === "34" && ["national", "regional", "34"].includes(aid.coverage)) || (territory === "regional" && ["national", "regional"].includes(aid.coverage));
-      return textMatch && territoryMatch && (category === "Toutes" || aid.category === category) && (organization === "Toutes" || aid.organization === organization);
-    });
-  }, [query, category, territory, organization]);
-  const clearFilters = () => { setQuery(""); setCategory("Toutes"); setTerritory("34"); setOrganization("Toutes"); };
+      return textMatch && aidMatchesTerritory(aid.coverage, territory) && (category === "Toutes" || aid.category === category) && (organization === "Toutes" || aid.organization === organization);
+    }).sort((a, b) => aidSort(a, b, territory));
+  }, [query, category, organization, territory]);
 
-  return <main className="container page">
-    <h1 className="page-heading">Aides et démarches pour mamans solos</h1>
-    <div className="toolbar" aria-label="Filtres du catalogue">
-      <Input className="search-field" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Rechercher une aide" aria-label="Rechercher une aide" />
-      <Select value={territory} onChange={(event) => setTerritory(event.target.value)} aria-label="Territoire">
-        <option value="34">Hérault (34)</option><option value="regional">Occitanie</option><option value="all">Toutes les zones</option>
-      </Select>
-      <Select value={organization} onChange={(event) => setOrganization(event.target.value)} aria-label="Organisme">
+  const clearFilters = () => { setQuery(""); setCategory("Toutes"); setOrganization("Toutes"); };
+
+  return <main className="container page catalogue-page">
+    <div className="catalogue-intro"><p className="eyebrow eyebrow-blue">Aides & démarches</p><h1 className="page-heading">Aides et démarches</h1><p>Des aides nationales et locales, présentées avec leurs conditions, leurs sources et les démarches connues.</p></div>
+    <div className="catalogue-toolbar" aria-label="Filtres du catalogue">
+      <Input className="search-field" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Rechercher une aide, un besoin…" aria-label="Rechercher une aide" />
+      <Select value={organization} onChange={(event) => setOrganization(event.target.value)} aria-label="Filtrer par organisme">
         <option value="Toutes">Tous les organismes</option>{organizations.map((org) => <option key={org}>{org}</option>)}
       </Select>
-      <Button type="button" onClick={clearFilters}>Effacer</Button>
+      <Button type="button" variant="secondary" onClick={clearFilters}>Effacer</Button>
     </div>
-    <div className="filter-row" aria-label="Catégorie">
-      <button type="button" className="filter-chip" aria-pressed={category === "Toutes"} onClick={() => setCategory("Toutes")}>Toutes</button>
+    <p className="filter-hint">Le territoire se règle dans le menu en haut de page. Un département affiche aussi les aides d’Occitanie et de France.</p>
+    <div className="filter-row" aria-label="Filtrer par sujet">
+      <button type="button" className="filter-chip" aria-pressed={category === "Toutes"} onClick={() => setCategory("Toutes")}>Tout voir</button>
       {categories.map((item) => <button type="button" className="filter-chip" key={item} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}
     </div>
-    <p className="result-count" aria-live="polite">{results.length} aide{results.length === 1 ? "" : "s"} publiée{results.length === 1 ? "" : "s"}</p>
+    <div className="results-heading"><p className="result-count" aria-live="polite"><strong>{results.length}</strong> aide{results.length === 1 ? "" : "s"} publiée{results.length === 1 ? "" : "s"}</p>{(query || category !== "Toutes" || organization !== "Toutes") && <button className="reset-link" onClick={clearFilters}>Réinitialiser la recherche</button>}</div>
     {results.length ? <div className="aid-grid">{results.map((aid) => <Link className="aid-card" href={`/aides/${aid.slug}`} key={aid.id}>
+      <div className="aid-card-top"><span className="badge">{aid.category}</span></div>
       <div><h2>{aid.name}</h2><p>{aid.description}</p></div>
-      <div className="card-meta"><span className="badge">{aid.category}</span><span>{coverageLabel[aid.coverage]}</span></div>
-    </Link>)}</div> : <div className="empty-state" role="status">{pendingCount > 0 && category === "Toutes" && organization === "Toutes" && !query.trim() ? `${pendingCount} dispositifs ont été recensés. Leurs fiches restent masquées pendant la vérification des règles, démarches et sources officielles.` : "Aucune aide publiée ne correspond à ces filtres. Modifiez ou effacez les filtres."}</div>}
-    <footer className="footer">Les conditions et informations sont à confirmer auprès des organismes responsables.</footer>
+      <div className="aid-card-bottom"><TerritoryMark coverage={aid.coverage} compact /><span className="verified-mini">Information vérifiée</span></div>
+    </Link>)}</div> : <div className="empty-state"><h2>Aucune aide publiée ne correspond</h2><p>{pendingCount > 0 && category === "Toutes" && organization === "Toutes" && !query.trim() ? `${pendingCount} dispositifs ont été recensés. Leurs fiches restent masquées pendant la vérification des règles, démarches et sources officielles.` : "Change tes mots-clés ou tes filtres pour élargir la recherche."}</p><Button type="button" variant="secondary" onClick={clearFilters}>Effacer les filtres</Button></div>}
+    <footer className="footer">Les informations sont à confirmer auprès des organismes responsables. <Link href="/demarches">Retrouver mes favoris</Link>.</footer>
   </main>;
 }

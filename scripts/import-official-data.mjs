@@ -14,6 +14,7 @@ const geographySnapshotPath = path.join(outputRoot, "geography", "raw", "commune
 const postalSnapshotPath = path.join(outputRoot, "geography", "raw", "la-poste-hexasmal.csv");
 const consultedAt = new Date().toISOString();
 const errors = [];
+const networkResponses = [];
 
 class ImportError extends Error {
   constructor(kind, url, message, details = {}) {
@@ -25,31 +26,49 @@ class ImportError extends Error {
   }
 }
 
-async function getResponse(url, accept = "application/json") {
-  let response;
-  try {
-    response = await fetch(url, { headers: { accept }, signal: AbortSignal.timeout(30_000) });
-  } catch (error) {
-    const cause = error?.cause;
-    const code = cause?.code ?? error?.code ?? "UNKNOWN_NETWORK_ERROR";
-    const classification = code === "ENOTFOUND" || code === "EAI_AGAIN"
-      ? "DNS_ERROR"
-      : code === "EACCES" || code === "EPERM"
-        ? "ENVIRONMENT_NETWORK_DENIED"
-        : code === "ECONNREFUSED" || code === "ETIMEDOUT" || code === "UND_ERR_CONNECT_TIMEOUT" || code === "EHOSTUNREACH" || code === "ENETUNREACH"
-        ? "CONNECTION_ERROR"
-        : code === "CERT_HAS_EXPIRED" || code === "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
-          ? "TLS_ERROR"
-          : "NETWORK_ERROR";
-    throw new ImportError(classification, url, error.message, { code, cause: cause?.message });
+export async function getResponse(url, accept = "application/json") {
+  const maxAttempts = 3;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    let response;
+    try {
+      response = await fetch(url, { headers: { accept }, signal: AbortSignal.timeout(30_000) });
+    } catch (error) {
+      const cause = error?.cause;
+      const code = cause?.code ?? error?.code ?? "UNKNOWN_NETWORK_ERROR";
+      networkResponses.push({ requestedUrl: url, requestedDomain: new URL(url).hostname, finalUrl: null, finalDomain: null, httpStatus: null, result: "network-error", networkCode: code, attempt });
+      const transient = ["ECONNREFUSED", "ETIMEDOUT", "UND_ERR_CONNECT_TIMEOUT", "EHOSTUNREACH", "ENETUNREACH", "ECONNRESET", "UND_ERR_SOCKET"].includes(code);
+      if (transient && attempt < maxAttempts) {
+        await new Promise((resolve) => setTimeout(resolve, 300 * (2 ** (attempt - 1))));
+        continue;
+      }
+      const classification = code === "ENOTFOUND" || code === "EAI_AGAIN"
+        ? "DNS_ERROR"
+        : code === "EACCES" || code === "EPERM"
+          ? "ENVIRONMENT_NETWORK_DENIED"
+          : transient
+            ? "CONNECTION_ERROR"
+            : code === "CERT_HAS_EXPIRED" || code === "UNABLE_TO_VERIFY_LEAF_SIGNATURE"
+              ? "TLS_ERROR"
+              : "NETWORK_ERROR";
+      throw new ImportError(classification, url, error.message, { code, cause: cause?.message, attempts: attempt });
+    }
+    networkResponses.push({ requestedUrl: url, requestedDomain: new URL(url).hostname, finalUrl: response.url, finalDomain: response.url ? new URL(response.url).hostname : null, httpStatus: response.status, contentType: response.headers.get("content-type"), result: response.ok ? "http-response" : "http-error", attempt });
+    if (!response.ok) {
+      const retryable = response.status === 429 || response.status >= 500;
+      if (retryable && attempt < maxAttempts) {
+        const retryAfter = Number(response.headers.get("retry-after"));
+        await new Promise((resolve) => setTimeout(resolve, Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter * 1000, 5000) : 300 * (2 ** (attempt - 1))));
+        continue;
+      }
+      throw new ImportError("HTTP_ERROR", url, `${response.status} ${response.statusText}`, {
+        status: response.status,
+        retryAfter: response.headers.get("retry-after"),
+        attempts: attempt,
+      });
+    }
+    return response;
   }
-  if (!response.ok) {
-    throw new ImportError("HTTP_ERROR", url, `${response.status} ${response.statusText}`, {
-      status: response.status,
-      retryAfter: response.headers.get("retry-after"),
-    });
-  }
-  return response;
+  throw new ImportError("RETRY_EXHAUSTED", url, "request attempts exhausted");
 }
 
 async function getJson(url) {
@@ -183,7 +202,7 @@ export function normalizeGeographyRecords(communes) {
   return { records, duplicateCount };
 }
 
-export function normalizeGeoPostalMappings(communes) {
+export function normalizeGeoPostalMappings(communes, retrievedAt = consultedAt) {
   const mappingSet = new Set();
   const mappings = [];
   for (const commune of communes) {
@@ -194,7 +213,7 @@ export function normalizeGeoPostalMappings(communes) {
       const key = `${inseeCode}|${postal}`;
       if (mappingSet.has(key)) continue;
       mappingSet.add(key);
-      mappings.push({ inseeCode, communeName: commune.nom, postalCode: postal, source: "geo.api.gouv.fr", retrievedAt: consultedAt });
+      mappings.push({ inseeCode, communeName: commune.nom, postalCode: postal, source: "geo.api.gouv.fr", retrievedAt });
     }
   }
   return mappings;
@@ -348,6 +367,11 @@ export function parseCsv(content, delimiter = ";") {
       row = [];
     } else cell += char;
   }
+  if (quoted) {
+    const error = new Error("CSV contains an unterminated quoted field");
+    error.kind = "CSV_PARSE_ERROR";
+    throw error;
+  }
   if (cell || row.length) { row.push(cell); rows.push(row); }
   if (!rows.length) return [];
   const headers = rows.shift().map((header) => header.replace(/^\uFEFF/, "").trim());
@@ -392,7 +416,7 @@ async function readStoredGeography() {
   }
   const { records, duplicateCount } = normalizeGeographyRecords(snapshot.communes);
   await writeJson("geography/normalized/communes-occitanie.json", records);
-  const geoPostalMappings = normalizeGeoPostalMappings(snapshot.communes);
+  const geoPostalMappings = normalizeGeoPostalMappings(snapshot.communes, snapshot.retrievedAt ?? consultedAt);
   await writeJson("geography/normalized/geo-api-postal-codes-occitanie.json", geoPostalMappings);
   return { status: "stored-snapshot-reused", sourceRetrievedAt: snapshot.retrievedAt, departmentCount: snapshot.departments.length, communeCount: snapshot.communes.length, normalizedCommuneCount: records.length, duplicateCount, geoPostalMappingCount: geoPostalMappings.length, requiredChecks, communes: snapshot.communes };
 }
@@ -404,7 +428,16 @@ async function refreshPostalFromSavedCsv(communes = null) {
   const normalized = normalizePostalRows(rows);
   const occitanieDepartments = new Set(["09", "11", "12", "30", "31", "32", "34", "46", "48", "65", "66", "81", "82"]);
   const occitanieCodes = communes ? new Set(communes.map((item) => item.code)) : null;
-  const matched = normalized.mappings.filter((row) => occitanieCodes ? occitanieCodes.has(row.inseeCode) : occitanieDepartments.has(row.inseeCode.slice(0, 2)));
+  let postalSnapshot = null;
+  try { postalSnapshot = JSON.parse(await readFile(path.join(outputRoot, "geography/raw/postal-codes-dataset.json"), "utf8")); }
+  catch { /* A standalone CSV snapshot can still be normalized without its metadata sidecar. */ }
+  const matched = normalized.mappings.filter((row) => occitanieCodes ? occitanieCodes.has(row.inseeCode) : occitanieDepartments.has(row.inseeCode.slice(0, 2))).map((row) => ({
+    ...row,
+    sourceDataset: postalSnapshot?.datasetId ?? null,
+    sourceResourceId: postalSnapshot?.resource?.id ?? null,
+    sourceUpdatedAt: postalSnapshot?.datasetLastUpdate ?? null,
+    retrievedAt: postalSnapshot?.retrievedAt ?? consultedAt,
+  }));
   await writeJson("geography/normalized/postal-codes-occitanie.json", matched);
   return { status: "saved-raw-reprocessed", sourceRows: rows.length, occitanieRows: matched.length, matchedCommunes: new Set(matched.map((item) => item.inseeCode)).size, duplicateCount: normalized.duplicateCount, encoding, matchedAgainst: communes ? "API Géo commune codes" : "department code prefixes pending API Géo cross-check" };
 }
@@ -412,7 +445,19 @@ async function refreshPostalFromSavedCsv(communes = null) {
 async function writeJson(relative, value) {
   const target = path.join(outputRoot, relative);
   await mkdir(path.dirname(target), { recursive: true });
-  await writeFile(target, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  const serialized = `${JSON.stringify(value, null, 2)}\n`;
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    try {
+      await writeFile(target, serialized, "utf8");
+      return;
+    } catch (error) {
+      // Windows security scanners can briefly hold a just-refreshed generated
+      // JSON file. Retry only an unclassified open failure; access-denied and
+      // other explicit filesystem errors remain visible to the caller.
+      if (attempt === 2 || error.code || !/unknown error, open/i.test(error.message ?? "")) throw error;
+      await new Promise((resolve) => setTimeout(resolve, 200));
+    }
+  }
 }
 
 async function main() {
@@ -444,8 +489,14 @@ async function main() {
   let regionConsent = { required: true, accepted: process.env.SOLOMAM_REGION_TERMS_ACCEPTED === "1", status: "awaiting-acceptance" };
   try { region = await importRegion(); regionConsent = { required: true, accepted: true, status: "accepted" }; }
   catch (error) {
-    if (error.kind === "CONSENT_REQUIRED") region = { status: "awaiting-consent", retrievedRecords: 0 };
-    else { errors.push(serializeError(error)); region = { status: "failed", retrievedRecords: 0 }; }
+    if (error.kind === "CONSENT_REQUIRED") {
+      regionConsent = { required: true, accepted: false, status: "awaiting-acceptance" };
+      region = { status: "awaiting-consent", retrievedRecords: 0 };
+    } else {
+      regionConsent = { required: true, accepted: process.env.SOLOMAM_REGION_TERMS_ACCEPTED === "1", status: process.env.SOLOMAM_REGION_TERMS_ACCEPTED === "1" ? "accepted" : "awaiting-acceptance" };
+      errors.push(serializeError(error));
+      region = { status: "failed", retrievedRecords: 0 };
+    }
   }
 
   try { geographyResult = await importGeography(); }
@@ -469,9 +520,10 @@ async function main() {
     }
   }
   const report = {
-    importerVersion: 1,
+    importerVersion: 2,
     startedAt: consultedAt,
     completedAt: new Date().toISOString(),
+    retryPolicy: { maxAttempts: 3, transientHttpStatuses: [429, "5xx"], transientNetworkCodes: ["ECONNREFUSED", "ETIMEDOUT", "UND_ERR_CONNECT_TIMEOUT", "EHOSTUNREACH", "ENETUNREACH", "ECONNRESET", "UND_ERR_SOCKET"], nonRetryableNetworkCodes: ["EACCES", "EPERM", "ENOTFOUND", "EAI_AGAIN"] },
     previousAttempt,
     historicalPostalResponse: knownPostalHistory,
     counts: {
@@ -493,6 +545,7 @@ async function main() {
     geography,
     postalStatus: postal?.status ?? "not-imported-current-run",
     postal,
+    networkResponses,
     errors,
   };
   await writeJson("import-report.json", report);

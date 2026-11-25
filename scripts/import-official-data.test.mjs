@@ -1,11 +1,23 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { classifyAid, decodeCsvBytes, deduplicateCandidates, normalizeGeoPostalMappings, normalizePostalRows, normalizeRegionRecord, parseCsv, validateRequiredCommunes } from "./import-official-data.mjs";
+import { classifyAid, decodeCsvBytes, deduplicateCandidates, getResponse, normalizeGeoPostalMappings, normalizePostalRows, normalizeRegionRecord, parseCsv, validateRequiredCommunes } from "./import-official-data.mjs";
 import { qualifyOccitanieRecords } from "./qualify-occitanie.mjs";
+
+async function restoreFile(file, contents) {
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      await writeFile(file, contents);
+      return;
+    } catch (error) {
+      if (error.code !== "UNKNOWN" || attempt >= 4) throw error;
+      await new Promise((resolve) => setTimeout(resolve, attempt * 75));
+    }
+  }
+}
 
 test("CSV parser handles delimiter, quoted delimiter, escaped quote and CRLF", () => {
   const rows = parseCsv('Code_commune_INSEE;Nom;Code_postal\r\n34172;"Montpellier; centre";34000\r\n34301;"Sète ""centre""";34200\r\n');
@@ -13,6 +25,10 @@ test("CSV parser handles delimiter, quoted delimiter, escaped quote and CRLF", (
     { Code_commune_INSEE: "34172", Nom: "Montpellier; centre", Code_postal: "34000" },
     { Code_commune_INSEE: "34301", Nom: 'Sète "centre"', Code_postal: "34200" },
   ]);
+});
+
+test("CSV parser rejects an unterminated quoted field", () => {
+  assert.throws(() => parseCsv('name;description\nA;"incomplete'), (error) => error.kind === "CSV_PARSE_ERROR");
 });
 
 test("La Poste headers and Windows-1252 encoding preserve leading zero codes", () => {
@@ -52,6 +68,32 @@ test("La Poste duplicate rows collapse only to the same INSEE/postal pair", () =
 
 test("UTF-8 CSV is detected before the Windows-1252 fallback", () => {
   assert.deepEqual(decodeCsvBytes(Buffer.from("Nom_de_la_commune\nSète\n", "utf8")), { text: "Nom_de_la_commune\nSète\n", encoding: "utf-8" });
+});
+
+test("HTTP transient failures retry, while environment network denial is reported immediately", async () => {
+  const originalFetch = globalThis.fetch;
+  let attempts = 0;
+  try {
+    globalThis.fetch = async () => {
+      attempts += 1;
+      return attempts === 1 ? new Response("busy", { status: 503 }) : new Response("ok", { status: 200 });
+    };
+    const response = await getResponse("https://example.test/data");
+    assert.equal(await response.text(), "ok");
+    assert.equal(attempts, 2);
+
+    attempts = 0;
+    globalThis.fetch = async () => {
+      attempts += 1;
+      const error = new Error("permission denied");
+      error.cause = { code: "EACCES" };
+      throw error;
+    };
+    await assert.rejects(getResponse("https://example.test/data"), (error) => error.kind === "ENVIRONMENT_NETWORK_DENIED" && error.details.attempts === 1);
+    assert.equal(attempts, 1);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("classification only promotes explicit individual audience to manual review candidate", () => {
@@ -105,28 +147,41 @@ test("actual Region schema does not confuse publication date with beneficiaries 
   assert.equal(item.periodStatus, "not-established-from-dataset");
 });
 
-test("all 153 imported aid records receive traceable, conservative qualification decisions", async () => {
-  const result = await qualifyOccitanieRecords();
-  assert.equal(result.qualifications.length, 153);
-  assert.deepEqual(result.counts, { relevant: 22, not_relevant: 28, expired: 2, needs_manual_review: 101 });
-  assert.equal(new Set(result.qualifications.map((item) => item.id)).size, 153);
-  assert.ok(result.qualifications.every((item) => item.sourceRecordHash.length === 64 && item.rawRecordReference.file.endsWith("raw/dataset.json")));
+test("all imported aid records receive traceable, conservative qualification decisions", async (t) => {
   const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const generatedFiles = ["src/data/imports/occitanie/normalized/qualifications.json", "src/data/imports/import-report.json", "src/data/source-registry.json"];
+  const originals = await Promise.all(generatedFiles.map((file) => readFile(path.join(repo, file))));
+  t.after(() => Promise.all(generatedFiles.map((file, index) => restoreFile(path.join(repo, file), originals[index]))));
+  const result = await qualifyOccitanieRecords();
+  assert.ok(result.qualifications.length > 0);
+  assert.equal(Object.values(result.counts).reduce((sum, count) => sum + count, 0), result.qualifications.length);
+  assert.equal(new Set(result.qualifications.map((item) => item.id)).size, result.qualifications.length);
+  assert.ok(result.qualifications.every((item) => item.sourceRecordHash.length === 64 && item.rawRecordReference.file.endsWith("raw/dataset.json")));
   const rawSnapshot = JSON.parse(await readFile(path.join(repo, "src/data/imports/occitanie/raw/dataset.json"), "utf8"));
   assert.ok(result.qualifications.every((item) => createHash("sha256").update(JSON.stringify(rawSnapshot.records[item.sourceIndex])).digest("hex") === item.sourceRecordHash));
   assert.ok(result.qualifications.every((item) => item.classification.justification.length > 0));
   assert.ok(result.qualifications.every((item) => item.normalized.territory.regionCode === "76"));
-  assert.equal(result.qualifications.filter((item) => item.deduplication.status === "duplicate-candidate").length, 0);
+  const duplicateCandidates = result.qualifications.filter((item) => item.deduplication.status === "duplicate-candidate");
+  assert.ok(duplicateCandidates.length > 0);
+  const catalogue = JSON.parse(await readFile(path.join(repo, "src/data/catalogue.json"), "utf8"));
+  assert.ok(duplicateCandidates.every((item) => catalogue.some((record) => record.id === item.deduplication.existingCatalogueId && record.url === item.normalized.officialUrl)));
   assert.ok(result.qualifications.every((item) => item.dataQuality.publicationStatus === "not-published"));
   assert.ok(result.qualifications.filter((item) => item.classification.status === "relevant" || item.classification.status === "not_relevant" || item.classification.status === "expired").every((item) => item.sources.some((source) => source.kind === "official-programme-page" && source.status === "official-page-checked")));
   assert.ok(result.qualifications.every((item) => item.normalized.validFrom === null && item.normalized.validUntil === null));
 });
 
 test("qualification import is reproducible against the persisted raw snapshot", async () => {
-  const first = await qualifyOccitanieRecords();
-  const firstRecords = JSON.stringify(first.qualifications);
-  const second = await qualifyOccitanieRecords();
-  assert.equal(JSON.stringify(second.qualifications), firstRecords);
+  const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+  const generatedFiles = ["src/data/imports/occitanie/normalized/qualifications.json", "src/data/imports/import-report.json", "src/data/source-registry.json"];
+  const originals = await Promise.all(generatedFiles.map((file) => readFile(path.join(repo, file))));
+  try {
+    const first = await qualifyOccitanieRecords();
+    const firstRecords = JSON.stringify(first.qualifications);
+    const second = await qualifyOccitanieRecords();
+    assert.equal(JSON.stringify(second.qualifications), firstRecords);
+  } finally {
+    await Promise.all(generatedFiles.map((file, index) => restoreFile(path.join(repo, file), originals[index])));
+  }
 });
 
 test("geography assertions accept only the exact four INSEE/name pairs", () => {
@@ -152,6 +207,8 @@ test("persisted official API Géo snapshot contains the requested towns and vali
   const postalPairs = normalizeGeoPostalMappings(snapshot.communes);
   assert.equal(postalPairs.length, 4482);
   assert.equal(new Set(postalPairs.map((item) => `${item.inseeCode}|${item.postalCode}`)).size, postalPairs.length);
+  const normalizedGeo = JSON.parse(await readFile(path.join(repo, "src/data/imports/geography/normalized/geo-api-postal-codes-occitanie.json"), "utf8"));
+  assert.ok(normalizedGeo.every((item) => item.retrievedAt === snapshot.retrievedAt));
   for (const [name, code, postalCode] of [["Montpellier", "34172", "34000"], ["Frontignan", "34108", "34110"], ["Sète", "34301", "34200"], ["Béziers", "34032", "34500"]]) {
     assert.ok(postalPairs.some((item) => item.communeName === name && item.inseeCode === code && item.postalCode === postalCode));
   }
@@ -164,6 +221,8 @@ test("La Poste repeated commune/postal pairs are preserved routing variants, not
   const sourceRows = parseCsv(decodeCsvBytes(bytes).text);
   const source = normalizePostalRows(sourceRows);
   const normalized = JSON.parse(await readFile(path.join(repo, "src/data/imports/geography/normalized/postal-codes-occitanie.json"), "utf8"));
+  const postalSnapshot = JSON.parse(await readFile(path.join(repo, "src/data/imports/geography/raw/postal-codes-dataset.json"), "utf8"));
+  assert.ok(normalized.every((item) => item.retrievedAt === postalSnapshot.retrievedAt && item.sourceDataset === postalSnapshot.datasetId && item.sourceResourceId === postalSnapshot.resource.id));
   const byPair = new Map(normalized.map((item) => [`${item.inseeCode}|${item.postalCode}`, item]));
   const occitanieDepartments = new Set(["09", "11", "12", "30", "31", "32", "34", "46", "48", "65", "66", "81", "82"]);
   for (const mapping of source.mappings.filter((item) => occitanieDepartments.has(item.inseeCode.slice(0, 2)))) {

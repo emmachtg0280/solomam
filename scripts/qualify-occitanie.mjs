@@ -2,6 +2,8 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { repairText } from "./lib/repair-text.mjs";
+import { sameAidIdentity } from "../src/lib/catalogue-identity.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rawPath = path.join(root, "src/data/imports/occitanie/raw/dataset.json");
@@ -9,12 +11,18 @@ const cataloguePath = path.join(root, "src/data/catalogue.json");
 const outputPath = path.join(root, "src/data/imports/occitanie/normalized/qualifications.json");
 const reportPath = path.join(root, "src/data/imports/import-report.json");
 const registryPath = path.join(root, "src/data/source-registry.json");
+const pageDecisionsPath = path.join(root, "src/data/imports/occitanie/normalized/official-page-decisions.json");
 const checkedAt = "2026-11-23";
 const regionDataUrl = "https://data.laregion.fr/explore/dataset/aides-et-appels-a-projets-de-la-region-occitanie/";
+const pageDecisionSnapshot = JSON.parse(await readFile(pageDecisionsPath, "utf8"));
+const officialPageDecisions = pageDecisionSnapshot.decisions ?? [];
+const officialPageDecisionsByUrl = new Map(officialPageDecisions.map((decision) => [decision.url, decision]));
+const editorialExclusionsByUrl = new Map(Object.entries(pageDecisionSnapshot.editorialExclusions ?? {}));
 
 // Decisions below are keyed by the stable official URL. Page-level verification
 // links to official Region pages. Items without enough evidence remain manual.
 const verifiedRelevant = {
+  "https://www.laregion.fr/eco-cheque-mobilite-vehicule-electrique-occasion": { audience: "Personne majeure domiciliée en Occitanie et non imposable, n'ayant pas déjà bénéficié de cette aide ou de ses versions antérieures.", justification: "La Région décrit une aide directe à une personne physique avec conditions de résidence, de ressources, de véhicule et de non-cumul; le règlement officiel est disponible.", amount: "30 % du coût d'acquisition, plafonné à 1 600 € (règlement 2026)", status: "relevant" },
   "https://www.laregion.fr/Aide-a-la-lecture-de-loisirs": { audience: "Lycéens titulaires de la Carte Jeune Région; a child in the household may be the direct beneficiary.", justification: "Official page confirms an individual benefit of €20 for qualifying lycée learners across Occitanie.", amount: "20 €", status: "relevant" },
   "https://www.laregion.fr/Pass-Mutuelle-Etudiant-e": { audience: "Scholarship students in Occitanie lacking CSS, employer coverage, or dependent coverage under a parent's health plan.", justification: "Official page describes the student-specific regional complementary health support; eligibility is conditional and must be checked against the current scheme rules.", status: "relevant" },
   "https://www.laregion.fr/Remuneration-des-stagiaires-de-la-formation-professionnelle": { audience: "Jobseekers with vocational trainee status, over 16 and not compensated by France Travail (page conditions).", justification: "Official page identifies a direct payment to vocational trainees and gives the non-compensation and age conditions.", status: "relevant" },
@@ -45,6 +53,12 @@ const verifiedExpired = {
 };
 
 const verifiedNotRelevant = {
+  "https://www.laregion.fr/Aide-a-la-construction-et-a-la-rehabilitation-de-logements-pour-les-jeunes": "The official page identifies HLM organisations, authorised associations or institutions as direct recipients; a household cannot apply for this investment grant.",
+  "https://www.laregion.fr/Accueil-de-la-petite-enfance": "The direct recipients are communes/EPCI, associations, CCAS/CIAS and operators developing childcare facilities; this is not an individual family benefit.",
+  "https://www.laregion.fr/Dispositif-regional-fonds-de-solidarite-catastrophes-naturelles": "The fund supports local authorities and public bodies after natural disasters; it does not provide direct individual housing repair grants.",
+  "https://www.laregion.fr/Arts-de-la-scene-Aide-aux-festivals": "The official aid targets legal entities carrying performing-arts festival projects, not individual households.",
+  "https://www.laregion.fr/Aide-aux-equipements-culturels-et-patrimoniaux-structurants": "The official page states that aid is for public owners/project owners or collective associations and is not individual aid.",
+  "https://www.laregion.fr/Dispositif-d-aide-au-prototypage-de-jeu-video": "The page concerns video-game production/publishing companies and is currently being updated; its direct applicant is not a household.",
   "https://www.laregion.fr/Dispositif-regional-de-soutien-au-fonctionnement-des-CFA-OFA-2026": "The official page identifies apprenticeship training centres and apprenticeship training organisations as grant recipients, not the apprentices themselves.",
   "https://www.laregion.fr/Dispositif-d-aides-pour-les-projets-d-energie-renouvelable-cooperatifs-et-citoyens-d": "The official page names associations, local authorities/public actors and businesses as applicants for collective renewable-energy project grants; it is not a direct household energy bill aid.",
   "https://www.laregion.fr/Startup-industrie-de-demain": "The official page restricts this innovation support to young companies meeting prior-public-support/incubator, research-laboratory and sector conditions.",
@@ -73,6 +87,13 @@ const verifiedNotRelevant = {
   "https://www.laregion.fr/Aide-a-la-mobilite-internationale-des-jeunes-en-insertion-avec-Mouv-Occitanie": "The official page restricts applicants to member organisations of the Erasmus+ consortium; young people are participants in group actions rather than individual aid applicants.",
   "https://www.laregion.fr/Aide-a-la-mobilite-internationale-des-eleves-du-sanitaire-et-social-avec-Mouv": "The official page restricts applicants to consortium-member organisations and funds group mobility projects; individual learners are beneficiaries of those projects, not the applicants.",
   "https://www.laregion.fr/Mobilite-europeenne-des-personnels-des-formations-sanitaires-et-sociales": "The official page restricts recipients to staff employed by consortium-member training institutions; it is not a family/learner aid.",
+  "https://www.laregion.fr/Contrat-Transmission-Reprise-D-entreprises": "La page officielle cible le cédant ou le repreneur d'une entreprise et finance une transmission-reprise; il s'agit d'un soutien à un projet d'entreprise, pas d'une aide sociale ou familiale.",
+  "https://www.laregion.fr/Aide-regionale-au-developpement-des-installations-solaires-thermiques": "La page officielle exclut explicitement les particuliers; les bénéficiaires sont des associations, collectivités, organismes publics, entreprises, professionnels et bailleurs sociaux portant un investissement.",
+  "https://www.laregion.fr/competencesRH-entreprises": "L'offre Pass RH est destinée aux entreprises, groupements et associations employeuses de 5 à 49 salariés dans certains secteurs; les particuliers ne sont pas bénéficiaires.",
+  "https://www.laregion.fr/Pass-RH": "Le dispositif finance un diagnostic et un accompagnement RH au bénéfice d'entreprises et associations employeuses de 5 à 49 salariés; une personne ou une famille ne peut pas en demander le bénéfice.",
+  "https://www.laregion.fr/Dispositif-pour-la-Renovation-des-batiments-publics-ERP-pour-une-meilleure": "La page vise les communes, EPCI, syndicats mixtes et organismes publics pour rénover des ERP; les habitants sont usagers des bâtiments, non demandeurs de l'aide.",
+  "https://www.laregion.fr/Dispositif-de-soutien-aux-equipements-structurants-Bourgs-Centres-Occitanie": "La page finance des projets d'équipements mutualisés portés par des communes, EPCI ou syndicats mixtes; les habitants sont bénéficiaires d'usage et non demandeurs.",
+  "https://www.laregion.fr/Contrat-Agriculture-Durable-Public-Structures-de-conseil-et-d-accompagnement": "La page distingue la structure sélectionnée qui candidate et reçoit le forfait de 1 500 euros par contrat; l'agriculteur reçoit un accompagnement mais ne demande pas cette subvention régionale comme particulier.",
 };
 
 function normalizedKey(value) {
@@ -80,9 +101,9 @@ function normalizedKey(value) {
 }
 function stableHash(value) { return createHash("sha256").update(JSON.stringify(value)).digest("hex"); }
 function entityFromUrl(url) { return url?.startsWith("https://www.laregion.fr/") ? "Région Occitanie" : null; }
-function evidenceFor(record, status, justification) {
+function evidenceFor(record, status, justification, pageDecision) {
   const sources = [{ url: regionDataUrl, kind: "dataset-record", retrievedAt: "2026-11-24", fields: ["titre", "type", "chapo", "introduction", "date_publication", "date_modification", "url", "thematiques"] }];
-  if (record.url && status !== "needs_manual_review") sources.push({ url: record.url, kind: "official-programme-page", consultedAt: checkedAt, verificationNote: justification });
+  if (record.url && (status !== "needs_manual_review" || pageDecision)) sources.push({ url: record.url, kind: "official-programme-page", consultedAt: pageDecision?.consultedAt ?? checkedAt, status: pageDecision?.sourceStatus ?? "official-page-checked", verificationNote: justification });
   return sources;
 }
 
@@ -91,25 +112,34 @@ export async function qualifyOccitanieRecords() {
   const catalogue = JSON.parse(await readFile(cataloguePath, "utf8"));
   const aidRecords = records.map((record, sourceIndex) => ({ record, sourceIndex })).filter(({ record }) => /^aides?$/i.test(record.type ?? ""));
   const qualifications = aidRecords.map(({ record, sourceIndex }) => {
+    const rawHash = stableHash(record);
+    record = Object.fromEntries(Object.entries(record).map(([key, value]) => [key, typeof value === "string" ? repairText(value) : value]));
+    const pageDecision = officialPageDecisionsByUrl.get(record.url);
     const specific = verifiedRelevant[record.url] ?? verifiedNotRelevant[record.url];
     const expiredReason = verifiedExpired[record.url];
     let reviewStatus = "needs_manual_review";
-    let justification = "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.";
+    let justification = pageDecision?.justification ?? "Le dataset officiel donne le titre, le thème et un extrait, mais pas les règles d'éligibilité, la période juridique, les pièces et le chemin de demande. Une validation de la fiche officielle reste nécessaire.";
     let beneficiary = null;
     let amount = null;
-    if (specific && verifiedRelevant[record.url]) {
+    if (pageDecision?.status === "relevant") {
+      reviewStatus = "relevant"; beneficiary = pageDecision.audience; amount = pageDecision.amount;
+    } else if (pageDecision?.status === "not_relevant") {
+      reviewStatus = "not_relevant";
+    } else if (pageDecision?.status === "expired") {
+      reviewStatus = "expired";
+    } else if (specific && verifiedRelevant[record.url]) {
       reviewStatus = "relevant"; ({ audience: beneficiary, justification, amount } = specific);
     } else if (specific && verifiedNotRelevant[record.url]) {
       reviewStatus = "not_relevant"; justification = specific;
     } else if (expiredReason) {
       reviewStatus = "expired"; justification = expiredReason;
     }
-    const hash = stableHash(record);
+    const hash = rawHash;
     const id = `occitanie:${record.url ? normalizedKey(record.url.split("/").pop()) : hash.slice(0, 20)}`;
-    const duplicateOf = catalogue.find((item) => normalizedKey(item.name) === normalizedKey(record.titre) || (item.url && item.url === record.url));
+    const duplicateOf = catalogue.find((item) => sameAidIdentity(item, { name: record.titre, org: entityFromUrl(record.url), zone: "regional" }));
     const introduction = [record.chapo, record.introduction].filter(Boolean).join("\n\n");
     const sourceStatus = reviewStatus === "needs_manual_review" ? "dataset-only" : "official-page-checked";
-    const sourceEntries = evidenceFor(record, reviewStatus, justification);
+    const sourceEntries = evidenceFor(record, reviewStatus, justification, pageDecision);
     return {
       id,
       sourceRecordId: record.source_record_id ?? record.recordid ?? record.id ?? `content-sha256:${hash}`,
@@ -118,15 +148,20 @@ export async function qualifyOccitanieRecords() {
       sourceRecordHash: hash,
       rawRecordReference: { file: "src/data/imports/occitanie/raw/dataset.json", recordIndex: sourceIndex, sourceDataset: "aides-et-appels-a-projets-de-la-region-occitanie", datasetRetrievedAt: retrievedAt ?? null },
       classification: { status: reviewStatus, justification, decidedAt: checkedAt },
+      editorialDisposition: editorialExclusionsByUrl.has(record.url)
+        ? { status: "excluded-from-editorial-catalogue", reason: editorialExclusionsByUrl.get(record.url).reason, decidedAt: pageDecisionSnapshot.reviewedAt }
+        : ["https://www.laregion.fr/Aides-en-faveur-du-developpement-de-la-pratique-du-sport-scolaire", "https://www.laregion.fr/Avec-Mouv-Occitanie-la-Region-t-aide-pour-ta-mobilite-internationale"].includes(record.url)
+          ? { status: "candidate-retained-for-review", reason: record.url.includes("sport-scolaire") ? "Le lycée est identifié comme bénéficiaire, mais l’aide individuelle effective aux familles/élèves et les modalités restent à établir." : "Aide individuelle possible pour des jeunes selon leur statut d’études, de formation ou de recherche d’emploi; pertinence conditionnée à ces statuts, sans ciblage monoparental." , decidedAt: pageDecisionSnapshot.reviewedAt }
+          : { status: "eligible-for-editorial-review", reason: "Aucune décision éditoriale additionnelle enregistrée.", decidedAt: pageDecisionSnapshot.reviewedAt },
       normalized: {
         officialName: record.titre ?? null,
         type: record.type ?? null,
         benefitKind: reviewStatus === "relevant" ? (/service|logement|accompagnement/i.test(record.titre ?? "") || record.url === "https://www.laregion.fr/pacte-embauche" ? "service-or-accompagnement" : "aid-or-benefit") : null,
         organization: entityFromUrl(record.url),
-        audience: beneficiary,
-        conditions: reviewStatus === "relevant" ? beneficiary : null,
+        audience: pageDecision?.audience ?? beneficiary,
+        conditions: pageDecision?.conditions ?? (reviewStatus === "relevant" ? beneficiary : null),
         territory: { level: "regional", regionCode: "76", label: "Occitanie" },
-        amount,
+        amount: pageDecision?.amount ?? amount,
         documents: null,
         applicationSteps: null,
         officialUrl: record.url ?? null,
@@ -136,23 +171,24 @@ export async function qualifyOccitanieRecords() {
         sourceModifiedAt: record.date_modification ?? null,
         validFrom: null,
         validUntil: null,
-        validityStatus: "not-established-by-dataset",
+        validityStatus: pageDecision?.validityStatus ?? "not-established-by-dataset",
       },
-      sources: sourceEntries.map((source) => ({ ...source, status: source.kind === "dataset-record" ? "imported" : sourceStatus })),
+      sources: sourceEntries.map((source) => ({ ...source, status: source.kind === "dataset-record" ? "imported" : source.status ?? sourceStatus })),
       dataQuality: {
-        unresolved: reviewStatus === "relevant" ? ["conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel", "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement"] : reviewStatus === "needs_manual_review" ? ["public bénéficiaire", "conditions", "période de validité", "montant", "pièces", "démarche", "nature exacte du bénéfice"] : [],
+        unresolved: reviewStatus === "relevant" ? ["conditions détaillées, documents et étapes de dépôt à normaliser depuis le règlement officiel", "fenêtre de dépôt et validité annuelle à contrôler lorsque la page renvoie à un règlement", "ne pas publier tant que les contrôles existants de qualité et de procédure ne sont pas satisfaits"] : reviewStatus === "needs_manual_review" ? ["public bénéficiaire", "conditions", "période de validité", "montant", "pièces", "démarche", "nature exacte du bénéfice"] : [],
         publicationStatus: "not-published",
       },
-      deduplication: duplicateOf ? { status: "duplicate-candidate", existingCatalogueId: duplicateOf.id, reason: "normalized title or identical official URL" } : { status: "no-match-found" },
+      deduplication: duplicateOf ? { status: "duplicate-candidate", existingCatalogueId: duplicateOf.id, reason: "same normalized aid name, competent organization and territory" } : { status: "no-match-found" },
       importMetadata: { schema: schema.map((item) => item.name), datasetSourceUrl: sourceUrl ?? regionDataUrl, rawRecordHash: hash },
     };
     
   });
   await mkdir(path.dirname(outputPath), { recursive: true });
   const counts = Object.fromEntries(["relevant", "not_relevant", "expired", "needs_manual_review"].map((status) => [status, qualifications.filter((item) => item.classification.status === status).length]));
-  const generatedAt = new Date().toISOString();
-  await writeFile(outputPath, `${JSON.stringify({ generatedAt, source: regionDataUrl, sourceSnapshot: "src/data/imports/occitanie/raw/dataset.json", records: qualifications }, null, 2)}\n`, "utf8");
   const report = JSON.parse(await readFile(reportPath, "utf8"));
+  const generatedAt = report.startedAt ?? retrievedAt ?? checkedAt;
+  await writeFile(outputPath, `${JSON.stringify({ generatedAt, source: regionDataUrl, sourceSnapshot: "src/data/imports/occitanie/raw/dataset.json", records: qualifications }, null, 2)}\n`, "utf8");
+  const sourceRetrievedAt = report.startedAt ?? retrievedAt ?? generatedAt;
   report.qualification = {
     completedAt: generatedAt,
     sourceRecordsReviewed: qualifications.length,
@@ -172,37 +208,38 @@ export async function qualifyOccitanieRecords() {
   const regionSource = registry.sources.find((item) => item.id === "region-occitanie-dataset");
   if (regionSource) Object.assign(regionSource, {
     status: "official-snapshot-imported-qualification-in-progress",
-    version: "Snapshot captured 2026-11-24T00:53:03.529Z; live dataset revision not separately pinned",
+    version: `${report.counts.regionRecordsRetrieved} records captured ${sourceRetrievedAt}; live dataset revision not separately pinned`,
     license: "Licence Ouverte / Open Licence 2.0 (previously observed in source metadata; snapshot lacks license metadata)",
-    retrievedAt: "2026-11-24T00:53:03.529Z",
-    recordsImported: 229,
-    candidateRowsObserved: 229,
-    candidateAidRowsObserved: 153,
+    retrievedAt: sourceRetrievedAt,
+    recordsImported: report.counts.regionRecordsRetrieved,
+    candidateRowsObserved: report.counts.regionRecordsRetrieved,
+    candidateAidRowsObserved: qualifications.length,
     candidateAidRowsQualifiedRelevant: counts.relevant,
     candidateAidRowsExpired: counts.expired,
     candidateAidRowsExcluded: counts.not_relevant,
     candidateAidRowsPendingReview: counts.needs_manual_review,
     uniqueUsableAids: 0,
-    endpointProbe: { consent: "accepted for the recorded import", metadataRetrieved: true, datasetRecordsRetrieved: 229, rawSnapshotWritten: true, networkCause: null },
-    coverage: "229 official dataset records; 153 rows categorized Aides; 76 other categories excluded from this aid qualification run",
+    endpointProbe: { consent: "accepted for the recorded import", metadataRetrieved: true, datasetRecordsRetrieved: report.counts.regionRecordsRetrieved, rawSnapshotWritten: true, networkCause: null },
+    coverage: `${report.counts.regionRecordsRetrieved} official dataset records; ${qualifications.length} rows categorized Aides; ${report.counts.regionRecordsRetrieved - qualifications.length} other categories excluded from this aid qualification run`,
     limitations: ["Dataset has no beneficiary, eligibility, documents, application process or validity fields", `Qualification register has ${counts.relevant} relevant candidates, ${counts.not_relevant} confirmed non-relevant items, ${counts.expired} expired items and ${counts.needs_manual_review} manual reviews`, "No regional aid card is published until full current rules and application routes are normalized", "Live source page and dataset metadata need to be rechecked for updates and reuse terms"],
   });
   const postalSource = registry.sources.find((item) => item.id === "postal-codes");
   if (postalSource) Object.assign(postalSource, {
     status: "official-snapshot-imported-and-normalized",
-    version: `Source updated ${audit.sourceDatasetLastUpdate}; fetched 2026-11-24T00:53:03.529Z`,
-    retrievedAt: "2026-11-24T00:53:03.529Z",
-    recordsImported: 4482,
+    version: `Source updated ${audit.sourceDatasetLastUpdate}; fetched ${sourceRetrievedAt}`,
+    retrievedAt: sourceRetrievedAt,
+    recordsImported: report.counts.occitaniePostalRowsNormalized,
     uniqueUsableAids: 0,
     endpointProbe: { latestRefreshHttpStatus: 200, latestRefreshNetworkCause: null, encoding: audit.encoding, sourceRows: audit.totalRows, uniqueCommunePostalPairsFrance: audit.uniqueCommunePostalPairs, identicalFullRows: audit.identicalFullRowsRemoved, repeatedRowsForSharedPair: audit.rowsBeyondFirstPerPair, OccitaniePairsWithMultipleRows: audit.occitaniePairsWithMultipleRows, priorUserRun: null },
     coverage: "4,482 distinct Occitanie commune/postal-code pairs cross-checked against API Géo; 4,446 communes matched",
     limitations: ["Dataset last updated in 2023 and therefore needs freshness monitoring", "Repeated INSEE/postal pairs are not exact duplicate rows; preserve alternative delivery labels and Ligne_5 values", "Postal relation supports geographic routing only and does not itself establish a programme's legal territory"],
   });
   const geoSource = registry.sources.find((item) => item.id === "api-geo");
-  if (geoSource) Object.assign(geoSource, { version: "Snapshot retrieved 2026-11-24T00:53:03.529Z", retrievedAt: "2026-11-24T00:53:03.529Z", recordsImported: 4446, postalMappingsImported: 4482, status: "official-snapshot-imported-and-normalized", endpointProbe: { latestRefreshHttpStatus: 200, latestRefreshNetworkCause: null, departments: 13, communes: 4446, postalMappings: 4482 } });
+  if (geoSource) Object.assign(geoSource, { version: `Snapshot retrieved ${report.geography.sourceRetrievedAt ?? sourceRetrievedAt}`, retrievedAt: report.geography.sourceRetrievedAt ?? sourceRetrievedAt, recordsImported: report.geography.communeCount, postalMappingsImported: report.geography.geoPostalMappingCount, status: "official-snapshot-imported-and-normalized", endpointProbe: { latestRefreshHttpStatus: 200, latestRefreshNetworkCause: null, departments: report.geography.departmentCount, communes: report.geography.communeCount, postalMappings: report.geography.geoPostalMappingCount } });
   const regionCatalogue = registry.sources.find((item) => item.id === "region-official-catalogue");
   const pagesReviewed = qualifications.filter((item) => item.classification.status !== "needs_manual_review").length;
-  if (regionCatalogue) Object.assign(regionCatalogue, { status: "official-pages-reviewed-partially", retrievedAt: checkedAt, pagesReviewed, relevantCandidates: counts.relevant, confirmedNonRelevant: counts.not_relevant, expired: counts.expired, pendingManualReview: counts.needs_manual_review, uniqueUsableAids: 0, limitations: [`Review is partial: ${pagesReviewed} of 153 aid records have a decision supported by the linked official detail page`, "No complete individual application journey has yet been normalized into a publishable aid card", `The remaining ${counts.needs_manual_review} official pages still require beneficiary, validity and application-path review`] });
+  const pagesRetrievedAt = officialPageDecisions.reduce((latest, item) => item.consultedAt > latest ? item.consultedAt : latest, "");
+  if (regionCatalogue) Object.assign(regionCatalogue, { status: "official-pages-reviewed-for-relevance", retrievedAt: pagesRetrievedAt || checkedAt, pagesReviewed, relevantCandidates: counts.relevant, confirmedNonRelevant: counts.not_relevant, expired: counts.expired, pendingManualReview: counts.needs_manual_review, uniqueUsableAids: 0, limitations: [`Relevance review covers ${pagesReviewed} of ${qualifications.length} aid records; this is not legal or regulatory validation`, "No complete individual application journey has yet been normalized into a publishable aid card", "All relevant candidates still require current eligibility, validity, document and application-process checks before publication"] });
   registry.auditedAt = checkedAt;
   await writeFile(registryPath, `${JSON.stringify(registry, null, 2)}\n`, "utf8");
   return { qualifications, counts, outputPath };

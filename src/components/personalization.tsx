@@ -5,24 +5,25 @@ import { useMemo, useState } from "react";
 import { publishedAids, categories } from "@/lib/aids";
 import { Select } from "@/components/ui/field";
 import { Button } from "@/components/ui/button";
+import { useTerritory } from "@/components/territory-provider";
+import { aidMatchesTerritory, departmentCoverages, territoryLabel, territoryPriority } from "@/lib/territories";
+import { TerritoryMark } from "@/components/territory-mark";
 
 export function Personalization() {
-  const [territory, setTerritory] = useState("34");
+  const { territory, setTerritory } = useTerritory();
   const [category, setCategory] = useState("Toutes");
   const [showResults, setShowResults] = useState(false);
   const matches = useMemo(() => publishedAids.filter((aid) => {
-    const territoryMatch = territory === "regional" ? ["regional", "national"].includes(aid.coverage) : ["34", "regional", "national"].includes(aid.coverage);
-    return territoryMatch && (category === "Toutes" || aid.category === category);
-  }), [territory, category]);
+    return aidMatchesTerritory(aid.coverage, territory) && (category === "Toutes" || aid.category === category);
+  }).sort((a, b) => territory === "occitanie" || territory === "all" ? territoryPriority(a.coverage) - territoryPriority(b.coverage) : Number(b.coverage === territory) - Number(a.coverage === territory)), [territory, category]);
   return <main className="container page">
-    <h1 className="page-heading">Parcours personnalisé</h1>
-    <p className="detail-description">Affinez la liste selon votre territoire et votre besoin. Ces filtres ne calculent pas l’éligibilité et vos réponses ne sont pas enregistrées.</p>
+    <div className="catalogue-intro"><p className="eyebrow">On cherche ensemble</p><h1 className="page-heading">Par où commencer ?</h1><p>Choisis un sujet pour repérer les aides qui peuvent correspondre. Tes réponses ne sont pas enregistrées.</p></div>
     <form className="profile-form" onSubmit={(event) => { event.preventDefault(); setShowResults(true); }}>
-      <label>Votre territoire<Select value={territory} onChange={(event) => setTerritory(event.target.value)}><option value="34">Hérault (34)</option><option value="regional">Autre département d’Occitanie</option></Select></label>
-      <label>Le sujet qui vous concerne<Select value={category} onChange={(event) => setCategory(event.target.value)}><option value="Toutes">Je préfère parcourir toutes les aides</option>{categories.map((item) => <option key={item}>{item}</option>)}</Select></label>
-      <Button variant="primary" type="submit">Afficher les aides correspondantes</Button>
+      <label>Où cherches-tu ?<Select value={territory} onChange={(event) => setTerritory(event.target.value)}><option value="occitanie">Toute l’Occitanie</option>{departmentCoverages.map((coverage) => <option key={coverage} value={coverage}>{territoryLabel[coverage]}</option>)}<option value="all">Partout en France</option></Select></label>
+      <label>Quel sujet t’amène ici ?<Select value={category} onChange={(event) => setCategory(event.target.value)}><option value="Toutes">Je préfère tout parcourir</option>{categories.map((item) => <option key={item}>{item}</option>)}</Select></label>
+      <Button variant="primary" type="submit">Voir les aides</Button>
     </form>
-    {showResults && <section className="detail-section" aria-live="polite"><h2>{matches.length} aide{matches.length === 1 ? "" : "s"} à consulter</h2>{matches.length ? <ul>{matches.map((aid) => <li key={aid.id}><Link href={`/aides/${aid.slug}`}>{aid.name}</Link></li>)}</ul> : <p>Aucune aide ne correspond à ces filtres.</p>}</section>}
-    <p className="note">Les conditions doivent être vérifiées sur chaque fiche et auprès de l’organisme responsable.</p>
+    {showResults && <section className="detail-section guided-results" aria-live="polite"><h2>{matches.length} piste{matches.length === 1 ? "" : "s"} à regarder</h2>{matches.length ? <div className="aid-grid">{matches.map((aid) => <Link className="aid-card" key={aid.id} href={`/aides/${aid.slug}`}><span className="badge">{aid.category}</span><div><h3>{aid.name}</h3><p>{aid.description}</p></div><TerritoryMark coverage={aid.coverage} compact /></Link>)}</div> : <p>Aucune aide publiée ne correspond à ces filtres. Essaie d’élargir le sujet ou le territoire.</p>}</section>}
+    <p className="note">Ce parcours aide à repérer des pistes, mais ne calcule pas ton éligibilité. Vérifie les conditions sur chaque fiche et auprès de l’organisme.</p>
   </main>;
 }
