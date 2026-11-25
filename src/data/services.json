@@ -269,6 +269,7 @@
     ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
+    "allowFavorite": true,
     "remainingChecks": [
       "Confirmer les conditions d'adhésion et la disponibilité des groupes et rencontres au moment de la prochaine mise à jour."
     ],
@@ -368,6 +369,7 @@
     ],
     "verifiedAt": "2026-11-24",
     "publicationStatus": "published",
+    "allowFavorite": true,
     "remainingChecks": [
       "Vérifier les prix, promotions et modalités de livraison lors de la prochaine mise à jour de la fiche."
     ],
