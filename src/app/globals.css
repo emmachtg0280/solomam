@@ -397,7 +397,7 @@ body { background: var(--paper); color: var(--ink); font-family: "DM Sans", "Tre
   .aid-preview-card { min-height: 170px; padding: 20px; border-radius: 18px; }
   .aid-preview-card > strong { font-size: 20px; }
 }
-@media (max-width: 1020px) {
+@media (max-width: 1400px) {
   :root { --header-overlap: 118px; }
   .nav-row { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand actions" "nav nav"; column-gap: 20px; row-gap: 2px; padding: 10px 18px 3px; }
   .main-nav { justify-content: center; gap: clamp(18px, 4vw, 36px); }
