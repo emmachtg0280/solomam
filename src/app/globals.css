@@ -89,10 +89,10 @@ button, select { cursor: pointer; }
 .badge { display: inline-flex; align-items: center; width: fit-content; min-height: 25px; border-radius: 99px; padding: 3px 10px; color: var(--olive-dark); background: #e9ecdf; font-size: 11px; line-height: 1.2; font-weight: 800; }
 .badge-light { background: var(--surface-soft); }
 .badge-verified { background: #e3efe2; color: #3f6743; }
-.territory-mark { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 120px; padding: 9px 12px; border-left: 3px solid var(--sun); background: #faf7ea; color: var(--muted); }
+.territory-mark { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 120px; padding: 9px 0; color: var(--muted); }
 .territory-mark > span { color: var(--muted); font-size: 9px; line-height: 1.2; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .territory-mark strong { color: var(--olive-dark); font-size: 17px; line-height: 1.1; letter-spacing: -.025em; }
-.territory-national { border-color: var(--olive); background: #eff0e8; }
+.territory-national { background: transparent; }
 .territory-national span { color: var(--olive-dark); font-size: 14px; font-weight: 800; }
 .featured-aid .territory-mark { margin-top: 17px; }
 .verified-note { margin: 17px 0 0; color: var(--muted); font-size: 12px; }
@@ -172,7 +172,7 @@ button, select { cursor: pointer; }
 .save-aid-panel button { flex: 0 0 auto; }
 .status-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .official-action { margin-top: 19px !important; }
-.note { padding: 14px 16px; border-left: 3px solid var(--sun); background: var(--surface-soft); color: var(--muted); font-size: 13px; }
+.note { padding: 14px 0; background: transparent; color: var(--muted); font-size: 13px; }
 .footer { margin-top: 32px; border-top: 1px solid var(--line); padding-block: 17px; color: var(--muted); font-size: 12px; }
 .footer a { margin-left: 7px; color: var(--olive-dark); font-weight: 700; }
 .track-list { display: grid; gap: 13px; }
@@ -318,8 +318,7 @@ body { background: var(--paper); color: var(--ink); font-family: "DM Sans", "Tre
 .featured-aid-copy > strong, .aid-card h2 { color: var(--ink); font-family: "DM Sans", sans-serif; font-weight: 700; }
 .badge, .badge-light, .badge-verified { color: #fff; background: var(--olive); border-radius: 999px; text-transform: uppercase; letter-spacing: .04em; }
 .badge-verified, .verified-mini { color: var(--olive); }
-.territory-mark, .territory-national { border-color: var(--olive); background: #fff; }
-.territory-mark { border-radius: 0 10px 10px 0; }
+.territory-mark, .territory-national { border: 0; background: transparent; }
 .territory-mark strong, .territory-national span { color: var(--ink); }
 .verified-note span { color: var(--olive); background: var(--sun-pale); }
 .local-section { border-block: 1px solid var(--line); background: #fff; color: var(--ink); }
@@ -383,7 +382,7 @@ body { background: var(--paper); color: var(--ink); font-family: "DM Sans", "Tre
 .aid-preview-card > strong { margin-top: 12px; color: var(--ink); font-size: clamp(19px, 2vw, 24px); line-height: 1.2; letter-spacing: -.025em; }
 .aid-preview-description { display: -webkit-box; overflow: hidden; max-width: 640px; margin-top: 8px; color: #625f5b; font-size: 14px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .aid-preview-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: auto; padding-top: 15px; }
-.aid-preview-card .territory-mark-compact { min-width: 0; min-height: 35px; padding: 5px 10px; border-left-width: 2px; border-radius: 0 8px 8px 0; }
+.aid-preview-card .territory-mark-compact { min-width: 0; min-height: 35px; padding: 5px 0; }
 .aid-preview-card .territory-mark-compact strong { font-size: 14px; }
 .aid-preview-card .verified-mini { color: var(--olive); font-size: 11px; font-weight: 700; }
 .aid-preview-note { display: flex; align-items: flex-start; gap: 7px; max-width: 620px; margin: 20px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
@@ -442,8 +441,13 @@ body { background: var(--paper); color: var(--ink); font-family: "DM Sans", "Tre
 .resource-card-copy { position: relative; z-index: 1; display: flex; min-width: 0; min-height: 100%; flex: 1; flex-direction: column; align-items: flex-start; width: 100%; }
 .resource-card-with-image .resource-card-copy { width: 58%; }
 .resource-card-heading { display: flex; align-items: center; min-height: 24px; }
+.resource-favorite-control { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; }
+.resource-favorite-control .button { min-height: 34px; padding: 5px 10px; font-size: 12px; }
+.resource-favorite-compact .button { width: 34px; min-height: 34px; padding: 0; border-radius: 50%; color: var(--olive-dark); font-size: 19px; }
+.resource-favorite-compact .button[aria-pressed="true"] { color: var(--olive-dark); }
 .resource-kind { color: #716157; font-size: 12px; font-weight: 700; }
-.resource-card h2 { display: -webkit-box; overflow: hidden; margin: 10px 0 6px; color: var(--ink); font-size: 20px; line-height: 1.2; letter-spacing: -.025em; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.resource-card h2, .resource-card h3 { display: -webkit-box; overflow: hidden; margin: 10px 0 6px; color: var(--ink); font-size: 20px; line-height: 1.2; letter-spacing: -.025em; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.resource-card h2 a, .resource-card h3 a { color: inherit; text-decoration: none; }
 .resource-card p { display: -webkit-box; overflow: hidden; max-width: 620px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .resource-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: auto; padding-top: 16px; }
 .resource-location { overflow: hidden; color: #62554d; font-size: 12px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
@@ -452,5 +456,6 @@ body { background: var(--paper); color: var(--ink); font-family: "DM Sans", "Tre
   .resource-grid { grid-template-columns: 1fr; gap: 12px; }
   .resource-card { min-height: 196px; padding: 19px 20px 16px; border-radius: 18px; }
   .resource-card h2 { font-size: 19px; }
+  .resource-card h3 { font-size: 19px; }
   .resource-card-image { width: 36%; }
 }
